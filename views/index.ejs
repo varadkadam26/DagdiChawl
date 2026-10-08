@@ -1,81 +1,24 @@
 <%- include('partials/header') %>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;500;600&display=swap');
-
-  :root {
-    --gold: #D4AF37;
-    --gold-hover: #F2CA52;
-    --warm-light: #FFB700;
-    --bg-dark: #070708;
-    --text-main: #F4EDE0;
-    --text-muted: #A8A196;
-  }
-
   body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    background-color: var(--bg-dark);
+    background-color: #000;
+    overflow-x: hidden; /* Only hide horizontal scroll */
     font-family: 'Lato', sans-serif;
-    color: var(--text-main);
-    overflow-x: hidden;
   }
-
-  /* Hide old headers */
+  
+  /* Hide old headers completely */
   .topbar-chintamani, .site-header {
     display: none !important;
   }
 
   /* =====================
-     HERO BACKGROUND
-     ===================== */
-  .hero-wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-image: url('/images/mockup_bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Atmospheric overlays */
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(90deg, rgba(7,7,8,0.95) 0%, rgba(7,7,8,0.7) 45%, rgba(7,7,8,0.2) 100%),
-      linear-gradient(to top, rgba(7,7,8,0.9) 0%, transparent 30%);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* Simulated Ivy/Vines using pseudo elements if the bg doesn't have them prominently */
-  .cave-ivy {
-    position: absolute;
-    top: -10%;
-    width: 35%;
-    height: 40%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C 40 40, 20 60, 20 100 M50 0 C 60 30, 80 50, 70 90 M50 0 C 45 20, 50 40, 45 80" stroke="rgba(20, 50, 20, 0.4)" stroke-width="2" fill="none"/></svg>') repeat-x;
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 2;
-    filter: blur(1px) drop-shadow(0 5px 10px rgba(0,0,0,0.8));
-  }
-  .cave-ivy.left { left: 0; transform: scaleX(-1); }
-  .cave-ivy.right { right: 0; }
-
-  /* =====================
-     HEADER & NAV
+     HD ANIMATED HEADER
      ===================== */
   .nm-nav-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -83,12 +26,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 18px 5%;
     box-sizing: border-box;
-    background: rgba(7, 7, 8, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    /* Frosted glass to cover any blurry baked-in header */
+    background: linear-gradient(to bottom, rgba(5,5,6,0.95), rgba(5,5,6,0.7));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   }
 
   .nm-logo-container {
@@ -96,27 +40,33 @@
     align-items: center;
     gap: 15px;
     text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .nm-logo-container:hover {
+    transform: scale(1.02);
   }
 
   .nm-trishul-icon {
     width: 32px;
     height: 42px;
     fill: none;
-    stroke: var(--gold);
+    stroke: #D4AF37;
     stroke-width: 2.5;
+    filter: drop-shadow(0 0 5px rgba(212,175,55,0.5));
   }
 
   .nm-logo-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .nm-logo-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 2.5px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #F4EDE0;
+    letter-spacing: 2px;
     text-transform: uppercase;
     line-height: 1.1;
   }
@@ -124,9 +74,19 @@
   .nm-logo-subtitle {
     font-family: 'Lato', sans-serif;
     font-size: 0.65rem;
-    color: var(--text-muted);
+    color: #D4AF37;
     letter-spacing: 3px;
-    margin-top: 3px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nm-logo-subtitle::before, .nm-logo-subtitle::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: rgba(212, 175, 55, 0.5);
   }
 
   .nm-nav-links {
@@ -135,279 +95,169 @@
   }
 
   .nm-nav-links a {
+    position: relative;
     font-size: 0.9rem;
-    color: var(--text-main);
+    color: #d1cbc0;
     text-decoration: none;
     letter-spacing: 1px;
     font-weight: 400;
     transition: color 0.3s ease;
+    padding: 5px 0;
+  }
+
+  /* Animated underline effect */
+  .nm-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #D4AF37;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
   }
 
   .nm-nav-links a:hover, .nm-nav-links a.active {
-    color: var(--gold);
+    color: #D4AF37;
+    text-shadow: 0 0 8px rgba(212,175,55,0.4);
+  }
+  
+  .nm-nav-links a:hover::after, .nm-nav-links a.active::after {
+    width: 100%;
   }
 
+  /* Donate Button Animation */
   .nm-donate-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid var(--gold);
+    border: 1px solid #D4AF37;
     border-radius: 25px;
     padding: 8px 24px;
-    color: var(--gold);
+    color: #D4AF37;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 1px;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nm-donate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+    transition: all 0.5s ease;
   }
 
   .nm-donate-btn:hover {
-    background: rgba(212, 175, 55, 0.15);
+    background: rgba(212, 175, 55, 0.1);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    color: var(--gold-hover);
-  }
-
-  /* =====================
-     HERO CONTENT GRID
-     ===================== */
-  .hero-content-grid {
-    position: relative;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    flex-grow: 1;
-    padding: 120px 5% 50px 5%;
-    align-items: center;
-  }
-
-  /* Left Side - Text */
-  .hero-text-col {
-    padding-right: 40px;
-  }
-
-  .eyebrow-text {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.85rem;
-    color: var(--gold);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: 600;
-  }
-
-  .main-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4.8rem;
-    color: #FFFFFF;
-    line-height: 1.1;
-    margin: 0 0 25px 0;
-    font-weight: 600;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
-  }
-
-  .subtext-keywords {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    color: var(--gold);
-    letter-spacing: 4px;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-  }
-
-  .subtext-keywords span {
-    color: rgba(212, 175, 55, 0.4);
-    margin: 0 12px;
-  }
-
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    margin-bottom: 45px;
-    max-width: 90%;
-  }
-
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    border: 1px solid var(--gold);
-    border-radius: 30px;
-    padding: 14px 35px;
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    background: rgba(7, 7, 8, 0.6);
-    backdrop-filter: blur(5px);
-  }
-
-  .cta-button:hover {
-    background: rgba(212, 175, 55, 0.2);
-    border-color: var(--gold-hover);
     color: #FFF;
   }
-
-  /* Right Side - Seamless Composition */
-  .hero-image-col {
-    position: relative;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 2vh;
+  
+  .nm-donate-btn:hover::before {
+    left: 100%;
   }
 
-  /* The actual isolated PNG idol */
-  .hero-idol-img {
+  .container-wrapper {
+    width: 100%;
+    display: block;
     position: relative;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+  }
+  
+  .image-container img.bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hd-devi {
+    position: absolute;
+    top: 12.31%;
+    left: 50.58%;
+    width: 34.86%;
+    height: auto;
     z-index: 5;
-    width: auto;
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    /* Strong golden glow behind Devi */
-    filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 120px rgba(255, 183, 0, 0.7)) drop-shadow(0 20px 50px rgba(0, 0, 0, 0.95));
+    pointer-events: none; /* Let clicks pass through if needed */
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
   }
 
-  /* Floor reflection illusion below the idol's platform */
-  .idol-reflection {
-    content: '';
+  /* Overlay for rest of buttons */
+  .button-overlay {
     position: absolute;
-    bottom: 0;
-    width: 70%;
-    height: 40px;
-    background: radial-gradient(ellipse at center, rgba(255, 183, 0, 0.3) 0%, rgba(0,0,0,0) 70%);
-    filter: blur(8px);
-    transform: perspective(300px) rotateX(70deg);
-    pointer-events: none;
-    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
   }
-
-  /* =====================
-     ANIMATIONS & EFFECTS
-     ===================== */
-  .diya-glow {
+  
+  .invisible-btn {
     position: absolute;
-    border-radius: 50%;
-    background: var(--warm-light);
-    filter: blur(25px);
-    opacity: 0.5;
-    animation: flicker 3s infinite alternate ease-in-out;
-    pointer-events: none;
-    z-index: 2;
+    display: block;
+    cursor: pointer;
+    z-index: 10;
   }
 
-  .diya-1 { width: 60px; height: 60px; bottom: 5%; left: 15%; }
-  .diya-2 { width: 80px; height: 80px; bottom: 8%; right: 15%; animation-delay: 1s; background: #FF8C00; }
-  .diya-3 { width: 40px; height: 40px; bottom: 15%; left: 35%; animation-delay: 0.5s; }
-
-  @keyframes flicker {
-    0%, 100% { opacity: 0.3; transform: scale(0.9); }
-    50% { opacity: 0.6; transform: scale(1.1); }
-    75% { opacity: 0.4; transform: scale(1.0); }
-  }
-
-  @media (max-width: 1024px) {
-    .main-heading { font-size: 3.5rem; }
-    .hero-content-grid { grid-template-columns: 50% 50%; padding-top: 100px; }
-    .seamless-idol-img { height: 85%; }
-  }
-
-  @media (max-width: 768px) {
-    .hero-content-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-      padding-top: 100px;
-      gap: 40px;
-    }
-    .hero-text-col { padding-right: 0; display: flex; flex-direction: column; align-items: center; }
-    .quote-text { max-width: 100%; }
-    .nm-nav-links { display: none; }
-    .hero-image-col { height: 60vh; }
-  }
+  .btn-explore { top: 57%; left: 12%; width: 15%; height: 6%; }
 </style>
 
-<div class="hero-wrapper">
-  <div class="hero-overlay"></div>
-  <div class="cave-ivy left"></div>
-  <div class="cave-ivy right"></div>
-  
-  <!-- Glowing Diyas along floor -->
-  <div class="diya-glow diya-1"></div>
-  <div class="diya-glow diya-2"></div>
-  <div class="diya-glow diya-3"></div>
+<!-- HD Animated Header -->
+<header class="nm-nav-header">
+  <a href="/" class="nm-logo-container">
+    <svg class="nm-trishul-icon" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 5 L30 25" stroke-linecap="round"/>
+      <path d="M30 25 Q15 20 15 5" stroke-linecap="round"/>
+      <path d="M30 25 Q45 20 45 5" stroke-linecap="round"/>
+      <text x="30" y="22" font-family="sans-serif" font-size="14" fill="#D4AF37" stroke="none" text-anchor="middle">ॐ</text>
+      <line x1="30" y1="25" x2="30" y2="75" stroke-linecap="round"/>
+      <line x1="20" y1="35" x2="40" y2="35" stroke-linecap="round"/>
+    </svg>
+    <div class="nm-logo-text">
+      <span class="nm-logo-title">SHREE NAVRATRI MANDAL</span>
+      <span class="nm-logo-subtitle">|| Jai Mata Di ||</span>
+    </div>
+  </a>
 
-  <!-- Header -->
-  <header class="nm-nav-header">
-    <a href="/" class="nm-logo-container">
-      <svg class="nm-trishul-icon" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 5 L30 25" stroke-linecap="round"/>
-        <path d="M30 25 Q15 20 15 5" stroke-linecap="round"/>
-        <path d="M30 25 Q45 20 45 5" stroke-linecap="round"/>
-        <text x="30" y="22" font-family="sans-serif" font-size="14" fill="#D4AF37" stroke="none" text-anchor="middle">ॐ</text>
-        <line x1="30" y1="25" x2="30" y2="75" stroke-linecap="round"/>
-        <line x1="20" y1="35" x2="40" y2="35" stroke-linecap="round"/>
-      </svg>
-      <div class="nm-logo-text">
-        <span class="nm-logo-title">SHREE NAVRATRI MANDAL</span>
-        <span class="nm-logo-subtitle">|| Jai Mata Di ||</span>
-      </div>
-    </a>
+  <nav class="nm-nav-links">
+    <a href="/" class="active">Home</a>
+    <a href="/about">About</a>
+    <a href="/schedule">Events</a>
+    <a href="/glimpses">Gallery</a>
+    <a href="/contact">Contact</a>
+  </nav>
 
-    <nav class="nm-nav-links">
-      <a href="/" class="active">Home</a>
-      <a href="/about">About</a>
-      <a href="/schedule">Events</a>
-      <a href="/glimpses">Gallery</a>
-      <a href="/contact">Contact</a>
-    </nav>
+  <a href="/donate" class="nm-donate-btn">
+    <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
+    Donate
+  </a>
+</header>
 
-    <a href="/donate" class="nm-donate-btn">
-      <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
-      Donate
-    </a>
-  </header>
-
-  <!-- Hero Content Grid -->
-  <div class="hero-content-grid">
+<div class="container-wrapper">
+  <div class="image-container">
+    <!-- Blurry baked background -->
+    <img src="/images/final_page.jpg" alt="Shree Navratri Mandal Home" class="bg-image" />
     
-    <!-- Left: Text Content -->
-    <div class="hero-text-col">
-      <div class="eyebrow-text">WELCOME TO</div>
-      
-      <h1 class="main-heading">Shree Navratri<br>Mandal</h1>
-      
-      <div class="subtext-keywords">
-        Faith <span>|</span> Unity <span>|</span> Celebration
-      </div>
-      
-      <p class="quote-text">
-        "May the divine energy of Maa Durga<br>fill your life with happiness, prosperity and strength."
-      </p>
-      
-      <a href="#events" class="cta-button">
-        Explore More &nbsp;&nbsp;&rarr;
-      </a>
+    <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
+    <img src="/devi-idol.png" alt="HD Devi" class="hd-devi" />
+    
+    <div class="button-overlay">
+      <a href="/schedule" class="invisible-btn btn-explore" title="Explore More"></a>
     </div>
-
-    <!-- Right: Seamless Composition of Isolated Devi -->
-    <div class="hero-image-col">
-      <!-- Seamless Transparent PNG -->
-      <img src="/devi-idol.png?v=2" alt="Shree Navratri Mandal Maa Durga" class="hero-idol-img" loading="eager" />
-      
-      <!-- Floor reflection -->
-      <div class="idol-reflection"></div>
-    </div>
-
   </div>
 </div>
 
