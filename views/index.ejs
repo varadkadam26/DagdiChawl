@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;500;600&display=swap');
 
   :root {
     --gold: #D4AF37;
     --gold-hover: #F2CA52;
     --warm-light: #FFB700;
-    --bg-dark: #0F0F12;
+    --bg-dark: #070708;
     --text-main: #F4EDE0;
     --text-muted: #A8A196;
   }
@@ -22,7 +22,7 @@
     overflow-x: hidden;
   }
 
-  /* Hide the old topbars if any from header.ejs */
+  /* Hide old headers */
   .topbar-chintamani, .site-header {
     display: none !important;
   }
@@ -34,8 +34,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    /* Use the cave background */
-    background-image: url('/images/generated_bg_cave.jpg');
+    background-image: url('/images/mockup_bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -43,7 +42,7 @@
     flex-direction: column;
   }
 
-  /* Gradient overlays for moody atmospheric lighting and text readability */
+  /* Atmospheric overlays */
   .hero-overlay {
     position: absolute;
     top: 0;
@@ -51,11 +50,26 @@
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(90deg, rgba(15,15,18,0.95) 0%, rgba(15,15,18,0.7) 45%, rgba(15,15,18,0.2) 100%),
-      linear-gradient(to top, rgba(15,15,18,0.9) 0%, transparent 30%);
+      linear-gradient(90deg, rgba(7,7,8,0.95) 0%, rgba(7,7,8,0.7) 45%, rgba(7,7,8,0.2) 100%),
+      linear-gradient(to top, rgba(7,7,8,0.9) 0%, transparent 30%);
     pointer-events: none;
     z-index: 1;
   }
+
+  /* Simulated Ivy/Vines using pseudo elements if the bg doesn't have them prominently */
+  .cave-ivy {
+    position: absolute;
+    top: -10%;
+    width: 35%;
+    height: 40%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C 40 40, 20 60, 20 100 M50 0 C 60 30, 80 50, 70 90 M50 0 C 45 20, 50 40, 45 80" stroke="rgba(20, 50, 20, 0.4)" stroke-width="2" fill="none"/></svg>') repeat-x;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 2;
+    filter: blur(1px) drop-shadow(0 5px 10px rgba(0,0,0,0.8));
+  }
+  .cave-ivy.left { left: 0; transform: scaleX(-1); }
+  .cave-ivy.right { right: 0; }
 
   /* =====================
      HEADER & NAV
@@ -71,11 +85,10 @@
     align-items: center;
     padding: 15px 5%;
     box-sizing: border-box;
-    /* Semi-transparent dark backdrop blur */
-    background: rgba(15, 15, 18, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    background: rgba(7, 7, 8, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   }
 
   .nm-logo-container {
@@ -99,11 +112,11 @@
   }
 
   .nm-logo-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
     font-weight: 600;
     color: var(--gold);
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     line-height: 1.1;
   }
@@ -127,31 +140,11 @@
     text-decoration: none;
     letter-spacing: 1px;
     font-weight: 400;
-    position: relative;
-    padding-bottom: 4px;
     transition: color 0.3s ease;
   }
 
   .nm-nav-links a:hover, .nm-nav-links a.active {
     color: var(--gold);
-  }
-
-  /* Subtle golden underline glow on hover */
-  .nm-nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
-    transition: width 0.3s ease;
-  }
-
-  .nm-nav-links a:hover::after, .nm-nav-links a.active::after {
-    width: 100%;
   }
 
   .nm-donate-btn {
@@ -188,7 +181,7 @@
     max-width: 1400px;
     margin: 0 auto;
     flex-grow: 1;
-    padding: 100px 5% 50px 5%;
+    padding: 120px 5% 50px 5%;
     align-items: center;
   }
 
@@ -208,8 +201,8 @@
   }
 
   .main-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.8rem;
     color: #FFFFFF;
     line-height: 1.1;
     margin: 0 0 25px 0;
@@ -232,9 +225,9 @@
   }
 
   .quote-text {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
     line-height: 1.8;
     margin-bottom: 45px;
@@ -253,7 +246,7 @@
     font-size: 0.95rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    background: rgba(15, 15, 18, 0.4);
+    background: rgba(7, 7, 8, 0.6);
     backdrop-filter: blur(5px);
   }
 
@@ -261,74 +254,48 @@
     background: rgba(212, 175, 55, 0.2);
     border-color: var(--gold-hover);
     color: #FFF;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
   }
 
-  /* Right Side - Spotlight Frame */
+  /* Right Side - Seamless Composition */
   .hero-image-col {
+    position: relative;
+    height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 2vh;
+  }
+
+  /* The actual isolated PNG idol */
+  .hero-idol-img {
     position: relative;
+    z-index: 5;
+    width: auto;
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    /* Strong golden glow behind Devi */
+    filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 120px rgba(255, 183, 0, 0.7)) drop-shadow(0 20px 50px rgba(0, 0, 0, 0.95));
   }
 
-  /* Dark wooden alcove frame styling */
-  .idol-frame {
-    position: relative;
-    max-width: 85%;
-    background: #080706; /* Dark wood/stone base */
-    padding: 12px;
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    border-radius: 8px 8px 0 0;
-    box-shadow: 
-      inset 0 0 30px rgba(0,0,0,0.9),
-      0 20px 50px rgba(0,0,0,0.8),
-      0 0 60px rgba(255, 183, 0, 0.15); /* Ambient warm glow behind frame */
-  }
-
-  /* The uploaded image */
-  .idol-frame img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 75vh;
-    object-fit: cover;
-    border-radius: 4px 4px 0 0;
-    filter: contrast(1.05) saturate(1.05); /* Slight enhancement for realism */
-  }
-
-  /* Warm directional light overlay */
-  .idol-light-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 183, 0, 0.1) 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
-    pointer-events: none;
-    border-radius: 4px 4px 0 0;
-  }
-
-  /* Floor reflection illusion below the frame */
+  /* Floor reflection illusion below the idol's platform */
   .idol-reflection {
     content: '';
     position: absolute;
-    bottom: -40px;
-    left: 5%;
-    width: 90%;
+    bottom: 0;
+    width: 70%;
     height: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    filter: blur(15px);
-    transform: perspective(200px) rotateX(60deg);
+    background: radial-gradient(ellipse at center, rgba(255, 183, 0, 0.3) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(8px);
+    transform: perspective(300px) rotateX(70deg);
     pointer-events: none;
+    z-index: 3;
   }
 
   /* =====================
      ANIMATIONS & EFFECTS
      ===================== */
-  /* Candle flicker */
-  .flicker-light {
+  .diya-glow {
     position: absolute;
     border-radius: 50%;
     background: var(--warm-light);
@@ -336,23 +303,12 @@
     opacity: 0.5;
     animation: flicker 3s infinite alternate ease-in-out;
     pointer-events: none;
+    z-index: 2;
   }
 
-  .flicker-1 {
-    width: 80px;
-    height: 80px;
-    bottom: 20%;
-    left: 10%;
-  }
-
-  .flicker-2 {
-    width: 120px;
-    height: 120px;
-    bottom: 10%;
-    right: 5%;
-    animation-delay: 1s;
-    background: #FF8C00;
-  }
+  .diya-1 { width: 60px; height: 60px; bottom: 5%; left: 15%; }
+  .diya-2 { width: 80px; height: 80px; bottom: 8%; right: 15%; animation-delay: 1s; background: #FF8C00; }
+  .diya-3 { width: 40px; height: 40px; bottom: 15%; left: 35%; animation-delay: 0.5s; }
 
   @keyframes flicker {
     0%, 100% { opacity: 0.3; transform: scale(0.9); }
@@ -360,48 +316,35 @@
     75% { opacity: 0.4; transform: scale(1.0); }
   }
 
-  /* =====================
-     RESPONSIVE DESIGN
-     ===================== */
   @media (max-width: 1024px) {
     .main-heading { font-size: 3.5rem; }
-    .hero-content-grid { grid-template-columns: 50% 50%; }
-    .nm-nav-links { gap: 20px; }
+    .hero-content-grid { grid-template-columns: 50% 50%; padding-top: 100px; }
+    .seamless-idol-img { height: 85%; }
   }
 
   @media (max-width: 768px) {
     .hero-content-grid {
       grid-template-columns: 1fr;
       text-align: center;
-      padding-top: 120px;
+      padding-top: 100px;
       gap: 40px;
     }
-
-    .hero-text-col {
-      padding-right: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
+    .hero-text-col { padding-right: 0; display: flex; flex-direction: column; align-items: center; }
     .quote-text { max-width: 100%; }
-
-    .nm-nav-links { display: none; /* Hide nav on mobile for simplicity in this demo */ }
-    
-    .hero-overlay {
-      background: linear-gradient(to top, rgba(15,15,18,0.95) 0%, rgba(15,15,18,0.8) 50%, rgba(15,15,18,0.6) 100%);
-    }
-
-    .idol-frame { max-width: 90%; }
+    .nm-nav-links { display: none; }
+    .hero-image-col { height: 60vh; }
   }
 </style>
 
 <div class="hero-wrapper">
   <div class="hero-overlay"></div>
+  <div class="cave-ivy left"></div>
+  <div class="cave-ivy right"></div>
   
-  <!-- Flickering Ambient Lights -->
-  <div class="flicker-light flicker-1"></div>
-  <div class="flicker-light flicker-2"></div>
+  <!-- Glowing Diyas along floor -->
+  <div class="diya-glow diya-1"></div>
+  <div class="diya-glow diya-2"></div>
+  <div class="diya-glow diya-3"></div>
 
   <!-- Header -->
   <header class="nm-nav-header">
@@ -416,7 +359,7 @@
       </svg>
       <div class="nm-logo-text">
         <span class="nm-logo-title">SHREE NAVRATRI MANDAL</span>
-        <span class="nm-logo-subtitle">|| EST. 1995 ||</span>
+        <span class="nm-logo-subtitle">|| Jai Mata Di ||</span>
       </div>
     </a>
 
@@ -429,7 +372,7 @@
     </nav>
 
     <a href="/donate" class="nm-donate-btn">
-      <i class="fa-solid fa-heart" style="font-size: 0.9rem;"></i>
+      <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
       Donate
     </a>
   </header>
@@ -439,7 +382,7 @@
     
     <!-- Left: Text Content -->
     <div class="hero-text-col">
-      <div class="eyebrow-text">WELCOME TO SHREE NAVRATRI MANDAL (EST. 1995)</div>
+      <div class="eyebrow-text">WELCOME TO</div>
       
       <h1 class="main-heading">Shree Navratri<br>Mandal</h1>
       
@@ -448,20 +391,20 @@
       </div>
       
       <p class="quote-text">
-        "May the divine energy of Maa Durga fill your life with happiness, prosperity and strength."
+        "May the divine energy of Maa Durga<br>fill your life with happiness, prosperity and strength."
       </p>
       
       <a href="#events" class="cta-button">
-        Discover More Events &nbsp;&nbsp;&rarr;
+        Explore More &nbsp;&nbsp;&rarr;
       </a>
     </div>
 
-    <!-- Right: Main Idol Spotlight -->
+    <!-- Right: Seamless Composition of Isolated Devi -->
     <div class="hero-image-col">
-      <div class="idol-frame">
-        <img src="/images/devi-idol.jpg" alt="Shree Navratri Mandal Maa Durga" loading="eager" />
-        <div class="idol-light-overlay"></div>
-      </div>
+      <!-- Seamless Transparent PNG -->
+      <img src="/devi-idol.png?v=2" alt="Shree Navratri Mandal Maa Durga" class="hero-idol-img" loading="eager" />
+      
+      <!-- Floor reflection -->
       <div class="idol-reflection"></div>
     </div>
 

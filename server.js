@@ -47,6 +47,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
   }
 }));
 
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 // i18n Language Cookie Middleware
 app.use((req, res, next) => {
   let lang = 'en';

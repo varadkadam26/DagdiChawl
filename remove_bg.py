@@ -1,11 +1,11 @@
-import sys
-from rembg import remove
+import rembg
 from PIL import Image
 
-input_path = sys.argv[1]
-output_path = sys.argv[2]
+# Use lighter model
+session = rembg.new_session('u2net')
 
-input_img = Image.open(input_path)
-output_img = remove(input_img)
-output_img.save(output_path)
-print("Background removed successfully.")
+with open('input.jpg', 'rb') as i:
+    with open('public/devi-idol.png', 'wb') as o:
+        input_data = i.read()
+        output_data = rembg.remove(input_data, session=session)
+        o.write(output_data)
