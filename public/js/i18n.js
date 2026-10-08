@@ -13,6 +13,7 @@ const translations = {
     mandal_full_title: "Shree Bal Gopal Ganeshutsav Mandal",
     mandal_name_header: "Malabar Hill Cha Raja",
     mandal_sub_header: "Shree Bal Gopal Ganeshutsav Mandal",
+    nav_mandal_title: "BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL",
 
     // Navigation
     nav_live: "LIVE DARSHAN",
@@ -283,6 +284,7 @@ const translations = {
     reg_label: "नोंदणी क्र. : ई-३८९२ मुंबई",
     mandal_name_header: "मलबार हिलचा राजा",
     mandal_sub_header: "श्री बाल गोपाल गणेशोत्सव मंडळ",
+    nav_mandal_title: "भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ",
 
     // Navigation
     nav_live: "थेट दर्शन",

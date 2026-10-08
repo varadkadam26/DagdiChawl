@@ -63,12 +63,13 @@
 
   .nm-logo-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+    font-size: min(1.2rem, 1.8vw);
     font-weight: 500;
     color: #F4EDE0;
     letter-spacing: 2px;
     text-transform: uppercase;
     line-height: 1.1;
+    white-space: nowrap;
   }
 
   .nm-logo-subtitle {
@@ -213,7 +214,211 @@
     z-index: 10;
   }
 
-  .btn-explore { top: 57%; left: 12%; width: 15%; height: 6%; }
+  /* HD Text Overlay Styles */
+  .hd-text-container {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    width: 45%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hd-eyebrow {
+    font-size: 0.9vw;
+    color: #D4AF37;
+    letter-spacing: 0.4vw;
+    text-transform: uppercase;
+    margin-bottom: 1vw;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5vw;
+    color: #F4EDE0;
+    line-height: 1.1;
+    margin: 0 0 1.5vw 0;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  }
+
+  .hd-keywords {
+    font-size: 1vw;
+    color: #D4AF37;
+    letter-spacing: 0.3vw;
+    margin-bottom: 2vw;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2vw;
+    color: #A8A196;
+    line-height: 1.8;
+    margin-bottom: 3vw;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #D4AF37;
+    border-radius: 30px;
+    padding: 1vw 2.5vw;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: rgba(5, 5, 6, 0.6);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+
+  .hd-explore-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+    transition: all 0.5s ease;
+  }
+
+  .hd-explore-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    color: #FFF;
+  }
+
+  .hd-explore-btn:hover::before {
+    left: 100%;
+  }
+
+  /* =====================
+     MOBILE OPTIMIZATION
+     ===================== */
+  @media (max-width: 768px) {
+    /* Adjust header for mobile */
+    .nm-nav-header {
+      padding: 12px 5%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    }
+    .nm-nav-links {
+      display: none; 
+    }
+    .nm-logo-container {
+      gap: 6px;
+    }
+    .nm-trishul-icon {
+      width: 22px;
+      height: 30px;
+    }
+    .nm-logo-text {
+      align-items: flex-start; /* Left align on mobile */
+    }
+    .nm-logo-title {
+      font-size: 2.7vw; /* Increased size to make it more readable */
+      white-space: nowrap;
+      letter-spacing: 0px; /* Crucial: remove the 2px desktop letter spacing! */
+    }
+    .nm-logo-subtitle {
+      font-size: 0.65rem;
+    }
+    .nm-donate-btn {
+      display: none; /* Hide on mobile to fit long title */
+    }
+
+    /* Reset container layout */
+    .container-wrapper {
+      height: auto;
+    }
+    .image-container {
+      height: auto;
+      display: block;
+      background: none;
+    }
+    
+    /* 1. First Section: Full Screen Devi Image */
+    .image-container img.bg-image {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      /* Shift image slightly right to perfectly balance the Devi */
+      object-position: 79% center; 
+    }
+
+    /* Hide the HD overlay on mobile. The base image is 1024px which is 
+       more than enough resolution for a phone screen, so it won't be blurry! */
+    .hd-devi {
+      display: none;
+    }
+
+    /* 2. Second Section: Text below the image */
+    .hd-text-container {
+      position: static; /* normal flow below the image */
+      width: 100%;
+      margin: 0;
+      padding: 60px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #070709; /* Deep dark cave color */
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: inset 0 20px 50px rgba(0,0,0,0.8);
+    }
+
+    /* Proper rem sizing for mobile */
+    .hd-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-shadow: none;
+    }
+    .hd-main-title {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      white-space: normal;
+      text-shadow: none;
+    }
+    .hd-keywords {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      text-shadow: none;
+    }
+    .hd-quote {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      text-shadow: none;
+      color: #b8b1a6;
+    }
+    .hd-explore-btn {
+      font-size: 1rem;
+      padding: 15px 35px;
+      background: #000;
+    }
+
+    .button-overlay {
+      display: none;
+    }
+  }
+
 </style>
 
 <!-- HD Animated Header -->
@@ -228,8 +433,8 @@
       <line x1="20" y1="35" x2="40" y2="35" stroke-linecap="round"/>
     </svg>
     <div class="nm-logo-text">
-      <span class="nm-logo-title">SHREE NAVRATRI MANDAL</span>
-      <span class="nm-logo-subtitle">|| Jai Mata Di ||</span>
+      <span class="nm-logo-title" data-i18n="nav_mandal_title" style="white-space: nowrap;">BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL</span>
+      <span class="nm-logo-subtitle">|| <span data-i18n="nav.subtitle">Jai Mata Di</span> ||</span>
     </div>
   </a>
 
@@ -250,14 +455,20 @@
 <div class="container-wrapper">
   <div class="image-container">
     <!-- Blurry baked background -->
-    <img src="/images/final_page.jpg" alt="Shree Navratri Mandal Home" class="bg-image" />
+    <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" />
     
     <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
     <img src="/devi-idol.png" alt="HD Devi" class="hd-devi" />
     
-    <div class="button-overlay">
-      <a href="/schedule" class="invisible-btn btn-explore" title="Explore More"></a>
+    <!-- HD Text Overlay -->
+    <div class="hd-text-container">
+      <div class="hd-eyebrow">WELCOME TO</div>
+      <h1 class="hd-main-title">Shree Navratri Mandal</h1>
+      <div class="hd-keywords">Faith &nbsp;|&nbsp; Unity &nbsp;|&nbsp; Celebration</div>
+      <p class="hd-quote">"May the divine energy of Maa Durga<br>fill your life with happiness, prosperity and strength."</p>
+      <a href="#events" class="hd-explore-btn">Explore More &nbsp;&nbsp;&rarr;</a>
     </div>
+
   </div>
 </div>
 
