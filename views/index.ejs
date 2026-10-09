@@ -203,6 +203,15 @@
   }
   
   /* Fire Glow Animation */
+  
+  @keyframes fire-flicker-no-move {
+    0% { opacity: 0.5; filter: blur(3px); transform: scale(0.98); }
+    25% { opacity: 0.6; filter: blur(4px); transform: scale(1.02); }
+    50% { opacity: 0.9; filter: blur(2px); transform: scale(0.95); }
+    75% { opacity: 0.7; filter: blur(5px); transform: scale(1.05); }
+    100% { opacity: 0.8; filter: blur(4px); }
+  }
+
   @keyframes fire-flicker {
     0% { opacity: 0.8; filter: blur(4px); }
     25% { opacity: 1; filter: blur(6px); transform: scale(1.15) translate(-40%, -40%); }
@@ -467,11 +476,14 @@
       object-position: 79% center; 
     }
 
+    
+  @media (max-width: 1200px) {
+    .hd-devi-wrapper { display: none !important; }
+  }
+
     /* Hide the HD overlay on mobile. The base image is 1024px which is 
        more than enough resolution for a phone screen, so it won't be blurry! */
-    .hd-devi-wrapper {
-      display: none;
-    }
+    .hd-devi-wrapper { display: none !important; }
 
     /* 2. Second Section: Text below the image */
     .hd-text-container {
