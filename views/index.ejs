@@ -1,4 +1,4 @@
-﻿<%- include('partials/header') %>
+<%- include('partials/header') %>
 <style>
   body, html {
     margin: 0;
@@ -24,27 +24,48 @@
     width: 100%;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; removed for top bar */
     align-items: center;
-    padding: 18px 5%;
+    /* padding: 24px 5%; removed for top bar */
     box-sizing: border-box;
-    /* Frosted glass to cover any blurry baked-in header */
-    background: linear-gradient(to bottom, rgba(5,5,6,0.95), rgba(5,5,6,0.7));
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    /* Soft vignette effect to make text pop while blending perfectly */
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0) 100%);
+    border-bottom: none;
   }
 
   .nm-logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
     text-decoration: none;
     transition: transform 0.3s ease;
   }
   .nm-logo-container:hover {
     transform: scale(1.02);
   }
+
+  .nm-nav-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .nm-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .nm-hamburger span {
+    display: block;
+    width: 21px;
+    height: 2px;
+    background: linear-gradient(135deg, #FDE047, #EAB308, #CA8A04);
+    box-shadow: 0 0 6px rgba(234, 179, 8, 0.7);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
 
   .nm-trishul-icon {
     width: 32px;
@@ -58,15 +79,15 @@
   .nm-logo-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .nm-logo-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Baloo 2', sans-serif;
     font-size: min(1.2rem, 1.8vw);
-    font-weight: 500;
+    font-weight: 700;
     color: #F4EDE0;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     line-height: 1.1;
     white-space: nowrap;
@@ -361,7 +382,7 @@
     margin: 0 0 1.5vw 0;
     font-weight: 600;
     white-space: nowrap;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.9), 0 0 40px rgba(212, 175, 55, 0.7), 2px 5px 15px rgba(0,0,0,0.8);
   }
 
   .hd-keywords {
@@ -426,34 +447,75 @@
      MOBILE OPTIMIZATION
      ===================== */
   @media (max-width: 768px) {
+    /* Fix extracted layout sections for mobile */
+    .grid-2 {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem !important;
+    }
+    .grid-4 {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important; /* Stats counter 2x2 on mobile */
+      gap: 1rem !important;
+    }
+    section[style*="padding: 6rem 0"] {
+      padding: 3rem 0 !important; /* Reduce massive desktop padding on mobile */
+    }
+
     /* Adjust header for mobile */
     .nm-nav-header {
-      padding: 12px 5%;
-      background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+      /* padding: 18px 5%; removed for top bar */
+      background: linear-gradient(to bottom, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0) 100%);
     }
     .nm-nav-links {
       display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(25, 18, 12, 0.98);
+      /* No backdrop blur so it matches exactly */
+      padding: 20px 5%;
+      border-bottom: none;
+      box-sizing: border-box;
+      gap: 20px;
+    }
+    .nm-nav-links.active {
+      display: flex;
+    }
+    .nm-hamburger {
+      display: flex;
+    }
+    .nm-nav-logo {
+      width: 35px !important;
+      height: 35px !important;
     }
     .nm-logo-container {
-      gap: 6px;
+      gap: 4px;
+      max-width: 80%; /* Ensure it doesn't push hamburger */
     }
     .nm-trishul-icon {
       width: 22px;
       height: 30px;
     }
     .nm-logo-text {
-      align-items: flex-start; /* Left align on mobile */
+      align-items: flex-start;
+      overflow: hidden;
     }
     .nm-logo-title {
-      font-size: 2.7vw; /* Increased size to make it more readable */
+      font-size: 2vw !important; /* Strictly scale with screen width to never overflow */
       white-space: nowrap;
-      letter-spacing: 0px; /* Crucial: remove the 2px desktop letter spacing! */
+      letter-spacing: 0px !important;
     }
     .nm-logo-subtitle {
       font-size: 0.65rem;
     }
     .nm-donate-btn {
       display: none; /* Hide on mobile to fit long title */
+    }
+    .president-img {
+      height: auto !important;
     }
 
     /* Reset container layout */
@@ -472,8 +534,8 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      /* Shift image slightly right to perfectly balance the Devi */
-      object-position: 79% center; 
+      /* Adjusted to 74% to perfectly center the 68% idol mark on mobile screens */
+      object-position: 74% center; 
     }
 
     
@@ -522,7 +584,7 @@
       margin: 0;
       white-space: nowrap; /* Forces one line */
       /* Added a slight gold glow behind it while preserving readability */
-      text-shadow: 0 0 15px rgba(212, 175, 55, 0.7), 2px 2px 10px rgba(0, 0, 0, 0.8); 
+      text-shadow: 0 0 25px rgba(212, 175, 55, 1), 0 0 45px rgba(212, 175, 55, 0.8), 2px 2px 10px rgba(0, 0, 0, 0.9); 
     }
     
     /* Hide everything else so ONLY the sentence is shown on the picture */
@@ -552,36 +614,135 @@
     }
   }
 
+
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    
+    
+  }
+
+
+  .nm-social-icons a:hover {
+    color: #D4AF37 !important;
+  }
+
+
+  .ios-glass-switch .lang-btn {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .ios-glass-switch .lang-btn:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .ios-glass-switch .lang-btn.active {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  }
+
+
+  .ios-glass-switch {
+    border-color: rgba(212, 175, 55, 0.4) !important;
+  }
+  .ios-glass-switch .lang-btn {
+    color: rgba(212, 175, 55, 0.5) !important;
+  }
+  .ios-glass-switch .lang-btn:hover {
+    color: rgba(212, 175, 55, 0.9) !important;
+  }
+  .ios-glass-switch .lang-btn.active {
+    background: #d8ba66 !important;
+    color: #1a1403 !important;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4) !important;
+  }
+  
+  /* Golden glow behind President photo */
+  .president-img {
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3) !important;
+  }
+  .gold-motion-frame {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3) !important;
+  }
+
+
+    .arun-gawli-badge {
+    font-family: 'Baloo 2', sans-serif !important;
+    font-weight: 700 !important;
+    border: none !important;
+    background: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    font-size: 1.25rem !important; /* BIGGER IN LAPTOP VIEW */
+  }
+    @media (max-width: 768px) {
+    .arun-gawli-badge {
+      font-size: min(15.5px, 4.2vw) !important;
+      letter-spacing: 0 !important;
+      display: block !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+  }
 </style>
 
 <!-- HD Animated Header -->
-<header class="nm-nav-header">
+<header class="nm-nav-header" style="flex-direction: column; padding: 0; align-items: stretch; background: transparent;">
+  
+  <!-- Pre-Header (Top Bar) -->
+  <div class="nm-top-bar" style="display: flex; justify-content: center; align-items: center; gap: 30px; padding: 10px 5%; background: transparent; border-bottom: none;">
+    
+    <!-- Social Icons -->
+    <div class="nm-social-icons" style="display: flex; gap: 15px;">
+      <a href="https://www.facebook.com/BycullaDagadiChawl/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/byculla_dagadichawl_navratri/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@MalabarHillChaRaja-e2z" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle-container ios-glass-switch" style="display: flex; gap: 2px; align-items: center; border-radius: 50px; padding: 4px; background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);">
+      <a href="#" class="lang-btn active" data-lang="mr" style=" text-decoration: none; font-size: 13px; font-family: 'Baloo 2', sans-serif; font-weight: 700; padding: 4px 14px; border-radius: 40px; transition: all 0.3s ease;">मराठी</a>
+      <a href="#" class="lang-btn" data-lang="en" style=" text-decoration: none; font-size: 13px; font-family: 'Baloo 2', sans-serif; font-weight: 700; padding: 4px 14px; border-radius: 40px; transition: all 0.3s ease;">EN</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="nm-main-nav" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 5%; width: 100%; box-sizing: border-box;">
+
   <a href="/" class="nm-logo-container">
-    <svg class="nm-trishul-icon" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30 5 L30 25" stroke-linecap="round"/>
-      <path d="M30 25 Q15 20 15 5" stroke-linecap="round"/>
-      <path d="M30 25 Q45 20 45 5" stroke-linecap="round"/>
-      <text x="30" y="22" font-family="sans-serif" font-size="14" fill="#D4AF37" stroke="none" text-anchor="middle">ॐ</text>
-      <line x1="30" y1="25" x2="30" y2="75" stroke-linecap="round"/>
-      <line x1="20" y1="35" x2="40" y2="35" stroke-linecap="round"/>
-    </svg>
+    <img src="/images/nav_logo_transparent.png" alt="Mandal Logo" class="nm-nav-logo" style="object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.7));">
     <div class="nm-logo-text">
       <span class="nm-logo-title" data-i18n="nav_mandal_title" style="white-space: nowrap;">BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL</span>
     </div>
   </a>
 
-  <nav class="nm-nav-links">
-    <a href="/" class="active">Home</a>
-    <a href="/about">About</a>
-    <a href="/schedule">Events</a>
-    <a href="/glimpses">Gallery</a>
-    <a href="/contact">Contact</a>
-  </nav>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <!-- Hamburger Menu Button (Mobile Only) -->
+    <div class="nm-hamburger" onclick="document.querySelector('.nm-nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <a href="/donate" class="nm-donate-btn">
-    <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
-    Donate
-  </a>
+    <nav class="nm-nav-links">
+      <a href="/" class="active">Home</a>
+      <a href="/about">About</a>
+      <a href="/schedule">Events</a>
+      <a href="/glimpses">Gallery</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <a href="/donate" class="nm-donate-btn">
+      <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
+      Donate
+    </a>
+  </div>
+
+  </div>
 </header>
 
 <div class="container-wrapper">
@@ -622,56 +783,56 @@
 
 
 
+<div style="background: linear-gradient(to bottom, transparent 0%, #080A08 150px, #15130F 50%, #30190F 100%); margin-top: -150px; padding-top: 150px; position: relative; z-index: 10; pointer-events: none;">
+<div style="pointer-events: auto;">
 <!-- EXTRACTED FROM malabarhillcharaja.in -->
 <section style="padding: 6rem 0;">
       <div class="container">
         <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div style="position: relative;">
+            <div class="gold-motion-frame">
+              <picture>
+                <img src="/images/president.jpg" alt="President" class="president-img" width="600" height="460"
+                  loading="lazy"
+                  style="width: 100%; height: auto; display: block; border-radius: 8px;">
+              </picture>
+            </div>
+          </div>
+
           <div>
-            <span class="section-badge">
-              <span class="lang-mr">अध्यक्ष व कार्यकारिणी संदेश</span>
-              <span class="lang-en">President & Executive Message</span>
+            <span class="section-badge arun-gawli-badge">
+              <span class="lang-mr">माननीय श्री अरुण गवळी जी यांचे मनोगत</span>
+              <span class="lang-en">Hon. Shree Arun Gawli Ji's Thoughts</span>
             </span>
-            <h2 class="section-title" style="margin-top: 0.5rem;">
-              <span class="lang-mr">स्वागतम व देवाचा आशीर्वाद</span>
-              <span class="lang-en">Warm Welcome & Divine Blessings</span>
-            </h2>
+            
+            <p style="color: var(--text-muted); font-size: 1.08rem; line-height: 1.85; margin-bottom: 1rem;">
+              <span class="lang-mr">दगडी चाळीची आई माऊली ही आपल्या सर्वांच्या श्रद्धेचे आणि आस्थेचे स्थान आहे. नवरात्रौत्सवाच्या माध्यमातून एकजूट, संस्कृती आणि भक्तीची परंपरा आपण अनेक वर्षे जपत आलो आहोत.</span>
+              <span class="lang-en">Dagdi Chawl Chi Aai Mauli is the center of faith and devotion for all of us. Through the Navratri festival, we have been preserving the tradition of unity, culture, and devotion for many years.</span>
+            </p>
+
             <p style="color: var(--text-muted); font-size: 1.08rem; line-height: 1.85; margin-bottom: 1.5rem;">
-              <span class="lang-mr">मलबार हिलचा राजाच्या अधिकृत डिजिटल मंदिर पोर्टलमध्ये आपले स्वागत आहे.</span>
-              <span class="lang-en">Welcome to the official digital temple portal of Malabar Hill Cha Raja.</span>
+              <span class="lang-mr">या पवित्र उत्सवाच्या निमित्ताने सर्व भाविक भक्तांना मनःपूर्वक शुभेच्छा! आई माऊलीची कृपा आपल्या सर्वांवर सदैव राहो आणि प्रत्येकाच्या जीवनात सुख, शांती व समृद्धी नांदो, हीच आईच्या चरणी प्रार्थना.</span>
+              <span class="lang-en">On the occasion of this holy festival, heartfelt greetings to all the devotees! May the grace of Aai Mauli always be upon all of us, and may happiness, peace, and prosperity fill everyone's life - this is my prayer at the feet of the Mother.</span>
             </p>
 
             <!-- Pull Quote Style Emphasis -->
             <blockquote class="pres-quote"
-              style="border-left: 4px solid #C9A227; padding-left: 1.2rem; margin: 1.5rem 0; font-family: var(--font-mr-head); font-size: 1.25rem; color: #6B1414; font-style: italic;">
-              <span class="lang-mr">"श्रद्धा, सेवा आणि सामाजिक बांधिलकी हे मलबार हिलचा राजा मंडळाचे प्रमुख आधारस्तंभ
-                आहेत."</span>
-              <span class="lang-en">"Faith, service, and social commitment are the core pillars of Malabar Hill Cha Raja
-                Mandal."</span>
+              style="border-left: 4px solid #C9A227; padding-left: 1.2rem; margin: 1.5rem 0; font-family: var(--font-mr-head); font-size: 1.35rem; color: #6B1414; font-weight: bold; font-style: italic;">
+              <span class="lang-mr">जय शंभो नारायण<br><br>दगडी चाळीच्या आई माऊलीचा विजय असो….!🙏</span>
+              <span class="lang-en">Jai Shambho Narayan<br><br>Victory to Dagdi Chawl Chi Aai Mauli...!🙏</span>
             </blockquote>
 
             <div
-              style="display: flex; gap: 1.5rem; border-left: 3px solid var(--royal-gold); padding-left: 1.5rem; background: rgba(212, 175, 55, 0.05); padding: 1.2rem 1.5rem; border-radius: var(--radius-sm);">
+              style="display: flex; gap: 1.5rem; border-left: 3px solid var(--royal-gold); padding-left: 1.5rem; background: rgba(212, 175, 55, 0.05); padding: 1.2rem 1.5rem; border-radius: var(--radius-sm); margin-top: 1.5rem;">
               <div>
                 <h4 style="margin: 0; color: var(--temple-maroon); font-size: 1.15rem;">
-                  <span class="lang-mr">श्री. परेश परब</span><span class="lang-en">Mr. Paresh Parab</span>
+                  <span class="lang-mr">माननीय श्री अरुण गवळी जी</span><span class="lang-en">Hon. Shree Arun Gawli Ji</span>
                 </h4>
-                <p style="margin: 0; font-size: 0.88rem; color: var(--primary-saffron); font-weight: 700;">
-                  <span class="lang-mr">अध्यक्ष, गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७
-                    मंडळ</span><span class="lang-en">President, Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant
-                    Road (W), Mumbai - 400007 Mandal</span>
+                <p style="margin: 0; font-size: 0.88rem; color: var(--primary-saffron); font-weight: 700; line-height: 1.4; margin-top: 4px;">
+                  <span class="lang-mr">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ</span>
+                  <span class="lang-en">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal</span>
                 </p>
               </div>
-            </div>
-          </div>
-
-          <div style="position: relative;">
-            <div class="gold-motion-frame">
-              <picture>
-                <source srcset="/images/malabar_ganpati_06.webp" type="image/webp">
-                <img src="/images/malabar_ganpati_06.jpg" alt="Malabar Hill Cha Raja Ganpati" width="600" height="460"
-                  loading="lazy"
-                  style="width: 100%; height: 460px; object-fit: cover; object-position: center center; display: block;">
-              </picture>
             </div>
           </div>
         </div>
@@ -2126,7 +2287,60 @@
             border-width: 1.5px !important;
           }
         }
-      </style>
+      
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    
+    
+  }
+
+
+  .nm-social-icons a:hover {
+    color: #D4AF37 !important;
+  }
+
+
+  .ios-glass-switch .lang-btn {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .ios-glass-switch .lang-btn:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .ios-glass-switch .lang-btn.active {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  }
+
+
+  .ios-glass-switch {
+    border-color: rgba(212, 175, 55, 0.4) !important;
+  }
+  .ios-glass-switch .lang-btn {
+    color: rgba(212, 175, 55, 0.5) !important;
+  }
+  .ios-glass-switch .lang-btn:hover {
+    color: rgba(212, 175, 55, 0.9) !important;
+  }
+  .ios-glass-switch .lang-btn.active {
+    background: #d8ba66 !important;
+    color: #1a1403 !important;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4) !important;
+  }
+  
+  /* Golden glow behind President photo */
+  .president-img {
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3) !important;
+  }
+  .gold-motion-frame {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3) !important;
+  }
+
+</style>
 
       <div style="overflow: hidden; margin-bottom: 1rem;">
         <div class="marquee-track-right">
@@ -2334,4 +2548,6 @@
       </div>
     </section>
 
+</div>
+</div>
 <%- include('partials/footer') %>

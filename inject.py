@@ -1,33 +1,75 @@
 import re
-import codecs
 
-with codecs.open('malabar.html', 'r', encoding='utf-8') as f:
-    html = f.read()
+content = open('views/index.ejs', encoding='utf-8').read()
 
-# Extract all sections
-sections = re.findall(r'(<section.*?</section>)', html, re.DOTALL | re.IGNORECASE)
+# Add desktop CSS for hamburger and logo
+desktop_css = '''  .nm-logo-container:hover {
+    transform: scale(1.02);
+  }
 
-# Filter out the heroCarousel section
-middle_sections = []
-for s in sections:
-    if 'id="heroCarousel"' not in s:
-        middle_sections.append(s)
+  .nm-nav-logo {
+    width: 70px;
+    height: 70px;
+  }
 
-extracted_html = '\n\n'.join(middle_sections)
+  .nm-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .nm-hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #D4AF37;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+'''
+content = content.replace('  .nm-logo-container:hover {\n    transform: scale(1.02);\n  }', desktop_css)
 
-# Open current index.ejs and insert it before footer
-with codecs.open('views/index.ejs', 'r', encoding='utf-8') as f:
-    current = f.read()
+# Update mobile CSS
+mobile_css_old = '''    .nm-nav-links {
+      display: none; 
+    }
+    .nm-logo-container {
+      gap: 6px;
+    }'''
 
-# We will replace the "MOCKUP HIGHLIGHTS" section with this new extracted content
-# Actually, the user says "add everything in the middle", so we should keep what we have and append?
-# "leaving the top navigaation section,main hero section and footer ssectin add eveything in the middle present in the home page of this website :malabarhillcharaja.in into our new website"
-# Let's just insert it right above the footer
+mobile_css_new = '''    .nm-nav-links {
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(5,5,6,0.95);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 20px 5%;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      box-sizing: border-box;
+      gap: 20px;
+    }
+    .nm-nav-links.active {
+      display: flex;
+    }
+    .nm-hamburger {
+      display: flex;
+    }
+    .nm-nav-logo {
+      width: 45px !important;
+      height: 45px !important;
+    }
+    .nm-logo-container {
+      gap: 6px;
+    }'''
+content = content.replace(mobile_css_old, mobile_css_new)
 
-new_content = "\n<!-- EXTRACTED FROM malabarhillcharaja.in -->\n" + extracted_html + "\n\n<%- include('partials/footer') %>"
-current = current.replace("<%- include('partials/footer') %>", new_content)
+# Update mobile title font size
+content = content.replace('font-size: 2.7vw; /* Increased size to make it more readable */', 'font-size: clamp(8px, 2.3vw, 12px);')
 
-with codecs.open('views/index.ejs', 'w', encoding='utf-8') as f:
-    f.write(current)
-
-print(f"Extracted {len(middle_sections)} sections.")
+open('views/index.ejs', 'w', encoding='utf-8').write(content)
+print('Done injecting')

@@ -1,27 +1,53 @@
-import codecs
-import re
+content = open('views/index.ejs', encoding='utf-8').read()
 
-with codecs.open('views/index.ejs', 'r', encoding='utf-8') as f:
-    content = f.read()
+# Fix 1: Remove inline margin-right from logo
+old_logo = '<img src="/images/nav_logo_transparent.png" alt="Mandal Logo" class="nm-nav-logo" style="object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.7)); margin-right: 8px;">'
+new_logo = '<img src="/images/nav_logo_transparent.png" alt="Mandal Logo" class="nm-nav-logo" style="object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.7));">'
+content = content.replace(old_logo, new_logo)
 
-# Replace all mojibake
-replacements = {
-    r'αñåαñ«αñÜαÑç αñáαñ│αñò αñ╡αÑêαñ╢αñ┐αñ╖αÑìαñƒαÑìαñ»αÑç': 'आमचे ठळक वैशिष्ट्ये',
-    r'αñåαñ░αññαÑÇ αñ╡ αñ¬αÑéαñ£αñ╛': 'आरती व पूजा',
-    r'αñ░αÑïαñ£ αñ╕αñòαñ╛αñ│αÑÇ αÑ« αñ╡ αñ╕αñéαñºαÑìαñ»αñ╛αñòαñ╛αñ│αÑÇ αÑ« αñ«αñ╣αñ╛αñåαñ░αññαÑÇ.': 'रोज सकाळी ८ व संध्याकाळी ८ महाआरती.',
-    r'αñ╕αñ╛αñ«αñ╛αñ£αñ┐αñò αñòαñ╛αñ░αÑìαñ»': 'सामाजिक कार्य',
-    r'αÑ½αÑª,αÑªαÑªαÑª\+ αñ¡αñ╛αñ╡αñ┐αñòαñ╛αñéαñ¿αñ╛ αñ«αñ╣αñ╛αñ¬αÑìαñ░αñ╕αñ╛αñª αñåαñúαñ┐ αñ«αñªαññ.': '५०,०००+ भाविकांना महाप्रसाद आणि मदत.',
-    r'αñòαÑìαñ╖αñúαñÜαñ┐αññαÑìαñ░αÑç': 'क्षणचित्रे',
-    r'αñÉαññαñ┐αñ╣αñ╛αñ╕αñ┐αñò αñ╕αÑüαñ╡αñ░αÑìαñú αñòαÑìαñ╖αñú αñåαñúαñ┐ αñªαñ╢αñòαñ╛αññαÑÇαñ▓ αñ¬αÑìαñ░αñ╡αñ╛αñ╕.': 'ऐतिहासिक सुवर्ण क्षण आणि दशकातील प्रवास.',
-    r'αñùαÑàαñ▓αñ░αÑÇ': 'गॅलरी',
-    r'αñåαñ«αñÜαÑìαñ»αñ╛ αñëαññαÑìαñ╕αñ╡ αñåαñúαñ┐ αñ╕αñ£αñ╛αñ╡αñƒαÑÇαñÜαÑç αñ½αÑïαñƒαÑï αñ¬αñ╣αñ╛.': 'आमच्या उत्सव आणि सजावटीचे फोटो पहा.',
-    r'αñªαÑçαñúαñùαÑÇ': 'देणगी',
-    r'αÑ«αÑªG αñòαñ░ αñ╕αñ╡αñ▓αññ αñªαÑçαñúαñùαÑÇ αñëαñ¬αñ▓αñ¼αÑìαñº αñåαñ╣αÑç.': '८०G कर सवलत देणगी उपलब्ध आहे.'
-}
+# Fix 2: Make mobile logo smaller and title strictly relative to vw
+old_mobile_css = '''    .nm-nav-logo {
+      width: 45px !important;
+      height: 45px !important;
+    }
+    .nm-logo-container {
+      gap: 6px;
+    }
+    .nm-trishul-icon {
+      width: 22px;
+      height: 30px;
+    }
+    .nm-logo-text {
+      align-items: flex-start; /* Left align on mobile */
+    }
+    .nm-logo-title {
+      font-size: clamp(8px, 2.3vw, 12px);
+      white-space: nowrap;
+      letter-spacing: 0px; /* Crucial: remove the 2px desktop letter spacing! */
+    }'''
 
-for bad, good in replacements.items():
-    content = re.sub(bad, good, content)
+new_mobile_css = '''    .nm-nav-logo {
+      width: 35px !important;
+      height: 35px !important;
+    }
+    .nm-logo-container {
+      gap: 4px;
+      max-width: 80%; /* Ensure it doesn't push hamburger */
+    }
+    .nm-trishul-icon {
+      width: 22px;
+      height: 30px;
+    }
+    .nm-logo-text {
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    .nm-logo-title {
+      font-size: 2vw !important; /* Strictly scale with screen width to never overflow */
+      white-space: nowrap;
+      letter-spacing: 0px !important;
+    }'''
+content = content.replace(old_mobile_css, new_mobile_css)
 
-with codecs.open('views/index.ejs', 'w', encoding='utf-8') as f:
-    f.write(content)
-
+open('views/index.ejs', 'w', encoding='utf-8').write(content)
+print('Fixed mobile alignment')
