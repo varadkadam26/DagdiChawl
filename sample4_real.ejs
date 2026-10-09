@@ -1,0 +1,475 @@
+﻿<%- include('partials/header') %>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #000;
+    overflow-x: hidden; /* Only hide horizontal scroll */
+    font-family: 'Lato', sans-serif;
+  }
+  
+  /* Hide old headers completely */
+  .topbar-chintamani, .site-header {
+    display: none !important;
+  }
+
+  /* =====================
+     HD ANIMATED HEADER
+     ===================== */
+  .nm-nav-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    box-sizing: border-box;
+    /* Frosted glass to cover any blurry baked-in header */
+    background: linear-gradient(to bottom, rgba(5,5,6,0.95), rgba(5,5,6,0.7));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  .nm-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .nm-logo-container:hover {
+    transform: scale(1.02);
+  }
+
+  .nm-trishul-icon {
+    width: 32px;
+    height: 42px;
+    fill: none;
+    stroke: #D4AF37;
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 5px rgba(212,175,55,0.5));
+  }
+
+  .nm-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nm-logo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: min(1.2rem, 1.8vw);
+    font-weight: 500;
+    color: #F4EDE0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .nm-logo-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    color: #D4AF37;
+    letter-spacing: 3px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nm-logo-subtitle::before, .nm-logo-subtitle::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: rgba(212, 175, 55, 0.5);
+  }
+
+  .nm-nav-links {
+    display: flex;
+    gap: 40px;
+  }
+
+  .nm-nav-links a {
+    position: relative;
+    font-size: 0.9rem;
+    color: #d1cbc0;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+  }
+
+  /* Animated underline effect */
+  .nm-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #D4AF37;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nm-nav-links a:hover, .nm-nav-links a.active {
+    color: #D4AF37;
+    text-shadow: 0 0 8px rgba(212,175,55,0.4);
+  }
+  
+  .nm-nav-links a:hover::after, .nm-nav-links a.active::after {
+    width: 100%;
+  }
+
+  /* Donate Button Animation */
+  .nm-donate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #D4AF37;
+    border-radius: 25px;
+    padding: 8px 24px;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nm-donate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+    transition: all 0.5s ease;
+  }
+
+  .nm-donate-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    color: #FFF;
+  }
+  
+  .nm-donate-btn:hover::before {
+    left: 100%;
+  }
+
+  .container-wrapper {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+  }
+  
+  .image-container img.bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hd-devi {
+    position: absolute;
+    top: 12.31%;
+    left: 50.58%;
+    width: 34.86%;
+    height: auto;
+    z-index: 5;
+    pointer-events: none; /* Let clicks pass through if needed */
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+  }
+
+  /* Overlay for rest of buttons */
+  .button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  
+  .invisible-btn {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  /* HD Text Overlay Styles */
+  .hd-text-container {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    width: 45%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hd-eyebrow {
+    font-size: 0.9vw;
+    color: #D4AF37;
+    letter-spacing: 0.4vw;
+    text-transform: uppercase;
+    margin-bottom: 1vw;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5vw;
+    color: #F4EDE0;
+    line-height: 1.1;
+    margin: 0 0 1.5vw 0;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  }
+
+  .hd-keywords {
+    font-size: 1vw;
+    color: #D4AF37;
+    letter-spacing: 0.3vw;
+    margin-bottom: 2vw;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2vw;
+    color: #A8A196;
+    line-height: 1.8;
+    margin-bottom: 3vw;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #D4AF37;
+    border-radius: 30px;
+    padding: 1vw 2.5vw;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: rgba(5, 5, 6, 0.6);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+
+  .hd-explore-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+    transition: all 0.5s ease;
+  }
+
+  .hd-explore-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    color: #FFF;
+  }
+
+  .hd-explore-btn:hover::before {
+    left: 100%;
+  }
+
+  /* =====================
+     MOBILE OPTIMIZATION
+     ===================== */
+  @media (max-width: 768px) {
+    /* Adjust header for mobile */
+    .nm-nav-header {
+      padding: 12px 5%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    }
+    .nm-nav-links {
+      display: none; 
+    }
+    .nm-logo-container {
+      gap: 6px;
+    }
+    .nm-trishul-icon {
+      width: 22px;
+      height: 30px;
+    }
+    .nm-logo-text {
+      align-items: flex-start; /* Left align on mobile */
+    }
+    .nm-logo-title {
+      font-size: 2.7vw; /* Increased size to make it more readable */
+      white-space: nowrap;
+      letter-spacing: 0px; /* Crucial: remove the 2px desktop letter spacing! */
+    }
+    .nm-logo-subtitle {
+      font-size: 0.65rem;
+    }
+    .nm-donate-btn {
+      display: none; /* Hide on mobile to fit long title */
+    }
+
+    /* Reset container layout */
+    .container-wrapper {
+      height: auto;
+    }
+    .image-container {
+      height: auto;
+      display: block;
+      background: none;
+    }
+    
+    /* 1. First Section: Full Screen Devi Image */
+    .image-container img.bg-image {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      /* Shift image slightly right to perfectly balance the Devi */
+      object-position: 79% center; 
+    }
+
+    /* Hide the HD overlay on mobile. The base image is 1024px which is 
+       more than enough resolution for a phone screen, so it won't be blurry! */
+    .hd-devi {
+      display: none;
+    }
+
+    /* 2. Second Section: Text below the image */
+    .hd-text-container {
+      position: static; /* normal flow below the image */
+      width: 100%;
+      margin: 0;
+      padding: 60px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #070709; /* Deep dark cave color */
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: inset 0 20px 50px rgba(0,0,0,0.8);
+    }
+
+    /* Proper rem sizing for mobile */
+    .hd-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-shadow: none;
+    }
+    .hd-main-title {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      white-space: normal;
+      text-shadow: none;
+    }
+    .hd-keywords {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      text-shadow: none;
+    }
+    .hd-quote {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      text-shadow: none;
+      color: #b8b1a6;
+    }
+    .hd-explore-btn {
+      font-size: 1rem;
+      padding: 15px 35px;
+      background: #000;
+    }
+
+    .button-overlay {
+      display: none;
+    }
+  }
+
+</style>
+
+<!-- HD Animated Header -->
+<header class="nm-nav-header">
+  <a href="/" class="nm-logo-container">
+    <svg class="nm-trishul-icon" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 5 L30 25" stroke-linecap="round"/>
+      <path d="M30 25 Q15 20 15 5" stroke-linecap="round"/>
+      <path d="M30 25 Q45 20 45 5" stroke-linecap="round"/>
+      <text x="30" y="22" font-family="sans-serif" font-size="14" fill="#D4AF37" stroke="none" text-anchor="middle">αÑÉ</text>
+      <line x1="30" y1="25" x2="30" y2="75" stroke-linecap="round"/>
+      <line x1="20" y1="35" x2="40" y2="35" stroke-linecap="round"/>
+    </svg>
+    <div class="nm-logo-text">
+      <span class="nm-logo-title" data-i18n="nav_mandal_title" style="white-space: nowrap;">BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL</span>
+      <span class="nm-logo-subtitle">|| <span data-i18n="nav.subtitle">Jai Mata Di</span> ||</span>
+    </div>
+  </a>
+
+  <nav class="nm-nav-links">
+    <a href="/" class="active">Home</a>
+    <a href="/about">About</a>
+    <a href="/schedule">Events</a>
+    <a href="/glimpses">Gallery</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <a href="/donate" class="nm-donate-btn">
+    <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
+    Donate
+  </a>
+</header>
+
+<div class="container-wrapper">
+  <div class="image-container">
+    <!-- Blurry baked background -->
+    <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" />
+    
+    <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
+    <img src="/devi-idol.png" alt="HD Devi" class="hd-devi" />
+    
+    <!-- HD Text Overlay -->
+    <div class="hd-text-container">
+      <div class="hd-eyebrow">WELCOME TO</div>
+      <h1 class="hd-main-title">Shree Navratri Mandal</h1>
+      <div class="hd-keywords">Faith &nbsp;|&nbsp; Unity &nbsp;|&nbsp; Celebration</div>
+      <p class="hd-quote">"May the divine energy of Maa Durga<br>fill your life with happiness, prosperity and strength."</p>
+      <a href="#events" class="hd-explore-btn">Explore More &nbsp;&nbsp;&rarr;</a>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

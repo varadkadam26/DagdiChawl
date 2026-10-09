@@ -1,0 +1,388 @@
+<%- include('partials/header') %>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #030303 !important; /* Deep black for the cave */
+  color: #E8E3D9;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   HEADER OVERRIDES TO MATCH MOCKUP VIBE
+   ========================================= */
+/* Hide the top chintamani banner only on the homepage to match the clean mockup look */
+.topbar-chintamani {
+  display: none !important;
+}
+
+/* Make the site header transparent and float over the hero */
+.site-header {
+  background: transparent !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 100%;
+  z-index: 100;
+  box-shadow: none !important;
+  border-bottom: none !important;
+  padding-top: 20px;
+}
+
+.site-header .nav-link, .brand-text h2, .brand-text p {
+  color: #E8E3D9 !important;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.site-header .nav-link:hover, .site-header .nav-link.active {
+  color: #C9A26A !important;
+}
+
+.site-header .nav-link.active {
+  border-bottom: 1px solid #C9A26A !important;
+}
+
+.nav-donate-btn {
+  background: transparent !important;
+  border: 1px solid #E8E3D9 !important;
+  color: #E8E3D9 !important;
+  border-radius: 30px !important;
+  font-weight: 400 !important;
+  padding: 8px 24px !important;
+}
+
+.nav-donate-btn:hover {
+  background: rgba(201, 162, 106, 0.1) !important;
+  border-color: #C9A26A !important;
+  color: #C9A26A !important;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* Applying the purely generated AI clean background */
+  background-image: 
+    linear-gradient(to right, rgba(3,3,3,0.85) 0%, rgba(3,3,3,0.3) 50%, rgba(3,3,3,0.6) 100%),
+    url('/images/generated_bg_cave.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 650px;
+  z-index: 10;
+  margin-top: 80px; /* Offset for header */
+}
+
+.welcome-text {
+  color: #C9A26A;
+  font-size: 0.9rem;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.welcome-text::before, .welcome-text::after {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 1px;
+  background-color: #C9A26A;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: #E8E3D9;
+  margin: 0 0 25px 0;
+  font-weight: 400;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #C9A26A;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+.subtitle span {
+  opacity: 0.5;
+}
+
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(232, 227, 217, 0.8);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: transparent;
+  border: 1px solid #C9A26A;
+  color: #C9A26A;
+  padding: 12px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+.explore-btn:hover {
+  background: rgba(201, 162, 106, 0.1);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   HIGHLIGHTS SECTION
+   ========================================= */
+.highlights-section {
+  background-color: #030303;
+  padding: 80px 5%;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -20px 40px rgba(3,3,3,1);
+}
+
+.highlights-header {
+  text-align: center;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.highlights-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #E8E3D9;
+  font-weight: 400;
+  margin: 0;
+}
+.header-line {
+  height: 1px;
+  width: 40px;
+  background-color: #C9A26A;
+  opacity: 0.6;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.highlight-item {
+  text-align: center;
+  position: relative;
+}
+.highlight-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(201, 162, 106, 0.4), transparent);
+}
+
+.icon-wrapper {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px auto;
+  border: 1px solid rgba(201, 162, 106, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A26A;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+.highlight-item:hover .icon-wrapper {
+  background: rgba(201, 162, 106, 0.1);
+  transform: scale(1.05);
+}
+
+.hl-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #E8E3D9;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.hl-desc {
+  font-size: 0.85rem;
+  color: rgba(232, 227, 217, 0.6);
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .site-header {
+    background: rgba(3,3,3,0.9) !important;
+    padding-top: 10px;
+  }
+  .hero-content {
+    margin-top: 150px;
+    text-align: center;
+  }
+  .welcome-text {
+    justify-content: center;
+  }
+  .main-title {
+    font-size: 3rem;
+  }
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .highlight-item:not(:last-child)::after {
+    display: none;
+  }
+}
+</style>
+
+<!-- MOCKUP HERO -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="welcome-text">
+      <span class="lang-mr">सुस्वागतम</span>
+      <span class="lang-en">WELCOME TO</span>
+    </div>
+    
+    <h1 class="main-title">
+      <span class="lang-mr">मलबार हिलचा राजा</span>
+      <span class="lang-en">Malabar Hill Cha Raja</span>
+    </h1>
+    
+    <div class="subtitle">
+      <span class="lang-mr">श्रद्धा <span>|</span> एकता <span>|</span> उत्सव</span>
+      <span class="lang-en">Faith <span>|</span> Unity <span>|</span> Celebration</span>
+    </div>
+    
+    <p class="quote">
+      <span class="lang-mr">
+        "५३ वर्षांची अविरत सेवा आणि शुद्ध भक्तीची परंपरा<br>
+        अनुभवण्यासाठी आमच्यात सामील व्हा."
+      </span>
+      <span class="lang-en">
+        "May the divine energy of Maa Durga<br>
+        fill your life with happiness, prosperity and strength."
+      </span>
+    </p>
+    
+    <a href="#highlights" class="explore-btn">
+      <span class="lang-mr">पुढे एक्सप्लोर करा &nbsp;&nbsp;&rarr;</span>
+      <span class="lang-en">Explore More &nbsp;&nbsp;&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- MOCKUP HIGHLIGHTS -->
+<section id="highlights" class="highlights-section">
+  <div class="highlights-header">
+    <div class="header-line left"></div>
+    <h2>
+      <span class="lang-mr">आमचे ठळक वैशिष्ट्ये</span>
+      <span class="lang-en">Our Highlights</span>
+    </h2>
+    <div class="header-line right"></div>
+  </div>
+
+  <div class="highlights-grid">
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-om"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">आरती व पूजा</span>
+        <span class="lang-en">Aarti & Pooja</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">रोज सकाळी ८ व संध्याकाळी ८ महाआरती.</span>
+        <span class="lang-en">Feel the divine blessings with traditional rituals.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-hands-holding-child"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">सामाजिक कार्य</span>
+        <span class="lang-en">Social Work</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">५०,०००+ भाविकांना महाप्रसाद आणि मदत.</span>
+        <span class="lang-en">Annadan Mahaprasad for 50,000+ devotees and social aid.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-calendar-days"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">क्षणचित्रे</span>
+        <span class="lang-en">Events</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">ऐतिहासिक सुवर्ण क्षण आणि दशकातील प्रवास.</span>
+        <span class="lang-en">Stay updated with our latest programs.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-image"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">गॅलरी</span>
+        <span class="lang-en">Gallery</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">आमच्या उत्सव आणि सजावटीचे फोटो पहा.</span>
+        <span class="lang-en">Relive the moments of celebration.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">देणगी</span>
+        <span class="lang-en">Support Us</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">८०G कर सवलत देणगी उपलब्ध आहे.</span>
+        <span class="lang-en">Be a part of our journey. 80G Tax Exempt Donations available.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
