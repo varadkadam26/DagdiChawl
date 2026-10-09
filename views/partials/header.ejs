@@ -196,131 +196,766 @@
   <div class="custom-cursor-dot" id="customCursorDot"></div>
   <div class="custom-cursor-outline" id="customCursorOutline"></div>
 
-  <!-- Mandal Top Header Banner -->
-  <div class="topbar-chintamani top-utility-bar" id="topUtilityBar">
-    <div class="container">
-      <div class="mandal-top-banner-flex">
-        <!-- Top Meta (Est & Reg & Social Links) -->
-        <div class="mandal-top-meta">
-          <span class="est-text">
-            <span class="lang-mr">स्थापना : १९७३</span>
-            <span class="lang-en">Est. Year: 1973</span>
-          </span>
-          
-          <div class="mandal-top-meta-actions">
-            <a href="https://www.youtube.com/@MalabarHillChaRaja-e2z" target="_blank" rel="noopener noreferrer" class="social-link yt-link">
-              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> <span>YouTube</span>
-            </a>
-            <a href="https://www.facebook.com/malabarhillcharaja" target="_blank" rel="noopener noreferrer" class="social-link fb-link">
-              <i class="fa-brands fa-facebook" style="color: #1877F2;"></i> <span>Facebook</span>
-            </a>
-            <a href="https://www.instagram.com/malabarhill_cha_raja/" target="_blank" rel="noopener noreferrer" class="social-link insta-link">
-              <i class="fa-brands fa-instagram" style="color: var(--royal-gold);"></i> <span class="insta-full">@malabarhill_cha_raja</span><span class="insta-short">Instagram</span>
-            </a>
-            <!-- Language Switcher Pills -->
-            <div class="lang-switcher-container">
-              <button class="lang-btn <%= typeof lang !== 'undefined' && lang === 'mr' ? 'active' : '' %>" data-lang="mr">मराठी</button>
-              <button class="lang-btn <%= typeof lang === 'undefined' || lang === 'en' ? 'active' : '' %>" data-lang="en">English</button>
-            </div>
-          </div>
+  <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #000;
+    overflow-x: hidden; /* Only hide horizontal scroll */
+    font-family: 'Lato', sans-serif;
+  }
+  
+  /* Hide old headers completely */
+  .topbar-chintamani, .site-header {
+    display: none !important;
+  }
 
-          <span class="reg-text">
-            <span class="lang-mr">नोंदणी क्र. : एफ-११५१८</span>
-            <span class="lang-en">Reg No F-11518</span>
-          </span>
-        </div>
+  /* =====================
+     HD ANIMATED HEADER
+     ===================== */
+    .nm-nav-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: none;
+    overflow: hidden; /* For vignette and pseudo-element */
+  }
 
-        <!-- Mandal Devanagari Heading -->
-        <h1 class="mandal-banner-3d-text">
-          <span class="lang-mr">श्री बाल गोपाल गणेशोत्सव मंडळ, मुंबई</span>
-          <span class="lang-en">Shree Bal Gopal Ganeshutsav Mandal, Mumbai</span>
-        </h1>
-      </div>
+  /* Only on non-home pages, inject the blurred cave background */
+  body:not([data-lang]) .nm-nav-header::before,
+  body[data-lang] .nm-nav-header::before {
+    content: "";
+    position: absolute;
+    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    background: url(/images/final_page_no_text.jpg) center top / cover no-repeat;
+    z-index: -2;
+    opacity: <%= currentTabName === 'home' ? '0' : '1' %>;
+  }
+  
+  .nm-nav-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 40px 10px rgba(0,0,0,0.6), inset 0 -80px 60px -20px rgba(0,0,0,1);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+
+  .nm-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .nm-logo-container:hover {
+    transform: scale(1.02);
+  }
+
+  .nm-nav-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .nm-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .nm-hamburger span {
+    display: block;
+    width: 21px;
+    height: 2px;
+    background: linear-gradient(135deg, #FDE047, #EAB308, #CA8A04);
+    box-shadow: 0 0 6px rgba(234, 179, 8, 0.7);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+
+  .nm-trishul-icon {
+    width: 32px;
+    height: 42px;
+    fill: none;
+    stroke: #D4AF37;
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 5px rgba(212,175,55,0.5));
+  }
+
+  .nm-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nm-logo-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: min(1.2rem, 1.8vw);
+    font-weight: 700;
+    color: #F4EDE0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .nm-logo-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    color: #D4AF37;
+    letter-spacing: 3px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nm-logo-subtitle::before, .nm-logo-subtitle::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: rgba(212, 175, 55, 0.5);
+  }
+
+  .nm-nav-links {
+    display: flex;
+    gap: 40px;
+  }
+
+  .nm-nav-links a {
+    position: relative;
+    font-size: 0.9rem;
+    color: #d1cbc0;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+  }
+
+  /* Animated underline effect */
+  .nm-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #D4AF37;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nm-nav-links a:hover, .nm-nav-links a.active {
+    color: #D4AF37;
+    text-shadow: 0 0 8px rgba(212,175,55,0.4);
+  }
+  
+  .nm-nav-links a:hover::after, .nm-nav-links a.active::after {
+    width: 100%;
+  }
+
+  /* Donate Button Animation */
+  .nm-donate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #D4AF37;
+    border-radius: 25px;
+    padding: 8px 24px;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nm-donate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+    transition: all 0.5s ease;
+  }
+
+  .nm-donate-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    color: #FFF;
+  }
+  
+  .nm-donate-btn:hover::before {
+    left: 100%;
+  }
+
+  .container-wrapper {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    overflow: hidden; /* Prevent scrollbars when background scales */
+  }
+  
+  @keyframes ambient-environment {
+    0% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    25% {
+      filter: brightness(1.15); /* Stronger flicker */
+    }
+    50% {
+      transform: scale(1.08); /* More noticeable zoom */
+      filter: brightness(0.85); /* Darker shadow */
+    }
+    75% {
+      filter: brightness(1.1);
+    }
+    100% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+  }
+  
+  /* Fire Glow Animation */
+  
+  @keyframes fire-flicker-no-move {
+    0% { opacity: 0.5; filter: blur(3px); transform: scale(0.98); }
+    25% { opacity: 0.6; filter: blur(4px); transform: scale(1.02); }
+    50% { opacity: 0.9; filter: blur(2px); transform: scale(0.95); }
+    75% { opacity: 0.7;  transform: scale(1.05); }
+    100% { opacity: 0.8; filter: blur(4px); }
+  }
+
+  @keyframes fire-flicker {
+    0% { opacity: 0.8; filter: blur(4px); }
+    25% { opacity: 1; filter: blur(6px); transform: scale(1.15) translate(-40%, -40%); }
+    50% { opacity: 0.9; filter: blur(3px); transform: scale(0.9) translate(-60%, -60%); }
+    75% { opacity: 0.7;  transform: scale(1.05) translate(-45%, -45%); }
+    100% { opacity: 0.8; filter: blur(4px); }
+  }
+
+  .fire-glow {
+    position: absolute;
+    width: 8vw; /* Scales with screen */
+    height: 8vw;
+    background: radial-gradient(circle, rgba(255, 180, 50, 0.9) 0%, rgba(255, 70, 0, 0.5) 40%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 15;
+    mix-blend-mode: screen;
+    animation: fire-flicker 2s infinite alternate;
+    /* Removed default top/left, it's now handled by JS for perfect alignment */
+  }
+
+  .image-container img.bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+    .hd-devi-wrapper {
+    position: absolute;
+    top: 12.31%;
+    left: 50.58%;
+    width: 34.86%;
+    z-index: 5;
+    pointer-events: none;
+    /* Ambient occlusion and ground shadow */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.85)) drop-shadow(0 5px 15px rgba(0,0,0,0.6));
+  }
+
+  .hd-devi {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Photorealistic color grading: warm, slightly darker, matching cave */
+    filter: sepia(0.35) brightness(0.9) contrast(1.15) saturate(1.2) hue-rotate(-5deg);
+  }
+
+  /* Photorealistic localized highlights and rim lighting via masking */
+  .hd-devi-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    
+    -webkit-mask-image: url('/devi-idol.png');
+    mask-image: url('/devi-idol.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    
+    /* Left and right warm firelight rim bounces, plus bottom darkening */
+    background: 
+      radial-gradient(ellipse at -10% 60%, rgba(255, 150, 30, 0.6) 0%, transparent 45%),
+      radial-gradient(ellipse at 110% 60%, rgba(255, 150, 30, 0.5) 0%, transparent 45%),
+      linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 10%, transparent 25%);
+    
+    mix-blend-mode: overlay;
+    z-index: 6;
+    pointer-events: none;
+  }
+
+  /* Overlay for rest of buttons */
+  .button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  
+  /* New Action Buttons */
+  .action-buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 15px;
+    z-index: 20;
+  }
+
+  .glow-btn {
+    background: <%= currentTabName === 'home' ? 'rgba(0,0,0,0.2)' : 'rgba(21, 19, 15, 0.7)' %>; /* Removed background glow */
+    color: #F4EDE0;
+    font-family: 'Baloo 2', sans-serif; /* Changed to Baloo 2 */
+    font-size: 1.1rem;
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 40px;
+    border: 1px solid #D4AF37; /* Very thin gold border */
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.6), inset 0 0 5px rgba(212, 175, 55, 0.3); /* Glowy gold border */
+    transition: all 0.3s ease;
+  }
+  
+  .glow-btn:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.9), inset 0 0 10px rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.1);
+    color: #FFF;
+    transform: scale(1.05);
+  }
+
+  .invisible-btn {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  /* HD Text Overlay Styles */
+  .hd-text-container {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    width: 45%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hd-eyebrow {
+    font-size: 0.9vw;
+    color: #D4AF37;
+    letter-spacing: 0.4vw;
+    text-transform: uppercase;
+    margin-bottom: 1vw;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5vw;
+    color: #F4EDE0;
+    line-height: 1.1;
+    margin: 0 0 1.5vw 0;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.9), 0 0 40px rgba(212, 175, 55, 0.7), 2px 5px 15px rgba(0,0,0,0.8);
+  }
+
+  .hd-keywords {
+    font-size: 1vw;
+    color: #D4AF37;
+    letter-spacing: 0.3vw;
+    margin-bottom: 2vw;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2vw;
+    color: #A8A196;
+    line-height: 1.8;
+    margin-bottom: 3vw;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hd-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #D4AF37;
+    border-radius: 30px;
+    padding: 1vw 2.5vw;
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 1vw;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: rgba(5, 5, 6, 0.6);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+
+  .hd-explore-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent);
+    transition: all 0.5s ease;
+  }
+
+  .hd-explore-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    color: #FFF;
+  }
+
+  .hd-explore-btn:hover::before {
+    left: 100%;
+  }
+
+  /* =====================
+     MOBILE OPTIMIZATION
+     ===================== */
+  @media (max-width: 768px) {
+    /* Fix extracted layout sections for mobile */
+    .grid-2 {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem !important;
+    }
+    .grid-4 {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important; /* Stats counter 2x2 on mobile */
+      gap: 1rem !important;
+    }
+    section[style*="padding: 6rem 0"] {
+      padding: 3rem 0 !important; /* Reduce massive desktop padding on mobile */
+    }
+
+    /* Adjust header for mobile */
+    .nm-nav-header {
+      /* padding: 18px 5%; removed for top bar */
+      background: linear-gradient(to bottom, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0) 100%);
+    }
+    .nm-nav-links {
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(25, 18, 12, 0.98);
+      /* No backdrop blur so it matches exactly */
+      padding: 20px 5%;
+      border-bottom: none;
+      box-sizing: border-box;
+      gap: 20px;
+    }
+    .nm-nav-links.active {
+      display: flex;
+    }
+    .nm-hamburger {
+      display: flex;
+    }
+    .nm-nav-logo {
+      width: 35px !important;
+      height: 35px !important;
+    }
+    .nm-logo-container {
+      gap: 4px;
+      max-width: 80%; /* Ensure it doesn't push hamburger */
+    }
+    .nm-trishul-icon {
+      width: 22px;
+      height: 30px;
+    }
+    .nm-logo-text {
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    .nm-logo-title {
+      font-size: 2vw !important; /* Strictly scale with screen width to never overflow */
+      white-space: nowrap;
+      letter-spacing: 0px !important;
+    }
+    .nm-logo-subtitle {
+      font-size: 0.65rem;
+    }
+    .nm-donate-btn {
+      display: none; /* Hide on mobile to fit long title */
+    }
+    .president-img {
+      height: auto !important;
+    }
+
+    /* Reset container layout */
+    .container-wrapper {
+      height: auto;
+    }
+    .image-container {
+      height: auto;
+      display: block;
+      background: none;
+    }
+    
+    /* 1. First Section: Full Screen Devi Image */
+    .image-container img.bg-image {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      /* Adjusted to 74% to perfectly center the 68% idol mark on mobile screens */
+      object-position: 74% center; 
+    }
+
+    
+  @media (max-width: 1200px) {
+    .hd-devi-wrapper { display: none !important; }
+  }
+
+    /* Hide the HD overlay on mobile. The base image is 1024px which is 
+       more than enough resolution for a phone screen, so it won't be blurry! */
+    .hd-devi-wrapper { display: none !important; }
+
+    /* 2. Second Section: Text below the image */
+    .hd-text-container {
+      position: absolute; /* Overlay on the image */
+      top: 18vh; /* Moved a bit down */
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: <%= currentTabName === 'home' ? 'rgba(0,0,0,0.2)' : 'rgba(21, 19, 15, 0.7)' %>; /* Keep the cave as the background */
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      z-index: 20;
+    }
+
+    /* Mobile Lamp Placements */
+    .fire-glow {
+      width: 20vw;
+      height: 20vw;
+    }
+    
+    /* Proper rem sizing for mobile */
+    .hd-eyebrow {
+      display: none; /* Hide in mobile so the title is immediately below the image */
+    }
+    .hd-main-title {
+      font-family: 'Baloo 2', sans-serif; /* Applied Baloo 2 font */
+      font-weight: 700; /* Bold */
+      font-size: 5.8vw; /* Scales to fit in one single line on mobile */
+      margin: 0;
+      white-space: nowrap; /* Forces one line */
+      /* Added a slight gold glow behind it while preserving readability */
+      text-shadow: 0 0 25px rgba(212, 175, 55, 1), 0 0 45px rgba(212, 175, 55, 0.8), 2px 2px 10px rgba(0, 0, 0, 0.9); 
+    }
+    
+    /* Hide everything else so ONLY the sentence is shown on the picture */
+    .hd-keywords, .hd-quote {
+      display: none;
+    }
+
+    .action-buttons-container {
+      position: absolute;
+      top: 65vh; /* Moved back up to original position */
+      left: 0;
+      width: 100%;
+      justify-content: center;
+      gap: 10px; /* Reduced gap for smaller screens */
+      flex-direction: row; /* Ensure side by side */
+      margin-top: 0;
+    }
+
+    .glow-btn {
+      font-size: 0.75rem; /* Made smaller */
+      padding: 8px 14px; /* Properly fit into mobile */
+      letter-spacing: 1px; /* Less spacing for better fit */
+    }
+
+    .button-overlay {
+      display: none;
+    }
+  }
+
+
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    
+    
+  }
+
+
+  .nm-social-icons a:hover {
+    color: #D4AF37 !important;
+  }
+
+
+  .ios-glass-switch .lang-btn {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .ios-glass-switch .lang-btn:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .ios-glass-switch .lang-btn.active {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  }
+
+
+  .ios-glass-switch {
+    border-color: rgba(212, 175, 55, 0.4) !important;
+  }
+  .ios-glass-switch .lang-btn {
+    color: rgba(212, 175, 55, 0.5) !important;
+  }
+  .ios-glass-switch .lang-btn:hover {
+    color: rgba(212, 175, 55, 0.9) !important;
+  }
+  .ios-glass-switch .lang-btn.active {
+    background: #d8ba66 !important;
+    color: #1a1403 !important;
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4) !important;
+  }
+  
+  /* Golden glow behind President photo */
+  .president-img {
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3) !important;
+  }
+  .gold-motion-frame {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3) !important;
+  }
+
+
+    .arun-gawli-badge {
+    font-family: 'Baloo 2', sans-serif !important;
+    font-weight: 700 !important;
+    border: none !important;
+    background: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    font-size: 1.25rem !important; /* BIGGER IN LAPTOP VIEW */
+  }
+    @media (max-width: 768px) {
+    .arun-gawli-badge {
+      font-size: min(15.5px, 4.2vw) !important;
+      letter-spacing: 0 !important;
+      display: block !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+  }
+</style>
+
+<!-- HD Animated Header -->
+<header class="nm-nav-header" style="flex-direction: column; padding: 0; align-items: stretch; background: <%= currentTabName === 'home' ? 'rgba(0,0,0,0.2)' : 'rgba(21, 19, 15, 0.7)' %>;">
+  
+  <!-- Pre-Header (Top Bar) -->
+  <div class="nm-top-bar" style="display: flex; justify-content: center; align-items: center; gap: 30px; padding: 10px 5%; background: transparent; border-bottom: none;">
+    
+    <!-- Social Icons -->
+    <div class="nm-social-icons" style="display: flex; gap: 15px;">
+      <a href="https://www.facebook.com/BycullaDagadiChawl/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/byculla_dagadichawl_navratri/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@MalabarHillChaRaja-e2z" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle-container ios-glass-switch" style="display: flex; gap: 2px; align-items: center; border-radius: 50px; padding: 4px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);">
+      <a href="#" class="lang-btn active" data-lang="mr" style=" text-decoration: none; font-size: 13px; font-family: 'Baloo 2', sans-serif; font-weight: 700; padding: 4px 14px; border-radius: 40px; transition: all 0.3s ease;">मराठी</a>
+      <a href="#" class="lang-btn" data-lang="en" style=" text-decoration: none; font-size: 13px; font-family: 'Baloo 2', sans-serif; font-weight: 700; padding: 4px 14px; border-radius: 40px; transition: all 0.3s ease;">EN</a>
     </div>
   </div>
 
-  <!-- Main Site Sticky Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Official Mandal Logo Crest with Motion Frame -->
-      <a href="/" class="brand-logo">
-        <div class="logo-motion-wrapper">
-          <div class="logo-motion-ring"></div>
-          <picture>
-            <source srcset="/images/logo.webp" type="image/webp">
-            <img src="/images/logo.png" alt="Malabar Hill Cha Raja Logo" width="60" height="60" style="width: 100%; height: 100%; object-fit: contain; position: relative; z-index: 1;" loading="eager">
-          </picture>
-        </div>
-        <div class="brand-text">
-          <h2>
-            <span class="lang-mr">मलबार हिलचा राजा</span>
-            <span class="lang-en">Malabar Hill Cha Raja</span>
-          </h2>
-          <p>
-            <span class="lang-mr">श्री बाल गोपाल गणेशोत्सव मंडळ</span>
-            <span class="lang-en">Shree Bal Gopal Ganeshutsav Mandal</span>
-          </p>
-        </div>
-      </a>
+  <!-- Main Navigation Bar -->
+  <div class="nm-main-nav" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 5%; width: 100%; box-sizing: border-box;">
 
-      <!-- Navigation Links -->
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li>
-            <a href="https://www.youtube.com/@MalabarHillChaRaja-e2z" target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-live-btn">
-              <i class="fa-solid fa-tower-broadcast" style="color: var(--primary-saffron);"></i>
-              <span class="lang-mr">थेट दर्शन</span>
-              <span class="lang-en">LIVE DARSHAN</span>
-            </a>
-          </li>
-          <li><a href="/" class="nav-link <%= activeTab === 'home' ? 'active' : '' %>">
-            <span class="lang-mr">मुखपृष्ठ</span><span class="lang-en">Home</span>
-          </a></li>
-          <li><a href="/about" class="nav-link <%= activeTab === 'about' ? 'active' : '' %>">
-            <span class="lang-mr">आमच्याबद्दल</span><span class="lang-en">About Us</span>
-          </a></li>
-          <li><a href="/schedule" class="nav-link <%= activeTab === 'schedule' ? 'active' : '' %>">
-            <span class="lang-mr">वेळापत्रक</span><span class="lang-en">Schedule</span>
-          </a></li>
-          <li><a href="/glimpses" class="nav-link <%= activeTab === 'glimpses' || activeTab === 'photobooth' ? 'active' : '' %>">
-            <span class="lang-mr">क्षणचित्रे</span><span class="lang-en">Glimpses</span>
-          </a></li>
-          <li><a href="/social-work" class="nav-link <%= activeTab === 'socialwork' ? 'active' : '' %>">
-            <span class="lang-mr">सामाजिक कार्य</span><span class="lang-en">Social Work</span>
-          </a></li>
-          <li><a href="/tshirt" class="nav-link <%= activeTab === 'tshirt' ? 'active' : '' %>">
-            <span class="lang-mr">टी-शर्ट</span><span class="lang-en">Official T-Shirt</span>
-          </a></li>
-          <li><a href="/committee" class="nav-link <%= activeTab === 'committee' ? 'active' : '' %>">
-            <span class="lang-mr">कार्यकारिणी</span><span class="lang-en">Committee</span>
-          </a></li>
-          <li><a href="/advertisement" class="nav-link <%= activeTab === 'advertisement' ? 'active' : '' %>">
-            <span class="lang-mr">जाहिरात</span><span class="lang-en">Advertisement</span>
-          </a></li>
-          <li><a href="/contact" class="nav-link <%= activeTab === 'contact' ? 'active' : '' %>">
-            <span class="lang-mr">संपर्क</span><span class="lang-en">Contact</span>
-          </a></li>
-          
-          <!-- Distinct Donate Button -->
-          <li class="nav-donate-item">
-            <a href="/donate" class="btn btn-primary nav-donate-btn">
-              <span class="lang-mr">देणगी</span><span class="lang-en">Donate Now</span>
-            </a>
-          </li>
-
-          <!-- Mobile Language Switcher (Visible only in hamburger menu) -->
-          <li class="mobile-lang-switcher-item">
-            <div class="lang-switcher-container mobile-nav-lang">
-              <button class="lang-btn <%= typeof lang !== 'undefined' && lang === 'mr' ? 'active' : '' %>" data-lang="mr">मराठी</button>
-              <button class="lang-btn <%= typeof lang === 'undefined' || lang === 'en' ? 'active' : '' %>" data-lang="en">English</button>
-            </div>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Mobile Navigation Toggle -->
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-        <i class="bi bi-list"></i>
-      </button>
+  <a href="/" class="nm-logo-container">
+    <img src="/images/nav_logo_transparent.png" alt="Mandal Logo" class="nm-nav-logo" style="object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.7));">
+    <div class="nm-logo-text">
+      <span class="nm-logo-title" data-i18n="nav_mandal_title" style="white-space: nowrap;">BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL</span>
     </div>
-  </header>
+  </a>
+
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <!-- Hamburger Menu Button (Mobile Only) -->
+    <div class="nm-hamburger" onclick="document.querySelector('.nm-nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nm-nav-links">
+      <a href="/" class="<%= currentTabName === 'home' ? 'active' : '' %>">Home</a>
+      <a href="/about" class="<%= currentTabName === 'about' ? 'active' : '' %>">About</a>
+      <a href="/schedule" class="<%= currentTabName === 'schedule' ? 'active' : '' %>">Events</a>
+      <a href="/glimpses" class="<%= (currentTabName === 'glimpses' || currentTabName === 'photobooth') ? 'active' : '' %>">Gallery</a>
+      <a href="/contact" class="<%= currentTabName === 'contact' ? 'active' : '' %>">Contact</a>
+    </nav>
+
+    <a href="/donate" class="nm-donate-btn">
+      <i class="fa-regular fa-bell" style="font-size: 0.9rem;"></i>
+      Donate
+    </a>
+  </div>
+
+  </div>
+</header>

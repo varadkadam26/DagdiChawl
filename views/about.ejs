@@ -1,5 +1,51 @@
 <%- include('partials/header') %>
 
+<style>
+  body {
+    background: linear-gradient(to bottom, #080A08 0%, #15130F 40%, #30190F 100%) !important;
+    min-height: 100vh;
+  }
+  .main-content-gradient, .page-hero-banner {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Transparent Cards with Golden Border */
+  .main-content-gradient > .container > div,
+  .main-content-gradient .grid-2 > div,
+  .stat-counter-card {
+    background: transparent !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    box-shadow: none !important;
+  }
+
+  /* Text Colors to compliment dark background */
+  .main-content-gradient p,
+  .main-content-gradient p span,
+  .stat-label-text span {
+    color: #F4EDE0 !important;
+  }
+  
+  .main-content-gradient h2,
+  .main-content-gradient h2 span,
+  .main-content-gradient h3,
+  .main-content-gradient h3 span,
+  .stat-num-value {
+    color: #D4AF37 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+  }
+  
+  .main-content-gradient h2 {
+    border-left-color: #D4AF37 !important;
+  }
+  
+  .page-hero-banner h1 span,
+  .page-hero-banner p span {
+    color: #F4EDE0 !important;
+  }
+</style>
+
 <section class="page-hero-banner">
   <div class="container">
     <span class="section-badge">
@@ -33,6 +79,23 @@
         <span class="lang-mr">वर्षानुवर्षे 'मलबार हिलचा राजा' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. मूर्तीची प्रसन्न राजेशाही मुद्रा, भव्य काष्ठ सिंहासन आणि अनोखा मण्डप शृंगार हे राजाचे वैशिष्ट्य मानले जाते.</span>
         <span class="lang-en">Over the years, the idol of 'Malabar Hill Cha Raja' became the darling of thousands and millions of devotees. The idol's pleasant royal posture, the grand wooden throne, and the unique mandap decoration are considered to be the specialties of the Raja.</span>
       </p>
+    </div>
+
+
+    <!-- Animated Stat Counter Row -->
+    <div class="grid-2" style="margin-bottom: 3rem; gap: 1.5rem;">
+      <div class="stat-counter-card">
+        <div class="stat-num-value" data-target="1973" data-no-comma="true">1973</div>
+        <div class="stat-label-text">
+          <span class="lang-mr">??????? ????</span><span class="lang-en">Founding Year</span>
+        </div>
+      </div>
+      <div class="stat-counter-card">
+        <div class="stat-num-value" data-target="53">53</div>
+        <div class="stat-label-text">
+          <span class="lang-mr">????? ?????? ?????</span><span class="lang-en">Years of Continuous Service</span>
+        </div>
+      </div>
     </div>
 
     <div class="grid-2" style="margin-bottom: 3rem;">

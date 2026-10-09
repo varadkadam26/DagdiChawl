@@ -1,11 +1,49 @@
 <%- include('partials/header') %>
 
+<style>
+  body {
+    background: linear-gradient(to bottom, #080A08 0%, #15130F 40%, #30190F 100%) !important;
+    min-height: 100vh;
+  }
+  .main-content-gradient, .page-hero-banner {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Responsive clamp fonts to keep everything in 1 line on mobile */
+  .fit-1-line-lg {
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 3.5vw, 1.8rem) !important;
+  }
+  .fit-1-line-md {
+    white-space: nowrap;
+    font-size: clamp(0.6rem, 2.8vw, 1.5rem) !important;
+  }
+  .fit-1-line-sm {
+    white-space: nowrap;
+    font-size: clamp(0.55rem, 2.4vw, 1.25rem) !important;
+  }
+  .fit-1-line-xs {
+    white-space: nowrap;
+    font-size: clamp(0.5rem, 2.0vw, 0.95rem) !important;
+  }
+  
+  .card-temple {
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    padding: 1rem 0.5rem !important;
+    justify-content: space-between !important;
+    overflow: hidden;
+  }
+</style>
+
 <section class="page-hero-banner">
   <div class="container">
-    <span class="section-badge" data-i18n="schedule_badge">उत्सव कार्यसूची</span>
-    <h1 data-i18n="schedule_page_title">कार्यक्रमाची रुपरेखा</h1>
-    <p data-i18n="schedule_page_sub">
-      श्री बाल गोपाल गणेशोत्सव मंडळ - मलबार हिलचा राजा (१४ सप्टेंबर ते २५ सप्टेंबर २०२६)
+    <span class="section-badge fit-1-line-sm" data-i18n="schedule_badge">उत्सव कार्यसूची</span>
+    <h1 data-i18n="schedule_page_title" class="fit-1-line-lg">कार्यक्रमाची रुपरेखा</h1>
+    <p data-i18n="schedule_page_sub" class="fit-1-line-md">
+      भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (१० ऑक्टोबर ते २१ ऑक्टोबर २०२६)
     </p>
   </div>
 </section>
@@ -13,37 +51,43 @@
 <section class="main-content-gradient" style="padding: 4rem 0;">
   <div class="container" style="max-width: 900px;">
     
-    <div style="background: #FFFFFF; border: 2px solid var(--royal-gold); border-radius: var(--radius-lg); padding: 2.5rem 2rem; box-shadow: var(--shadow-md); margin-bottom: 2rem;">
+    <div style="background: transparent; border: none; border-radius: var(--radius-lg); padding: 2.5rem 1rem; box-shadow: none; margin-bottom: 2rem;">
       <div style="text-align: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-gold); padding-bottom: 1.5rem;">
-        <div style="font-family: var(--font-mr-head); color: var(--temple-maroon); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.2rem;">
-          श्री बाल गोपाल गणेशोत्सव मंडळ
+        <div style="font-family: var(--font-mr-head); color: var(--gold-soft); font-weight: 800; margin-bottom: 0.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);" class="fit-1-line-lg">
+          <span class="lang-mr">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ</span>
+          <span class="lang-en">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal</span>
         </div>
-        <div style="color: var(--primary-saffron); font-weight: 700; font-size: 1.15rem; margin-bottom: 0.5rem;">
-          ।। श्री गजानन प्रसन्न ।।
+        <div style="font-family: var(--font-mr-head); color: var(--gold-soft); font-weight: 800; margin-top: 0.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);" class="fit-1-line-md">
+          <span class="lang-mr">अधिकृत कार्यक्रम यादी</span><span class="lang-en">Official Program List</span>
         </div>
-        <div style="display: inline-block; background: var(--temple-maroon); color: var(--gold-soft); font-weight: 800; font-size: 1.3rem; padding: 0.5rem 2rem; border-radius: 50px; border: 2px solid var(--royal-gold); margin-top: 0.5rem;">
-          <span class="lang-mr">कार्यक्रमाची रुपरेखा</span><span class="lang-en">Official Festival Schedule</span>
-        </div>
+      </div>
+
+      <div style="text-align: center; color: var(--primary-saffron); font-weight: 800; margin-bottom: 0.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+        <div class="fit-1-line-sm lang-mr">कालावधी - शनिवार दि. १० ऑक्टोबर ते बुधवार दि. २१ ऑक्टोबर २०२६</div>
+        <div class="fit-1-line-sm lang-en">Duration - Saturday, 10 Oct to Wednesday, 21 Oct 2026</div>
+        <div class="fit-1-line-sm lang-mr">शनिवार १०/१०/२०२६ रात्री ८.०० वा. देवीचे आगमन</div>
+        <div class="fit-1-line-sm lang-en">Saturday 10/10/2026 at 8:00 PM - Arrival of the Goddess</div>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 1rem;">
         <% scheduleData.forEach(evt => { %>
-          <div class="card-temple" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.2rem 1.5rem; background: var(--bg-cream); border: 1px solid var(--border-gold); border-radius: var(--radius-md);">
-            <div style="display: flex; align-items: center; gap: 1rem; min-width: 220px;">
-              <div style="background: var(--temple-maroon); color: var(--gold-soft); padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-weight: 800; font-size: 0.95rem; text-align: center; border: 1px solid var(--royal-gold);">
+          <div class="card-temple" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 1rem; padding: 1.2rem 1.5rem; background: <%= evt.bg || 'var(--bg-cream)' %>; border: 1px solid var(--border-gold); border-radius: var(--radius-md);">
+            <div style="display: flex; align-items: center; gap: 1rem; flex-shrink: 0;">
+              <div style="background: <%= evt.color === '#D32F2F' ? 'var(--temple-maroon)' : 'rgba(255,255,255,0.2)' %>; color: <%= evt.color === '#D32F2F' ? 'var(--gold-soft)' : '#FFFFFF' %>; padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-weight: 800; text-align: center; border: 1px solid rgba(255,255,255,0.3);" class="fit-1-line-xs">
                 <span class="lang-mr"><%= evt.dateMr %></span>
                 <span class="lang-en"><%= evt.dateEn %></span>
               </div>
             </div>
 
-            <div style="flex: 1; min-width: 220px;">
-              <h3 style="font-size: 1.25rem; color: var(--temple-maroon); margin: 0; font-weight: 800;" data-mr="<%= evt.titleMr %>" data-en="<%= evt.titleEn %>">
-                <%= evt.titleMr %>
+            <div style="flex: 1; overflow: hidden;">
+              <h3 style="color: <%= evt.color || 'var(--temple-maroon)' %>; margin: 0; font-weight: 800;" data-mr="<%= evt.titleMr %>" data-en="<%= evt.titleEn %>" class="fit-1-line-sm">
+                <span class="lang-mr"><%= evt.titleMr %></span>
+                <span class="lang-en"><%= evt.titleEn %></span>
               </h3>
             </div>
 
             <% if (evt.timeMr) { %>
-              <div style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--border-gold); color: var(--primary-saffron); font-weight: 700; padding: 0.4rem 0.9rem; border-radius: 20px; font-size: 0.88rem; white-space: nowrap;">
+              <div style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: <%= evt.color || 'var(--primary-saffron)' %>; font-weight: 700; padding: 0.4rem 0.9rem; border-radius: 20px; flex-shrink: 0;" class="fit-1-line-xs">
                 <i class="fa-regular fa-clock"></i> <span class="lang-mr"><%= evt.timeMr %></span><span class="lang-en"><%= evt.timeEn %></span>
               </div>
             <% } %>
@@ -51,14 +95,26 @@
         <% }); %>
       </div>
 
-      <div style="margin-top: 2rem; padding: 1.2rem 1.5rem; background: rgba(107, 20, 20, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--temple-maroon); text-align: center; color: var(--temple-maroon); font-weight: 700; font-size: 1rem;">
-        <span class="lang-mr">(वरील सर्व कार्यक्रमाची नोंद घेऊन सर्व कार्यकर्त्यांनी वेळेवर हजर राहावे.)</span>
-        <span class="lang-en">(All karyakartas and devotees are requested to note the schedule and attend on time.)</span>
+      <div style="background: #f57c00; color: #ffffff; padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-top: 1rem; text-align: center; font-weight: 800; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div style="font-size: clamp(0.8rem, 3.5vw, 1.15rem); margin-bottom: 0.5rem; line-height: 1.4;" class="lang-mr">मंगळवार २०/१०/२०२६ रात्री आरती नंतर - विद्यार्थी गुणगौरव सोहळा नंतर रासगरबा</div>
+        <div style="font-size: clamp(0.8rem, 3.5vw, 1.15rem); margin-bottom: 0.5rem; line-height: 1.4;" class="lang-en">Tuesday 20/10/2026 After Aarti - Student Felicitation & Rasgarba</div>
+        <div style="font-size: clamp(0.8rem, 3.5vw, 1.15rem); line-height: 1.4;" class="lang-mr">बुधवार २१/१०/२०२६ सायंकाळी ५.०० नंतर - देवी विसर्जन सोहळा</div>
+        <div style="font-size: clamp(0.8rem, 3.5vw, 1.15rem); line-height: 1.4;" class="lang-en">Wednesday 21/10/2026 After 5:00 PM - Devi Visarjan Ceremony</div>
       </div>
 
-      <div style="margin-top: 1.5rem; text-align: center; font-family: var(--font-mr-head); font-size: 1.5rem; color: var(--primary-saffron); font-weight: 800;">
-        मलबार हिलचा राजा
+      <div style="background: transparent; padding: 1rem 0; margin-top: 2rem; text-align: center;">
+        <h3 style="font-weight: 800; margin-bottom: 1rem; color: var(--primary-saffron); text-shadow: 1px 1px 3px rgba(0,0,0,0.5);" class="fit-1-line-md">
+          <span class="lang-mr">महत्त्वाची सूचना</span>
+          <span class="lang-en">Important Instructions</span>
+        </h3>
+        
+        <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--gold-soft);" class="fit-1-line-sm lang-mr">रोज सकाळी ९:०० वा. व रात्री ८:०० वा. देवीची आरती</p>
+        <p style="color: #ffffff; opacity: 0.9;" class="fit-1-line-xs lang-mr">वि. सूचना : कार्यक्रमात फेरफार करण्याचा अधिकार उत्सव समितीवर असेल.</p>
+        
+        <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--gold-soft);" class="fit-1-line-sm lang-en">Daily Morning 9:00 AM & Night 8:00 PM Devi's Aarti</p>
+        <p style="color: #ffffff; opacity: 0.9;" class="fit-1-line-xs lang-en">Note: The festival committee reserves the right to make changes to the schedule.</p>
       </div>
+
     </div>
 
   </div>
