@@ -199,8 +199,8 @@
         <% uniqueYears.forEach((yr, index) => { %>
           <div class="modak-wrapper year-btn <%= yr === defaultYear ? 'active' : '' %>" data-filter="<%= yr %>" tabindex="0">
             <div class="modak-icon-box">
-              <% const imgSrc = yr === '2026' ? '/images/glimpses/2026_new_1.jpg' : (yr === '2025' ? '/images/glimpses/2025_logo.jpg' : '/images/nav_logo_transparent.png'); %>
-              <% const customStyle = (yr === '2026' || yr === '2025') ? 'object-fit: cover; border-radius: 50%;' : ''; %>
+              <% const imgSrc = yr === '2026' ? '/images/glimpses/2026_new_1.jpg' : (yr === '2025' ? '/images/glimpses/2025_logo.jpg' : (yr === '2024' ? '/images/glimpses/2024_logo.jpg' : (yr === '2023' ? '/images/glimpses/2023_logo.jpg' : '/images/nav_logo_transparent.png'))); %>
+              <% const customStyle = (yr === '2026' || yr === '2025' || yr === '2024' || yr === '2023') ? 'object-fit: cover; border-radius: 50%;' : ''; %>
               <img src="<%= imgSrc %>" class="modak-img modak-cream" alt="<%= yr %>" draggable="false" style="filter: grayscale(1) opacity(0.7); <%= customStyle ? customStyle + ' border: 1px solid rgba(212, 175, 55, 0.5);' : '' %>">
               <img src="<%= imgSrc %>" class="modak-img modak-gold" alt="<%= yr %>" draggable="false" style="<%= customStyle ? customStyle + ' box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);' : '' %>">
             </div>
