@@ -4,6 +4,7 @@
   body {
     background: linear-gradient(125deg, #050403 0%, #100A07 38%, #28140C 72%, #422315 100%) !important;
     min-height: 100vh;
+    color: #F4EDE0;
   }
   .main-content-gradient, .page-hero-banner {
     background: transparent !important;
@@ -11,144 +12,303 @@
     box-shadow: none !important;
   }
   
-  /* Transparent Cards with Golden Border */
-  .main-content-gradient > .container > div,
-  .main-content-gradient .grid-2 > div,
-  .stat-counter-card {
-    background: transparent !important;
-    border: 1px solid rgba(212, 175, 55, 0.4) !important;
-    box-shadow: none !important;
+  .about-card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 16px;
+    padding: clamp(1.8rem, 5vw, 3rem);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
 
-  /* Text Colors to compliment dark background */
-  .main-content-gradient p,
-  .main-content-gradient p span,
-  .stat-label-text span {
-    color: #F4EDE0 !important;
+  .about-card:hover {
+    border-color: rgba(212, 175, 55, 0.6) !important;
+    transform: translateY(-3px);
   }
-  
-  .main-content-gradient h2,
-  .main-content-gradient h2 span,
-  .main-content-gradient h3,
-  .main-content-gradient h3 span,
-  .stat-num-value {
-    color: #CBA135; text-shadow: 0 0 8px rgba(203, 161, 53, 0.4); !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+
+  .section-gold-title {
+    font-size: clamp(1.3rem, 4vw, 2.1rem);
+    color: #CBA135;
+    text-shadow: 0 0 12px rgba(203, 161, 53, 0.4);
+    margin-bottom: 1.2rem;
+    border-left: 4px solid #CBA135;
+    padding-left: clamp(0.6rem, 2vw, 1.2rem);
+    font-weight: 800;
   }
-  
-  .main-content-gradient h2 {
-    border-left-color: #CBA135; text-shadow: 0 0 8px rgba(203, 161, 53, 0.4); !important;
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
-  
-  .page-hero-banner h1 span,
-  .page-hero-banner p span {
-    color: #F4EDE0 !important;
+
+  .mission-item-card {
+    background: rgba(217, 90, 0, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .mission-item-card:hover {
+    background: rgba(217, 90, 0, 0.15);
+    border-color: #CBA135;
+  }
+
+  .value-pill {
+    background: linear-gradient(135deg, rgba(217, 90, 0, 0.2), rgba(0, 0, 0, 0.4));
+    border: 1px solid #CBA135;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 800;
+    color: #F5D98E;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 </style>
 
-<section class="page-hero-banner">
+<!-- Hero Section -->
+<section class="page-hero-banner" style="padding: 4rem 0 2rem; text-align: center;">
   <div class="container">
-    <span class="section-badge">
-      <span class="lang-mr">इतिहास व भव्य परंपरा</span>
-      <span class="lang-en">History & Grand Tradition</span>
+    <span class="section-badge" style="background: rgba(217, 90, 0, 0.25); color: #F5D98E; border: 1px solid #CBA135; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 1rem;">
+      <span class="lang-mr">इतिहास व भक्तीचा वारसा</span>
+      <span class="lang-en">Devotion & Cultural Heritage</span>
     </span>
-    <h1>
-      <span class="lang-mr">आमच्याबद्दल - दगडी चाळ ची आई माऊली</span>
-      <span class="lang-en">About Us - Dagdi Chawl Chi Aai Mauli</span>
+    <h1 style="font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; color: #CBA135; text-shadow: 0 0 15px rgba(203, 161, 53, 0.4); margin-bottom: 0.5rem;">
+      <span class="lang-mr">आमच्याविषयी — भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ</span>
+      <span class="lang-en">About Us — Dagdi Chawl Chi Aai Mauli</span>
     </h1>
-    <p>
-      <span class="lang-mr">भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ (स्थापना १९७३)</span>
-      <span class="lang-en">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Est. 1973)</span>
+    <p style="color: #F4EDE0; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600;">
+      <span class="lang-mr">भक्ती, परंपरा आणि एकतेचा अखंड वारसा</span>
+      <span class="lang-en">A Legacy of Devotion, Culture & Togetherness</span>
     </p>
   </div>
 </section>
 
-<section class="main-content-gradient" style="padding: 5rem 0;">
-  <div class="container" style="max-width: 1000px;">
+<section class="main-content-gradient" style="padding: 2rem 0 5rem;">
+  <div class="container" style="max-width: 1050px;">
     
-    <style>
-      .history-card {
-        background: var(--bg-dark);
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--border-gold);
-        padding: clamp(1.5rem, 5vw, 3rem);
-        box-shadow: var(--shadow-md);
-        margin-bottom: 3rem;
-      }
-      .history-title {
-        font-size: clamp(1.1rem, 4vw, 2rem);
-        color: var(--temple-maroon);
-        margin-bottom: 1.2rem;
-        border-left: 4px solid var(--royal-gold);
-        padding-left: clamp(0.5rem, 2vw, 1rem);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      @media (max-width: 480px) {
-        .history-title {
-          font-size: clamp(0.95rem, 4.5vw, 1.2rem);
-        }
-      }
-    </style>
-    <div class="history-card">
-      <h2 class="history-title">
-        <span class="lang-mr">मंडळाचा गौरवशाली इतिहास</span>
-        <span class="lang-en">Glorious History of the Mandal</span>
+    <!-- 1. About Us Section -->
+    <div class="about-card">
+      <h2 class="section-gold-title">
+        <span class="lang-mr">आमच्याविषयी — दगडी चाळीची आई माउली</span>
+        <span class="lang-en">About Dagdi Chawl Chi Aai Mauli</span>
       </h2>
-      <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; text-align: justify;">
-        <span class="lang-mr">भायखळा येथील ७१४, दगडी चाळ, बापूराव जगताप मार्ग, भायखळा (पश्चिम), मुंबई - ४०००११ वरील ऐतिहासिक भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक उत्सवाची भव्य परंपरा सुरू केली.</span>
-        <span class="lang-en">The historic Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal was established in 1973 at 714, Dagdi Chawl, Bapurao Jagtap Marg, Byculla (W), Mumbai - 400011. Since its inception, local residents, young activists, and senior guides came together to start a grand tradition of the festival.</span>
-      </p>
-      <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; text-align: justify;">
-        <span class="lang-mr">वर्षानुवर्षे 'दगडी चाळ ची आई माऊली' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. माऊलीची प्रसन्न व भव्य मुद्रा आणि अनोखा मण्डप शृंगार हे या नवरात्रोत्सवाचे वैशिष्ट्य मानले जाते.</span>
-        <span class="lang-en">Over the years, the idol of 'Dagdi Chawl Chi Aai Mauli' became the beloved deity of thousands and millions of devotees. The divine posture and unique mandap decoration are considered to be the specialties of the Mandal.</span>
-      </p>
-    </div>
 
+      <!-- English Version -->
+      <div class="lang-en" style="line-height: 1.9; font-size: 1.05rem; color: #F4EDE0; text-align: justify;">
+        <p style="margin-bottom: 1.2rem;">
+          <strong style="color: #CBA135; font-size: 1.15rem;">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal</strong>, popularly known as <em>Dagdi Chawl Chi Aai Mauli</em>, represents the spirit of faith, devotion, and community celebration in Mumbai.
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          Rooted in the cultural heritage of Byculla, our mandal brings devotees and families together to celebrate Navratri with deep <strong>श्रद्धा (faith)</strong>, enthusiasm, and devotion to Maa Durga. Every year, devotees come together to seek the blessings of Aai Mauli and become part of a tradition that celebrates spirituality, unity, and Maharashtra's vibrant cultural identity.
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          Our Navratri celebrations are known for their devotional atmosphere, beautifully designed decorations, artistic displays, traditional rituals, and cultural programmes. From welcoming Aai Mauli with devotion to participating in festive celebrations, every moment reflects the collective dedication of the mandal and its community.
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          Beyond the festivities, we believe that a mandal's true strength lies in bringing people together, preserving our cultural traditions, encouraging community participation, and creating meaningful experiences for future generations.
+        </p>
+        <div style="background: rgba(217, 90, 0, 0.15); border-left: 4px solid #CBA135; padding: 1.2rem 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+          <p style="margin: 0; font-size: 1.1rem; font-weight: 700; color: #F5D98E;">
+            For us, Aai Mauli is not just a symbol of devotion; she is a source of faith, strength, inspiration, and togetherness.
+          </p>
+        </div>
+        <p style="margin-bottom: 0;">
+          With the blessings of Aai Mauli and the continued support of our devotees, we strive to carry this cherished tradition forward with pride, responsibility, and unwavering devotion.
+        </p>
+      </div>
+
+      <!-- Marathi Version -->
+      <div class="lang-mr" style="line-height: 1.9; font-size: 1.05rem; color: #F4EDE0; text-align: justify;">
+        <p style="margin-bottom: 1.2rem;">
+          <strong style="color: #CBA135; font-size: 1.15rem;">भक्ती, परंपरा आणि एकतेचा अखंड वारसा</strong>
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ, अर्थात <strong>दगडी चाळीची आई माउली</strong>, हे मुंबईतील भक्ती, श्रद्धा आणि सांस्कृतिक परंपरेचे एक महत्त्वाचे प्रतीक आहे.
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          आई माउलीवरील अपार श्रद्धा आणि भक्तिभाव जपत, मंडळ दरवर्षी नवरात्रौत्सवाच्या माध्यमातून भाविकांना एकत्र आणते. धार्मिक विधी, आकर्षक सजावट, कलात्मक देखावे आणि विविध सांस्कृतिक कार्यक्रम यांच्या माध्यमातून नवरात्रीचा उत्सव भक्तिमय वातावरणात साजरा केला जातो.
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          आमच्यासाठी नवरात्रौत्सव हा केवळ एक सण नसून श्रद्धा, संस्कृती, सामाजिक बांधिलकी आणि सामुदायिक एकतेचा उत्सव आहे. आपल्या परंपरांचे जतन करणे, नव्या पिढीला सांस्कृतिक वारशाची ओळख करून देणे आणि समाजातील बंध अधिक दृढ करणे, हीच आमची प्रेरणा आहे.
+        </p>
+        <div style="background: rgba(217, 90, 0, 0.15); border-left: 4px solid #CBA135; padding: 1.2rem 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+          <p style="margin: 0; font-size: 1.1rem; font-weight: 700; color: #F5D98E;">
+            आई माउलीच्या आशीर्वादाने आणि भाविकांच्या सहकार्याने ही भक्तीची परंपरा पुढील पिढ्यांपर्यंत पोहोचविण्यासाठी मंडळ सदैव प्रयत्नशील आहे.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <!-- Animated Stat Counter Row -->
-    <div class="grid-2" style="margin-bottom: 3rem; gap: 1.5rem;">
-      <div class="stat-counter-card">
-        <div class="stat-num-value" data-target="1973" data-no-comma="true">1973</div>
-        <div class="stat-label-text">
-          <span class="lang-mr">स्थापना वर्ष</span><span class="lang-en">Founding Year</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div class="about-card" style="text-align: center; margin-bottom: 0; padding: 1.8rem;">
+        <div style="font-size: 2.5rem; font-weight: 900; color: #CBA135; text-shadow: 0 0 10px rgba(203,161,53,0.5);">53+</div>
+        <div style="color: #F5D98E; font-weight: 700; margin-top: 5px;">
+          <span class="lang-mr">अविरत सेवेची व भक्तीची वर्षे</span>
+          <span class="lang-en">Years of Glorious Devotion</span>
         </div>
       </div>
-      <div class="stat-counter-card">
-        <div class="stat-num-value" data-target="53">53</div>
-        <div class="stat-label-text">
-          <span class="lang-mr">अविरत सेवेची वर्षे</span><span class="lang-en">Years of Continuous Service</span>
+
+      <div class="about-card" style="text-align: center; margin-bottom: 0; padding: 1.8rem;">
+        <div style="font-size: 2.5rem; font-weight: 900; color: #CBA135; text-shadow: 0 0 10px rgba(203,161,53,0.5);">100%</div>
+        <div style="color: #F5D98E; font-weight: 700; margin-top: 5px;">
+          <span class="lang-mr">सामाजिक बांधिलकी व लोकसहभाग</span>
+          <span class="lang-en">Community Participation</span>
         </div>
       </div>
     </div>
 
-    <div class="grid-2" style="margin-bottom: 3rem;">
-      <div style="background: var(--bg-dark); border-radius: var(--radius-md); border: 1px solid var(--border-gold); padding: 2rem; box-shadow: var(--shadow-sm);">
-        <h3 style="color: var(--temple-maroon); font-size: 1.4rem; margin-bottom: 0.8rem;">
-          <i class="fa-solid fa-eye" style="color: var(--primary-saffron); text-shadow: 0 0 8px rgba(203, 161, 53, 0.4);; margin-right: 8px;"></i> 
-          <span class="lang-mr">आमची दृष्टी (Vision)</span>
-          <span class="lang-en">Our Vision</span>
-        </h3>
-        <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; text-align: justify;">
-          <span class="lang-mr">महाराष्ट्राची थोर गणेशोत्सव परंपरा जागतिक पातळीवर पोहोचवणे आणि भक्तीच्या माध्यमातून सामाजिक ऐक्य व बंधुता वाढवणे.</span>
-          <span class="lang-en">To take Maharashtra's great Ganeshotsav tradition to a global level and to foster social unity and brotherhood through devotion.</span>
+    <!-- 2. Our Vision Section -->
+    <div class="about-card">
+      <h2 class="section-gold-title">
+        <span class="lang-mr">आमची दृष्टी (Our Vision)</span>
+        <span class="lang-en">Our Vision — Preserving Tradition, Inspiring Generations</span>
+      </h2>
+
+      <!-- English Version -->
+      <div class="lang-en" style="line-height: 1.9; font-size: 1.05rem; color: #F4EDE0;">
+        <p style="margin-bottom: 1.5rem;">
+          Our vision is to preserve and celebrate the rich spiritual and cultural heritage of Dagdi Chawl Chi Aai Mauli while strengthening the bonds of unity, devotion, and community spirit. We aspire to create a welcoming environment where devotees of every generation can experience the blessings of Aai Mauli.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 1.5rem;">
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; padding: 1.2rem;">
+            <h4 style="color: #CBA135; margin-bottom: 6px; font-weight: 800;">Preserve Our Heritage</h4>
+            <p style="font-size: 0.95rem; margin: 0; color: #CBD5E1;">Keep our devotional traditions and cultural values alive for future generations.</p>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; padding: 1.2rem;">
+            <h4 style="color: #CBA135; margin-bottom: 6px; font-weight: 800;">Strengthen Community Bonds</h4>
+            <p style="font-size: 0.95rem; margin: 0; color: #CBD5E1;">Bring families, devotees, and the wider community together through faith and celebration.</p>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; padding: 1.2rem;">
+            <h4 style="color: #CBA135; margin-bottom: 6px; font-weight: 800;">Inspire the Youth</h4>
+            <p style="font-size: 0.95rem; margin: 0; color: #CBD5E1;">Encourage younger generations to participate in cultural activities and take pride in our traditions.</p>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; padding: 1.2rem;">
+            <h4 style="color: #CBA135; margin-bottom: 6px; font-weight: 800;">Promote Harmony</h4>
+            <p style="font-size: 0.95rem; margin: 0; color: #CBD5E1;">Foster mutual respect, inclusivity, and togetherness through shared celebrations.</p>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.8rem; font-style: italic; color: #F5D98E; font-weight: 700; text-align: center;">
+          "Our vision is to keep the light of devotion alive in every heart and the spirit of unity strong in every generation."
         </p>
       </div>
 
-      <div style="background: var(--bg-dark); border-radius: var(--radius-md); border: 1px solid var(--border-gold); padding: 2rem; box-shadow: var(--shadow-sm);">
-        <h3 style="color: var(--temple-maroon); font-size: 1.4rem; margin-bottom: 0.8rem;">
-          <i class="fa-solid fa-bullseye" style="color: var(--primary-saffron); text-shadow: 0 0 8px rgba(203, 161, 53, 0.4);; margin-right: 8px;"></i> 
-          <span class="lang-mr">आमचे ध्येय (Mission)</span>
-          <span class="lang-en">Our Mission</span>
-        </h3>
-        <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; text-align: justify;">
-          <span class="lang-mr">दरवर्षी ३६५ दिवस वैद्यकीय मदत, अन्नदान, शिक्षण मदत आणि पर्यावरण रक्षण यासारख्या सामाजिक उपक्रमांतून समाजाची अखंड सेवा करणे.</span>
-          <span class="lang-en">To serve society continuously 365 days a year through social initiatives like medical aid, food donation, educational help, and environmental protection.</span>
+      <!-- Marathi Version -->
+      <div class="lang-mr" style="line-height: 1.9; font-size: 1.05rem; color: #F4EDE0;">
+        <p style="margin-bottom: 1.2rem;">
+          आई माउलीवरील श्रद्धा, सांस्कृतिक वारसा आणि सामाजिक एकता यांचे जतन करून ही परंपरा पुढील पिढ्यांपर्यंत पोहोचविणे, ही आमची दृष्टी आहे.
+        </p>
+        <p style="margin-bottom: 0;">
+          भक्तीच्या माध्यमातून समाजाला एकत्र आणणे, तरुण पिढीला आपल्या संस्कृतीशी जोडणे आणि सर्व भाविकांना आपलेपणाचा अनुभव देणे, यासाठी आम्ही कटिबद्ध आहोत.
         </p>
       </div>
     </div>
 
+    <!-- 3. Our Mission Section -->
+    <div class="about-card">
+      <h2 class="section-gold-title">
+        <span class="lang-mr">आमचे ध्येय (Our Mission)</span>
+        <span class="lang-en">Our Mission — Devotion in Every Step, Service in Every Action</span>
+      </h2>
+
+      <!-- English Version -->
+      <div class="lang-en">
+        <p style="line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.5rem;">
+          Our mission is to organise Navratri celebrations with devotion, discipline, cultural pride, and a strong sense of responsibility towards our community.
+        </p>
+
+        <div class="mission-grid">
+          <div class="mission-item-card">
+            <h4 style="color: #CBA135; font-size: 1.1rem; margin-bottom: 8px; font-weight: 800;">1. Celebrating Navratri with Devotion</h4>
+            <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: #E2E8F0;">Organising traditional rituals, prayers, devotional ceremonies, and festive activities that honour Maa Durga and bring devotees closer to Aai Mauli.</p>
+          </div>
+
+          <div class="mission-item-card">
+            <h4 style="color: #CBA135; font-size: 1.1rem; margin-bottom: 8px; font-weight: 800;">2. Preserving Cultural Traditions</h4>
+            <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: #E2E8F0;">Promoting Maharashtra's rich cultural heritage through artistic decorations, traditional celebrations, and community participation.</p>
+          </div>
+
+          <div class="mission-item-card">
+            <h4 style="color: #CBA135; font-size: 1.1rem; margin-bottom: 8px; font-weight: 800;">3. Encouraging Community Participation</h4>
+            <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: #E2E8F0;">Providing opportunities for devotees, families, and young people to participate in celebrations and contribute to the mandal's continued journey.</p>
+          </div>
+
+          <div class="mission-item-card">
+            <h4 style="color: #CBA135; font-size: 1.1rem; margin-bottom: 8px; font-weight: 800;">4. Supporting Social Responsibility</h4>
+            <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: #E2E8F0;">Encouraging community-oriented initiatives and activities that promote collective well-being, compassion, and social awareness.</p>
+          </div>
+
+          <div class="mission-item-card">
+            <h4 style="color: #CBA135; font-size: 1.1rem; margin-bottom: 8px; font-weight: 800;">5. Welcoming Devotee Experience</h4>
+            <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: #E2E8F0;">Striving to maintain a respectful, organised, and accessible environment for devotees visiting Aai Mauli during the festival.</p>
+          </div>
+
+          <div class="mission-item-card">
+            <h4 style="color: #CBA135; font-size: 1.1rem; margin-bottom: 8px; font-weight: 800;">6. Carrying the Legacy Forward</h4>
+            <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: #E2E8F0;">Working together to ensure that our devotion, traditions, and cultural values continue to inspire generations to come.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marathi Version -->
+      <div class="lang-mr">
+        <ul style="line-height: 2.2; font-size: 1.05rem; color: #F4EDE0; padding-left: 1.5rem; margin: 0;">
+          <li>पारंपरिक धार्मिक विधी आणि भक्तिभावाने नवरात्रोत्सव साजरा करणे.</li>
+          <li>आपल्या समृद्ध सांस्कृतिक परंपरांचे जतन व संवर्धन करणे.</li>
+          <li>समाजातील सर्व घटकांचा उत्सवातील सहभाग वाढविणे.</li>
+          <li>युवकांमध्ये सांस्कृतिक मूल्ये आणि सामाजिक बांधिलकी रुजविणे.</li>
+          <li>सामाजिक उपक्रमांद्वारे सहकार्य, एकता आणि जनजागृतीला प्रोत्साहन देणे.</li>
+          <li>आई माउलीवरील श्रद्धा आणि परंपरेचा वारसा पुढील पिढ्यांपर्यंत पोहोचविणे.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Core Values Pill Section -->
+    <div style="margin-bottom: 3rem;">
+      <h3 style="text-align: center; color: #CBA135; font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">
+        <span class="lang-mr">आमची मुख्य मूल्ये (Our Values)</span>
+        <span class="lang-en">Our Core Values</span>
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem;">
+        <div class="value-pill">
+          <span class="lang-mr">🙏 श्रद्धा (Faith)</span>
+          <span class="lang-en">🙏 Faith</span>
+        </div>
+        <div class="value-pill">
+          <span class="lang-mr">🤝 एकता (Unity)</span>
+          <span class="lang-en">🤝 Unity</span>
+        </div>
+        <div class="value-pill">
+          <span class="lang-mr">🪔 संस्कृती (Culture)</span>
+          <span class="lang-en">🪔 Culture</span>
+        </div>
+        <div class="value-pill">
+          <span class="lang-mr">🌸 समाजसेवा (Service)</span>
+          <span class="lang-en">🌸 Service</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Devotional Closing Banner -->
+    <div style="background: linear-gradient(135deg, #D95A00 0%, #800020 100%); border: 2px solid #CBA135; border-radius: 16px; padding: 2.5rem; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+      <h3 style="color: #F5D98E; font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; margin-bottom: 0.8rem; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+        <span class="lang-mr">॥ जय माता दी! आई माउलीचा उदो उदो! ॥</span>
+        <span class="lang-en">The Blessings of Aai Mauli</span>
+      </h3>
+      <p style="color: #FFFFFF; font-size: 1.1rem; font-weight: 700; margin: 0; line-height: 1.6;">
+        <span class="lang-mr">आई माउलींचा आशीर्वाद आपल्या व आपल्या कुटुंबावर सदैव राहो!</span>
+        <span class="lang-en">Jai Mata Di! 🙏  May the divine blessings of Aai Mauli be with you and your family always.</span>
+      </p>
+    </div>
 
   </div>
 </section>
