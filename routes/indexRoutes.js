@@ -21,13 +21,7 @@ router.get('/social-work', yatraController.renderSocialWorkPage);
 // Executive Committee Page (Public - Separate from Admin Login)
 router.get('/committee', yatraController.renderCommitteePage);
 
-// Advertisement Page
-  res.render('advertisement', {
-    title: 'Sponsorship & Souvenir Advertisement | Dagdi Chawl Chi Aai Mauli',
-    metaDescription: 'Partner with Dagdi Chawl Chi Aai Mauli for Ganeshotsav souvenir advertisements, banner sponsorships, and digital brand visibility reaching lakhs of devotees.',
-    activeTab: 'advertisement'
-  });
-});
+
 
 // Contact Us Page (With Embedded Google Maps)
 router.get('/contact', (req, res) => {
