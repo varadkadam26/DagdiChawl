@@ -266,4 +266,4 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 
 ISC License. Built for **Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal**, Dagdi Chawl, Mumbai.
 
-**गणपती बाप्पा मोरया! 🙏**
+****

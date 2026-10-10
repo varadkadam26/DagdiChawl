@@ -9,10 +9,6 @@ const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID || '';
 
 // Tab definitions with their headers
 const TABS = {
-  TSHIRT: {
-    name: 'T-Shirt Bookings',
-    headers: ['Receipt No', 'Buyer Name', 'Phone', 'Email', 'Size', 'Color', 'Quantity', 'Total Amount (₹)', 'Address', 'Payment ID', 'Status', 'Date & Time']
-  },
   DONATION: {
     name: 'Donations',
     headers: ['Receipt No', 'Donor Name', 'Phone', 'Email', 'Amount (₹)', 'Category', 'PAN Number', 'Payment ID', 'Order ID', 'Status', 'Date & Time']
@@ -22,16 +18,9 @@ const TABS = {
     headers: ['Name', 'Contact (Email/Phone)', 'Message', 'Date & Time']
   }
 };
-
 let sheetsClient = null;
 let initPromise = null;
 
-/**
- * Authenticate with Google Sheets API using Service Account
- * Supports both:
- *  1. credentials.json file (local development)
- *  2. GOOGLE_CREDENTIALS env var as JSON string (Vercel / production)
- */
 async function getClient() {
   if (sheetsClient) return sheetsClient;
 
@@ -72,9 +61,6 @@ async function getClient() {
   return initPromise;
 }
 
-/**
- * Ensure all 3 tabs exist in the spreadsheet, creating them with headers if missing
- */
 async function ensureTabs() {
   if (!SPREADSHEET_ID) {
     console.log('⚠️ GOOGLE_SHEET_ID not set in .env — skipping Google Sheets sync.');
@@ -90,7 +76,6 @@ async function ensureTabs() {
 
     for (const tab of Object.values(TABS)) {
       if (!existingSheets.includes(tab.name)) {
-        // Add the new tab
         await client.spreadsheets.batchUpdate({
           spreadsheetId: SPREADSHEET_ID,
           requestBody: {
@@ -102,7 +87,6 @@ async function ensureTabs() {
           }
         });
 
-        // Add headers to the new tab
         await client.spreadsheets.values.update({
           spreadsheetId: SPREADSHEET_ID,
           range: `'${tab.name}'!A1`,
@@ -123,9 +107,6 @@ async function ensureTabs() {
   }
 }
 
-/**
- * Append a row to a specific tab
- */
 async function appendRow(tabName, rowData) {
   if (!SPREADSHEET_ID) return;
 
@@ -148,30 +129,6 @@ async function appendRow(tabName, rowData) {
   }
 }
 
-/**
- * Append a T-Shirt booking row
- */
-async function appendTshirtBooking(order) {
-  const row = [
-    order.receipt_no || '',
-    order.buyer_name || '',
-    order.phone || '',
-    order.email || '',
-    order.size || '',
-    order.color || 'Royal Maroon',
-    order.quantity || 1,
-    order.total_amount || 0,
-    order.address || '',
-    order.payment_id || '',
-    order.status || 'SUCCESS',
-    new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
-  ];
-  await appendRow(TABS.TSHIRT.name, row);
-}
-
-/**
- * Append a Donation row
- */
 async function appendDonation(donation) {
   const row = [
     donation.receipt_no || '',
@@ -189,9 +146,6 @@ async function appendDonation(donation) {
   await appendRow(TABS.DONATION.name, row);
 }
 
-/**
- * Append a Contact Us inquiry row
- */
 async function appendContactInquiry(contact) {
   const row = [
     contact.name || '',
@@ -202,9 +156,6 @@ async function appendContactInquiry(contact) {
   await appendRow(TABS.CONTACT.name, row);
 }
 
-/**
- * Clear data rows (below header row A1:Z1) from all tabs in Google Sheet
- */
 async function clearAllSheetsData() {
   if (!SPREADSHEET_ID) {
     console.log('⚠️ GOOGLE_SHEET_ID not set in .env — skipping Google Sheets clear.');
@@ -231,7 +182,6 @@ async function clearAllSheetsData() {
 
 module.exports = {
   ensureTabs,
-  appendTshirtBooking,
   appendDonation,
   appendContactInquiry,
   clearAllSheetsData
