@@ -35,7 +35,7 @@ router.get('/advertisement', (req, res) => {
 router.get('/contact', (req, res) => {
   res.render('contact', {
     title: 'Contact Us & Mandap Location | Dagdi Chawl Chi Aai Mauli',
-    metaDescription: 'Get in touch with Shree Bal Gopal Ganeshutsav Mandal. Mandap address: Ganesh Chowk, Bhaji Galli, Grant Road (W), Mumbai - 400007. Phone, email, and Google Maps directions.',
+    metaDescription: 'Get in touch with Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. Mandap address: Bapurao Jagtap Marg, Byculla West, Mumbai - 400011. Phone, email, and Google Maps directions.',
     activeTab: 'contact'
   });
 });

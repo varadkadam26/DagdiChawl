@@ -2,7 +2,7 @@
 /**
  * Dagdi Chawl Chi Aai Mauli - Main Frontend Interactions
  * Libraries: GSAP, ScrollTrigger, Swiper.js
- * Official Mandal: Shree Bal Gopal Ganeshutsav Mandal
+ * Official Mandal: Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -438,10 +438,10 @@ document.addEventListener('DOMContentLoaded', () => {
       yearTag: 'वर्ष १९७३',
       subhead: 'स्थापना पर्व',
       title: 'मंडळ स्थापना व प्रथम श्री स्थापना',
-      desc: 'श्री बाल गोपाल गणेशोत्सव मंडळ येथील रहिवाशांनी एकत्र येऊन सार्वजनिक गणेशोत्सव मंडळाची स्थापना केली. अखंड भक्ती, परंपरा आणि सामाजिक ऐक्याचा ऐतिहासिक पाया १९७३ मध्ये रचला गेला.',
+      desc: 'भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ येथील रहिवाशांनी एकत्र येऊन सार्वजनिक गणेशोत्सव मंडळाची स्थापना केली. अखंड भक्ती, परंपरा आणि सामाजिक ऐक्याचा ऐतिहासिक पाया १९७३ मध्ये रचला गेला.',
       image: '/images/dagdi chawl_ganpati_01.jpg',
       feat1: 'स्थापना: १९७३',
-      feat2: 'स्थान: श्री बाल गोपाल गणेशोत्सव मंडळ',
+      feat2: 'स्थान: भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ',
       feat3: 'संकल्पना: सांस्कृतिक ऐक्य'
     },
     '2000': {
@@ -497,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '2026': {
       yearTag: 'वर्ष २०२६',
       subhead: 'सुवर्ण तेज व राजेशाही आगमन',
-      title: 'मलबार हिलचा राजा २०२६ - सुवर्ण तेज दर्शन',
+      title: 'दगडी चाळची आई माऊली २०२६ - सुवर्ण तेज दर्शन',
       desc: 'सन २०२६ च्या गणेशोत्सवातील मलबार हिलच्या राजाचे मनमोहक, भव्य दिव्य आणि अलौकिक सुवर्ण रूप दर्शन.',
       image: '/images/dagdi chawl_ganpati_2026.png',
       feat1: 'वर्ष: २०२६',
@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const yearKeys = Object.keys(timelineYearData);
   const timelineYearDataEn = {
-    '1973': {yearTag:'Year 1973', subhead:'Foundation Era', title:'Mandal Foundation & First Idol Installation', desc:'A foundation-era milestone celebrating the establishment of the public Ganeshotsav tradition of the mandal.', image:'/images/dagdi chawl_ganpati_01.jpg', feat1:'Founded: 1973', feat2:'Location: Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007', feat3:'Theme: Cultural Unity'},
+    '1973': {yearTag:'Year 1973', subhead:'Foundation Era', title:'Mandal Foundation & First Idol Installation', desc:'A foundation-era milestone celebrating the establishment of the public Ganeshotsav tradition of the mandal.', image:'/images/dagdi chawl_ganpati_01.jpg', feat1:'Founded: 1973', feat2:'Location: Bapurao Jagtap Marg, Byculla West, Mumbai-400011', feat3:'Theme: Cultural Unity'},
     '2000': {yearTag:'Year 2000', subhead:'Seva Expansion', title:'Annadan Mahaprasad & Community Service', desc:'A milestone focused on community service, Annadan Mahaprasad and devotee support.', image:'/images/dagdi chawl_ganpati_06.jpg', feat1:'Seva: Annadan Mahaprasad', feat2:'Health: Support Camps', feat3:'Education: Student Aid'},
     '2015': {yearTag:'Year 2015', subhead:'Heritage Showcase', title:'Grand Royal Idol Presentation', desc:'A heritage-themed presentation of the idol with a traditional royal aesthetic.', image:'/images/dagdi chawl_ganpati_02.jpg', feat1:'Darshan: Grand Idol', feat2:'Craft: Traditional Artisans', feat3:'Decor: Royal Motifs'},
     '2020': {yearTag:'Year 2020', subhead:'Health & Seva', title:'Health Service & Community Support', desc:'A service-focused milestone highlighting health support and community care.', image:'/images/dagdi chawl_ganpati_01.jpg', feat1:'Service: Health Support', feat2:'Community: Seva', feat3:'Care: Devotee Assistance'},
@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
           '2020': { title: 'आरोग्य संकल्प व सुवर्ण पदकमयी रूप', theme: 'संकल्पना: Arogya Seva & Blood Drive', desc: 'अखंड रक्तदान आणि आरोग्य शिबीरांच्या संकल्पातील सुवर्ण पदकमयी रूप.', img: '/images/dagdi chawl_ganpati_06.jpg', badge: 'वर्ष २०२०' },
           '2019': { title: 'शिवछत्रपती राजमुद्रा व राजेशाही सिंहासन', theme: 'संकल्पना: Shivrajyabhishek & Chhatrapati Rajmudra Arch', desc: 'शिवछत्रपती शिवरायांच्या सुवर्ण राजमुद्रेच्या भव्य कमानीत आणि राजेशाही सिंहासनावर विराजमान श्रींचे मनमोहक रूप.', img: '/images/glimpses/2019.jpg', badge: 'वर्ष २०१९' },
           '2018': { title: 'राजवाडा महामंडप व सुवर्ण मेघडंबरी', theme: 'संकल्पना: Fort Raigad & Palace Architecture', desc: 'भव्य मराठा राजवाडा देखावा आणि सुवर्ण मेघडंबरीतील विलोभनीय रूप.', img: '/images/dagdi chawl_ganpati_01.jpg', badge: 'वर्ष २०१८' },
-          '1973': { title: 'मंडळ स्थापना व प्रथम श्री स्थापना', theme: 'संकल्पना: Establishment & Sacred Foundation', desc: 'श्री बाल गोपाल गणेशोत्सव मंडळ येथील रहिवाशांनी एकत्रित येऊन स्थापन केलेली श्रींची प्रथम प्रतिष्ठापना.', img: '/images/dagdi chawl_ganpati_02.jpg', badge: 'वर्ष १९७३' }
+          '1973': { title: 'मंडळ स्थापना व प्रथम श्री स्थापना', theme: 'संकल्पना: Establishment & Sacred Foundation', desc: 'भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ येथील रहिवाशांनी एकत्रित येऊन स्थापन केलेली श्रींची प्रथम प्रतिष्ठापना.', img: '/images/dagdi chawl_ganpati_02.jpg', badge: 'वर्ष १९७३' }
         };
 
         const yearDetailsEn = {
@@ -596,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
           '2020': { title: 'Health Pledge & Golden Medallion Form', theme: 'Theme: Arogya Seva & Blood Drive', desc: 'Continuous blood donation and health camp seva — honoured with a golden medallion idol form.', img: '/images/dagdi chawl_ganpati_06.jpg', badge: 'Year 2020' },
           '2019': { title: 'Shivchhatrapati Rajmudra & Royal Throne', theme: 'Theme: Shivrajyabhishek & Chhatrapati Rajmudra Arch', desc: 'Divine Ganesha seated on a magnificent royal throne backed by Chhatrapati Shivaji Maharaj\'s sacred Rajmudra seal arch.', img: '/images/glimpses/2019.jpg', badge: 'Year 2019' },
           '2018': { title: 'Royal Mandap & Golden Canopy', theme: 'Theme: Fort Raigad & Palace Architecture', desc: 'Grand Maratha palace-style set and a breathtaking golden canopy mandap decor.', img: '/images/dagdi chawl_ganpati_01.jpg', badge: 'Year 2018' },
-          '1973': { title: 'Mandal Founded & First Idol Consecration', theme: 'Theme: Establishment & Sacred Foundation', desc: 'Residents of Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007 united to establish the Sarvajanik Ganeshotsav Mandal and first divine installation.', img: '/images/dagdi chawl_ganpati_02.jpg', badge: 'Year 1973' }
+          '1973': { title: 'Mandal Founded & First Idol Consecration', theme: 'Theme: Establishment & Sacred Foundation', desc: 'Residents of Bapurao Jagtap Marg, Byculla West, Mumbai-400011 united to establish the Sarvajanik Ganeshotsav Mandal and first divine installation.', img: '/images/dagdi chawl_ganpati_02.jpg', badge: 'Year 1973' }
         };
 
         const yearDetails = lang === 'mr' ? yearDetailsMr : yearDetailsEn;

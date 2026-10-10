@@ -2,7 +2,7 @@ const PDFDocument = require('pdfkit');
 const path = require('path');
 const fs = require('fs');
 
-const logoPath = path.join(__dirname, '../public/images/logo.png');
+const logoPath = path.join(__dirname, '../public/images/nav_logo_transparent.png');
 
 // Helper to render subtle background logo watermark on PDF receipts
 const drawWatermark = (doc) => {
@@ -32,15 +32,15 @@ module.exports = {
     drawWatermark(doc);
 
     // Header Box
-    doc.rect(40, 40, 515, 100).fill('#4A0404');
-    doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
+    doc.rect(40, 40, 515, 100).fill('#1A0700');
+    doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('BYCULLA DAGDI CHAWL NAVRATROTSAV MANDAL', 55, 52, { width: 485 });
     doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli (SEC 80G TAX EXEMPT)', 55, 85);
     doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawlichiaaimauli', 55, 106);
 
     // Main Receipt Body
-    doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#800020').stroke();
+    doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#D97706').stroke();
 
-    doc.fillColor('#4A0404').fontSize(13).font('Helvetica-Bold').text('OFFICIAL DONATION ACKNOWLEDGEMENT RECEIPT', 60, 172);
+    doc.fillColor('#1A0700').fontSize(13).font('Helvetica-Bold').text('OFFICIAL DONATION ACKNOWLEDGEMENT RECEIPT', 60, 172);
     doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
 
     const drawField = (label, value, x, y, width = 220) => {
@@ -68,10 +68,10 @@ module.exports = {
     doc.fillColor('#B45309').fontSize(20).font('Helvetica-Bold').text(`₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}/-`, 75, 427);
 
     // Tax Exemption Note
-    doc.fillColor('#475569').fontSize(9).font('Helvetica-Oblique').text('All donations made to Shree Bal Gopal Ganeshutsav Mandal are 50% tax exempt under Section 80G of the Income Tax Act, 1961.', 40, 505, { align: 'center', width: 515 });
+    doc.fillColor('#475569').fontSize(9).font('Helvetica-Oblique').text('All donations made to Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal are 50% tax exempt under Section 80G of the Income Tax Act, 1961.', 40, 505, { align: 'center', width: 515 });
 
     // Signatures
-    doc.fillColor('#4A0404').fontSize(10).font('Helvetica-Bold').text('For Dagdi Chawl Chi Aai Mauli Mandal', 350, 570);
+    doc.fillColor('#1A0700').fontSize(10).font('Helvetica-Bold').text('For Dagdi Chawl Chi Aai Mauli Mandal', 350, 570);
     doc.fillColor('#64748B').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 350, 620);
     
     doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Follow us on Instagram @dagdichawlichiaaimauli', 40, 750, { align: 'center', width: 515 });
@@ -91,15 +91,15 @@ module.exports = {
     drawWatermark(doc);
 
     // Header Banner
-    doc.rect(40, 40, 515, 100).fill('#800020');
-    doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
+    doc.rect(40, 40, 515, 100).fill('#D97706');
+    doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('BYCULLA DAGDI CHAWL NAVRATROTSAV MANDAL', 55, 52, { width: 485 });
     doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('OFFICIAL T-SHIRT & MERCHANDISE BOOKING TOKEN', 55, 85);
     doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | Instagram: @dagdichawlichiaaimauli', 55, 106);
 
     // Main Receipt Body
-    doc.rect(40, 155, 515, 340).lineWidth(1.5).strokeColor('#800020').stroke();
+    doc.rect(40, 155, 515, 340).lineWidth(1.5).strokeColor('#D97706').stroke();
 
-    doc.fillColor('#800020').fontSize(13).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli OFFICIAL MERCHANDISE', 60, 172);
+    doc.fillColor('#D97706').fontSize(13).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli OFFICIAL MERCHANDISE', 60, 172);
     doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
 
     const drawField = (label, value, x, y, width = 220) => {
@@ -133,8 +133,8 @@ module.exports = {
     doc.fillColor('#1E40AF').fontSize(10).font('Helvetica-Bold').text('T-SHIRT PICKUP INSTRUCTIONS FOR DEVOTEES', 55, 525);
     const instructions = [
       '1. Please show this PDF order token (digital or printed) at Mandap Merchandise Desk.',
-      '2. Pickup Address: Tulsiwadi Pandal, Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.',
-      '3. For courier delivery queries, contact Mandal Help Desk: +91 98765 43210.'
+      '2. Pickup Address: Tulsiwadi Pandal, Bapurao Jagtap Marg, Byculla West, Mumbai-400011.',
+      '3. For courier delivery queries, contact Mandal Help Desk: +91 95945 12999.'
     ];
     let instY = 545;
     instructions.forEach(inst => {
@@ -142,7 +142,7 @@ module.exports = {
       instY += 20;
     });
 
-    doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Shree Bal Gopal Ganeshutsav Mandal', 40, 750, { align: 'center', width: 515 });
+    doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal', 40, 750, { align: 'center', width: 515 });
 
     doc.end();
   },
@@ -160,15 +160,15 @@ module.exports = {
       drawWatermark(doc);
 
       // Header Box
-      doc.rect(40, 40, 515, 100).fill('#4A0404');
-      doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
+      doc.rect(40, 40, 515, 100).fill('#1A0700');
+      doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('BYCULLA DAGDI CHAWL NAVRATROTSAV MANDAL', 55, 52, { width: 485 });
       doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli (SEC 80G TAX EXEMPT)', 55, 85);
       doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawlichiaaimauli', 55, 106);
 
       // Main Receipt Body
-      doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#800020').stroke();
+      doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#D97706').stroke();
 
-      doc.fillColor('#4A0404').fontSize(13).font('Helvetica-Bold').text('OFFICIAL DONATION ACKNOWLEDGEMENT RECEIPT', 60, 172);
+      doc.fillColor('#1A0700').fontSize(13).font('Helvetica-Bold').text('OFFICIAL DONATION ACKNOWLEDGEMENT RECEIPT', 60, 172);
       doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
 
       const drawField = (label, value, x, y, width = 220) => {

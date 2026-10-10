@@ -69,7 +69,7 @@ async function sendContactEmail({ name, email, contact, message }) {
         </table>
       </div>
       <div style="background: #800020; padding: 14px; text-align: center;">
-        <p style="color: #E8C86E; margin: 0; font-size: 12px;">श्री बाल गोपाल गणेशोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
+        <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
       </div>
     </div>
   `;
@@ -115,7 +115,7 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
       </div>
       <div style="padding: 28px; background: #FFF9F0;">
         <p style="font-size: 16px; color: #800020; font-weight: 700; margin-top: 0;">जय गणेश! सस्नेह नमस्कार ${donation.donor_name},</p>
-        <p style="color: #333; line-height: 1.6;">श्री बाल गोपाल गणेशोत्सव मंडळाला आपण दिलेल्या <strong>₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}</strong> च्या देणगीची यशस्वी पडताळणी झाली असून आपली अधिकृत ८०जी कर सवलत पावती या ईमेलसोबत जोडलेली (Attached) आहे.</p>
+        <p style="color: #333; line-height: 1.6;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळाला आपण दिलेल्या <strong>₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}</strong> च्या देणगीची यशस्वी पडताळणी झाली असून आपली अधिकृत ८०जी कर सवलत पावती या ईमेलसोबत जोडलेली (Attached) आहे.</p>
         
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #FFFFFF; border: 1px solid #E8C86E; border-radius: 8px;">
           <tr>
@@ -139,7 +139,7 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
         <p style="color: #555; font-size: 14px; line-height: 1.6;">बाप्पाचा आशीर्वाद आपल्या व आपल्या कुटुंबावर सदैव राहो हीच श्रींच्या चरणी प्रार्थना! 🙏</p>
       </div>
       <div style="background: #800020; padding: 14px; text-align: center;">
-        <p style="color: #E8C86E; margin: 0; font-size: 12px;">श्री बाल गोपाल गणेशोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
+        <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
       </div>
     </div>
   `;

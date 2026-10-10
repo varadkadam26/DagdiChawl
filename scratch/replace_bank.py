@@ -7,7 +7,7 @@ files_to_modify = [
 
 replacements = {
     "SVC Co-Operative Bank Ltd.": "Bank of Maharashtra",
-    "Shree Bal Gopal Ganeshutsav Mandal (Bal Gopal Mandal)": "BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL",
+    "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Bal Gopal Mandal)": "BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL",
     "100903130041974": "20023347685",
     "SVCB0000009": "MAHB0000294",
     "Sleater Road": "MUMBAI JACOB CIRCLE"

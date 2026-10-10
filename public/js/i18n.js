@@ -1,6 +1,6 @@
 /**
  * Dagdi Chawl Chi Aai Mauli - Internationalization (i18n) System
- * Mandal: Shree Bal Gopal Ganeshutsav Mandal
+ * Mandal: Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal
  * Languages: Marathi (mr), English (en)
  * 100% Strict Zero-Leakage Translation Engine
  */
@@ -10,9 +10,9 @@ const translations = {
     // Header & Meta
     est_label: "Est. Year: 1973",
     reg_label: "Reg No: E-3892 Mumbai",
-    mandal_full_title: "Shree Bal Gopal Ganeshutsav Mandal",
+    mandal_full_title: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
     mandal_name_header: "Dagdi Chawl Chi Aai Mauli",
-    mandal_sub_header: "Shree Bal Gopal Ganeshutsav Mandal",
+    mandal_sub_header: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
     nav_mandal_title: "BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL",
 
     // Navigation
@@ -32,7 +32,7 @@ const translations = {
     hero_tag: "ESTD 1973",
     hero_title: "Dagdi Chawl Chi Aai Mauli",
     hero_sub_tag: "Warm Welcome - We cordially welcome you all.",
-    hero_subtitle: "Shree Bal Gopal Ganeshutsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
+    hero_subtitle: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
     btn_hero_live: "Watch Live Darshan",
     btn_hero_donate: "Donate Seva Online",
     countdown_badge: "Ganeshotsav 2026 Arrival",
@@ -49,10 +49,10 @@ const translations = {
     // President Message & Counters
     pres_badge: "President & Executive Message",
     pres_title: "Warm Welcome & Divine Blessings",
-    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Chi Aai Mauli, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
+    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Chi Aai Mauli, Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. Serving society with faith, culture, and unity since 1973.",
     pres_quote: '"Faith, service, and social commitment are the core pillars of Dagdi Chawl Chi Aai Mauli Mandal."',
     pres_name: "Mr. Sandeep Sawal",
-    pres_role: "President, Shree Bal Gopal Ganeshutsav Mandal",
+    pres_role: "President, Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
     stat_year_label: "Founding Year",
     stat_service_label: "Years of Continuous Service",
     stat_prasadam_label: "Daily Mahaprasad Devotees",
@@ -70,7 +70,7 @@ const translations = {
     hero_tag: "ESTD 1973",
     hero_title: "Dagdi Chawl Chi Aai Mauli",
     hero_sub_tag: "Warm Welcome - We cordially welcome you all.",
-    hero_subtitle: "Shree Bal Gopal Ganeshutsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
+    hero_subtitle: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
     btn_hero_live: "Watch Live Darshan",
     btn_hero_donate: "Donate Seva Online",
     countdown_badge: "Ganeshotsav 2026 Arrival",
@@ -87,10 +87,10 @@ const translations = {
     // President Message & Counters
     pres_badge: "President & Executive Message",
     pres_title: "Warm Welcome & Divine Blessings",
-    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Chi Aai Mauli, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
+    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Chi Aai Mauli, Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. Serving society with faith, culture, and unity since 1973.",
     pres_quote: '"Faith, service, and social commitment are the core pillars of Dagdi Chawl Chi Aai Mauli Mandal."',
     pres_name: "Mr. Sandeep Sawal",
-    pres_role: "President, Shree Bal Gopal Ganeshutsav Mandal",
+    pres_role: "President, Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
     stat_year_label: "Founding Year",
     stat_service_label: "Years of Continuous Service",
     stat_prasadam_label: "Daily Mahaprasad Devotees",
@@ -150,10 +150,10 @@ const translations = {
     // Location & Contact
     location_tag: "MANDAP LOCATION & CONTACT",
     location_title: "Mandap Darshan Location & Map",
-    location_sub: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
+    location_sub: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
     contact_box_title: "Contact Information",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
-    contact_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
+    contact_address: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
     contact_reg: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
     visitor_count_label: "Total Devotee Visits:",
 
@@ -180,10 +180,10 @@ const translations = {
     footer_col_links: "Quick Links",
     footer_col_initiatives: "Initiatives & Donation",
     footer_col_location: "Mandap Location & Map",
-    footer_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
+    footer_address: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
     footer_reg_tax: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
-    footer_desc: "Shree Bal Gopal Ganeshutsav Mandal (Est. 1973). Dedicated to preserving Maharashtrian heritage and serving humanity.",
-    footer_copyright: "© Shree Bal Gopal Ganeshutsav Mandal. All Rights Reserved.",
+    footer_desc: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Est. 1973). Dedicated to preserving Maharashtrian heritage and serving humanity.",
+    footer_copyright: "© Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. All Rights Reserved.",
 
     // Scroll Info Popup
     scroll_popup_badge: "Live Updates",
@@ -200,10 +200,10 @@ const translations = {
     // Location & Contact
     location_tag: "MANDAP LOCATION & CONTACT",
     location_title: "Mandap Darshan Location & Map",
-    location_sub: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
+    location_sub: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
     contact_box_title: "Contact Information",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
-    contact_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
+    contact_address: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
     contact_reg: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
 
     // Social Work section
@@ -212,7 +212,7 @@ const translations = {
     social_section_sub: "Serving humanity through Annadan Mahaprasad, Blood Donation, Free Healthcare, and Student Education support.",
     // Timeline Milestone Cards
     milestone_1973_title: "Mandal Founded & First Idol Consecration",
-    milestone_1973_desc: "Residents of Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007 united to establish the Sarvajanik Ganeshotsav Mandal.",
+    milestone_1973_desc: "Residents of Bapurao Jagtap Marg, Byculla West, Mumbai-400011 united to establish the Sarvajanik Ganeshotsav Mandal.",
     milestone_2000_title: "Annadan Mahaprasad & Social Initiatives",
     milestone_2000_desc: "Expanded social service: Annadan Mahaprasad, student support, and free health camps launched.",
     milestone_2015_title: "Decade Milestone & 18-Foot Royal Form",
@@ -223,9 +223,9 @@ const translations = {
     // About Page
     about_badge: "Historic Heritage & Legacy",
     about_title: "About Us - Dagdi Chawl Chi Aai Mauli",
-    about_sub: "Shree Bal Gopal Ganeshutsav Mandal (Estd. 1973)",
+    about_sub: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Estd. 1973)",
     about_history_title: "The Glorious Legacy of the Mandal",
-    about_history_p1: "Shree Bal Gopal Ganeshutsav Mandal was established in 1973 in the historic premises at Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007. Since its inception, local residents, dedicated youth volunteers, and senior mentors have joined hands to build and sustain a grand public Ganeshotsav tradition.",
+    about_history_p1: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal was established in 1973 in the historic premises at Bapurao Jagtap Marg, Byculla West, Mumbai-400011. Since its inception, local residents, dedicated youth volunteers, and senior mentors have joined hands to build and sustain a grand public Ganeshotsav tradition.",
     about_history_p2: "Over the decades, 'Dagdi Chawl Chi Aai Mauli' has become an iconic divine symbol cherished by millions of devotees. The idol's radiant majestic presence, the intricately carved wooden throne, and the unique cultural mandap decorations remain the true hallmarks of our Mandal.",
     about_vision_title: "Our Vision",
     about_vision_desc: "To elevate Maharashtra's rich Ganeshotsav tradition to global heights while fostering social unity and brotherhood through devotion.",
@@ -260,7 +260,7 @@ const translations = {
     bank_transfer_note: "Please contact us for your receipt if you make a direct bank transfer.",
     tshirt_badge: "Official Merchandise",
     tshirt_page_title: "Dagdi Chawl Chi Aai Mauli - T-Shirt Booking",
-    tshirt_page_sub: "Official cotton polo t-shirt with royal emblem print of Shree Bal Gopal Ganeshutsav Mandal.",
+    tshirt_page_sub: "Official cotton polo t-shirt with royal emblem print of Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal.",
     tshirt_product_title: "Official Collar Polo T-Shirt",
     tshirt_product_sub: "Half-collar polo T-shirt with royal emblem and official logo.",
     tshirt_price_label: "Price per T-shirt",
@@ -282,8 +282,8 @@ const translations = {
     // Header & Meta
     est_label: "स्थापना : १९७३",
     reg_label: "नोंदणी क्र. : ई-३८९२ मुंबई",
-    mandal_name_header: "मलबार हिलचा राजा",
-    mandal_sub_header: "श्री बाल गोपाल गणेशोत्सव मंडळ",
+    mandal_name_header: "दगडी चाळची आई माऊली",
+    mandal_sub_header: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ",
     nav_mandal_title: "भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ",
 
     // Navigation
@@ -298,12 +298,12 @@ const translations = {
     nav_advertisement: "जाहिरात",
     nav_contact: "संपर्क",
     nav_donate: "देणगी",
-    mandal_full_title: "श्री बाल गोपाल गणेशोत्सव मंडळ, मुंबई",
+    mandal_full_title: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मुंबई",
     btn_all_photos: "दशकातील सर्व फोटो पाहा",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
     badge_80g: "८०जी कर सवलत प्राप्त",
     donate_title: "ऑनलाईन देणगी पोर्टल",
-    donate_sub: "मलबार हिलचा राजाच्या सामाजिक उपक्रमांना, अन्नदान महाप्रसादाला आणि मंडप व्यवस्थापनाला मदत करा.",
+    donate_sub: "दगडी चाळची आई माऊलीच्या सामाजिक उपक्रमांना, अन्नदान महाप्रसादाला आणि मंडप व्यवस्थापनाला मदत करा.",
     donate_form_title: "देणगी फॉर्म",
     lbl_select_amount: "देणगीची रक्कम निवडा (₹) *",
     lbl_custom_amount: "देणगी रक्कम टाका (₹) *",
@@ -331,8 +331,8 @@ const translations = {
 
     // Hero & Flip Clock
     hero_tag: "स्थापना १९७३",
-    hero_title: "मलबार हिलचा राजा",
-    hero_subtitle: "श्री बाल गोपाल गणेशोत्सव मंडळ. १९७३ पासून भक्ती, राजेशाही वारसा आणि समाजसेवेची अखंड परंपरा.",
+    hero_title: "दगडी चाळची आई माऊली",
+    hero_subtitle: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ. १९७३ पासून भक्ती, राजेशाही वारसा आणि समाजसेवेची अखंड परंपरा.",
     btn_hero_live: "थेट दर्शन पाहा",
     btn_hero_donate: "ऑनलाईन देणगी द्या",
     countdown_badge: "गणेशोत्सव २०२६ आगमन",
@@ -349,10 +349,10 @@ const translations = {
     // President Message & Counters
     pres_badge: "अध्यक्ष व कार्यकारिणी संदेश",
     pres_title: "स्वागतम व हार्दिक शुभेच्छा",
-    pres_desc: "मलबार हिलचा राजा, श्री बाल गोपाल गणेशोत्सव मंडळाच्या अधिकृत डिजिटल दर्शन पोर्टलवर आपले स्वागत आहे. १९७३ पासून भक्ती, संस्कृती आणि एकतेच्या माध्यमातून समाजसेवा.",
-    pres_quote: '"भक्ती, सेवा आणि सामाजिक बांधिलकी हे मलबार हिलचा राजा मंडळाचे प्रमुख आधारस्तंभ आहेत."',
+    pres_desc: "दगडी चाळची आई माऊली, भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळाच्या अधिकृत डिजिटल दर्शन पोर्टलवर आपले स्वागत आहे. १९७३ पासून भक्ती, संस्कृती आणि एकतेच्या माध्यमातून समाजसेवा.",
+    pres_quote: '"भक्ती, सेवा आणि सामाजिक बांधिलकी हे दगडी चाळची आई माऊली मंडळाचे प्रमुख आधारस्तंभ आहेत."',
     pres_name: "श्री. संदीप सावळ",
-    pres_role: "अध्यक्ष, श्री बाल गोपाल गणेशोत्सव मंडळ",
+    pres_role: "अध्यक्ष, भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ",
     stat_year_label: "स्थापना वर्ष",
 
     // Indie Mandala Timeline
@@ -375,7 +375,7 @@ const translations = {
     live_badge: "साक्षात दर्शन",
     live_title: "गणेशोत्सव आरती व थेट प्रक्षेपण",
     live_sub: "दररोज सकाळी ८:०० व संध्याकाळी ८:०० वाजता महाआरतीचे थेट थेट प्रक्षेपण पाहा.",
-    live_box_title: "मलबार हिलचा राजा - २४/७ लाईव्ह दर्शन",
+    live_box_title: "दगडी चाळची आई माऊली - २४/७ लाईव्ह दर्शन",
     live_box_sub: "अधिकृत युट्यूब चॅनेल प्रवाह",
     btn_watch_youtube: "YouTube वर पाहा",
 
@@ -400,16 +400,16 @@ const translations = {
 
     // Donation Section
     donate_section_tag: "सेवा योगदान",
-    donate_section_title: "मलबार हिलचा राजा सेवेला पाठिंबा द्या",
+    donate_section_title: "दगडी चाळची आई माऊली सेवेला पाठिंबा द्या",
     donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
     btn_donate_80g: "ONLINE देणगी द्या (८०जी पावतीसह)",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
     location_title: "मंडप दर्शन स्थान व नकाशा",
-    location_sub: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
+    location_sub: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     contact_box_title: "संपर्क माहिती",
-    contact_address: "श्री बाल गोपाल गणेशोत्सव मंडळ, मलबार हिल, मुंबई.",
+    contact_address: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मलबार हिल, मुंबई.",
     contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
     visitor_count_label: "एकूण दर्शनार्थी भेट :",
 
@@ -436,10 +436,10 @@ const translations = {
     footer_col_links: "मुख्य दुवे",
     footer_col_initiatives: "उपक्रम व देणगी",
     footer_col_location: "मंडप स्थान व नकाशा",
-    footer_address: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
+    footer_address: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     footer_reg_tax: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
-    footer_desc: "श्री बाल गोपाल गणेशोत्सव मंडळ (स्थापना १९७३). भक्ती, संस्कृती आणि समाजसेवेचा अखंड वसा.",
-    footer_copyright: "© श्री बाल गोपाल गणेशोत्सव मंडळ. सर्व हक्क सुरक्षित.",
+    footer_desc: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (स्थापना १९७३). भक्ती, संस्कृती आणि समाजसेवेचा अखंड वसा.",
+    footer_copyright: "© भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ. सर्व हक्क सुरक्षित.",
 
     // Scroll Info Popup
     scroll_popup_badge: "ताजी माहिती",
@@ -450,15 +450,15 @@ const translations = {
 
     // Donate CTA section
     donate_section_tag: "सेवा योगदान",
-    donate_section_title: "मलबार हिलचा राजा सेवेला पाठिंबा द्या",
+    donate_section_title: "दगडी चाळची आई माऊली सेवेला पाठिंबा द्या",
     donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
     location_title: "मंडप दर्शन स्थान व नकाशा",
-    location_sub: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
+    location_sub: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     contact_box_title: "संपर्क माहिती",
-    contact_address: "श्री बाल गोपाल गणेशोत्सव मंडळ, मलबार हिल, मुंबई.",
+    contact_address: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मलबार हिल, मुंबई.",
     contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
 
     // Social Work section
@@ -475,7 +475,7 @@ const translations = {
 
     // Timeline Milestone Cards
     milestone_1973_title: "मंडळ स्थापना व प्रथम श्री स्थापना",
-    milestone_1973_desc: "श्री बाल गोपाल गणेशोत्सव मंडळ येथील रहिवाशांनी एकत्र होऊन सार्वजनिक गणेशोत्सव मंडळाची स्थापना केली.",
+    milestone_1973_desc: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ येथील रहिवाशांनी एकत्र होऊन सार्वजनिक गणेशोत्सव मंडळाची स्थापना केली.",
     milestone_2000_title: "अन्नदान महाप्रसाद व सामाजिक उपक्रम",
     milestone_2000_desc: "सामाजिक सेवेचा विस्तार करत अन्नदान महाप्रसाद, विद्यार्थी मदत आणि मोफत आरोग्य शिबीरांची सुरुवात.",
     milestone_2015_title: "दशकपूर्ती व १८ फूट राजेशाही रूप",
@@ -485,19 +485,19 @@ const translations = {
 
     // About Page
     about_badge: "इतिहास व भव्य परंपरा",
-    about_title: "आमच्याबद्दल - मलबार हिलचा राजा",
-    about_sub: "श्री बाल गोपाल गणेशोत्सव मंडळ (स्थापना १९७३)",
+    about_title: "आमच्याबद्दल - दगडी चाळची आई माऊली",
+    about_sub: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (स्थापना १९७३)",
     about_history_title: "मंडळाचा गौरवशाली इतिहास",
-    about_history_p1: "मलबार हिल येथील गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७ वरील ऐतिहासिक श्री बाल गोपाल गणेशोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.",
-    about_history_p2: "वर्षानुवर्षे 'मलबार हिलचा राजा' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. मूर्तीची प्रसन्न राजेशाही मुद्रा, भव्य काष्ठ सिंहासन आणि अनोखा मण्डप शृंगार हे राजाचे वैशिष्ट्य मानले जाते.",
+    about_history_p1: "मलबार हिल येथील बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११ वरील ऐतिहासिक भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.",
+    about_history_p2: "वर्षानुवर्षे 'दगडी चाळची आई माऊली' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. मूर्तीची प्रसन्न राजेशाही मुद्रा, भव्य काष्ठ सिंहासन आणि अनोखा मण्डप शृंगार हे राजाचे वैशिष्ट्य मानले जाते.",
     about_vision_title: "आमची दृष्टी (Vision)",
     about_vision_desc: "महाराष्ट्राची थोर गणेशोत्सव परंपरा जागतिक पातळीवर पोहोचवणे आणि भक्तीच्या माध्यमातून सामाजिक ऐक्य व बंधुता वाढवणे.",
     about_mission_title: "आमचे ध्येय (Mission)",
     about_mission_desc: "दरवर्षी ३६५ दिवस वैद्यकीय मदत, अन्नदान, शिक्षण मदत आणि पर्यावरण रक्षण यासारख्या सामाजिक उपक्रमांतून समाजाची अखंड सेवा करणे.",
     about_gallery_title: "उत्सव क्षणचित्रे व मण्डप कला",
     tshirt_badge: "अधिकृत वस्त्रालंकार",
-    tshirt_page_title: "मलबार हिलचा राजा - टी-शर्ट बुकिंग",
-    tshirt_page_sub: "श्री बाल गोपाल गणेशोत्सव मंडळाचा अधिकृत कॉटन टी-शर्ट व राजमुद्रित प्रिंट.",
+    tshirt_page_title: "दगडी चाळची आई माऊली - टी-शर्ट बुकिंग",
+    tshirt_page_sub: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळाचा अधिकृत कॉटन टी-शर्ट व राजमुद्रित प्रिंट.",
     tshirt_product_title: "अधिकृत कॉलर टी-शर्ट",
     tshirt_product_sub: "हाफ कॉलर पोलो टी-शर्ट, सुवर्ण राजमुद्रा व अधिकृत लोगो.",
     tshirt_price_label: "प्रति टी-शर्ट किंमत",
@@ -524,9 +524,9 @@ const translations = {
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
     location_title: "मंडप दर्शन स्थान व नकाशा",
-    location_sub: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
+    location_sub: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     contact_box_title: "संपर्क माहिती",
-    contact_address: "श्री बाल गोपाल गणेशोत्सव मंडळ, मालाबार हिल, मुंबई.",
+    contact_address: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मालाबार हिल, मुंबई.",
     contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
 
     // Social Work section
@@ -543,7 +543,7 @@ const translations = {
 
     // Timeline Milestone Cards
     milestone_1973_title: "मंडळ स्थापना व प्रथम श्री स्थापना",
-    milestone_1973_desc: "श्री बाल गोपाल गणेशोत्सव मंडळ येथील रहिवाशांनी एकत्र येऊन सार्वजनिक गणेशोत्सव मंडळाची स्थापना केली.",
+    milestone_1973_desc: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ येथील रहिवाशांनी एकत्र येऊन सार्वजनिक गणेशोत्सव मंडळाची स्थापना केली.",
     milestone_2000_title: "अन्नदान महाप्रसाद व सामाजिक उपक्रम",
     milestone_2000_desc: "सामाजिक सेवेचा विस्तार करत अन्नदान महाप्रसाद, विद्यार्थी मदत आणि मोफत आरोग्य शिबीरांची सुरुवात.",
     milestone_2015_title: "दशकपूर्ती व १८ फूट राजेशाही रूप",
@@ -554,9 +554,9 @@ const translations = {
     // About Page
     about_badge: "इतिहास व भव्य परंपरा",
     about_title: "आमच्याबद्दल - मालाबार हिलचा राजा",
-    about_sub: "श्री बाल गोपाल गणेशोत्सव मंडळ (स्थापना १९७३)",
+    about_sub: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (स्थापना १९७३)",
     about_history_title: "मंडळाचा गौरवशाली इतिहास",
-    about_history_p1: "मालाबार हिल येथील गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७ वरील ऐतिहासिक श्री बाल गोपाल गणेशोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.",
+    about_history_p1: "मालाबार हिल येथील बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११ वरील ऐतिहासिक भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.",
     about_history_p2: "वर्षानुवर्षे 'मालाबार हिलचा राजा' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. मूर्तीची प्रसन्न राजेशाही मुद्रा, भव्य काष्ठ सिंहासन आणि अनोखा मण्डप शृंगार हे राजाचे वैशिष्ट्य मानले जाते.",
     about_vision_title: "आमची दृष्टी (Vision)",
     about_vision_desc: "महाराष्ट्राची थोर गणेशोत्सव परंपरा जागतिक पातळीवर पोहोचवणे आणि भक्तीच्या माध्यमातून सामाजिक ऐक्य व बंधुता वाढवणे.",
@@ -565,7 +565,7 @@ const translations = {
     about_gallery_title: "उत्सव क्षणचित्रे व मण्डप कला",
     tshirt_badge: "अधिकृत वस्त्रालंकार",
     tshirt_page_title: "मालाबार हिलचा राजा - टी-शर्ट बुकिंग",
-    tshirt_page_sub: "श्री बाल गोपाल गणेशोत्सव मंडळाचा अधिकृत कॉटन टी-शर्ट व राजमुद्रित प्रिंट.",
+    tshirt_page_sub: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळाचा अधिकृत कॉटन टी-शर्ट व राजमुद्रित प्रिंट.",
     tshirt_product_title: "Official Collar Polo T-Shirt",
     tshirt_product_sub: "Half-collar polo T-shirt with royal emblem and official logo.",
     tshirt_price_label: "Price per T-shirt",

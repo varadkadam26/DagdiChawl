@@ -1,8 +1,8 @@
 const db = require('../config/db');
 
 // Ganeshotsav Event Schedule Data for Dagdi Chawl Chi Aai Mauli
-const SCHEDULE_LOCATION_EN = 'Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007';
-const SCHEDULE_LOCATION_MR = 'गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७';
+const SCHEDULE_LOCATION_EN = 'Bapurao Jagtap Marg, Byculla West, Mumbai-400011';
+const SCHEDULE_LOCATION_MR = 'बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११';
 
 const scheduleData = [
   { day:2, dateMr:'रविवार, ११-१०-२०२६', dateEn:'Sunday, 11-10-2026', titleMr:'घटस्थापना', titleEn:'Ghatasthapana', timeMr:'सकाळी ९:०० वा.', timeEn:'9:00 AM', bg: '#F47F24', color: '#FFFFFF' },
@@ -160,8 +160,8 @@ module.exports = {
   renderHomePage(req, res) {
     const status = db.getYatraStatus();
     res.render('index', {
-      title: 'Dagdi Chawl Chi Aai Mauli | Shree Bal Gopal Ganeshutsav Mandal, Mumbai',
-      metaDescription: 'Official Portal of Dagdi Chawl Chi Aai Mauli (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical gallery, social work & 80G tax exempt donations.',
+      title: 'Dagdi Chawl Chi Aai Mauli | Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Mumbai',
+      metaDescription: 'Official Portal of Dagdi Chawl Chi Aai Mauli (Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical gallery, social work & 80G tax exempt donations.',
       activeTab: 'home',
       yatraStatus: status,
       scheduleData: scheduleData.slice(0, 4),
@@ -174,7 +174,7 @@ module.exports = {
   renderAboutPage(req, res) {
     res.render('about', {
       title: 'About Us — History & Legacy | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'Explore the 50+ year legacy of Shree Bal Gopal Ganeshutsav Mandal (Est. 1973) at Ganesh Chowk, Bhaji Galli, Grant Road (W), Mumbai. Discover our history, vision, and 365-day social work.',
+      metaDescription: 'Explore the 50+ year legacy of Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Est. 1973) at Bapurao Jagtap Marg, Byculla West, Mumbai. Discover our history, vision, and 365-day social work.',
       activeTab: 'about'
     });
   },
@@ -196,7 +196,7 @@ module.exports = {
   renderGlimpsesPage(req, res) {
     res.render('glimpses', {
       title: 'Historical Photo Gallery & Idol Glimpses | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'Browse the 20+ year historical photo gallery and idol themes of Dagdi Chawl Chi Aai Mauli from 1990 to 2025 by Shree Bal Gopal Ganeshutsav Mandal, Mumbai.',
+      metaDescription: 'Browse the 20+ year historical photo gallery and idol themes of Dagdi Chawl Chi Aai Mauli from 1990 to 2025 by Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Mumbai.',
       activeTab: 'glimpses',
       glimpsesData
     });
@@ -216,7 +216,7 @@ module.exports = {
   renderSocialWorkPage(req, res) {
     res.render('social-work', {
       title: 'Social Initiatives & Community Service | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'Discover community welfare programs by Shree Bal Gopal Ganeshutsav Mandal including Tulsi Vatap, student school kits, 2017 flood relief, and food security drives in Mumbai.',
+      metaDescription: 'Discover community welfare programs by Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal including Tulsi Vatap, student school kits, 2017 flood relief, and food security drives in Mumbai.',
       activeTab: 'socialwork',
       socialWorkData
     });
@@ -225,7 +225,7 @@ module.exports = {
   renderCommitteePage(req, res) {
     res.render('committee', {
       title: 'Executive Committee & Trustees | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'Meet the executive committee members, office bearers, advisory board, and karyakartas of Shree Bal Gopal Ganeshutsav Mandal, Grant Road, Mumbai.',
+      metaDescription: 'Meet the executive committee members, office bearers, advisory board, and karyakartas of Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Grant Road, Mumbai.',
       activeTab: 'committee',
       committeeData
     });
