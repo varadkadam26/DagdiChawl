@@ -25,8 +25,8 @@ router.get('/committee', yatraController.renderCommitteePage);
 // Advertisement Page
 router.get('/advertisement', (req, res) => {
   res.render('advertisement', {
-    title: 'Sponsorship & Souvenir Advertisement | Malabar Hill Cha Raja',
-    metaDescription: 'Partner with Malabar Hill Cha Raja for Ganeshotsav souvenir advertisements, banner sponsorships, and digital brand visibility reaching lakhs of devotees.',
+    title: 'Sponsorship & Souvenir Advertisement | Dagdi Chawl Chi Aai Mauli',
+    metaDescription: 'Partner with Dagdi Chawl Chi Aai Mauli for Navratrotsav souvenir advertisements, banner sponsorships, and digital brand visibility reaching lakhs of devotees.',
     activeTab: 'advertisement'
   });
 });
@@ -34,8 +34,8 @@ router.get('/advertisement', (req, res) => {
 // Contact Us Page (With Embedded Google Maps)
 router.get('/contact', (req, res) => {
   res.render('contact', {
-    title: 'Contact Us & Mandap Location | Malabar Hill Cha Raja',
-    metaDescription: 'Get in touch with Shree Bal Gopal Ganeshutsav Mandal. Mandap address: Ganesh Chowk, Bhaji Galli, Grant Road (W), Mumbai - 400007. Phone, email, and Google Maps directions.',
+    title: 'Contact Us & Mandap Location | Dagdi Chawl Chi Aai Mauli',
+    metaDescription: 'Get in touch with Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. Mandap address: Dagdi Chawl, Byculla, Mumbai. Phone, email, and Google Maps directions.',
     activeTab: 'contact'
   });
 });
