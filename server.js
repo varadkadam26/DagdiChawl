@@ -1,3 +1,10 @@
+process.on('uncaughtException', (err) => {
+  console.error('⚠️ Uncaught Exception:', err.message);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('⚠️ Unhandled Rejection:', reason);
+});
+
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
