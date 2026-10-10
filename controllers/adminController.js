@@ -30,7 +30,7 @@ module.exports = {
     if (sessionToken && activeAdminSessions.has(sessionToken)) return res.redirect('/admin');
 
     res.render('admin/login', {
-      title: 'Admin Desk | Dagdi Chawl Chi Aai Mauli',
+      title: 'Admin Desk | Malabar Hill Cha Raja',
       activeTab: 'admin',
       error: null,
       username: 'admin'
@@ -48,7 +48,7 @@ module.exports = {
     }
 
     res.render('admin/login', {
-      title: 'Admin Desk | Dagdi Chawl Chi Aai Mauli',
+      title: 'Admin Desk | Malabar Hill Cha Raja',
       activeTab: 'admin',
       error: 'Invalid username or password. Please try again.',
       username: username || 'admin'
@@ -84,7 +84,7 @@ module.exports = {
       const combinedTshirtTotal = onlineTshirtTotal + offlineTshirtTotal;
 
       res.render('admin/dashboard', {
-      title: 'Admin Control Panel | Dagdi Chawl Chi Aai Mauli',
+        title: 'Admin Control Panel | Malabar Hill Cha Raja',
         activeTab: 'admin',
         passes,
         donations,
