@@ -44,7 +44,7 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Dagdi Chawl Chi Aai Mauli Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
+    ticker_text: "🎉 Dagdi Chawl Chi Aai Mauli Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM •  Tax Exempt Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
@@ -82,7 +82,7 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Dagdi Chawl Chi Aai Mauli Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
+    ticker_text: "🎉 Dagdi Chawl Chi Aai Mauli Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM •  Tax Exempt Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
@@ -144,8 +144,8 @@ const translations = {
     // Donation Section
     donate_section_tag: "SACRED CONTRIBUTION",
     donate_section_title: "Support Dagdi Chawl Chi Aai Mauli Seva",
-    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section 80G.",
-    btn_donate_80g: "Donate Online (With 80G Receipt)",
+    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section .",
+    btn_donate_: "Donate Online (With  Receipt)",
 
     // Location & Contact
     location_tag: "MANDAP LOCATION & CONTACT",
@@ -154,7 +154,7 @@ const translations = {
     contact_box_title: "Contact Information",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
     contact_address: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
-    contact_reg: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
+    contact_reg: "Reg No: E-3892 Mumbai ( Tax Exempt Certified)",
     visitor_count_label: "Total Devotee Visits:",
 
     // Schedule Page Titles
@@ -181,7 +181,7 @@ const translations = {
     footer_col_initiatives: "Initiatives & Donation",
     footer_col_location: "Mandap Location & Map",
     footer_address: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
-    footer_reg_tax: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
+    footer_reg_tax: "Reg No: E-3892 Mumbai ( Tax Exempt Certified)",
     footer_desc: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Est. 1973). Dedicated to preserving Maharashtrian heritage and serving humanity.",
     footer_copyright: "© Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. All Rights Reserved.",
 
@@ -195,7 +195,7 @@ const translations = {
     // Donate CTA section
     donate_section_tag: "SACRED CONTRIBUTION",
     donate_section_title: "Support Dagdi Chawl Chi Aai Mauli Seva",
-    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section 80G.",
+    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section .",
 
     // Location & Contact
     location_tag: "MANDAP LOCATION & CONTACT",
@@ -204,7 +204,7 @@ const translations = {
     contact_box_title: "Contact Information",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
     contact_address: "Bapurao Jagtap Marg, Byculla West, Mumbai-400011.",
-    contact_reg: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
+    contact_reg: "Reg No: E-3892 Mumbai ( Tax Exempt Certified)",
 
     // Social Work section
     social_section_tag: "COMMUNITY SERVICES",
@@ -234,7 +234,7 @@ const translations = {
     about_gallery_title: "Festival Glimpses & Mandap Art",
 
     // Donate Page Form & Modal
-    badge_80g: "80G Tax Exempt Eligible",
+    badge_: " Tax Exempt Eligible",
     donate_title: "Online Donation Portal",
     donate_sub: "Support social initiatives, Annadan Mahaprasad, and mandap management of Dagdi Chawl Chi Aai Mauli.",
     donate_form_title: "Donation Form",
@@ -245,12 +245,12 @@ const translations = {
     lbl_mobile: "Mobile Number *",
     ph_mobile: "10-digit mobile number",
     lbl_email: "Email ID (Optional)",
-    ph_email: "Email for 80G PDF receipt",
-    lbl_pan: "PAN Card Number (For 80G Tax Exemption Receipt)",
+    ph_email: "Email for  PDF receipt",
+    lbl_pan: "PAN Card Number (For  Tax Exemption Receipt)",
     ph_pan: "e.g. ABCDE1234F",
     btn_donate_submit: "Donate & Get Receipt",
     msg_donation_processing: "Donation processing in progress...",
-    msg_donation_success: "Donation successful! Your 80G receipt is downloading.",
+    msg_donation_success: "Donation successful! Your  receipt is downloading.",
     bank_details_title: "Bank Account Details for Direct Transfer",
     bank_name_lbl: "Bank Name:",
     acc_name_lbl: "Account Name:",
@@ -281,7 +281,7 @@ const translations = {
   mr: {
     // Header & Meta
     est_label: "स्थापना : १९७३",
-    reg_label: "नोंदणी क्र. : ई-३८९२ मुंबई",
+    reg_label: "",
     mandal_name_header: "दगडी चाळची आई माऊली",
     mandal_sub_header: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ",
     nav_mandal_title: "भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ",
@@ -301,7 +301,7 @@ const translations = {
     mandal_full_title: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मुंबई",
     btn_all_photos: "दशकातील सर्व फोटो पाहा",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
-    badge_80g: "८०जी कर सवलत प्राप्त",
+    badge_: "८०जी कर सवलत प्राप्त",
     donate_title: "ऑनलाईन देणगी पोर्टल",
     donate_sub: "दगडी चाळची आई माऊलीच्या सामाजिक उपक्रमांना, अन्नदान महाप्रसादाला आणि मंडप व्यवस्थापनाला मदत करा.",
     donate_form_title: "देणगी फॉर्म",
@@ -317,7 +317,7 @@ const translations = {
     ph_pan: "उदा. ABCDE1234F",
     btn_donate_submit: "देणगी द्या व पावती मिळवा",
     msg_donation_processing: "देणगी प्रक्रियेत आहे...",
-    msg_donation_success: "देणगी यशस्वी! तुमची ८०जी पावती डाउनलोड होत आहे.",
+    msg_donation_success: "देणगी यशस्वी! तुमची पावती डाउनलोड होत आहे.",
     bank_details_title: "थेट बँक ट्रान्सफरसाठी खाते तपशील",
     bank_name_lbl: "बँकेचे नाव:",
     acc_name_lbl: "खात्याचे नाव:",
@@ -401,8 +401,8 @@ const translations = {
     // Donation Section
     donate_section_tag: "सेवा योगदान",
     donate_section_title: "दगडी चाळची आई माऊली सेवेला पाठिंबा द्या",
-    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
-    btn_donate_80g: "ONLINE देणगी द्या (८०जी पावतीसह)",
+    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम  अंतर्गत ५०% कर सवलत मिळतो.",
+    btn_donate_: "ONLINE देणगी द्या (पावतीसह)",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
@@ -410,7 +410,7 @@ const translations = {
     location_sub: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     contact_box_title: "संपर्क माहिती",
     contact_address: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मलबार हिल, मुंबई.",
-    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    contact_reg: "",
     visitor_count_label: "एकूण दर्शनार्थी भेट :",
 
     // Schedule Page Titles
@@ -437,7 +437,7 @@ const translations = {
     footer_col_initiatives: "उपक्रम व देणगी",
     footer_col_location: "मंडप स्थान व नकाशा",
     footer_address: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
-    footer_reg_tax: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    footer_reg_tax: "",
     footer_desc: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (स्थापना १९७३). भक्ती, संस्कृती आणि समाजसेवेचा अखंड वसा.",
     footer_copyright: "© भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ. सर्व हक्क सुरक्षित.",
 
@@ -451,7 +451,7 @@ const translations = {
     // Donate CTA section
     donate_section_tag: "सेवा योगदान",
     donate_section_title: "दगडी चाळची आई माऊली सेवेला पाठिंबा द्या",
-    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
+    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम  अंतर्गत ५०% कर सवलत मिळतो.",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
@@ -459,7 +459,7 @@ const translations = {
     location_sub: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     contact_box_title: "संपर्क माहिती",
     contact_address: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मलबार हिल, मुंबई.",
-    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    contact_reg: "",
 
     // Social Work section
     social_section_tag: "समाजोपयोगी उपक्रम",
@@ -519,7 +519,7 @@ const translations = {
     // Donate CTA section
     donate_section_tag: "सेवा योगदान",
     donate_section_title: "मालाबार हिलचा राजा सेवेला पाठिंबा द्या",
-    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
+    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम  अंतर्गत ५०% कर सवलत मिळतो.",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
@@ -527,7 +527,7 @@ const translations = {
     location_sub: "बापूराव जगताप मार्ग (बी.जे. मार्ग), भायखळा पश्चिम, मुंबई, महाराष्ट्र ४०००११.",
     contact_box_title: "संपर्क माहिती",
     contact_address: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मालाबार हिल, मुंबई.",
-    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    contact_reg: "",
 
     // Social Work section
     social_section_tag: "समाजोपयोगी उपक्रम",

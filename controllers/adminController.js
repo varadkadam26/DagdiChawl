@@ -69,9 +69,9 @@ module.exports = {
     try {
       const passes = await db.getPasses();
       const donations = await db.getDonations();
-      const tshirtOrders = await db.getTshirtOrders();
+      
       const offlineDonations = await db.getOfflineDonations();
-      const offlineTshirtOrders = await db.getOfflineTshirtOrders();
+      
       const yatraStatus = db.getYatraStatus();
       const logs = db.getLogs();
 
@@ -79,26 +79,26 @@ module.exports = {
       const offlineDonationTotal = offlineDonations.reduce((sum, d) => sum + (parseFloat(d.amount) || 0), 0);
       const combinedDonationTotal = totalDonations + offlineDonationTotal;
 
-      const onlineTshirtTotal = tshirtOrders.reduce((sum, o) => sum + (parseFloat(o.total_amount) || 0), 0);
-      const offlineTshirtTotal = offlineTshirtOrders.reduce((sum, o) => sum + (parseFloat(o.amount) || 0), 0);
-      const combinedTshirtTotal = onlineTshirtTotal + offlineTshirtTotal;
+      
+      
+      
 
       res.render('admin/dashboard', {
         title: 'Admin Control Panel | Dagdi Chawl Chi Aai Mauli',
         activeTab: 'admin',
         passes,
         donations,
-        tshirtOrders,
+        
         offlineDonations,
-        offlineTshirtOrders,
+        
         yatraStatus,
         logs,
         totalDonations,
         offlineDonationTotal,
         combinedDonationTotal,
-        onlineTshirtTotal,
-        offlineTshirtTotal,
-        combinedTshirtTotal,
+        
+        
+        
         totalPasses: passes.length,
         query: req.query
       });

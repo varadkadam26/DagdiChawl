@@ -34,8 +34,8 @@ module.exports = {
     // Header Box
     doc.rect(40, 40, 515, 100).fill('#1A0700');
     doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('BYCULLA DAGDI CHAWL NAVRATROTSAV MANDAL', 55, 52, { width: 485 });
-    doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli (SEC 80G TAX EXEMPT)', 55, 85);
-    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawlichiaaimauli', 55, 106);
+    doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli ', 55, 85);
+    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('@dagdichawlichiaaimauli', 55, 106);
 
     // Main Receipt Body
     doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#D97706').stroke();
@@ -54,7 +54,7 @@ module.exports = {
     drawField('Donor Full Name', donation.donor_name, 60, 250);
     drawField('Contact Phone', donation.phone, 300, 250);
 
-    drawField('PAN Number (80G)', donation.pan_number || 'NOT PROVIDED', 60, 295);
+    drawField('PAN Number ()', donation.pan_number || 'NOT PROVIDED', 60, 295);
     drawField('Seva Category', donation.category || 'General Mandal Seva', 300, 295);
 
     drawField('Payment UTR / Ref', donation.payment_id || donation.payment_utr || 'N/A', 60, 340);
@@ -68,7 +68,7 @@ module.exports = {
     doc.fillColor('#B45309').fontSize(20).font('Helvetica-Bold').text(`₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}/-`, 75, 427);
 
     // Tax Exemption Note
-    doc.fillColor('#475569').fontSize(9).font('Helvetica-Oblique').text('All donations made to Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal are 50% tax exempt under Section 80G of the Income Tax Act, 1961.', 40, 505, { align: 'center', width: 515 });
+    doc.fillColor('#475569').fontSize(9).font('Helvetica-Oblique').text('', 40, 505, { align: 'center', width: 515 });
 
     // Signatures
     doc.fillColor('#1A0700').fontSize(10).font('Helvetica-Bold').text('For Dagdi Chawl Chi Aai Mauli Mandal', 350, 570);
@@ -94,8 +94,8 @@ module.exports = {
       // Header Box
       doc.rect(40, 40, 515, 100).fill('#1A0700');
       doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('BYCULLA DAGDI CHAWL NAVRATROTSAV MANDAL', 55, 52, { width: 485 });
-      doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli (SEC 80G TAX EXEMPT)', 55, 85);
-      doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawlichiaaimauli', 55, 106);
+      doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli ', 55, 85);
+      doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('@dagdichawlichiaaimauli', 55, 106);
 
       // Main Receipt Body
       doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#D97706').stroke();
@@ -128,7 +128,7 @@ module.exports = {
       doc.fillColor('#B45309').fontSize(20).font('Helvetica-Bold').text(`₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}/-`, 75, 427);
 
       // Tax Exemption Note
-      doc.fillColor('#334155').fontSize(9).font('Helvetica').text('Donations are 50% Tax Exempted under Section 80G of IT Act 1961. Thank you for your Seva!', 60, 475, { width: 475 });
+      doc.fillColor('#334155').fontSize(9).font('Helvetica').text(' Thank you for your Seva!', 60, 475, { width: 475 });
 
       doc.end();
     });

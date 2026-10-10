@@ -7,8 +7,8 @@ module.exports = {
   // Render Donation Page
   renderDonationPage(req, res) {
     res.render('donate', {
-      title: 'Online Donation Portal (80G Tax Exempt) | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'Support Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal\'s social service and festival initiatives. 80G tax-exempt online donations with direct bank/UPI verification and official PDF receipts.',
+      title: 'Online Donation Portal  | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'Support Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal\'s social service and festival initiatives. secure online donations with direct bank/UPI verification and official PDF receipts.',
       activeTab: 'donate'
     });
   },
@@ -60,7 +60,7 @@ module.exports = {
       res.json({
         success: true,
         receipt_no: createdDonation.receipt_no,
-        message: 'तुमची देणगी नोंदणी यशस्वी झाली आहे! मंडळाच्या पडताळणीनंतर (Admin Approval) अधिकृत ८०जी PDF पावती तुमच्या ईमेलवर पाठवली जाईल.'
+        message: 'तुमची देणगी नोंदणी यशस्वी झाली आहे! मंडळाच्या पडताळणीनंतर (Admin Approval) अधिकृत PDF पावती तुमच्या ईमेलवर पाठवली जाईल.'
       });
     } catch (err) {
       console.error('Submit donation error:', err);
@@ -112,7 +112,7 @@ module.exports = {
     }
   },
 
-  // Download 80G PDF Receipt
+  // Download  PDF Receipt
   async downloadDonationReceipt(req, res) {
     const { receiptNo } = req.params;
     const donation = await db.getDonationByReceipt(receiptNo);

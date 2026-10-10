@@ -161,7 +161,7 @@ module.exports = {
     const status = db.getYatraStatus();
     res.render('index', {
       title: 'Dagdi Chawl Chi Aai Mauli | Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Mumbai',
-      metaDescription: 'Official Portal of Dagdi Chawl Chi Aai Mauli (Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical gallery, social work & 80G tax exempt donations.',
+      metaDescription: 'Official Portal of Dagdi Chawl Chi Aai Mauli (Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Est. 1973, Reg. ). Daily Ganeshotsav live darshan, schedule, historical gallery, social work &  tax exempt donations.',
       activeTab: 'home',
       yatraStatus: status,
       scheduleData: scheduleData.slice(0, 4),

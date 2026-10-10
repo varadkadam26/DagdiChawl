@@ -29,7 +29,7 @@ The official website and backend management system for **Dagdi Chawl Chi Aai Mau
 ### 💰 Online Donation Portal (`/donate`)
 - Preset amounts (₹501, ₹1008, ₹2100, ₹5001) + custom amount
 - **Razorpay checkout** with live order creation
-- 80G Tax Exemption PDF receipt with PAN details
+-  Tax Exemption PDF receipt with PAN details
 - Twilio SMS confirmation to donor
 - Real-time sync to **Google Sheets** ("Donations" tab)
 
@@ -94,7 +94,7 @@ mmmdagdichawl/
 │   ├── donationController.js    # Donation CRUD + Razorpay + Sheets sync
 │   ├── tshirtController.js      # T-Shirt booking + Razorpay + Sheets sync
 │   ├── contactController.js     # Contact form + SMTP email + Sheets sync
-│   ├── pdfController.js         # PDF receipt generation (Donation 80G + T-Shirt token)
+│   ├── pdfController.js         # PDF receipt generation (Donation  + T-Shirt token)
 │   ├── adminController.js       # Admin auth & dashboard
 │   └── excelController.js       # Excel upload, parse, export (offline records)
 │
@@ -235,7 +235,7 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 |-------|------|-------------|
 | `/` | Home | Hero carousel, highlights, live status |
 | `/about` | About | Mandal history & mission |
-| `/donate` | Donations | Razorpay payment + 80G receipt |
+| `/donate` | Donations | Razorpay payment +  receipt |
 | `/tshirt` | T-Shirt Booking | Size selection + Razorpay payment + PDF token |
 | `/contact` | Contact Us | SMTP email form + Google Maps |
 | `/schedule` | Schedule | Festival day-by-day events |

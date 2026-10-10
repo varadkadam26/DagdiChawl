@@ -111,7 +111,7 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 2px solid #C0972D; border-radius: 12px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #800020, #5C0015); padding: 24px; text-align: center;">
         <h2 style="color: #F5D98E; margin: 0; font-size: 22px;">🌺 देणगी पावती मंजूर करण्यात आली आहे!</h2>
-        <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">Donation Approved & 80G Receipt — Dagdi Chawl Chi Aai Mauli</p>
+        <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">Donation Approved &  Receipt — Dagdi Chawl Chi Aai Mauli</p>
       </div>
       <div style="padding: 28px; background: #FFF9F0;">
         <p style="font-size: 16px; color: #800020; font-weight: 700; margin-top: 0;">जय गणेश! सस्नेह नमस्कार ${donation.donor_name},</p>
@@ -147,7 +147,7 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
   const mailOptions = {
     from: `"Dagdi Chawl Chi Aai Mauli" <${SMTP_USER}>`,
     to: donorEmail,
-    subject: `देणगी पावती (80G Receipt) — ${donation.receipt_no} | Dagdi Chawl Chi Aai Mauli`,
+    subject: `देणगी पावती ( Receipt) — ${donation.receipt_no} | Dagdi Chawl Chi Aai Mauli`,
     html: htmlBody,
     attachments: [
       {

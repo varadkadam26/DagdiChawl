@@ -213,7 +213,7 @@
           <!-- Donations Table -->
           <div class="card-temple" style="margin-bottom: 3rem; padding: 2rem;">
             <h3 style="font-size: 1.4rem; color: var(--temple-maroon); margin-bottom: 1.2rem;">
-              प्राप्त ऑनलाइन देणगी नोंदी व पडताळणी (80G Approval & Verification)
+              प्राप्त ऑनलाइन देणगी नोंदी व पडताळणी ( Approval & Verification)
             </h3>
 
             <div style="overflow-x: auto;">
@@ -275,7 +275,7 @@
                           <% } else { %>
                             <a href="/download-receipt/<%= d.receipt_no %>" class="btn btn-outline"
                               style="padding: 3px 10px; font-size: 0.78rem; white-space: nowrap;">
-                              <i class="fa-solid fa-file-pdf"></i> PDF 80G
+                              <i class="fa-solid fa-file-pdf"></i> PDF 
                             </a>
                           <% } %>
                         </td>
@@ -398,8 +398,7 @@
       }
     }
 
-    async function approveTshirt(receiptNo, btn) {
-      if (!confirm(`तुम्हाला टी-शर्ट बुकिंग पावती क्र. ${receiptNo} खरोखर मंजूर करायची आहे का?`)) return;
+     खरोखर मंजूर करायची आहे का?`)) return;
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> मंजूर होत आहे...';
       try {
