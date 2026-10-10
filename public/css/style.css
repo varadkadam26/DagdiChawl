@@ -41,7 +41,7 @@
   --shadow-sm: 3px 3px 0px #101010;
   --shadow-md: 5px 5px 0px #101010;
   --shadow-lg: 7px 7px 0px #101010;
-  --shadow-xl: 10px 10px 0px #7F1D1D;
+  --shadow-xl: 10px 10px 0px #000000;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -460,7 +460,7 @@ body[data-lang="mr"] .brand-text h2 {
 .nav-link {
   font-size: 0.84rem;
   font-weight: 700;
-  color: #7F1D1D;
+  color: #000000;
   padding: 0.4rem 0.55rem;
   border-radius: var(--radius-sm);
   white-space: nowrap;
@@ -501,7 +501,7 @@ body[data-lang="mr"] .brand-text h2 {
   font-weight: 800 !important;
   white-space: nowrap !important;
   flex-shrink: 0 !important;
-  background-color: #7F1D1D !important;
+  background-color: #000000 !important;
   background-image: none !important;
 }
 
@@ -2140,7 +2140,7 @@ section {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--temple-maroon, #7F1D1D), #4A0000);
+  background: linear-gradient(135deg, var(--temple-maroon, #000000), #1A1A1A);
   color: var(--gold-soft, #FDE68A);
   border: 2px solid var(--royal-gold, #D4AF37);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.5);
@@ -2156,7 +2156,7 @@ section {
 .crazy-reel-nav-btn:hover {
   transform: translateY(-50%) scale(1.15);
   background: var(--royal-gold, #D4AF37);
-  color: var(--temple-maroon, #7F1D1D);
+  color: var(--temple-maroon, #000000);
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.7);
 }
 
@@ -2241,7 +2241,7 @@ section {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: linear-gradient(135deg, var(--temple-maroon, #7F1D1D), #5B0E0E);
+  background: linear-gradient(135deg, var(--temple-maroon, #000000), #222222);
   color: var(--gold-soft, #FDE68A);
   font-weight: 800;
   font-size: 0.85rem;

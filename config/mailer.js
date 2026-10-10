@@ -45,27 +45,27 @@ async function sendContactEmail({ name, email, contact, message }) {
 
   const htmlBody = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 2px solid #C0972D; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #800020, #5C0015); padding: 24px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #D95A00, #111111); padding: 24px; text-align: center;">
         <h2 style="color: #F5D98E; margin: 0; font-size: 22px;">🙏 नवीन संपर्क संदेश</h2>
         <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">New Contact Inquiry — Dagdi Chawl Chi Aai Mauli</p>
       </div>
       <div style="padding: 28px; background: #FFF9F0;">
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020; width: 140px; vertical-align: top;">नाव / Name:</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00; width: 140px; vertical-align: top;">नाव / Name:</td>
             <td style="padding: 10px 12px; color: #333;">${name}</td>
           </tr>
           <tr style="background: #FEF3E2;">
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020; vertical-align: top;">ईमेल / Email:</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00; vertical-align: top;">ईमेल / Email:</td>
             <td style="padding: 10px 12px; color: #333;">${userEmail}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020; vertical-align: top;">संदेश / Message:</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00; vertical-align: top;">संदेश / Message:</td>
             <td style="padding: 10px 12px; color: #333; line-height: 1.6;">${message.replace(/\n/g, '<br>')}</td>
           </tr>
         </table>
       </div>
-      <div style="background: #800020; padding: 14px; text-align: center;">
+      <div style="background: #D95A00; padding: 14px; text-align: center;">
         <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | </p>
       </div>
     </div>
@@ -106,36 +106,36 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
 
   const htmlBody = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 2px solid #C0972D; border-radius: 12px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #800020, #5C0015); padding: 24px; text-align: center;">
+      <div style="background: linear-gradient(135deg, #D95A00, #111111); padding: 24px; text-align: center;">
         <h2 style="color: #F5D98E; margin: 0; font-size: 22px;">🌺 देणगी पावती मंजूर करण्यात आली आहे!</h2>
         <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">Donation Approved &  Receipt — Dagdi Chawl Chi Aai Mauli</p>
       </div>
       <div style="padding: 28px; background: #FFF9F0;">
-        <p style="font-size: 16px; color: #800020; font-weight: 700; margin-top: 0;">जय गणेश! सस्नेह नमस्कार ${donation.donor_name},</p>
+        <p style="font-size: 16px; color: #D95A00; font-weight: 700; margin-top: 0;">जय गणेश! सस्नेह नमस्कार ${donation.donor_name},</p>
         <p style="color: #333; line-height: 1.6;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळाला आपण दिलेल्या <strong>₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}</strong> च्या देणगीची यशस्वी पडताळणी झाली असून आपली अधिकृत ८०जी कर सवलत पावती या ईमेलसोबत जोडलेली (Attached) आहे.</p>
         
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #FFFFFF; border: 1px solid #E8C86E; border-radius: 8px;">
           <tr>
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020; width: 140px;">पावती क्र. / Receipt No:</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00; width: 140px;">पावती क्र. / Receipt No:</td>
             <td style="padding: 10px 12px; color: #333; font-weight: 700;">${donation.receipt_no}</td>
           </tr>
           <tr style="background: #FEF3E2;">
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020;">देणगीदार / Donor:</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00;">देणगीदार / Donor:</td>
             <td style="padding: 10px 12px; color: #333;">${donation.donor_name}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020;">रक्कम / Amount:</td>
-            <td style="padding: 10px 12px; color: #800020; font-size: 18px; font-weight: 800;">₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00;">रक्कम / Amount:</td>
+            <td style="padding: 10px 12px; color: #D95A00; font-size: 18px; font-weight: 800;">₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}</td>
           </tr>
           <tr style="background: #FEF3E2;">
-            <td style="padding: 10px 12px; font-weight: 700; color: #800020;">UTR No / Ref:</td>
+            <td style="padding: 10px 12px; font-weight: 700; color: #D95A00;">UTR No / Ref:</td>
             <td style="padding: 10px 12px; color: #333; font-family: monospace;">${donation.payment_id || donation.payment_utr || 'N/A'}</td>
           </tr>
         </table>
 
         <p style="color: #555; font-size: 14px; line-height: 1.6;">बाप्पाचा आशीर्वाद आपल्या व आपल्या कुटुंबावर सदैव राहो हीच श्रींच्या चरणी प्रार्थना! 🙏</p>
       </div>
-      <div style="background: #800020; padding: 14px; text-align: center;">
+      <div style="background: #D95A00; padding: 14px; text-align: center;">
         <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | </p>
       </div>
     </div>

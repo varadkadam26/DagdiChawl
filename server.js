@@ -76,7 +76,7 @@ app.use((err, req, res, next) => {
     <div style="font-family: sans-serif; padding: 40px; text-align: center;">
       <h2> - Server Encountered an Unexpected Issue</h2>
       <p style="color: #64748b;">${err.message}</p>
-      <a href="/" style="display: inline-block; margin-top: 15px; background: #800020; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px;">Return to Home</a>
+      <a href="/" style="display: inline-block; margin-top: 15px; background: #D95A00; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px;">Return to Home</a>
     </div>
   `);
 });
