@@ -127,8 +127,9 @@ const socialWorkData = [
 
 // Committee Members Data - 2025-26
 const committeeData = [
-  { number: 1, nameMr: 'श्री. सुशांत सातविडकर', nameEn: 'Mr. Sushant Satvidkar', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/sushant_satvidkar.png', phone: '+91 95945 12999' },
-  { number: 2, nameMr: 'श्री. मिलिंद बिरजे', nameEn: 'Mr. Milind Birje', designationMr: 'खजिनदार', designationEn: 'Treasurer', image: '/images/committee/milind_birje.jpg', phone: '+91 98676 77617' }
+  { number: 1, nameMr: 'श्री. सुशांत सातविडकर', nameEn: 'Mr. Sushant Satvidkar', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/sushant_satvidkar.png', noBorder: true, customTransform: 'scale(1.15) translate(4px, 2px)', phone: '+91 95945 12999' },
+  { number: 2, nameMr: 'श्री. अनिल शिंदे', nameEn: 'Mr. Anil Shinde', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/anil_shinde.png', objectPosition: 'top center', phone: '+91 98694 61397' },
+  { number: 3, nameMr: 'श्री. मिलिंद बिरजे', nameEn: 'Mr. Milind Birje', designationMr: 'खजिनदार', designationEn: 'Treasurer', image: '/images/committee/milind_birje.jpg', noBorder: true, customTransform: 'scale(1.4)', phone: '+91 98676 77617' }
 ];
 
 module.exports = {

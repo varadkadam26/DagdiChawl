@@ -275,13 +275,13 @@
 
       <div class="committee-heading">
 
-        <h2 class="committee-name-marathi lang-mr">मंडळाचे पदाधिकारी</h2>
-        <h2 class="committee-name-english lang-en" style="color: var(--temple-maroon); font-weight: 800; font-family: var(--font-en, 'Outfit', sans-serif);">Mandal Office Bearers</h2>
+        <h2 class="committee-name-marathi lang-mr" style="color: #ffffff; text-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 24px rgba(212, 175, 55, 0.4);">मंडळाचे पदाधिकारी</h2>
+        <h2 class="committee-name-english lang-en" style="color: #ffffff; text-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 24px rgba(212, 175, 55, 0.4); font-weight: 800; font-family: var(--font-en, 'Outfit', sans-serif);">Mandal Office Bearers</h2>
         
-        <p class="committee-name-marathi lang-mr" style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0.5rem auto 0;">
+        <p class="committee-name-marathi lang-mr" style="color: #ffffff; text-shadow: 0 0 8px rgba(212, 175, 55, 0.6); font-size: 1.1rem; max-width: 600px; margin: 0.5rem auto 0;">
           सन २०२६-२७ साठी नियुक्त पदाधिकारी
         </p>
-        <p class="committee-name-english lang-en" style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0.5rem auto 0; font-family: var(--font-en, 'Outfit', sans-serif);">
+        <p class="committee-name-english lang-en" style="color: #ffffff; text-shadow: 0 0 8px rgba(212, 175, 55, 0.6); font-size: 1.1rem; max-width: 600px; margin: 0.5rem auto 0; font-family: var(--font-en, 'Outfit', sans-serif);">
           Office Bearers for the Year 2026-27
         </p>
 
@@ -309,9 +309,9 @@
 
             <!-- MEMBER ICON -->
 
-            <div class="committee-icon">
+            <div class="committee-icon" style="<%= member.noBorder ? 'border: none; background: transparent; overflow: hidden;' : 'overflow: hidden;' %>">
               <% if (member.image) { %>
-                <img src="<%= member.image %>" alt="<%= member.nameEn %>" style="width: 100%; height: 100%; object-fit: cover; object-position: <%= member.objectPosition || 'center' %>; border-radius: 50%;">
+                <img src="<%= member.image %>" alt="<%= member.nameEn %>" style="width: 100%; height: 100%; object-fit: <%= member.objectFit || 'cover' %>; object-position: <%= member.objectPosition || 'center' %>; border-radius: 50%; <%= member.customTransform ? 'transform: ' + member.customTransform + ';' : '' %>">
               <% } else { %>
                 <i class="fa-solid fa-user-tie"></i>
               <% } %>
