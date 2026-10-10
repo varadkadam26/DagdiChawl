@@ -1,0 +1,171 @@
+<style>\n/* =========================================
+   HIGHLIGHTS SECTION
+   ========================================= */
+.highlights-section {
+  background-color: #030303;
+  padding: 80px 5%;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -20px 40px rgba(3,3,3,1);
+}
+
+.highlights-header {
+  text-align: center;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.highlights-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #E8E3D9;
+  font-weight: 400;
+  margin: 0;
+}
+.header-line {
+  height: 1px;
+  width: 40px;
+  background-color: #C9A26A;
+  opacity: 0.6;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.highlight-item {
+  text-align: center;
+  position: relative;
+}
+.highlight-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(201, 162, 106, 0.4), transparent);
+}
+
+.icon-wrapper {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px auto;
+  border: 1px solid rgba(201, 162, 106, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A26A;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+.highlight-item:hover .icon-wrapper {
+  background: rgba(201, 162, 106, 0.1);
+  transform: scale(1.05);
+}
+
+.hl-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #E8E3D9;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.hl-desc {
+  font-size: 0.85rem;
+  color: rgba(232, 227, 217, 0.6);
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+</style>\n<!-- MOCKUP HIGHLIGHTS -->
+<section id="highlights" class="highlights-section">
+  <div class="highlights-header">
+    <div class="header-line left"></div>
+    <h2>
+      <span class="lang-mr">αñåαñ«αñÜαÑç αñáαñ│αñò αñ╡αÑêαñ╢αñ┐αñ╖αÑìαñƒαÑìαñ»αÑç</span>
+      <span class="lang-en">Our Highlights</span>
+    </h2>
+    <div class="header-line right"></div>
+  </div>
+
+  <div class="highlights-grid">
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-om"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">αñåαñ░αññαÑÇ αñ╡ αñ¬αÑéαñ£αñ╛</span>
+        <span class="lang-en">Aarti & Pooja</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">αñ░αÑïαñ£ αñ╕αñòαñ╛αñ│αÑÇ αÑ« αñ╡ αñ╕αñéαñºαÑìαñ»αñ╛αñòαñ╛αñ│αÑÇ αÑ« αñ«αñ╣αñ╛αñåαñ░αññαÑÇ.</span>
+        <span class="lang-en">Feel the divine blessings with traditional rituals.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-hands-holding-child"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">αñ╕αñ╛αñ«αñ╛αñ£αñ┐αñò αñòαñ╛αñ░αÑìαñ»</span>
+        <span class="lang-en">Social Work</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">αÑ½αÑª,αÑªαÑªαÑª+ αñ¡αñ╛αñ╡αñ┐αñòαñ╛αñéαñ¿αñ╛ αñ«αñ╣αñ╛αñ¬αÑìαñ░αñ╕αñ╛αñª αñåαñúαñ┐ αñ«αñªαññ.</span>
+        <span class="lang-en">Annadan Mahaprasad for 50,000+ devotees and social aid.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-calendar-days"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">αñòαÑìαñ╖αñúαñÜαñ┐αññαÑìαñ░αÑç</span>
+        <span class="lang-en">Events</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">αñÉαññαñ┐αñ╣αñ╛αñ╕αñ┐αñò αñ╕αÑüαñ╡αñ░αÑìαñú αñòαÑìαñ╖αñú αñåαñúαñ┐ αñªαñ╢αñòαñ╛αññαÑÇαñ▓ αñ¬αÑìαñ░αñ╡αñ╛αñ╕.</span>
+        <span class="lang-en">Stay updated with our latest programs.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-image"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">αñùαÑàαñ▓αñ░αÑÇ</span>
+        <span class="lang-en">Gallery</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">αñåαñ«αñÜαÑìαñ»αñ╛ αñëαññαÑìαñ╕αñ╡ αñåαñúαñ┐ αñ╕αñ£αñ╛αñ╡αñƒαÑÇαñÜαÑç αñ½αÑïαñƒαÑï αñ¬αñ╣αñ╛.</span>
+        <span class="lang-en">Relive the moments of celebration.</span>
+      </div>
+    </div>
+
+    <div class="highlight-item">
+      <div class="icon-wrapper">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <div class="hl-title">
+        <span class="lang-mr">αñªαÑçαñúαñùαÑÇ</span>
+        <span class="lang-en">Support Us</span>
+      </div>
+      <div class="hl-desc">
+        <span class="lang-mr">αÑ«αÑªG αñòαñ░ αñ╕αñ╡αñ▓αññ αñªαÑçαñúαñùαÑÇ αñëαñ¬αñ▓αñ¼αÑìαñº αñåαñ╣αÑç.</span>
+        <span class="lang-en">Be a part of our journey. 80G Tax Exempt Donations available.</span>
+      </div>
+    </div>
+  </div>
+</section>
