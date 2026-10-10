@@ -6,29 +6,29 @@
    ========================================================================== */
 
 :root {
-  --primary-saffron: #D97706;
-  --saffron-dark: #B45309;
-  --saffron-light: #FEF3C7;
+  --primary-saffron: #D6AD62;
+  --saffron-dark: #B8860B;
+  --saffron-light: #422315;
 
-  --temple-maroon: #7F1D1D;
-  --maroon-dark: #450A0A;
-  --maroon-soft: #991B1B;
+  --temple-maroon: #28140C;
+  --maroon-dark: #100A07;
+  --maroon-soft: #422315;
 
-  --royal-gold: #D4AF37;
+  --royal-gold: #D6AD62;
   --gold-dark: #B8860B;
   --gold-soft: #FEF08A;
   --copper-accent: #B87333;
 
-  --bg-ivory: #FFF8E7;
-  --bg-cream: #FAF5EF;
-  --bg-white: #FFFFFF;
-  --bg-dark: #1B1B1B;
-  --bg-charcoal: #121212;
+  --bg-ivory: #100A07;
+  --bg-cream: #050403;
+  --bg-white: #050403;
+  --bg-dark: #100A07;
+  --bg-charcoal: #050403;
 
-  --text-main: #1B1B1B;
-  --text-muted: #4B5563;
+  --text-main: #F6EBDD;
+  --text-muted: #BDB0A0;
   --text-light: #6B7280;
-  --text-inverse: #FFF8E7;
+  --text-inverse: #050403;
 
   --border-gold: rgba(212, 175, 55, 0.3);
   --border-subtle: #E5E7EB;
