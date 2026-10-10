@@ -6,7 +6,7 @@
    ========================================================================== */
 
 :root {
-  --primary-saffron: #D6AD62;
+  --primary-saffron: #CBA135;
   --saffron-dark: #B8860B;
   --saffron-light: #422315;
 
@@ -14,7 +14,7 @@
   --maroon-dark: #100A07;
   --maroon-soft: #422315;
 
-  --royal-gold: #D6AD62;
+  --royal-gold: #CBA135;
   --gold-dark: #B8860B;
   --gold-soft: #FEF08A;
   --copper-accent: #B87333;
@@ -3139,4 +3139,24 @@ section {
   background-color: #D4AF37 !important;
   box-shadow: 0 0 8px rgba(212, 175, 55, 0.6) !important;
   border-color: #D4AF37 !important;
+}
+.rich-gold-text, 
+.text-saffron,
+.text-gold,
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.nm-logo-subtitle {
+    text-shadow: 0 0 8px rgba(203, 161, 53, 0.3), 0 0 15px rgba(203, 161, 53, 0.15);
+}
+
+
+/* USER REQUEST: EVERY TEXT MUST BE BALOO 2 BOLD */
+body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, input, textarea, strong, em, b, i:not([class*='fa']) {
+    font-family: 'Baloo 2', sans-serif !important;
+    font-weight: 700 !important;
+}
+:root {
+    --font-en-head: 'Baloo 2', sans-serif !important;
+    --font-mr-head: 'Baloo 2', sans-serif !important;
+    --font-body: 'Baloo 2', sans-serif !important;
 }
