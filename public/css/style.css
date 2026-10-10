@@ -1041,7 +1041,7 @@ section {
    FOOTER & GOOGLE MAPS
    ========================================================================== */
 .site-footer {
-  background: linear-gradient(to bottom, #160707, #3B1515, #651B1B);
+  background: linear-gradient(125deg, #422315 0%, #28140C 38%, #100A07 72%, #050403 100%);
   color: var(--bg-ivory);
   padding: 4.5rem 0 2rem;
   border-top: 3px solid var(--royal-gold);
