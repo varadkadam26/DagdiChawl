@@ -327,7 +327,7 @@
 
   .nm-nav-links {
     display: flex;
-    gap: 24px;
+    gap: 18px;
   }
 
   .nm-nav-links a {
@@ -902,6 +902,12 @@
       width: 100% !important;
     }
   }
+  
+  @media (max-width: 1200px) {
+    .nm-logo-text {
+      display: none !important;
+    }
+  }
 </style>
 
 <!-- HD Animated Header -->
@@ -933,7 +939,7 @@
     </div>
   </a>
 
-  <div style="display: flex; align-items: center; gap: 12px;">
+  <div style="display: flex; align-items: center; gap: 24px;">
     <!-- Hamburger Menu Button (Mobile Only) -->
     <div class="nm-hamburger" onclick="document.querySelector('.nm-nav-links').classList.toggle('active')">
       <span></span>
