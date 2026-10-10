@@ -7,8 +7,8 @@ if os.path.exists(file_path):
         content = f.read()
 
     # Replacing in i18n
-    content = content.replace("mcrofficial1973@gmail.com\\nmarketing.dagdichawlcharaja@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
-    content = content.replace("mcrofficial1973@gmail.com\\\\nmarketing.dagdichawlcharaja@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("mcrofficial1973@gmail.com\\nmarketing.dagdichawlichiaaimauli@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("mcrofficial1973@gmail.com\\\\nmarketing.dagdichawlichiaaimauli@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
     
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)

@@ -6,8 +6,8 @@ module.exports = {
   // Render Official T-Shirt Store Page
   renderTshirtPage(req, res) {
     res.render('tshirt', {
-      title: 'Official Mandal T-Shirt Booking | Dagdi Chawl Cha Raja',
-      metaDescription: 'Book official Dagdi Chawl Cha Raja Ganeshotsav T-shirts online with instant receipt generation. Show your devotion and support mandal cultural activities.',
+      title: 'Official Mandal T-Shirt Booking | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'Book official Dagdi Chawl Chi Aai Mauli Ganeshotsav T-shirts online with instant receipt generation. Show your devotion and support mandal cultural activities.',
       activeTab: 'tshirt'
     });
   },
@@ -108,7 +108,7 @@ module.exports = {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>पावती पडताळणी प्रलंबित | Dagdi Chawl Cha Raja</title>
+          <title>पावती पडताळणी प्रलंबित | Dagdi Chawl Chi Aai Mauli</title>
           <link href="https://fonts.googleapis.com/css2?family=Yashomudra&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
           <style>
             body { font-family: 'Inter', sans-serif; background: #FFF8F0; color: #1E293B; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1.5rem; text-align: center; }

@@ -20,7 +20,7 @@ const mockStore = {
     last_updated: new Date()
   },
   logs: [
-    { id: 1, type: 'SYSTEM', message: 'Dagdi Chawl Cha Raja Portal Initialized', timestamp: new Date() }
+    { id: 1, type: 'SYSTEM', message: 'Dagdi Chawl Chi Aai Mauli Portal Initialized', timestamp: new Date() }
   ]
 };
 

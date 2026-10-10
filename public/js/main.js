@@ -1,6 +1,6 @@
 
 /**
- * Dagdi Chawl Cha Raja - Main Frontend Interactions
+ * Dagdi Chawl Chi Aai Mauli - Main Frontend Interactions
  * Libraries: GSAP, ScrollTrigger, Swiper.js
  * Official Mandal: Shree Bal Gopal Ganeshutsav Mandal
  */
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const imgSrc = item.getAttribute('data-lightbox-src') || item.src;
       const currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem('mcc_lang')) || 'mr';
-      const title = item.getAttribute(currentLang === 'mr' ? 'data-lightbox-title-mr' : 'data-lightbox-title-en') || item.getAttribute('data-lightbox-title') || 'Dagdi Chawl Cha Raja';
+      const title = item.getAttribute(currentLang === 'mr' ? 'data-lightbox-title-mr' : 'data-lightbox-title-en') || item.getAttribute('data-lightbox-title') || 'Dagdi Chawl Chi Aai Mauli';
       const caption = item.getAttribute(currentLang === 'mr' ? 'data-lightbox-caption-mr' : 'data-lightbox-caption-en') || item.getAttribute('data-lightbox-caption') || '';
 
       if (lightboxModal && lightboxImg) {
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '2020': {yearTag:'Year 2020', subhead:'Health & Seva', title:'Health Service & Community Support', desc:'A service-focused milestone highlighting health support and community care.', image:'/images/dagdi chawl_ganpati_01.jpg', feat1:'Service: Health Support', feat2:'Community: Seva', feat3:'Care: Devotee Assistance'},
     '2024': {yearTag:'Year 2024', subhead:'Golden Throne Adornment', title:'Golden Throne & Radiant Darshan', desc:'A grand darshan presentation featuring ornate adornment and a festive setting.', image:'/images/dagdi chawl_ganpati_03.jpg', feat1:'Throne: Ornate Craft', feat2:'Attire: Festive Adornment', feat3:'Darshan: Devotional Experience'},
     '2025': {yearTag:'Year 2025', subhead:'Royal Woodcraft & Digital Darshan', title:'Carved Throne & Digital Darshan Portal', desc:'A modern milestone combining traditional woodcraft aesthetics with digital darshan access.', image:'/images/dagdi chawl_ganpati_04.jpg', feat1:'Craft: Traditional Woodwork', feat2:'Digital: Live Darshan', feat3:'Seva: Online Support'},
-    '2026': {yearTag:'Year 2026', subhead:'Golden Radiance & Royal Darshan', title:'Dagdi Chawl Cha Raja 2026 - Divine Golden Darshan', desc:'The majestic, divine, and enchanting golden idol form of Dagdi Chawl Cha Raja for Ganeshotsav 2026.', image:'/images/dagdi chawl_ganpati_2026.png', feat1:'Year: 2026', feat2:'Darshan: Royal Divine Radiance', feat3:'Location: Dagdi Chawl'}
+    '2026': {yearTag:'Year 2026', subhead:'Golden Radiance & Royal Darshan', title:'Dagdi Chawl Chi Aai Mauli 2026 - Divine Golden Darshan', desc:'The majestic, divine, and enchanting golden idol form of Dagdi Chawl Chi Aai Mauli for Ganeshotsav 2026.', image:'/images/dagdi chawl_ganpati_2026.png', feat1:'Year: 2026', feat2:'Darshan: Royal Divine Radiance', feat3:'Location: Dagdi Chawl'}
   };
 
   function setActiveTimelineYear(year) {

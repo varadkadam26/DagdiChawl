@@ -1,5 +1,5 @@
 /**
- * Dagdi Chawl Cha Raja - Internationalization (i18n) System
+ * Dagdi Chawl Chi Aai Mauli - Internationalization (i18n) System
  * Mandal: Shree Bal Gopal Ganeshutsav Mandal
  * Languages: Marathi (mr), English (en)
  * 100% Strict Zero-Leakage Translation Engine
@@ -11,7 +11,7 @@ const translations = {
     est_label: "Est. Year: 1973",
     reg_label: "Reg No: E-3892 Mumbai",
     mandal_full_title: "Shree Bal Gopal Ganeshutsav Mandal",
-    mandal_name_header: "Dagdi Chawl Cha Raja",
+    mandal_name_header: "Dagdi Chawl Chi Aai Mauli",
     mandal_sub_header: "Shree Bal Gopal Ganeshutsav Mandal",
     nav_mandal_title: "BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL",
 
@@ -30,7 +30,7 @@ const translations = {
 
     // Hero & Flip Clock
     hero_tag: "ESTD 1973",
-    hero_title: "Dagdi Chawl Cha Raja",
+    hero_title: "Dagdi Chawl Chi Aai Mauli",
     hero_sub_tag: "Warm Welcome - We cordially welcome you all.",
     hero_subtitle: "Shree Bal Gopal Ganeshutsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
     btn_hero_live: "Watch Live Darshan",
@@ -44,13 +44,13 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Dagdi Chawl Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
+    ticker_text: "🎉 Dagdi Chawl Chi Aai Mauli Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
     pres_title: "Warm Welcome & Divine Blessings",
-    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Cha Raja, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
-    pres_quote: '"Faith, service, and social commitment are the core pillars of Dagdi Chawl Cha Raja Mandal."',
+    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Chi Aai Mauli, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
+    pres_quote: '"Faith, service, and social commitment are the core pillars of Dagdi Chawl Chi Aai Mauli Mandal."',
     pres_name: "Mr. Sandeep Sawal",
     pres_role: "President, Shree Bal Gopal Ganeshutsav Mandal",
     stat_year_label: "Founding Year",
@@ -68,7 +68,7 @@ const translations = {
 
     // Hero & Flip Clock
     hero_tag: "ESTD 1973",
-    hero_title: "Dagdi Chawl Cha Raja",
+    hero_title: "Dagdi Chawl Chi Aai Mauli",
     hero_sub_tag: "Warm Welcome - We cordially welcome you all.",
     hero_subtitle: "Shree Bal Gopal Ganeshutsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
     btn_hero_live: "Watch Live Darshan",
@@ -82,13 +82,13 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Dagdi Chawl Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
+    ticker_text: "🎉 Dagdi Chawl Chi Aai Mauli Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
     pres_title: "Warm Welcome & Divine Blessings",
-    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Cha Raja, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
-    pres_quote: '"Faith, service, and social commitment are the core pillars of Dagdi Chawl Cha Raja Mandal."',
+    pres_desc: "Welcome to the official digital temple portal of Dagdi Chawl Chi Aai Mauli, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
+    pres_quote: '"Faith, service, and social commitment are the core pillars of Dagdi Chawl Chi Aai Mauli Mandal."',
     pres_name: "Mr. Sandeep Sawal",
     pres_role: "President, Shree Bal Gopal Ganeshutsav Mandal",
     stat_year_label: "Founding Year",
@@ -107,7 +107,7 @@ const translations = {
     // Legacy & Craftsmanship
     craft_badge: "Royal Attire & Sculpture Craft",
     craft_title: "24-Feet Grandeur & Golden Decoration",
-    craft_desc1: "Standing 24 feet tall, the divine smile and radiant eyes of Dagdi Chawl Cha Raja captivate millions of visiting devotees.",
+    craft_desc1: "Standing 24 feet tall, the divine smile and radiant eyes of Dagdi Chawl Chi Aai Mauli captivate millions of visiting devotees.",
     craft_desc2: "Seated on carved wooden and golden thrones, the idol form is crafted according to unique Maharashtrian cultural themes every single year.",
     craft_stat1_num: "24 Feet",
     craft_stat1_label: "Grand Idol Height",
@@ -118,14 +118,14 @@ const translations = {
     live_badge: "Live Stream",
     live_title: "Ganeshotsav Aarti & Live Stream",
     live_sub: "Watch 24/7 Live Stream and Daily Morning (8:00 AM) & Evening (8:00 PM) Maha Aarti directly from the royal mandap.",
-    live_box_title: "Dagdi Chawl Cha Raja - 24/7 Live Stream",
+    live_box_title: "Dagdi Chawl Chi Aai Mauli - 24/7 Live Stream",
     live_box_sub: "Official YouTube Live Channel Stream",
     btn_watch_youtube: "Watch on YouTube",
 
     // Glimpses 3D Reel Section
     reel_tag: "HISTORIC GOLDEN MOMENTS",
     reel_title: "Glimpses Over The Years",
-    reel_sub: "Glorious forms, royal thrones, and divine arches of Dagdi Chawl Cha Raja across the years.",
+    reel_sub: "Glorious forms, royal thrones, and divine arches of Dagdi Chawl Chi Aai Mauli across the years.",
     reel_drag_hint: "Drag or Scroll 3D Cards →",
     btn_view_decade_all: "View All Retrospective",
 
@@ -143,7 +143,7 @@ const translations = {
 
     // Donation Section
     donate_section_tag: "SACRED CONTRIBUTION",
-    donate_section_title: "Support Dagdi Chawl Cha Raja Seva",
+    donate_section_title: "Support Dagdi Chawl Chi Aai Mauli Seva",
     donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section 80G.",
     btn_donate_80g: "Donate Online (With 80G Receipt)",
 
@@ -194,7 +194,7 @@ const translations = {
 
     // Donate CTA section
     donate_section_tag: "SACRED CONTRIBUTION",
-    donate_section_title: "Support Dagdi Chawl Cha Raja Seva",
+    donate_section_title: "Support Dagdi Chawl Chi Aai Mauli Seva",
     donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section 80G.",
 
     // Location & Contact
@@ -222,11 +222,11 @@ const translations = {
 
     // About Page
     about_badge: "Historic Heritage & Legacy",
-    about_title: "About Us - Dagdi Chawl Cha Raja",
+    about_title: "About Us - Dagdi Chawl Chi Aai Mauli",
     about_sub: "Shree Bal Gopal Ganeshutsav Mandal (Estd. 1973)",
     about_history_title: "The Glorious Legacy of the Mandal",
     about_history_p1: "Shree Bal Gopal Ganeshutsav Mandal was established in 1973 in the historic premises at Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007. Since its inception, local residents, dedicated youth volunteers, and senior mentors have joined hands to build and sustain a grand public Ganeshotsav tradition.",
-    about_history_p2: "Over the decades, 'Dagdi Chawl Cha Raja' has become an iconic divine symbol cherished by millions of devotees. The idol's radiant majestic presence, the intricately carved wooden throne, and the unique cultural mandap decorations remain the true hallmarks of our Mandal.",
+    about_history_p2: "Over the decades, 'Dagdi Chawl Chi Aai Mauli' has become an iconic divine symbol cherished by millions of devotees. The idol's radiant majestic presence, the intricately carved wooden throne, and the unique cultural mandap decorations remain the true hallmarks of our Mandal.",
     about_vision_title: "Our Vision",
     about_vision_desc: "To elevate Maharashtra's rich Ganeshotsav tradition to global heights while fostering social unity and brotherhood through devotion.",
     about_mission_title: "Our Mission",
@@ -236,7 +236,7 @@ const translations = {
     // Donate Page Form & Modal
     badge_80g: "80G Tax Exempt Eligible",
     donate_title: "Online Donation Portal",
-    donate_sub: "Support social initiatives, Annadan Mahaprasad, and mandap management of Dagdi Chawl Cha Raja.",
+    donate_sub: "Support social initiatives, Annadan Mahaprasad, and mandap management of Dagdi Chawl Chi Aai Mauli.",
     donate_form_title: "Donation Form",
     lbl_select_amount: "Select Donation Amount (₹) *",
     lbl_custom_amount: "Enter Donation Amount (₹) *",
@@ -259,7 +259,7 @@ const translations = {
     branch_lbl: "Branch:",
     bank_transfer_note: "Please contact us for your receipt if you make a direct bank transfer.",
     tshirt_badge: "Official Merchandise",
-    tshirt_page_title: "Dagdi Chawl Cha Raja - T-Shirt Booking",
+    tshirt_page_title: "Dagdi Chawl Chi Aai Mauli - T-Shirt Booking",
     tshirt_page_sub: "Official cotton polo t-shirt with royal emblem print of Shree Bal Gopal Ganeshutsav Mandal.",
     tshirt_product_title: "Official Collar Polo T-Shirt",
     tshirt_product_sub: "Half-collar polo T-shirt with royal emblem and official logo.",

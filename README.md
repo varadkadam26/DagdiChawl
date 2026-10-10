@@ -1,8 +1,8 @@
-# 🙏 Dagdi Chawl Cha Raja — Official Website & Backend
+# 🙏 Dagdi Chawl Chi Aai Mauli — Official Website & Backend
 
 > **श्री बाल गोपाल गणेशोत्सव मंडळ | Est. 1973 | Mumbai, Maharashtra**
 
-The official website and backend management system for **Dagdi Chawl Cha Raja** — one of Mumbai's most iconic Ganpati mandals. Built with Node.js, Express, EJS, and integrated with Razorpay payments, Google Sheets real-time sync, Gmail SMTP, Twilio SMS, and PDFKit receipt generation.
+The official website and backend management system for **Dagdi Chawl Chi Aai Mauli** — one of Mumbai's most iconic Ganpati mandals. Built with Node.js, Express, EJS, and integrated with Razorpay payments, Google Sheets real-time sync, Gmail SMTP, Twilio SMS, and PDFKit receipt generation.
 
 ---
 
@@ -256,9 +256,9 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 | 📧 **Email** | byculladagadichawlnavratri1973@gmail.com |
 | 📧 **Marketing** | byculladagadichawlnavratri1973@gmail.com |
 | 📞 **Helpline** | +91 95945 12999 |
-| 📺 **YouTube** | [@DagdiChawlChaRaja-e2z](https://www.youtube.com/@DagdiChawlChaRaja-e2z) |
-| 📸 **Instagram** | [@dagdichawl_cha_raja](https://www.instagram.com/dagdichawl_cha_raja/) |
-| 📘 **Facebook** | [dagdichawlcharaja](https://www.facebook.com/dagdichawlcharaja) |
+| 📺 **YouTube** | [#dagdichawl](https://www.youtube.com/hashtag/dagdichawl) |
+| 📸 **Instagram** | [@dagdichawlichiaaimauli](https://www.instagram.com/dagdichawlichiaaimauli/) |
+| 📘 **Facebook** | [@dagdichawlichiaaimauli](https://www.facebook.com/dagdichawlichiaaimauli) |
 
 ---
 

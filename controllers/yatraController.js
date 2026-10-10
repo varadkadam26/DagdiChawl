@@ -1,6 +1,6 @@
 const db = require('../config/db');
 
-// Ganeshotsav Event Schedule Data for Dagdi Chawl Cha Raja
+// Ganeshotsav Event Schedule Data for Dagdi Chawl Chi Aai Mauli
 const SCHEDULE_LOCATION_EN = 'Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007';
 const SCHEDULE_LOCATION_MR = 'गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७';
 
@@ -160,8 +160,8 @@ module.exports = {
   renderHomePage(req, res) {
     const status = db.getYatraStatus();
     res.render('index', {
-      title: 'Dagdi Chawl Cha Raja | Shree Bal Gopal Ganeshutsav Mandal, Mumbai',
-      metaDescription: 'Official Portal of Dagdi Chawl Cha Raja (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical gallery, social work & 80G tax exempt donations.',
+      title: 'Dagdi Chawl Chi Aai Mauli | Shree Bal Gopal Ganeshutsav Mandal, Mumbai',
+      metaDescription: 'Official Portal of Dagdi Chawl Chi Aai Mauli (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical gallery, social work & 80G tax exempt donations.',
       activeTab: 'home',
       yatraStatus: status,
       scheduleData: scheduleData.slice(0, 4),
@@ -173,7 +173,7 @@ module.exports = {
   // Render About Us Page
   renderAboutPage(req, res) {
     res.render('about', {
-      title: 'About Us — History & Legacy | Dagdi Chawl Cha Raja',
+      title: 'About Us — History & Legacy | Dagdi Chawl Chi Aai Mauli',
       metaDescription: 'Explore the 50+ year legacy of Shree Bal Gopal Ganeshutsav Mandal (Est. 1973) at Ganesh Chowk, Bhaji Galli, Grant Road (W), Mumbai. Discover our history, vision, and 365-day social work.',
       activeTab: 'about'
     });
@@ -183,8 +183,8 @@ module.exports = {
   renderSchedulePage(req, res) {
     const status = db.getYatraStatus();
     res.render('schedule', {
-      title: 'Ganeshotsav 2026 Schedule & Maha Aarti Timings | Dagdi Chawl Cha Raja',
-      metaDescription: 'Official 12-day Ganeshotsav 2026 festival schedule for Dagdi Chawl Cha Raja. Morning & Evening Maha Aarti timings, Annadan Mahaprasad, cultural events, Hom Havan & Visarjan procession.',
+      title: 'Ganeshotsav 2026 Schedule & Maha Aarti Timings | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'Official 12-day Ganeshotsav 2026 festival schedule for Dagdi Chawl Chi Aai Mauli. Morning & Evening Maha Aarti timings, Annadan Mahaprasad, cultural events, Hom Havan & Visarjan procession.',
       activeTab: 'schedule',
       yatraStatus: status,
       scheduleData,
@@ -195,8 +195,8 @@ module.exports = {
   // Render Glimpses Page
   renderGlimpsesPage(req, res) {
     res.render('glimpses', {
-      title: 'Historical Photo Gallery & Idol Glimpses | Dagdi Chawl Cha Raja',
-      metaDescription: 'Browse the 20+ year historical photo gallery and idol themes of Dagdi Chawl Cha Raja from 1990 to 2025 by Shree Bal Gopal Ganeshutsav Mandal, Mumbai.',
+      title: 'Historical Photo Gallery & Idol Glimpses | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'Browse the 20+ year historical photo gallery and idol themes of Dagdi Chawl Chi Aai Mauli from 1990 to 2025 by Shree Bal Gopal Ganeshutsav Mandal, Mumbai.',
       activeTab: 'glimpses',
       glimpsesData
     });
@@ -205,8 +205,8 @@ module.exports = {
   // Render Decade Gallery (Renamed from Photo Booth)
   renderPhotoBoothPage(req, res) {
     res.render('photo-booth', {
-      title: 'Decade Glimpses Archive (2015-2025) | Dagdi Chawl Cha Raja',
-      metaDescription: 'View historical retrospective photos and iconic themes of Dagdi Chawl Cha Raja over the past decade (2015-2025).',
+      title: 'Decade Glimpses Archive (2015-2025) | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'View historical retrospective photos and iconic themes of Dagdi Chawl Chi Aai Mauli over the past decade (2015-2025).',
       activeTab: 'photobooth',
       glimpsesData
     });
@@ -215,7 +215,7 @@ module.exports = {
   // Render Social Work Page
   renderSocialWorkPage(req, res) {
     res.render('social-work', {
-      title: 'Social Initiatives & Community Service | Dagdi Chawl Cha Raja',
+      title: 'Social Initiatives & Community Service | Dagdi Chawl Chi Aai Mauli',
       metaDescription: 'Discover community welfare programs by Shree Bal Gopal Ganeshutsav Mandal including Tulsi Vatap, student school kits, 2017 flood relief, and food security drives in Mumbai.',
       activeTab: 'socialwork',
       socialWorkData
@@ -224,7 +224,7 @@ module.exports = {
 
   renderCommitteePage(req, res) {
     res.render('committee', {
-      title: 'Executive Committee & Trustees | Dagdi Chawl Cha Raja',
+      title: 'Executive Committee & Trustees | Dagdi Chawl Chi Aai Mauli',
       metaDescription: 'Meet the executive committee members, office bearers, advisory board, and karyakartas of Shree Bal Gopal Ganeshutsav Mandal, Grant Road, Mumbai.',
       activeTab: 'committee',
       committeeData

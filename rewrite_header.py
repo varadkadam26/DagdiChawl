@@ -24,7 +24,7 @@ if match:
     <div class="nm-social-icons" style="display: flex; gap: 15px;">
       <a href="https://www.facebook.com/BycullaDagadiChawl/" target="_blank" style="color: #F4EDE0; font-size: 16px; transition: color 0.3s;"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/byculla_dagadichawl_navratri/" target="_blank" style="color: #F4EDE0; font-size: 16px; transition: color 0.3s;"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@DagdiChawlChaRaja-e2z" target="_blank" style="color: #F4EDE0; font-size: 16px; transition: color 0.3s;"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.youtube.com/hashtag/dagdichawl" target="_blank" style="color: #F4EDE0; font-size: 16px; transition: color 0.3s;"><i class="fa-brands fa-youtube"></i></a>
     </div>
 
     <!-- Language Toggle -->

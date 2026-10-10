@@ -10,8 +10,8 @@ content = content.replace(
     '''<a href="https://www.instagram.com/byculla_dagadichawl_navratri/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-instagram"></i></a>'''
 )
 content = content.replace(
-    '''<a href="https://www.youtube.com/@DagdiChawlChaRaja-e2z" target="_blank" style="color: #F4EDE0; font-size: 16px; transition: color 0.3s;"><i class="fa-brands fa-youtube"></i></a>''',
-    '''<a href="https://www.youtube.com/@DagdiChawlChaRaja-e2z" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-youtube"></i></a>'''
+    '''<a href="https://www.youtube.com/hashtag/dagdichawl" target="_blank" style="color: #F4EDE0; font-size: 16px; transition: color 0.3s;"><i class="fa-brands fa-youtube"></i></a>''',
+    '''<a href="https://www.youtube.com/hashtag/dagdichawl" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-youtube"></i></a>'''
 )
 
 # 2. Update Toggle Button colors

@@ -6,23 +6,23 @@
   <meta name="theme-color" content="#7F1D1D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Dagdi Chawl Cha Raja">
-  <title><%= typeof title !== 'undefined' ? title : 'Dagdi Chawl Cha Raja | Shree Bal Gopal Ganeshutsav Mandal, Mumbai' %></title>
+  <meta name="apple-mobile-web-app-title" content="Dagdi Chawl Chi Aai Mauli">
+  <title><%= typeof title !== 'undefined' ? title : 'Dagdi Chawl Chi Aai Mauli | Shree Bal Gopal Ganeshutsav Mandal, Mumbai' %></title>
   <!-- Google Search Console Ownership Verification -->
   <meta name="google-site-verification" content="-La0Qcl3mNPWA_VzETqJiTZj5LkxDA9CygyqMylTeuY">
   <meta name="google-site-verification" content="660I70yKDwuyHiRbH-kyytKeHowTLgUQtc67gmOonAE">
   
   <%
-    var defaultDesc = 'Official Portal of Dagdi Chawl Cha Raja (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical photo gallery, social work & 80G tax exempt donations.';
+    var defaultDesc = 'Official Portal of Dagdi Chawl Chi Aai Mauli (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical photo gallery, social work & 80G tax exempt donations.';
     var pageDesc = typeof metaDescription !== 'undefined' ? metaDescription : defaultDesc;
     var currentTabName = typeof activeTab !== 'undefined' ? activeTab : 'home';
     var currentPath = currentTabName !== 'home' 
       ? (currentTabName === 'socialwork' ? '/social-work' : currentTabName === 'photobooth' ? '/glimpses' : '/' + currentTabName) 
       : '';
-    var canonicalUrl = 'https://dagdichawlcharaja.in' + currentPath;
+    var canonicalUrl = 'https://dagdichawlichiaaimauli.in' + currentPath;
 
     var breadcrumbs = [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dagdichawlcharaja.in/" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dagdichawlichiaaimauli.in/" }
     ];
     if (currentTabName !== 'home') {
       var tabLabelMap = {
@@ -49,17 +49,17 @@
   <meta name="description" content="<%= pageDesc %>">
   <!-- Canonical & Open Graph Meta Tags -->
   <link rel="canonical" href="<%= canonicalUrl %>">
-  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Dagdi Chawl Cha Raja | Shree Bal Gopal Ganeshutsav Mandal' %>">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Dagdi Chawl Chi Aai Mauli | Shree Bal Gopal Ganeshutsav Mandal' %>">
   <meta property="og:description" content="<%= pageDesc %>">
-  <meta property="og:image" content="https://dagdichawlcharaja.in/images/dagdi chawl_ganpati_01.jpg">
+  <meta property="og:image" content="https://dagdichawlichiaaimauli.in/images/dagdi chawl_ganpati_01.jpg">
   <meta property="og:url" content="<%= canonicalUrl %>">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Dagdi Chawl Cha Raja">
+  <meta property="og:site_name" content="Dagdi Chawl Chi Aai Mauli">
   <meta property="og:locale" content="<%= typeof lang !== 'undefined' && lang === 'mr' ? 'mr_IN' : 'en_US' %>">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Dagdi Chawl Cha Raja | Shree Bal Gopal Ganeshutsav Mandal' %>">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Dagdi Chawl Chi Aai Mauli | Shree Bal Gopal Ganeshutsav Mandal' %>">
   <meta name="twitter:description" content="<%= pageDesc %>">
-  <meta name="twitter:image" content="https://dagdichawlcharaja.in/images/dagdi chawl_ganpati_01.jpg">
+  <meta name="twitter:image" content="https://dagdichawlichiaaimauli.in/images/dagdi chawl_ganpati_01.jpg">
 
   <!-- LCP Image Preload for Instant First Contentful Render -->
   <link rel="preload" as="image" href="/images/dagdi chawl_ganpati_new1.webp" type="image/webp" fetchpriority="high">
@@ -71,18 +71,18 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://dagdichawlcharaja.in/#website",
-        "url": "https://dagdichawlcharaja.in/",
-        "name": "Dagdi Chawl Cha Raja Official Website",
-        "description": "Official Portal of Dagdi Chawl Cha Raja - Shree Bal Gopal Ganeshutsav Mandal"
+        "@id": "https://dagdichawlichiaaimauli.in/#website",
+        "url": "https://dagdichawlichiaaimauli.in/",
+        "name": "Dagdi Chawl Chi Aai Mauli Official Website",
+        "description": "Official Portal of Dagdi Chawl Chi Aai Mauli - Shree Bal Gopal Ganeshutsav Mandal"
       },
       {
         "@type": "Organization",
-        "@id": "https://dagdichawlcharaja.in/#organization",
+        "@id": "https://dagdichawlichiaaimauli.in/#organization",
         "name": "Shree Bal Gopal Ganeshutsav Mandal",
-        "alternateName": "Dagdi Chawl Cha Raja",
-        "url": "https://dagdichawlcharaja.in/",
-        "logo": "https://dagdichawlcharaja.in/images/logo.png",
+        "alternateName": "Dagdi Chawl Chi Aai Mauli",
+        "url": "https://dagdichawlichiaaimauli.in/",
+        "logo": "https://dagdichawlichiaaimauli.in/images/logo.png",
         "foundingDate": "1973",
         "identifier": "Reg. No. F-11518",
         "email": "byculladagadichawlnavratri1973@gmail.com",
@@ -96,18 +96,18 @@
           "addressCountry": "IN"
         },
         "sameAs": [
-          "https://www.youtube.com/@DagdiChawlChaRaja-e2z",
-          "https://www.facebook.com/dagdichawlcharaja",
-          "https://www.instagram.com/dagdichawl_cha_raja/"
+          "https://www.youtube.com/hashtag/dagdichawl",
+          "https://www.facebook.com/dagdichawlichiaaimauli",
+          "https://www.instagram.com/dagdichawlichiaaimauli/"
         ]
       },
       {
         "@type": "HinduTemple",
-        "@id": "https://dagdichawlcharaja.in/#temple",
-        "name": "Dagdi Chawl Cha Raja Mandap",
+        "@id": "https://dagdichawlichiaaimauli.in/#temple",
+        "name": "Dagdi Chawl Chi Aai Mauli Mandap",
         "alternateName": "Shree Bal Gopal Ganeshutsav Mandal",
-        "url": "https://dagdichawlcharaja.in/",
-        "image": "https://dagdichawlcharaja.in/images/dagdi chawl_ganpati_01.jpg",
+        "url": "https://dagdichawlichiaaimauli.in/",
+        "image": "https://dagdichawlichiaaimauli.in/images/dagdi chawl_ganpati_01.jpg",
         "telephone": "+919594512999",
         "address": {
           "@type": "PostalAddress",
@@ -126,8 +126,8 @@
       },
       {
         "@type": "Event",
-        "@id": "https://dagdichawlcharaja.in/#event-2026",
-        "name": "Dagdi Chawl Cha Raja Ganeshotsav Festival 2026",
+        "@id": "https://dagdichawlichiaaimauli.in/#event-2026",
+        "name": "Dagdi Chawl Chi Aai Mauli Ganeshotsav Festival 2026",
         "description": "Grand 12-day Ganeshotsav festival featuring daily Maha Aarti, 50,000+ Annadan Mahaprasad, cultural programs, and visarjan procession.",
         "startDate": "2026-09-14T08:00:00+05:30",
         "endDate": "2026-09-25T22:00:00+05:30",
@@ -147,7 +147,7 @@
         "organizer": {
           "@type": "Organization",
           "name": "Shree Bal Gopal Ganeshutsav Mandal",
-          "url": "https://dagdichawlcharaja.in/"
+          "url": "https://dagdichawlichiaaimauli.in/"
         }
       },
       {
@@ -186,7 +186,7 @@
     })();
   </script>
   <script src="/js/i18n.min.js?v=20260902_nocountdown" defer></script>
-  <!-- Dagdi Chawl Cha Raja Stylesheet -->
+  <!-- Dagdi Chawl Chi Aai Mauli Stylesheet -->
   <link rel="stylesheet" href="/css/style.min.css?v=20260902_nocountdown">
   <link rel="icon" type="image/webp" href="/images/logo.webp">
 </head>
@@ -915,7 +915,7 @@
     <div class="nm-social-icons" style="display: flex; gap: 15px;">
       <a href="https://www.facebook.com/BycullaDagadiChawl/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/byculla_dagadichawl_navratri/" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@DagdiChawlChaRaja-e2z" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.youtube.com/hashtag/dagdichawl" target="_blank" style="color: #d8ba66; font-size: 16px; transition: color 0.3s; text-shadow: 0 0 5px rgba(216,186,102,0.3);"><i class="fa-brands fa-youtube"></i></a>
     </div>
 
     <!-- Language Toggle -->

@@ -84,7 +84,7 @@ app.use((err, req, res, next) => {
 // 404 Handler
 app.use((req, res) => {
   res.status(404).render('index', {
-    title: '404 - Page Not Found | Dagdi Chawl Cha Raja',
+    title: '404 - Page Not Found | Dagdi Chawl Chi Aai Mauli',
     activeTab: 'home',
     yatraStatus: db.getYatraStatus(),
     scheduleData: [],
@@ -100,7 +100,7 @@ module.exports = app;
 if (process.env.VERCEL !== '1') {
   app.listen(PORT, async () => {
     console.log(`=======================================================`);
-    console.log(`🌺 Dagdi Chawl Cha Raja Official Web Server Started`);
+    console.log(`🌺 Dagdi Chawl Chi Aai Mauli Official Web Server Started`);
     console.log(`🌐 URL: http://localhost:${PORT}`);
     console.log(`=======================================================`);
     

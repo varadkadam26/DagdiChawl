@@ -19,7 +19,7 @@ def rename_and_replace():
             content = content.replace("dagdichawl_ganpati", "dagdichawl_ganpati")
             
             # Case insensitive replace but keep original casing for the replacement (always uppercase words as it's a name)
-            content = re.sub(r'(?i)Dagdi Chawl Cha Raja', 'Dagdi Chawl Cha Raja', content)
+            content = re.sub(r'(?i)Dagdi Chawl Chi Aai Mauli', 'Dagdi Chawl Chi Aai Mauli', content)
             content = re.sub(r'(?i)Dagdi Chawl', 'Dagdi Chawl', content)
             content = re.sub(r'(?i)Dagdi Chawl', 'Dagdi Chawl', content)
             

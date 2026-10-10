@@ -34,8 +34,8 @@ module.exports = {
     // Header Box
     doc.rect(40, 40, 515, 100).fill('#4A0404');
     doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
-    doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Cha Raja (SEC 80G TAX EXEMPT)', 55, 85);
-    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawl_cha_raja', 55, 106);
+    doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli (SEC 80G TAX EXEMPT)', 55, 85);
+    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawlichiaaimauli', 55, 106);
 
     // Main Receipt Body
     doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#800020').stroke();
@@ -71,10 +71,10 @@ module.exports = {
     doc.fillColor('#475569').fontSize(9).font('Helvetica-Oblique').text('All donations made to Shree Bal Gopal Ganeshutsav Mandal are 50% tax exempt under Section 80G of the Income Tax Act, 1961.', 40, 505, { align: 'center', width: 515 });
 
     // Signatures
-    doc.fillColor('#4A0404').fontSize(10).font('Helvetica-Bold').text('For Dagdi Chawl Cha Raja Mandal', 350, 570);
+    doc.fillColor('#4A0404').fontSize(10).font('Helvetica-Bold').text('For Dagdi Chawl Chi Aai Mauli Mandal', 350, 570);
     doc.fillColor('#64748B').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 350, 620);
     
-    doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Follow us on Instagram @dagdichawl_cha_raja', 40, 750, { align: 'center', width: 515 });
+    doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Follow us on Instagram @dagdichawlichiaaimauli', 40, 750, { align: 'center', width: 515 });
 
     doc.end();
   },
@@ -94,12 +94,12 @@ module.exports = {
     doc.rect(40, 40, 515, 100).fill('#800020');
     doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
     doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('OFFICIAL T-SHIRT & MERCHANDISE BOOKING TOKEN', 55, 85);
-    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | Instagram: @dagdichawl_cha_raja', 55, 106);
+    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | Instagram: @dagdichawlichiaaimauli', 55, 106);
 
     // Main Receipt Body
     doc.rect(40, 155, 515, 340).lineWidth(1.5).strokeColor('#800020').stroke();
 
-    doc.fillColor('#800020').fontSize(13).font('Helvetica-Bold').text('Dagdi Chawl Cha Raja OFFICIAL MERCHANDISE', 60, 172);
+    doc.fillColor('#800020').fontSize(13).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli OFFICIAL MERCHANDISE', 60, 172);
     doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
 
     const drawField = (label, value, x, y, width = 220) => {
@@ -162,8 +162,8 @@ module.exports = {
       // Header Box
       doc.rect(40, 40, 515, 100).fill('#4A0404');
       doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
-      doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Cha Raja (SEC 80G TAX EXEMPT)', 55, 85);
-      doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawl_cha_raja', 55, 106);
+      doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('Dagdi Chawl Chi Aai Mauli (SEC 80G TAX EXEMPT)', 55, 85);
+      doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | 80G Approval: CIT(E)/80G/2024-25/A-1029 | @dagdichawlichiaaimauli', 55, 106);
 
       // Main Receipt Body
       doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#800020').stroke();

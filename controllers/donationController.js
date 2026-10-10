@@ -7,7 +7,7 @@ module.exports = {
   // Render Donation Page
   renderDonationPage(req, res) {
     res.render('donate', {
-      title: 'Online Donation Portal (80G Tax Exempt) | Dagdi Chawl Cha Raja',
+      title: 'Online Donation Portal (80G Tax Exempt) | Dagdi Chawl Chi Aai Mauli',
       metaDescription: 'Support Shree Bal Gopal Ganeshutsav Mandal\'s social service and festival initiatives. 80G tax-exempt online donations with direct bank/UPI verification and official PDF receipts.',
       activeTab: 'donate'
     });

@@ -10,11 +10,11 @@ end_del = -1
 for i, l in enumerate(lines):
     if '<style>' in l and 'HIGHLIGHTS SECTION' in lines[i+1] if i+1 < len(lines) else False:
         start_del = i
-    if '</section>' in l and start_del != -1 and '<!-- EXTRACTED FROM dagdichawlcharaja.in -->' in lines[i+2] if i+2 < len(lines) else False:
+    if '</section>' in l and start_del != -1 and '<!-- EXTRACTED FROM dagdichawlichiaaimauli.in -->' in lines[i+2] if i+2 < len(lines) else False:
         end_del = i
         break
     # In case the exact spacing varies:
-    if '<!-- EXTRACTED FROM dagdichawlcharaja.in -->' in l and start_del != -1:
+    if '<!-- EXTRACTED FROM dagdichawlichiaaimauli.in -->' in l and start_del != -1:
         end_del = i - 1
         break
 

@@ -50,7 +50,7 @@ async function sendContactEmail({ name, email, contact, message }) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 2px solid #C0972D; border-radius: 12px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #800020, #5C0015); padding: 24px; text-align: center;">
         <h2 style="color: #F5D98E; margin: 0; font-size: 22px;">🙏 नवीन संपर्क संदेश</h2>
-        <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">New Contact Inquiry — Dagdi Chawl Cha Raja</p>
+        <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">New Contact Inquiry — Dagdi Chawl Chi Aai Mauli</p>
       </div>
       <div style="padding: 28px; background: #FFF9F0;">
         <table style="width: 100%; border-collapse: collapse;">
@@ -69,16 +69,16 @@ async function sendContactEmail({ name, email, contact, message }) {
         </table>
       </div>
       <div style="background: #800020; padding: 14px; text-align: center;">
-        <p style="color: #E8C86E; margin: 0; font-size: 12px;">श्री बाल गोपाल गणेशोत्सव मंडळ | Dagdi Chawl Cha Raja | गणपती बाप्पा मोरया 🙏</p>
+        <p style="color: #E8C86E; margin: 0; font-size: 12px;">श्री बाल गोपाल गणेशोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
       </div>
     </div>
   `;
 
   const mailOptions = {
-    from: `"Dagdi Chawl Cha Raja" <${SMTP_USER}>`,
+    from: `"Dagdi Chawl Chi Aai Mauli" <${SMTP_USER}>`,
     to: toAddresses.join(', '),
     cc: ccList.length ? ccList.join(', ') : undefined,
-    subject: `नवीन संपर्क संदेश — ${name} | Dagdi Chawl Cha Raja`,
+    subject: `नवीन संपर्क संदेश — ${name} | Dagdi Chawl Chi Aai Mauli`,
     html: htmlBody
   };
 
@@ -111,7 +111,7 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 2px solid #C0972D; border-radius: 12px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #800020, #5C0015); padding: 24px; text-align: center;">
         <h2 style="color: #F5D98E; margin: 0; font-size: 22px;">🌺 देणगी पावती मंजूर करण्यात आली आहे!</h2>
-        <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">Donation Approved & 80G Receipt — Dagdi Chawl Cha Raja</p>
+        <p style="color: #E8C86E; margin: 6px 0 0; font-size: 14px;">Donation Approved & 80G Receipt — Dagdi Chawl Chi Aai Mauli</p>
       </div>
       <div style="padding: 28px; background: #FFF9F0;">
         <p style="font-size: 16px; color: #800020; font-weight: 700; margin-top: 0;">जय गणेश! सस्नेह नमस्कार ${donation.donor_name},</p>
@@ -139,15 +139,15 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
         <p style="color: #555; font-size: 14px; line-height: 1.6;">बाप्पाचा आशीर्वाद आपल्या व आपल्या कुटुंबावर सदैव राहो हीच श्रींच्या चरणी प्रार्थना! 🙏</p>
       </div>
       <div style="background: #800020; padding: 14px; text-align: center;">
-        <p style="color: #E8C86E; margin: 0; font-size: 12px;">श्री बाल गोपाल गणेशोत्सव मंडळ | Dagdi Chawl Cha Raja | गणपती बाप्पा मोरया 🙏</p>
+        <p style="color: #E8C86E; margin: 0; font-size: 12px;">श्री बाल गोपाल गणेशोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
       </div>
     </div>
   `;
 
   const mailOptions = {
-    from: `"Dagdi Chawl Cha Raja" <${SMTP_USER}>`,
+    from: `"Dagdi Chawl Chi Aai Mauli" <${SMTP_USER}>`,
     to: donorEmail,
-    subject: `देणगी पावती (80G Receipt) — ${donation.receipt_no} | Dagdi Chawl Cha Raja`,
+    subject: `देणगी पावती (80G Receipt) — ${donation.receipt_no} | Dagdi Chawl Chi Aai Mauli`,
     html: htmlBody,
     attachments: [
       {

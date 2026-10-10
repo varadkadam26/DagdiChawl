@@ -13,15 +13,15 @@ for file_path in files_to_check:
         content = f.read()
 
     # Replacements
-    content = content.replace("mcrofficial1973@gmail.com<br>\n            marketing.dagdichawlcharaja@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
-    content = content.replace("mcrofficial1973@gmail.com<br>\\r\\n            marketing.dagdichawlcharaja@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("mcrofficial1973@gmail.com<br>\n            marketing.dagdichawlichiaaimauli@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("mcrofficial1973@gmail.com<br>\\r\\n            marketing.dagdichawlichiaaimauli@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
     
     # In i18n.js
-    content = content.replace("mcrofficial1973@gmail.com\\nmarketing.dagdichawlcharaja@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("mcrofficial1973@gmail.com\\nmarketing.dagdichawlichiaaimauli@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
     
     # In README
-    content = content.replace("marketing.dagdichawlcharaja@gmail.com` & `mcrofficial1973@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
-    content = content.replace("marketing.dagdichawlcharaja@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("marketing.dagdichawlichiaaimauli@gmail.com` & `mcrofficial1973@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
+    content = content.replace("marketing.dagdichawlichiaaimauli@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
     content = content.replace("mcrofficial1973@gmail.com", "byculladagadichawlnavratri1973@gmail.com")
     
     with open(file_path, 'w', encoding='utf-8') as f:

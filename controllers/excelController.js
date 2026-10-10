@@ -124,7 +124,7 @@ module.exports = {
       const selectedRows = selectedSheet ? await db.getOfflineExcelRows(selectedSheet.id) : [];
 
       res.render('admin/excel', {
-        title: 'Excel & Offline Records | Dagdi Chawl Cha Raja',
+        title: 'Excel & Offline Records | Dagdi Chawl Chi Aai Mauli',
         activeTab: 'admin',
         sheets,
         onlineDonations,
@@ -187,7 +187,7 @@ module.exports = {
       const filtered = type === 'all' ? sheets : sheets.filter(s => s.record_type === type);
 
       const workbook = new ExcelJS.Workbook();
-      workbook.creator = 'Dagdi Chawl Cha Raja Admin';
+      workbook.creator = 'Dagdi Chawl Chi Aai Mauli Admin';
       workbook.created = new Date();
 
       if (!filtered.length) {
@@ -230,7 +230,7 @@ module.exports = {
       const offlineTshirts = await db.getOfflineTshirtOrders();
 
       const workbook = new ExcelJS.Workbook();
-      workbook.creator = 'Dagdi Chawl Cha Raja Admin';
+      workbook.creator = 'Dagdi Chawl Chi Aai Mauli Admin';
 
       const donationSheet = workbook.addWorksheet('All Donations');
       donationSheet.addRow(['Source', 'Receipt / Row', 'Name', 'Phone', 'Amount', 'Date']);
