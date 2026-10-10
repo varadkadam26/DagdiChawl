@@ -36,7 +36,7 @@ The official website and backend management system for **Malabar Hill Cha Raja**
 ### 📬 Contact Form (`/contact`)
 - Email sent via **Gmail SMTP** (Nodemailer)
   - **From**: `mitramsolutions@gmail.com`
-  - **To**: `marketing.malabarhillcharaja@gmail.com` & `mcrofficial1973@gmail.com`
+  - **To**: `byculladagadichawlnavratri1973@gmail.com`
   - **CC**: User's email (if provided)
 - Real-time sync to **Google Sheets** ("Contact Us" tab)
 
@@ -253,9 +253,9 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 | Platform | Link |
 |----------|------|
 | 🌐 **Location** | Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai — 400007 |
-| 📧 **Email** | mcrofficial1973@gmail.com |
-| 📧 **Marketing** | marketing.malabarhillcharaja@gmail.com |
-| 📞 **Helpline** | +91 93261 50793 |
+| 📧 **Email** | byculladagadichawlnavratri1973@gmail.com |
+| 📧 **Marketing** | byculladagadichawlnavratri1973@gmail.com |
+| 📞 **Helpline** | +91 95945 12999 |
 | 📺 **YouTube** | [@MalabarHillChaRaja-e2z](https://www.youtube.com/@MalabarHillChaRaja-e2z) |
 | 📸 **Instagram** | [@malabarhill_cha_raja](https://www.instagram.com/malabarhill_cha_raja/) |
 | 📘 **Facebook** | [malabarhillcharaja](https://www.facebook.com/malabarhillcharaja) |

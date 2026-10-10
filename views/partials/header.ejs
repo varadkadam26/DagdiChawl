@@ -85,8 +85,8 @@
         "logo": "https://malabarhillcharaja.in/images/logo.png",
         "foundingDate": "1973",
         "identifier": "Reg. No. F-11518",
-        "email": "mcrofficial1973@gmail.com",
-        "telephone": "+919326150793",
+        "email": "byculladagadichawlnavratri1973@gmail.com",
+        "telephone": "+919594512999",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W)",
@@ -108,7 +108,7 @@
         "alternateName": "Shree Bal Gopal Ganeshutsav Mandal",
         "url": "https://malabarhillcharaja.in/",
         "image": "https://malabarhillcharaja.in/images/malabar_ganpati_01.jpg",
-        "telephone": "+919326150793",
+        "telephone": "+919594512999",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (West)",
@@ -224,7 +224,7 @@
     align-items: center;
     box-sizing: border-box;
     border-bottom: none;
-    overflow: hidden; /* For vignette and pseudo-element */
+    overflow: visible; /* Changed from hidden so mobile menu can drop down */
   }
 
   /* Only on non-home pages, inject the blurred cave background */
@@ -232,7 +232,7 @@
   body[data-lang] .nm-nav-header::before {
     content: "";
     position: absolute;
-    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: url(/images/final_page_no_text.jpg) center top / cover no-repeat;
     z-index: -2;
     opacity: <%= currentTabName === 'home' ? '0' : '1' %>;

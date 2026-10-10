@@ -16,6 +16,18 @@ const scheduleData = [
   { day:10, dateMr:'सोमवार, १९-१०-२०२६', dateEn:'Monday, 19-10-2026', titleMr:'होमहवन भंडारा / "गोंधळ जगदंबेचा" / "लोकनाद कला संस्कृती परंपरा"', titleEn:'Hom Havan Bhandara / "Gondhal Jagdambecha" / "Lokanad Kala Sanskruti Parampara"', timeMr:'सकाळी ९ नंतर / दुपारी १:०० वा. / रात्री आरतीनंतर', timeEn:'After 9:00 AM / 1:00 PM / After Night Aarti', bg: '#00ACC1', color: '#FFFFFF' }
 ];
 
+const jagranData = [
+  { day:1, dateMr:'रविवार, ११/१०/२०२६', dateEn:'Sunday, 11/10/2026', titleMr:'नवरात्रोत्सव मंडळ', titleEn:'Navratrotsav Mandal', bg: '#F47F24', color: '#FFFFFF' },
+  { day:2, dateMr:'सोमवार, १२/१०/२०२६', dateEn:'Monday, 12/10/2026', titleMr:"'गिताई'", titleEn:"'Gitai'", bg: '#FFFFFF', color: '#D32F2F' },
+  { day:3, dateMr:'मंगळवार, १३/१०/२०२६', dateEn:'Tuesday, 13/10/2026', titleMr:"'ई' चाळ", titleEn:"'E' Chawl", bg: '#D32F2F', color: '#FFFFFF' },
+  { day:4, dateMr:'बुधवार, १४/१०/२०२६', dateEn:'Wednesday, 14/10/2026', titleMr:"'एफ' चाळ", titleEn:"'F' Chawl", bg: '#2B3B96', color: '#FFFFFF' },
+  { day:5, dateMr:'गुरुवार, १५/१०/२०२६', dateEn:'Thursday, 15/10/2026', titleMr:"'जी' चाळ", titleEn:"'G' Chawl", bg: '#FDD835', color: '#D32F2F' },
+  { day:6, dateMr:'शुक्रवार, १६/१०/२०२६', dateEn:'Friday, 16/10/2026', titleMr:'नवरात्रोत्सव मंडळ', titleEn:'Navratrotsav Mandal', bg: '#4CAF50', color: '#FFFFFF' },
+  { day:7, dateMr:'शनिवार, १७/१०/२०२६', dateEn:'Saturday, 17/10/2026', titleMr:"'एच' चाळ", titleEn:"'H' Chawl", bg: '#5E35B1', color: '#FFFFFF' },
+  { day:8, dateMr:'रविवार, १८/१०/२०२६', dateEn:'Sunday, 18/10/2026', titleMr:"'आय' चाळ", titleEn:"'I' Chawl", bg: '#D81B60', color: '#FFFFFF' },
+  { day:9, dateMr:'सोमवार, १९/१०/२०२६', dateEn:'Monday, 19/10/2026', titleMr:"'जे' चाळ", titleEn:"'J' Chawl", bg: '#00ACC1', color: '#FFFFFF' }
+];
+
 // Glimpses over a Decade (10+ Years Historical Retrospective Data)
 const glimpsesData = [
   {year:'2026',category:'idols',titleMr:'श्री मलबार हिलचा राजा (२०२६)',titleEn:'Shri Malabar Hill Cha Raja (2026)',themeMr:'सुवर्ण तेज व राजेशाही आगमन',themeEn:'Golden Radiance & Royal Darshan',height:'—',artistMr:'मंडळ कारागीर',artistEn:'Mandal Artisans',image:'/images/glimpses/final_2026.jpg',descMr:'सन २०२६ चे मलबार हिलच्या राजाचे मनमोहक, भव्य दिव्य आणि अलौकिक सुवर्ण रूप दर्शन.',descEn:'The magnificent, divine and enchanting golden idol form of Malabar Hill Cha Raja for 2026.'},
@@ -198,7 +210,8 @@ module.exports = {
       metaDescription: 'Official 12-day Ganeshotsav 2026 festival schedule for Malabar Hill Cha Raja. Morning & Evening Maha Aarti timings, Annadan Mahaprasad, cultural events, Hom Havan & Visarjan procession.',
       activeTab: 'schedule',
       yatraStatus: status,
-      scheduleData
+      scheduleData,
+      jagranData
     });
   },
 

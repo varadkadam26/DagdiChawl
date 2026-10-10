@@ -1,5 +1,24 @@
 <%- include('partials/header') %>
 
+<style>
+  body {
+    background: linear-gradient(to bottom, #080A08 0%, #15130F 40%, #30190F 100%) !important;
+    min-height: 100vh;
+  }
+  .main-content-gradient, .page-hero-banner {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Make cards transparent to blend with dark gradient */
+  .card-temple {
+    background: transparent !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    box-shadow: none !important;
+  }
+</style>
+
   <section class="page-hero-banner">
     <div class="container">
       <h1>
@@ -80,50 +99,264 @@
   </section>
 
   <!-- Gallery Filter Bar & Grid -->
-  <section class="main-content-gradient" style="padding: 4rem 0;">
-    <div class="container">
+  <style>
+    /* MODAK TIMELINE STYLES FOR GALLERY PAGE */
+    .modak-timeline-container {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 2rem 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .modak-timeline-container::-webkit-scrollbar {
+      display: none;
+    }
+    .modak-timeline-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 3.5rem;
+      padding: 0 40vw;
+    }
+    .modak-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.3;
+      transform: scale(0.85);
+    }
+    .modak-wrapper.active {
+      opacity: 1 !important;
+      transform: scale(1.2) translateY(-10px);
+      z-index: 10;
+    }
+    .modak-icon-box {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+    .modak-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.4s ease;
+    }
+    .modak-gold {
+      opacity: 0;
+      filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+    }
+    .modak-wrapper.active .modak-gold {
+      opacity: 1;
+    }
+    .modak-wrapper.active .modak-cream {
+      opacity: 0;
+    }
+    .modak-year {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #FDE68A;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      font-family: 'Cinzel', serif;
+      transition: all 0.3s ease;
+    }
+    .modak-wrapper.active .modak-year {
+      color: #FFF;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+    }
+    
+    .grid-2x2-year {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2x2-year {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
-
-
-      <div class="grid-3">
-        <% glimpsesData.forEach(item=> { %>
-          <div class="card-temple gallery-card-item gold-motion-frame reveal-on-scroll"
-            data-category="<%= item.category %>"
-            style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="position: relative; height: 350px; overflow: hidden; background: #0A0A0A; cursor: pointer;"
-              data-lightbox data-lightbox-src="<%= item.image %>"
-              data-lightbox-title="<%= item.titleMr || item.title %> (वर्ष <%= item.year %>)"
-              data-lightbox-title-mr="<%= item.titleMr || item.title %> (वर्ष <%= item.year %>)"
-              data-lightbox-title-en="<%= item.titleEn || item.title %> (Year <%= item.year %>)"
-              data-lightbox-caption="<%= item.descMr || item.desc %>"
-              data-lightbox-caption-mr="<%= item.descMr || item.desc %>"
-              data-lightbox-caption-en="<%= item.descEn || item.desc %>">
-              <img src="<%= item.image %>" alt="<%= item.title %>"
-                style="width: 100%; height: 100%; object-fit: cover;">
+  <section class="main-content-gradient" style="padding: 1rem 0 4rem;">
+    <!-- TIMELINE INTERFACE -->
+    <% 
+      // Extract unique years from glimpsesData
+      const uniqueYears = [...new Set(glimpsesData.map(item => item.year))].sort((a, b) => b - a);
+      const defaultYear = uniqueYears[0];
+    %>
+    
+    <div class="modak-timeline-container" id="timelineContainer">
+      <div class="modak-timeline-track" id="timelineTrack">
+        <% uniqueYears.forEach((yr, index) => { %>
+          <div class="modak-wrapper year-btn <%= yr === defaultYear ? 'active' : '' %>" data-filter="<%= yr %>" tabindex="0">
+            <div class="modak-icon-box">
+              <img src="/images/nav_logo_transparent.png" class="modak-img modak-cream" alt="<%= yr %>" draggable="false" style="filter: grayscale(1) opacity(0.7);">
+              <img src="/images/nav_logo_transparent.png" class="modak-img modak-gold" alt="<%= yr %>" draggable="false">
             </div>
-            <div
-              style="padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <h3 style="font-size: 1.3rem; color: var(--temple-maroon); margin-bottom: 0.6rem;"><span
-                    class="lang-mr">
-                    <%= item.titleMr || item.title %>
-                  </span><span class="lang-en">
-                    <%= item.titleEn || item.title %>
-                  </span></h3>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.2rem;"><span
-                    class="lang-mr">
-                    <%= item.descMr || item.desc %>
-                  </span><span class="lang-en">
-                    <%= item.descEn || item.desc %>
-                  </span></p>
-              </div>
+            <span class="modak-year"><%= yr %></span>
+          </div>
+        <% }); %>
+      </div>
+    </div>
 
-
+    <div class="container">
+      <div class="year-contents-wrapper" style="max-width: 1000px; margin: 0 auto;">
+        <% uniqueYears.forEach(yr => { %>
+          <div class="year-content" data-content-year="<%= yr %>" style="display: <%= yr === defaultYear ? 'block' : 'none' %>; padding: 2rem 0;">
+            <div class="grid-2x2-year">
+              <% glimpsesData.filter(item => item.year === yr).forEach(item => { %>
+                <div class="card-temple gallery-card-item gold-motion-frame reveal-on-scroll"
+                  data-category="<%= item.category %>"
+                  style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                  <div class="glimpse-card-img-wrap" style="position: relative; height: 350px; overflow: hidden; background: #0A0A0A; cursor: pointer;"
+                    data-lightbox data-lightbox-src="<%= item.image %>"
+                    data-lightbox-title="<%= item.titleMr || item.title %> (  ?  <%= item.year %>)"
+                    data-lightbox-title-mr="<%= item.titleMr || item.title %> (  ?  <%= item.year %>)"
+                    data-lightbox-title-en="<%= item.titleEn || item.title %> (Year <%= item.year %>)"
+                    data-lightbox-caption="<%= item.descMr || item.desc %>"
+                    data-lightbox-caption-mr="<%= item.descMr || item.desc %>"
+                    data-lightbox-caption-en="<%= item.descEn || item.desc %>">
+                    <img src="<%= item.image %>" alt="<%= item.title %>"
+                      style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div style="padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                      <h3 style="font-size: 1.3rem; color: var(--temple-maroon); margin-bottom: 0.6rem;">
+                        <span class="lang-mr"><%= item.titleMr || item.title %></span>
+                        <span class="lang-en"><%= item.titleEn || item.title %></span>
+                      </h3>
+                      <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.2rem;">
+                        <span class="lang-mr"><%= item.descMr || item.desc %></span>
+                        <span class="lang-en"><%= item.descEn || item.desc %></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <% }); %>
             </div>
           </div>
-          <% }); %>
+        <% }); %>
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const timeline = document.getElementById('timelineContainer');
+      const yearBtns = Array.from(document.querySelectorAll('.year-btn'));
+      const yearContents = document.querySelectorAll('.year-content');
+      let isDragging = false, startX, scrollLeft;
+      
+      if (!timeline) return;
+
+      timeline.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        timeline.classList.add('grabbing');
+        startX = e.pageX - timeline.offsetLeft;
+        scrollLeft = timeline.scrollLeft;
+      });
+      timeline.addEventListener('mouseleave', () => { isDragging = false; timeline.classList.remove('grabbing'); });
+      timeline.addEventListener('mouseup', () => { isDragging = false; timeline.classList.remove('grabbing'); });
+      timeline.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - timeline.offsetLeft;
+        const walk = (x - startX) * 2; 
+        timeline.scrollLeft = scrollLeft - walk;
+        updateModakFade();
+      });
+      timeline.addEventListener('scroll', () => {
+        if (!isDragging) updateModakFade();
+      });
+
+      function updateModakFade() {
+        if (!timeline) return;
+        const containerRect = timeline.getBoundingClientRect();
+        const containerCenter = containerRect.left + containerRect.width / 2;
+        const maxDist = containerRect.width / 2;
+
+        yearBtns.forEach(btn => {
+          const rect = btn.getBoundingClientRect();
+          const itemCenter = rect.left + rect.width / 2;
+          const dist = Math.abs(itemCenter - containerCenter);
+          const ratio = Math.min(dist / maxDist, 1);
+          let opacity = 1 - (ratio * 0.68);
+          if (btn.classList.contains('active')) {
+            opacity = 1.0;
+          } else {
+            opacity = Math.max(0.3, opacity);
+          }
+          btn.style.opacity = opacity.toFixed(2);
+        });
+      }
+
+      function centerModak(btn, smooth = true) {
+        if (!btn || !timeline) return;
+        const btnLeft = btn.offsetLeft;
+        const btnWidth = btn.offsetWidth;
+        const containerWidth = timeline.clientWidth;
+        const targetScroll = btnLeft - (containerWidth / 2) + (btnWidth / 2);
+        timeline.scrollTo({
+          left: Math.max(0, targetScroll),
+          behavior: smooth ? 'smooth' : 'auto'
+        });
+      }
+
+      function activateYear(selectedYear, shouldScrollTimeline = true, shouldScrollToContent = false) {
+        const btn = yearBtns.find(b => b.getAttribute('data-filter') === selectedYear);
+        const contentToShow = document.querySelector(`.year-content[data-content-year="${selectedYear}"]`);
+        if (!btn || !contentToShow) return;
+
+        yearContents.forEach(content => content.style.display = 'none');
+        yearBtns.forEach(b => b.classList.remove('active'));
+
+        btn.classList.add('active');
+        contentToShow.style.display = 'block';
+
+        if (shouldScrollTimeline) centerModak(btn);
+        updateModakFade();
+        
+        if (shouldScrollToContent) {
+           const yOffset = -100;
+           const y = contentToShow.getBoundingClientRect().top + window.pageYOffset + yOffset;
+           window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      }
+
+      yearBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          activateYear(btn.getAttribute('data-filter'), true, true);
+        });
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activateYear(btn.getAttribute('data-filter'), true, true);
+          }
+        });
+      });
+
+      setTimeout(() => {
+        const activeBtn = document.querySelector('.year-btn.active');
+        if (activeBtn) {
+          centerModak(activeBtn, false);
+          updateModakFade();
+        }
+      }, 100);
+      
+      window.addEventListener('resize', () => {
+        const activeBtn = document.querySelector('.year-btn.active');
+        if (activeBtn) centerModak(activeBtn, false);
+      });
+    });
+  </script>
+</section>
 
   <%- include('partials/footer') %>

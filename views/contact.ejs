@@ -1,5 +1,52 @@
 <%- include('partials/header') %>
 
+<style>
+  body {
+    background: linear-gradient(to bottom, #080A08 0%, #15130F 40%, #30190F 100%) !important;
+    min-height: 100vh;
+  }
+  .main-content-gradient, .page-hero-banner {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Make cards transparent to blend with dark gradient */
+  .card-temple {
+    background: transparent !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    box-shadow: none !important;
+  }
+  
+  /* Adjust specific text colors for dark mode */
+  .page-hero-banner h1, .page-hero-banner p {
+    color: var(--gold-soft) !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+  .page-hero-banner p {
+    color: #f1f1f1 !important;
+  }
+  
+  /* Exceptional colors */
+  .section-badge {
+    color: var(--gold-soft) !important;
+    border-color: var(--gold-soft) !important;
+  }
+  .fa-solid, .fa-brands, .fa-regular {
+    color: var(--primary-saffron) !important;
+  }
+  
+  /* Form dark mode styling */
+  input, textarea {
+    background: rgba(255,255,255,0.05) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+  }
+</style>
+
 <section class="page-hero-banner">
   <div class="container">
     <span class="section-badge">
@@ -34,7 +81,7 @@
             <span class="lang-mr">मण्डप व मुख्य कार्यालय पत्ता</span>
             <span class="lang-en">Mandap & Head Office Address</span>
           </h4>
-          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7;">
+          <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.98rem; line-height: 1.7;">
             <span class="lang-mr">गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.</span>
             <span class="lang-en">Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai - 400007.</span>
           </p>
@@ -46,9 +93,9 @@
             <span class="lang-mr">आपत्कालीन व मदत केंद्र</span>
             <span class="lang-en">Emergency & Help Desk</span>
           </h4>
-          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7;">
-            <span class="lang-mr">फोन: +९१ ९३२६१ ५०७९३<br>व्हॉट्सॲप हेल्पलाईन: +९१ ९३२६१ ५०७९३</span>
-            <span class="lang-en">Phone: +91 93261 50793<br>WhatsApp Helpline: +91 93261 50793</span>
+          <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.98rem; line-height: 1.7;">
+            <span class="lang-mr">फोन: +९१ ९५९४५ १२९९९<br>व्हॉट्सॲप हेल्पलाईन: +९१ ९५९४५ १२९९९</span>
+            <span class="lang-en">Phone: +91 95945 12999<br>WhatsApp Helpline: +91 95945 12999</span>
           </p>
         </div>
 
@@ -58,9 +105,8 @@
             <span class="lang-mr">अधिकृत ईमेल पत्ता</span>
             <span class="lang-en">Official Email Address</span>
           </h4>
-          <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7;">
-            mcrofficial1973@gmail.com<br>
-            marketing.malabarhillcharaja@gmail.com
+          <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.98rem; line-height: 1.7;">
+            byculladagadichawlnavratri1973@gmail.com
           </p>
         </div>
       </div>
@@ -74,7 +120,7 @@
 
         <form id="contactForm">
           <div style="margin-bottom: 1.2rem;">
-            <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-main);">
+            <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--gold-soft);">
               <span class="lang-mr">तुमचे नाव *</span>
               <span class="lang-en">Your Name *</span>
             </label>
@@ -82,7 +128,7 @@
           </div>
 
           <div style="margin-bottom: 1.2rem;">
-            <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-main);">
+            <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--gold-soft);">
               <span class="lang-mr">ईमेल पत्ता *</span>
               <span class="lang-en">Email Address *</span>
             </label>
@@ -90,7 +136,7 @@
           </div>
 
           <div style="margin-bottom: 1.5rem;">
-            <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-main);">
+            <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--gold-soft);">
               <span class="lang-mr">तुमचा संदेश / प्रश्न *</span>
               <span class="lang-en">Your Message / Query *</span>
             </label>
@@ -106,7 +152,7 @@
     </div>
 
     <!-- Embedded Google Maps at Bottom -->
-    <div style="background: var(--bg-white); border-radius: var(--radius-lg); border: 2px solid var(--royal-gold); padding: 2rem; box-shadow: var(--shadow-md);">
+    <div style="background: transparent; border-radius: var(--radius-lg); border: 1px solid rgba(212, 175, 55, 0.2); padding: 2rem; box-shadow: none;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
         <h3 style="font-size: 1.6rem; color: var(--temple-maroon); margin: 0;">
           <span class="lang-mr">गूगल मॅप्स - मण्डप स्थान (Malabar Hill Cha Raja)</span>

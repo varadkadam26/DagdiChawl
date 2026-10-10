@@ -26,7 +26,7 @@ try {
 /**
  * Send contact form inquiry email
  * From: mitramsolutions@gmail.com
- * To: marketing.malabarhillcharaja@gmail.com & mcrofficial1973@gmail.com
+ * To: byculladagadichawlnavratri1973@gmail.com
  * CC: user's email (if provided)
  */
 async function sendContactEmail({ name, email, contact, message }) {
@@ -38,8 +38,7 @@ async function sendContactEmail({ name, email, contact, message }) {
   const userEmail = (email || contact || '').trim();
 
   const toAddresses = [
-    'marketing.malabarhillcharaja@gmail.com',
-    'mcrofficial1973@gmail.com',
+    'byculladagadichawlnavratri1973@gmail.com',
     SMTP_USER
   ];
 

@@ -126,9 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalAmountText) modalAmountText.textContent = `₹${parseFloat(amount).toLocaleString('en-IN')}`;
 
     // Generate Dynamic UPI QR Code
-    const upiString = `upi://pay?pa=SVCMERC00301799@svcbank&pn=Shree%20Bal%20Gopal%20Ganeshutsav%20Mandal&am=${amount}&cu=INR`;
     if (upiQrCodeImg) {
-      upiQrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(upiString)}`;
+      upiQrCodeImg.src = `/images/qr_code.png`;
     }
 
     // Open Modal
