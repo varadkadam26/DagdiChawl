@@ -1,10 +1,3 @@
-process.on('uncaughtException', (err) => {
-  console.error('⚠️ Uncaught Exception:', err.message);
-});
-process.on('unhandledRejection', (reason) => {
-  console.error('⚠️ Unhandled Rejection:', reason);
-});
-
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -100,26 +93,22 @@ app.use((req, res) => {
   });
 });
 
-// Export Express app for Vercel & Hostinger Passenger
+// Export Express app for Vercel Serverless Functions
 module.exports = app;
 
-// Start Server when running locally or via Passenger
+// Start Server & Database when running locally
 if (process.env.VERCEL !== '1') {
-  app.listen(PORT, () => {
+  app.listen(PORT, async () => {
     console.log(`=======================================================`);
-    console.log(`🌺 Dagdi Chawl Chi Aai Mauli Official Web Server Started`);
+    console.log(`🌺 Malabar Hill Cha Raja Official Web Server Started`);
     console.log(`🌐 URL: http://localhost:${PORT}`);
     console.log(`=======================================================`);
     
-    db.initDB();
+    await db.initDB();
     initCronJobs();
 
-    // Async non-blocking Google Sheets initialization
-    setImmediate(() => {
-      try {
-        const googleSheets = require('./config/googleSheets');
-        googleSheets.ensureTabs().catch(err => console.error('Google Sheets init warning:', err.message));
-      } catch (e) {}
-    });
+    // Initialize Google Sheets tabs (creates them if they don't exist)
+    const googleSheets = require('./config/googleSheets');
+    googleSheets.ensureTabs().catch(err => console.error('Google Sheets init error:', err.message));
   });
 }

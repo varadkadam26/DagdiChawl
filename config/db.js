@@ -25,12 +25,33 @@ const mockStore = {
 };
 
 let dbPool = null;
-let useMock = true;
+let useMock = false;
 
 async function initDB() {
-  console.log('⚡ MySQL bypassed. Running with fast In-Memory & Google Sheets Data Store.');
-  useMock = true;
-  return true;
+  try {
+    const pool = mysql.createPool({
+      host: process.env.DB_HOST || 'localhost',
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || '',
+      database: process.env.DB_NAME || 'saileela_palkhi',
+      port: process.env.DB_PORT || 3306,
+      waitForConnections: true,
+      connectionLimit: 5,
+      queueLimit: 0
+    });
+
+    // Test connection
+    const conn = await pool.getConnection();
+    conn.release();
+    dbPool = pool;
+    console.log('✅ Connected to MySQL Database successfully.');
+
+    // Create tables if they do not exist
+    await createTables(dbPool);
+  } catch (err) {
+    console.log('⚠️ MySQL connection omitted or unavailable. Running with high-performance In-Memory Data Store.');
+    useMock = true;
+  }
 }
 
 async function createTables(pool) {

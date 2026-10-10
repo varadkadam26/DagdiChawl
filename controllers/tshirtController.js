@@ -6,8 +6,8 @@ module.exports = {
   // Render Official T-Shirt Store Page
   renderTshirtPage(req, res) {
     res.render('tshirt', {
-      title: 'Official Mandal T-Shirt Booking | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'Book official Dagdi Chawl Chi Aai Mauli T-shirts online with instant receipt generation. Show your devotion and support mandal activities.',
+      title: 'आगमन सोहळा टी शर्ट २०२६ - बुकिंग | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'भायखळा दगडीचाळ सार्वजनिक नवरात्रोत्सव मंडळ - आगमन सोहळा अधिकृत टी शर्ट २०२६ ऑनलाईन बुकिंग.',
       activeTab: 'tshirt'
     });
   },
@@ -20,16 +20,20 @@ module.exports = {
       } = req.body;
 
       const parsedQty = parseInt(quantity, 10) || 1;
-      const parsedAmount = parseFloat(total_amount) || (parsedQty * 350);
+      
+      // Calculate unit price: Size 20-30 = 330, Size 32-50 = 350
+      const sizeNum = parseInt((size || '').replace(/\D/g, ''), 10) || 38;
+      const unitPrice = (sizeNum >= 20 && sizeNum <= 30) ? 330 : 350;
+      const parsedAmount = parseFloat(total_amount) || (parsedQty * unitPrice);
 
-      if (!buyer_name || !phone || !size || !color || !payment_id) {
+      if (!buyer_name || !phone || !size || !payment_id) {
         return res.status(400).json({
           success: false,
           message: 'कृपया नाव, मोबाईल नंबर, साईझ, संख्या आणि पेमेंट UTR / व्यवहार क्रमांक प्रविष्ट करा.'
         });
       }
 
-      const receiptNo = `MHR-TSHIRT-2026-${Math.floor(100 + Math.random() * 900)}`;
+      const receiptNo = `DCCAM-TSHIRT-2026-${Math.floor(100 + Math.random() * 900)}`;
 
       const orderData = {
         receipt_no: receiptNo,
@@ -37,7 +41,7 @@ module.exports = {
         phone: phone.trim(),
         email: (email || '').trim(),
         size,
-        color,
+        color: color || 'Peach Polo',
         quantity: parsedQty,
         total_amount: parsedAmount,
         address: (address || 'Mandap Counter Pickup').trim(),
@@ -46,7 +50,7 @@ module.exports = {
       };
 
       const createdOrder = await db.createTshirtOrder(orderData);
-      db.addLog('TSHIRT', `New pending T-Shirt order: ${createdOrder.quantity}x (${createdOrder.size}, ${createdOrder.color}) by ${createdOrder.buyer_name} (UTR: ${payment_id})`);
+      db.addLog('TSHIRT', `New pending T-Shirt order: ${createdOrder.quantity}x (${createdOrder.size}) by ${createdOrder.buyer_name} (UTR: ${payment_id})`);
 
       // Sync to Google Sheets
       try {
@@ -108,15 +112,15 @@ module.exports = {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>पावती पडताळणी प्रलंबित | Malabar Hill Cha Raja</title>
-          <link href="https://fonts.googleapis.com/css2?family=Yashomudra&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+          <title>पावती पडताळणी प्रलंबित | Dagdi Chawl Chi Aai Mauli</title>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
           <style>
-            body { font-family: 'Inter', sans-serif; background: #FFF8F0; color: #1E293B; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1.5rem; text-align: center; }
-            .card { background: #FFFFFF; border: 2px solid #D4AF37; border-radius: 16px; max-width: 500px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-            h2 { color: #800020; font-size: 1.5rem; margin-bottom: 1rem; }
+            body { font-family: 'Inter', sans-serif; background: #FFF9F0; color: #1E293B; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1.5rem; text-align: center; }
+            .card { background: #FFFFFF; border: 2px solid #C0972D; border-radius: 16px; max-width: 500px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            h2 { color: #D95A00; font-size: 1.5rem; margin-bottom: 1rem; }
             p { color: #475569; line-height: 1.6; margin-bottom: 1.5rem; }
             .badge { background: #FEF3C7; color: #D97706; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; }
-            a { display: inline-block; background: #800020; color: #FFF; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+            a { display: inline-block; background: #D95A00; color: #FFF; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; }
           </style>
         </head>
         <body>
