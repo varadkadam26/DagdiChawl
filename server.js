@@ -106,11 +106,10 @@ module.exports = app;
 
 // Start Server when running locally or via Passenger/Hostinger Cloud
 if (process.env.VERCEL !== '1') {
-  const HOST = process.env.HOST || '0.0.0.0';
-  app.listen(PORT, HOST, () => {
+  app.listen(PORT, () => {
     console.log(`=======================================================`);
     console.log(`🌺 Dagdi Chawl Chi Aai Mauli Official Web Server Started`);
-    console.log(`🌐 Host: ${HOST} | Port: ${PORT}`);
+    console.log(`🌐 Port: ${PORT}`);
     console.log(`=======================================================`);
     
     db.initDB();
