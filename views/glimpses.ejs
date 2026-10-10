@@ -175,12 +175,13 @@
     
     .grid-2x2-year {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
     @media (max-width: 768px) {
       .grid-2x2-year {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
       }
     }
   </style>
@@ -198,8 +199,10 @@
         <% uniqueYears.forEach((yr, index) => { %>
           <div class="modak-wrapper year-btn <%= yr === defaultYear ? 'active' : '' %>" data-filter="<%= yr %>" tabindex="0">
             <div class="modak-icon-box">
-              <img src="/images/nav_logo_transparent.png" class="modak-img modak-cream" alt="<%= yr %>" draggable="false" style="filter: grayscale(1) opacity(0.7);">
-              <img src="/images/nav_logo_transparent.png" class="modak-img modak-gold" alt="<%= yr %>" draggable="false">
+              <% const imgSrc = yr === '2026' ? '/images/glimpses/2026_new_1.jpg' : (yr === '2025' ? '/images/glimpses/2025_logo.jpg' : '/images/nav_logo_transparent.png'); %>
+              <% const customStyle = (yr === '2026' || yr === '2025') ? 'object-fit: cover; border-radius: 50%;' : ''; %>
+              <img src="<%= imgSrc %>" class="modak-img modak-cream" alt="<%= yr %>" draggable="false" style="filter: grayscale(1) opacity(0.7); <%= customStyle ? customStyle + ' border: 1px solid rgba(212, 175, 55, 0.5);' : '' %>">
+              <img src="<%= imgSrc %>" class="modak-img modak-gold" alt="<%= yr %>" draggable="false" style="<%= customStyle ? customStyle + ' box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);' : '' %>">
             </div>
             <span class="modak-year"><%= yr %></span>
           </div>
@@ -215,8 +218,8 @@
               <% glimpsesData.filter(item => item.year === yr).forEach(item => { %>
                 <div class="card-temple gallery-card-item gold-motion-frame reveal-on-scroll"
                   data-category="<%= item.category %>"
-                  style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                  <div class="glimpse-card-img-wrap" style="position: relative; height: 350px; overflow: hidden; background: #0A0A0A; cursor: pointer;"
+                  style="padding: 0; overflow: hidden; display: flex; flex-direction: column; <%= (item.isHorizontal || item.image.includes('2023_new_1.jpg')) ? 'grid-column: 1 / -1;' : '' %>">
+                  <div class="glimpse-card-img-wrap" style="position: relative; height: 100%; flex-grow: 1; overflow: hidden; cursor: pointer;"
                     data-lightbox data-lightbox-src="<%= item.image %>"
                     data-lightbox-title="<%= item.titleMr || item.title %> (  ?  <%= item.year %>)"
                     data-lightbox-title-mr="<%= item.titleMr || item.title %> (  ?  <%= item.year %>)"
@@ -225,8 +228,9 @@
                     data-lightbox-caption-mr="<%= item.descMr || item.desc %>"
                     data-lightbox-caption-en="<%= item.descEn || item.desc %>">
                     <img src="<%= item.image %>" alt="<%= item.title %>"
-                      style="width: 100%; height: 100%; object-fit: cover;">
+                      style="width: 100%; height: 100%; display: block; object-fit: cover;">
                   </div>
+                  <% if (item.titleMr || item.titleEn || item.descMr || item.descEn) { %>
                   <div style="padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                       <h3 style="font-size: 1.3rem; color: var(--temple-maroon); margin-bottom: 0.6rem;">
@@ -239,6 +243,7 @@
                       </p>
                     </div>
                   </div>
+                  <% } %>
                 </div>
               <% }); %>
             </div>
