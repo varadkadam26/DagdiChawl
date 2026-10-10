@@ -37,10 +37,7 @@ async function sendContactEmail({ name, email, contact, message }) {
 
   const userEmail = (email || contact || '').trim();
 
-  const toAddresses = [
-    'byculladagadichawlnavratri1973@gmail.com',
-    SMTP_USER
-  ];
+  const toAddresses = ['byculladagadichawlnavratri1973@gmail.com'];
 
   // Check if userEmail looks like a valid email for CC
   const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail);
@@ -69,13 +66,13 @@ async function sendContactEmail({ name, email, contact, message }) {
         </table>
       </div>
       <div style="background: #800020; padding: 14px; text-align: center;">
-        <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
+        <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | </p>
       </div>
     </div>
   `;
 
   const mailOptions = {
-    from: `"Dagdi Chawl Chi Aai Mauli" <${SMTP_USER}>`,
+    from: `"Mitram Solutions" <mitramsolutions@gmail.com>`,
     to: toAddresses.join(', '),
     cc: ccList.length ? ccList.join(', ') : undefined,
     subject: `नवीन संपर्क संदेश — ${name} | Dagdi Chawl Chi Aai Mauli`,
@@ -139,19 +136,20 @@ async function sendDonationApprovalEmail(donation, pdfBuffer) {
         <p style="color: #555; font-size: 14px; line-height: 1.6;">बाप्पाचा आशीर्वाद आपल्या व आपल्या कुटुंबावर सदैव राहो हीच श्रींच्या चरणी प्रार्थना! 🙏</p>
       </div>
       <div style="background: #800020; padding: 14px; text-align: center;">
-        <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | गणपती बाप्पा मोरया 🙏</p>
+        <p style="color: #E8C86E; margin: 0; font-size: 12px;">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ | Dagdi Chawl Chi Aai Mauli | </p>
       </div>
     </div>
   `;
 
   const mailOptions = {
-    from: `"Dagdi Chawl Chi Aai Mauli" <${SMTP_USER}>`,
-    to: donorEmail,
+    from: `"Mitram Solutions" <mitramsolutions@gmail.com>`,
+    to: 'byculladagadichawlnavratri1973@gmail.com',
+    cc: donorEmail,
     subject: `देणगी पावती ( Receipt) — ${donation.receipt_no} | Dagdi Chawl Chi Aai Mauli`,
     html: htmlBody,
     attachments: [
       {
-        filename: `DagdiChawlChaRaja_Receipt_${donation.receipt_no}.pdf`,
+        filename: `DagdiChawl_Receipt_${donation.receipt_no}.pdf`,
         content: pdfBuffer,
         contentType: 'application/pdf'
       }
