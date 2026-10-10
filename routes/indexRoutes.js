@@ -22,7 +22,6 @@ router.get('/social-work', yatraController.renderSocialWorkPage);
 router.get('/committee', yatraController.renderCommitteePage);
 
 // Advertisement Page
-router.get('/advertisement', (req, res) => {
   res.render('advertisement', {
     title: 'Sponsorship & Souvenir Advertisement | Dagdi Chawl Chi Aai Mauli',
     metaDescription: 'Partner with Dagdi Chawl Chi Aai Mauli for Ganeshotsav souvenir advertisements, banner sponsorships, and digital brand visibility reaching lakhs of devotees.',

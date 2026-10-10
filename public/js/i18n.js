@@ -22,9 +22,9 @@ const translations = {
     nav_schedule: "Schedule",
     nav_glimpses: "Glimpses",
     nav_socialwork: "Social Work",
-    nav_tshirt: "Official T-Shirt",
+    
     nav_committee: "Committee",
-    nav_advertisement: "Advertisement",
+    
     nav_contact: "Contact",
     nav_donate: "Donate Now",
 
@@ -62,7 +62,7 @@ const translations = {
     timeline_badge: "HISTORIC GOLDEN LEGACY",
     timeline_title: "Golden Journey of Devotion & Heritage Since 1973",
     timeline_sub: "Click on any year point below to explore the royal history, idol form, and divine milestones of that year!",
-    nav_advertisement: "Advertisement",
+    
     nav_contact: "Contact",
     nav_donate: "Donate Now",
 
@@ -259,12 +259,10 @@ const translations = {
     branch_lbl: "Branch:",
     bank_transfer_note: "Please contact us for your receipt if you make a direct bank transfer.",
     tshirt_badge: "Official Merchandise",
-    tshirt_page_title: "Dagdi Chawl Chi Aai Mauli - T-Shirt Booking",
     tshirt_page_sub: "Official cotton polo t-shirt with royal emblem print of Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal.",
     tshirt_product_title: "Official Collar Polo T-Shirt",
     tshirt_product_sub: "Half-collar polo T-shirt with royal emblem and official logo.",
     tshirt_price_label: "Price per T-shirt",
-    tshirt_form_title: "T-Shirt Booking Form",
     tshirt_name_label: "Your Full Name *",
     tshirt_phone_label: "Mobile Number (WhatsApp) *",
     tshirt_size_label: "Select Size *",
@@ -293,9 +291,9 @@ const translations = {
     nav_schedule: "वेळापत्रक",
     nav_glimpses: "क्षणचित्रे",
     nav_socialwork: "सामाजिक कार्य",
-    nav_tshirt: "टी-शर्ट",
+    
     nav_committee: "कार्यकारिणी",
-    nav_advertisement: "जाहिरात",
+    
     nav_contact: "संपर्क",
     nav_donate: "देणगी",
     mandal_full_title: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ, मुंबई",
@@ -569,7 +567,6 @@ const translations = {
     tshirt_product_title: "Official Collar Polo T-Shirt",
     tshirt_product_sub: "Half-collar polo T-shirt with royal emblem and official logo.",
     tshirt_price_label: "Price per T-shirt",
-    tshirt_form_title: "T-Shirt Booking Form",
     tshirt_name_label: "Your Full Name *",
     tshirt_phone_label: "Mobile Number (WhatsApp) *",
     tshirt_size_label: "Select Size *",

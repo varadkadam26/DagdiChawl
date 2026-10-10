@@ -241,7 +241,6 @@ module.exports = {
         donationSheet.addRow(['Offline', `${r.sheet_name} / Row ${r.row_number}`, r.data[nameKey] || '', phoneKey ? r.data[phoneKey] : '', Number(r.amount) || 0, '']);
       });
 
-      const tshirtSheet = workbook.addWorksheet('All T-Shirt Bookings');
       tshirtSheet.addRow(['Source', 'Receipt / Row', 'Name', 'Phone', 'Quantity', 'Amount', 'Date']);
       tshirts.forEach(o => tshirtSheet.addRow(['Online', o.receipt_no, o.buyer_name, o.phone, Number(o.quantity) || 0, Number(o.total_amount) || 0, o.created_at || '']));
       offlineTshirts.forEach(r => {

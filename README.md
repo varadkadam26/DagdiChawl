@@ -20,11 +20,9 @@ The official website and backend management system for **Dagdi Chawl Chi Aai Mau
 | **Advertisement** | Digital advertising information and brochure download |
 | **Contact Us** | Contact form with SMTP email delivery + embedded Google Maps |
 
-### 👕 T-Shirt Booking Portal (`/tshirt`)
 - Official Collar Polo T-Shirt booking with size selection (Kids + Adults)
 - **Razorpay payment gateway** integration — payment before receipt
 - Auto-generated PDF pickup token receipt via PDFKit
-- Real-time sync to **Google Sheets** ("T-Shirt Bookings" tab)
 
 ### 💰 Online Donation Portal (`/donate`)
 - Preset amounts (₹501, ₹1008, ₹2100, ₹5001) + custom amount
@@ -188,7 +186,6 @@ TWILIO_PHONE_NUMBER=+1234567890
 1. Place your Google Cloud **Service Account** `credentials.json` in the project root
 2. Create a Google Spreadsheet and share it with the service account email as **Editor**
 3. Set the `GOOGLE_SHEET_ID` in `.env` (extract from the spreadsheet URL)
-4. On server start, 3 tabs are auto-created: **T-Shirt Bookings**, **Donations**, **Contact Us**
 
 ### 4. Run the Server
 
@@ -223,7 +220,6 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 
 | Tab | Triggered When | Columns |
 |-----|----------------|---------|
-| **T-Shirt Bookings** | New t-shirt order confirmed | Receipt No, Name, Phone, Email, Size, Color, Qty, Amount, Address, Payment ID, Status, Date |
 | **Donations** | New donation payment verified | Receipt No, Name, Phone, Email, Amount, Category, PAN, Payment ID, Order ID, Status, Date |
 | **Contact Us** | Contact form submitted | Name, Contact, Message, Date |
 
@@ -236,13 +232,11 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 | `/` | Home | Hero carousel, highlights, live status |
 | `/about` | About | Mandal history & mission |
 | `/donate` | Donations | Razorpay payment +  receipt |
-| `/tshirt` | T-Shirt Booking | Size selection + Razorpay payment + PDF token |
 | `/contact` | Contact Us | SMTP email form + Google Maps |
 | `/schedule` | Schedule | Festival day-by-day events |
 | `/glimpses` | Gallery | Decade-wise photo archive |
 | `/social-work` | Social Work | Community service showcase |
 | `/committee` | Committee | Executive members directory |
-| `/advertisement` | Ads | Advertising info & brochure |
 | `/admin` | Admin Panel | Protected dashboard |
 | `/admin/excel` | Excel Manager | Upload/export offline records |
 

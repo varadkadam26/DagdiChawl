@@ -43,7 +43,6 @@
             <label style="font-weight:700;display:block;margin-bottom:.4rem;">Record Type *</label>
             <select name="record_type" required style="width:100%;padding:.75rem;border:1px solid var(--border-gold);border-radius:8px;">
               <option value="donation">Offline Donations</option>
-              <option value="tshirt">Offline T-Shirt Bookings</option>
             </select>
           </div>
           <div>
@@ -133,7 +132,6 @@
         <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
           <div>
             <h2 style="color:var(--temple-maroon);margin:0;"><%= selectedSheet.sheet_name %></h2>
-            <p style="color:var(--text-muted);margin:.4rem 0 0;"><%= selectedSheet.record_type === 'donation' ? 'Offline Donations' : 'Offline T-Shirt Bookings' %> · <%= selectedRows.length %> records · <%= selectedSheet.columns.length %> columns</p>
           </div>
           <a href="/admin/excel/export?type=<%= selectedSheet.record_type %>" class="btn btn-outline">Export Type</a>
         </div>

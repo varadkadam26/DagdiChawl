@@ -72,7 +72,6 @@ async function runTests() {
     { method: 'GET', path: '/download-receipt/MCC-REC-2026-101', expectedStatus: 200, name: 'Download Donation PDF Receipt' },
 
     // Merch Page
-    { method: 'GET', path: '/tshirt', expectedStatus: 200, name: 'T-Shirt Booking View' },
     { method: 'GET', path: '/download-tshirt-receipt/MCC-TSHIRT-2026-101', expectedStatus: 200, name: 'Download T-Shirt Receipt PDF' },
 
     // Admin Access Controls
