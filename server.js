@@ -93,22 +93,26 @@ app.use((req, res) => {
   });
 });
 
-// Export Express app for Vercel Serverless Functions
+// Export Express app for Vercel & Hostinger Passenger
 module.exports = app;
 
-// Start Server & Database when running locally
+// Start Server when running locally or via Passenger
 if (process.env.VERCEL !== '1') {
-  app.listen(PORT, async () => {
+  app.listen(PORT, () => {
     console.log(`=======================================================`);
-    console.log(`🌺 Malabar Hill Cha Raja Official Web Server Started`);
+    console.log(`🌺 Dagdi Chawl Chi Aai Mauli Official Web Server Started`);
     console.log(`🌐 URL: http://localhost:${PORT}`);
     console.log(`=======================================================`);
     
-    await db.initDB();
+    db.initDB();
     initCronJobs();
 
-    // Initialize Google Sheets tabs (creates them if they don't exist)
-    const googleSheets = require('./config/googleSheets');
-    googleSheets.ensureTabs().catch(err => console.error('Google Sheets init error:', err.message));
+    // Async non-blocking Google Sheets initialization
+    setImmediate(() => {
+      try {
+        const googleSheets = require('./config/googleSheets');
+        googleSheets.ensureTabs().catch(err => console.error('Google Sheets init warning:', err.message));
+      } catch (e) {}
+    });
   });
 }
