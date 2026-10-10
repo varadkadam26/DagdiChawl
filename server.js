@@ -3,6 +3,14 @@ const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
 
+// Prevent 503 Errors by catching unhandled exceptions and rejections
+process.on('uncaughtException', (err) => {
+  console.error('CRITICAL: Uncaught Exception:', err);
+});
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('CRITICAL: Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
 const db = require('./config/db');
 const { initCronJobs } = require('./config/cron');
 
