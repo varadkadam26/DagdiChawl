@@ -96,12 +96,13 @@ app.use((req, res) => {
 // Export Express app for Vercel & Hostinger Passenger
 module.exports = app;
 
-// Start Server when running locally or via Passenger
+// Start Server when running locally or via Passenger/Hostinger Cloud
 if (process.env.VERCEL !== '1') {
-  app.listen(PORT, () => {
+  const HOST = process.env.HOST || '0.0.0.0';
+  app.listen(PORT, HOST, () => {
     console.log(`=======================================================`);
     console.log(`🌺 Dagdi Chawl Chi Aai Mauli Official Web Server Started`);
-    console.log(`🌐 URL: http://localhost:${PORT}`);
+    console.log(`🌐 Host: ${HOST} | Port: ${PORT}`);
     console.log(`=======================================================`);
     
     db.initDB();
