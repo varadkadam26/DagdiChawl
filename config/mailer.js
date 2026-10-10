@@ -1,8 +1,9 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-const SMTP_USER = process.env.SMTP_USER || 'mitramsolutions@gmail.com';
-const SMTP_APP_PASSWORD = process.env.SMTP_APP_PASSWORD || '';
+const SMTP_USER = (process.env.SMTP_USER || 'byculladagadichawlnavratri1973@gmail.com').trim();
+const rawPass = process.env.SMTP_APP_PASSWORD || '';
+const SMTP_APP_PASSWORD = rawPass.replace(/\s+/g, '');
 
 let transporter = null;
 
