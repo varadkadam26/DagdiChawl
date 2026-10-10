@@ -6,8 +6,8 @@ module.exports = {
   // Render Official T-Shirt Store Page
   renderTshirtPage(req, res) {
     res.render('tshirt', {
-      title: 'Official Mandal T-Shirt Booking | Malabar Hill Cha Raja',
-      metaDescription: 'Book official Malabar Hill Cha Raja Ganeshotsav T-shirts online with instant receipt generation. Show your devotion and support mandal cultural activities.',
+      title: 'Official Mandal T-Shirt Booking | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'Book official Dagdi Chawl Chi Aai Mauli T-shirts online with instant receipt generation. Show your devotion and support mandal activities.',
       activeTab: 'tshirt'
     });
   },
