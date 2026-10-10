@@ -26,7 +26,9 @@ module.exports = {
       const unitPrice = (sizeNum >= 20 && sizeNum <= 30) ? 330 : 350;
       const parsedAmount = parseFloat(total_amount) || (parsedQty * unitPrice);
 
-      if (!buyer_name || !phone || !size || !payment_id) {
+      const utrNo = (payment_id || req.body.payment_utr || '').trim();
+
+      if (!buyer_name || !phone || !size || !utrNo) {
         return res.status(400).json({
           success: false,
           message: 'कृपया नाव, मोबाईल नंबर, साईझ, संख्या आणि पेमेंट UTR / व्यवहार क्रमांक प्रविष्ट करा.'
@@ -45,12 +47,12 @@ module.exports = {
         quantity: parsedQty,
         total_amount: parsedAmount,
         address: (address || 'Mandap Counter Pickup').trim(),
-        payment_id: payment_id.trim(),
+        payment_id: utrNo,
         status: 'PENDING'
       };
 
       const createdOrder = await db.createTshirtOrder(orderData);
-      db.addLog('TSHIRT', `New pending T-Shirt order: ${createdOrder.quantity}x (${createdOrder.size}) by ${createdOrder.buyer_name} (UTR: ${payment_id})`);
+      db.addLog('TSHIRT', `New pending T-Shirt order: ${createdOrder.quantity}x (${createdOrder.size}) by ${createdOrder.buyer_name} (UTR: ${utrNo})`);
 
       // Sync to Google Sheets
       try {
