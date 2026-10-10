@@ -3133,3 +3133,10 @@ section {
     margin-top: 0.8rem;
   }
 }
+
+/* User requested universal gold glow for borders and lines */
+.gold-divider, .committee-divider, hr {
+  background-color: #D4AF37 !important;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6) !important;
+  border-color: #D4AF37 !important;
+}

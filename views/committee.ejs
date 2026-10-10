@@ -2,8 +2,8 @@
 
   <style>
     .committee-hero {
-      background: var(--temple-maroon);
-      color: var(--bg-ivory);
+      background: transparent;
+      color: var(--gold-soft);
       padding: 4.5rem 0;
       border-bottom: 3px solid var(--royal-gold);
       text-align: center;
@@ -35,7 +35,7 @@
     }
 
     .committee-section {
-      background: linear-gradient(to bottom, #FFF8EC, #FCE8D5, #EEDFC5);
+      background: transparent;
       padding: 5rem 0;
     }
 
@@ -46,7 +46,7 @@
 
     .committee-heading h2 {
       font-size: 2.2rem;
-      color: var(--temple-maroon);
+      color: var(--gold-soft);
       margin-bottom: 0.5rem;
     }
 
@@ -63,8 +63,8 @@
 
     .committee-card {
       position: relative;
-      background: #ffffff;
-      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.15);
       border-top: 4px solid var(--royal-gold);
       border-radius: var(--radius-lg);
       padding: 2rem 1.5rem;
@@ -128,7 +128,7 @@
 
     .committee-name-marathi {
       font-family: var(--font-mr, "Baloo 2", serif);
-      color: var(--temple-maroon);
+      color: var(--gold-soft);
       font-size: 1.2rem;
       font-weight: 800;
       line-height: 1.5;
@@ -136,7 +136,7 @@
     }
 
     .committee-name-english {
-      color: var(--text-muted);
+      color: rgba(255, 255, 255, 0.85);
       font-family: var(--font-en, "Outfit", sans-serif);
       font-size: 0.95rem;
       font-weight: 700;
@@ -145,7 +145,7 @@
     }
 
     .committee-designation-marathi {
-      color: var(--primary-saffron);
+      color: rgba(212, 175, 55, 0.9);
       font-family: var(--font-mr, "Baloo 2", serif);
       font-size: 1rem;
       font-weight: 800;
@@ -153,7 +153,7 @@
     }
 
     .committee-designation-english {
-      color: var(--text-muted);
+      color: rgba(255, 255, 255, 0.6);
       font-family: var(--font-en, "Outfit", sans-serif);
       font-size: 0.85rem;
       font-weight: 700;
@@ -163,15 +163,15 @@
     .committee-divider {
       width: 70%;
       height: 1px;
-      background: var(--border-subtle);
+      background: rgba(212, 175, 55, 0.2);
       margin: 0.7rem auto;
     }
 
     .committee-note {
       margin-top: 3.5rem;
 
-      background: #ffffff;
-      border: 2px solid var(--royal-gold);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 175, 55, 0.15);
       border-radius: var(--radius-lg);
 
       padding: 2rem;
@@ -182,12 +182,12 @@
     }
 
     .committee-note h3 {
-      color: var(--temple-maroon);
+      color: var(--gold-soft);
       margin-bottom: 0.7rem;
     }
 
     .committee-note p {
-      color: var(--text-muted);
+      color: rgba(255, 255, 255, 0.75);
       margin: 0;
       line-height: 1.8;
     }
@@ -238,7 +238,10 @@
      COMMITTEE HERO
 ========================================== -->
 
-  <section class="page-hero-banner">
+<!-- Wrap everything in the gradient background -->
+<div style="background: linear-gradient(to bottom, #080A08 0%, #15130F 50%, #30190F 100%); min-height: 100vh;">
+
+  <section class="page-hero-banner" style="background: transparent !important;">
     <div class="container">
       <span class="section-badge">
         <span class="lang-mr">मंडळ नेतृत्व | कार्यकारिणी समिती</span>
@@ -339,11 +342,17 @@
             </div>
 
 
-            <!-- ENGLISH DESIGNATION -->
-
             <div class="committee-designation-english lang-en">
               <%= member.designationEn %>
             </div>
+
+            <!-- PHONE -->
+            <% if (member.phone) { %>
+            <div class="committee-phone" style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--gold-soft); font-family: var(--font-en, 'Outfit', sans-serif);">
+              <i class="fa-solid fa-phone" style="font-size: 0.8rem; margin-right: 0.4rem;"></i>
+              <a href="tel:<%= member.phone %>" style="color: inherit; text-decoration: none;"><%= member.phone %></a>
+            </div>
+            <% } %>
 
 
           </div>
@@ -371,9 +380,7 @@
       </div>
 
 
-    </div>
-
   </section>
-
+</div>
 
   <%- include('partials/footer') %>

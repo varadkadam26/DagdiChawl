@@ -66,14 +66,39 @@
 <section class="main-content-gradient" style="padding: 5rem 0;">
   <div class="container" style="max-width: 1000px;">
     
-    <div style="background: var(--bg-white); border-radius: var(--radius-lg); border: 1px solid var(--border-gold); padding: 3rem; box-shadow: var(--shadow-md); margin-bottom: 3rem;">
-      <h2 style="font-size: 2rem; color: var(--temple-maroon); margin-bottom: 1.2rem; border-left: 4px solid var(--royal-gold); padding-left: 1rem;">
+    <style>
+      .history-card {
+        background: var(--bg-white);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-gold);
+        padding: clamp(1.5rem, 5vw, 3rem);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 3rem;
+      }
+      .history-title {
+        font-size: clamp(1.1rem, 4vw, 2rem);
+        color: var(--temple-maroon);
+        margin-bottom: 1.2rem;
+        border-left: 4px solid var(--royal-gold);
+        padding-left: clamp(0.5rem, 2vw, 1rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      @media (max-width: 480px) {
+        .history-title {
+          font-size: clamp(0.95rem, 4.5vw, 1.2rem);
+        }
+      }
+    </style>
+    <div class="history-card">
+      <h2 class="history-title">
         <span class="lang-mr">मंडळाचा गौरवशाली इतिहास</span>
         <span class="lang-en">Glorious History of the Mandal</span>
       </h2>
       <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; text-align: justify;">
-        <span class="lang-mr">मलबार हिल येथील गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७ वरील ऐतिहासिक श्री बाल गोपाल गणेशोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.</span>
-        <span class="lang-en">The historic Shree Bal Gopal Ganeshotsav Mandal was established in 1973 at Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai - 400007. Since its inception, local residents, young activists, and senior guides came together to start a grand tradition of the public Ganeshotsav.</span>
+        <span class="lang-mr">भायखळा येथील ७१४, दगडी चाळ, बापूराव जगताप मार्ग, भायखळा (पश्चिम), मुंबई - ४०००११ वरील ऐतिहासिक श्री बाल गोपाल गणेशोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.</span>
+        <span class="lang-en">The historic Shree Bal Gopal Ganeshotsav Mandal was established in 1973 at 714, Dagdi Chawl, Bapurao Jagtap Marg, Byculla (W), Mumbai - 400011. Since its inception, local residents, young activists, and senior guides came together to start a grand tradition of the public Ganeshotsav.</span>
       </p>
       <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; text-align: justify;">
         <span class="lang-mr">वर्षानुवर्षे 'मलबार हिलचा राजा' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. मूर्तीची प्रसन्न राजेशाही मुद्रा, भव्य काष्ठ सिंहासन आणि अनोखा मण्डप शृंगार हे राजाचे वैशिष्ट्य मानले जाते.</span>
@@ -87,13 +112,13 @@
       <div class="stat-counter-card">
         <div class="stat-num-value" data-target="1973" data-no-comma="true">1973</div>
         <div class="stat-label-text">
-          <span class="lang-mr">??????? ????</span><span class="lang-en">Founding Year</span>
+          <span class="lang-mr">स्थापना वर्ष</span><span class="lang-en">Founding Year</span>
         </div>
       </div>
       <div class="stat-counter-card">
         <div class="stat-num-value" data-target="53">53</div>
         <div class="stat-label-text">
-          <span class="lang-mr">????? ?????? ?????</span><span class="lang-en">Years of Continuous Service</span>
+          <span class="lang-mr">अविरत सेवेची वर्षे</span><span class="lang-en">Years of Continuous Service</span>
         </div>
       </div>
     </div>

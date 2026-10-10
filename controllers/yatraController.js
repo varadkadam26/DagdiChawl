@@ -127,32 +127,8 @@ const socialWorkData = [
 
 // Committee Members Data - 2025-26
 const committeeData = [
-  { number: 1, nameMr: 'श्री. केतन जमनादास पटेल', nameEn: 'Shri Ketan Jamnadas Patel', designationMr: 'कार्याध्यक्ष', designationEn: 'Working President', image: '/images/committee/ketan_patel.png' },
-  { number: 2, nameMr: 'श्री. परेश रमेश परब', nameEn: 'Shri Paresh Ramesh Parab', designationMr: 'अध्यक्ष', designationEn: 'President', image: '/images/committee/paresh_parab.png' },
-  { number: 3, nameMr: 'श्री. आदित्य पवार', nameEn: 'Shri Aditya Pawar', designationMr: 'उपाध्यक्ष', designationEn: 'Vice President', image: '/images/committee/aditya_pawar.png' },
-  { number: 4, nameMr: 'श्री. अभिषेक उगले', nameEn: 'Shri Abhishek Ugale', designationMr: 'उपाध्यक्ष', designationEn: 'Vice President', image: '/images/committee/abhishek_ugale.png' },
-  { number: 5, nameMr: 'श्री. चंद्रकांत सांगळे', nameEn: 'Shri Chandrakant Sangale', designationMr: 'उपाध्यक्ष', designationEn: 'Vice President', image: '/images/committee/chandrakant_sangle.png' },
-  { number: 6, nameMr: 'सचिव', nameEn: 'Secretary', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/secretary.jpg' },
-  { number: 7, nameMr: 'श्री. निलेश पटेल', nameEn: 'Shri Nilesh Patel', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/nilesh_patel.png' },
-  { number: 8, nameMr: 'श्री. सर्वेश सांगळे', nameEn: 'Shri Sarvesh Sangle', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/sarvesh_sangle.jpg' },
-  { number: 9, nameMr: 'श्री. महेश यमकर', nameEn: 'Shri Mahesh Yamkar', designationMr: 'सहसचिव', designationEn: 'Joint Secretary', image: '/images/committee/mahesh_yamkar.png' },
-  { number: 10, nameMr: 'श्री. भुपेंद्र पवार', nameEn: 'Shri Bhupendra Pawar', designationMr: 'सहसचिव', designationEn: 'Joint Secretary', image: '/images/committee/bhupendra_pawar.png' },
-  { number: 11, nameMr: 'श्री. सुनिल घुगे', nameEn: 'Shri Sunil Ghuge', designationMr: 'सहसचिव', designationEn: 'Joint Secretary', image: '/images/committee/sunil_ghuge.png' },
-  { number: 12, nameMr: 'श्री. भाविक पटेल', nameEn: 'Shri Bhavik Patel', designationMr: 'सोशल मीडिया प्रमुख', designationEn: 'Social Media Head', image: '/images/committee/bhavik_patel.jpg' },
-  { number: 13, nameMr: 'श्री. शिवकुमार पांडे', nameEn: 'Shri Shivkumar Pande', designationMr: 'खजिनदार', designationEn: 'Treasurer', image: '/images/committee/shivkumar_pande.png' },
-  { number: 14, nameMr: 'श्री. निखिल परब', nameEn: 'Shri Nikhil Parab', designationMr: 'खजिनदार', designationEn: 'Treasurer', image: '/images/committee/nikhil_parab_real.png' },
-  { number: 15, nameMr: 'श्री. हर्ष पटेल', nameEn: 'Shri Harsh Patel', designationMr: 'खजिनदार', designationEn: 'Treasurer', image: '/images/committee/harsh_patel.png' },
-  { number: 16, nameMr: 'श्री. क्षितीज सांगळे', nameEn: 'Shri Kshitij Sangale', designationMr: 'सह खजिनदार', designationEn: 'Joint Treasurer', image: '/images/committee/kshitij_sangale.png' },
-  { number: 17, nameMr: 'श्री. अभिषेक पांडे', nameEn: 'Shri Abhishek Pande', designationMr: 'सह खजिनदार', designationEn: 'Joint Treasurer', image: '/images/committee/abhishek_pande.png' },
-  { number: 18, nameMr: 'श्री. अमित उपाध्याय', nameEn: 'Shri Amit Upadhyay', designationMr: 'सह खजिनदार', designationEn: 'Joint Treasurer', image: '/images/committee/amit_upadhyay.png' },
-  { number: 19, nameMr: 'श्री. राजेश पटेल', nameEn: 'Shri Rajesh Patel', designationMr: 'संयोजक', designationEn: 'Coordinator', image: '/images/committee/rajesh_patel.jpg' },
-  { number: 20, nameMr: 'श्री. संतोष सांगळे', nameEn: 'Shri Santosh Sangale', designationMr: 'संयोजक', designationEn: 'Coordinator', image: '/images/committee/santosh_sangale.png' },
-  { number: 21, nameMr: 'श्री. अंश जैन', nameEn: 'Shri Ansh Jain', designationMr: 'संयोजक', designationEn: 'Coordinator', image: '/images/committee/ansh_jain.png' },
-  { number: 22, nameMr: 'श्री. किशोर शेट्टी कटील', nameEn: 'Shri Kishor Shetty Katil', designationMr: 'स्मरणिका प्रमुख', designationEn: 'Souvenir Head', image: '/images/committee/kishore_shetty_katil.png', objectPosition: 'left center' },
-  { number: 23, nameMr: 'श्री. प्रथमेश वारंग', nameEn: 'Shri Prathamesh Warang', designationMr: 'स्मरणिका प्रमुख', designationEn: 'Souvenir Head', image: '/images/committee/prathamesh_warang.png' },
-  { number: 25, nameMr: 'श्री. ओम बोले', nameEn: 'Shri Om Bole', designationMr: 'स्मरणिका प्रमुख', designationEn: 'Souvenir Head', image: '/images/committee/om_bole.png' },
-  { number: 26, nameMr: 'श्री. प्रथमेश सांगळे', nameEn: 'Shri Prathamesh Sangale', designationMr: 'स्मरणिका प्रमुख', designationEn: 'Souvenir Head', image: '/images/committee/prathamesh_sangale.jpg' },
-  { number: 27, nameMr: 'श्री. भौमिक शिर्के', nameEn: 'Shri Bhaumik Shirke', designationMr: 'संयोजक', designationEn: 'Coordinator', image: '/images/committee/bhaumik_shirke.png' }
+  { number: 1, nameMr: 'श्री. सुशांत सातविडकर', nameEn: 'Mr. Sushant Satvidkar', designationMr: 'सचिव', designationEn: 'Secretary', image: '/images/committee/sushant_satvidkar.png', phone: '+91 95945 12999' },
+  { number: 2, nameMr: 'श्री. मिलिंद बिरजे', nameEn: 'Mr. Milind Birje', designationMr: 'खजिनदार', designationEn: 'Treasurer', image: '/images/committee/milind_birje.jpg', phone: '+91 98676 77617' }
 ];
 
 module.exports = {
