@@ -568,10 +568,9 @@
       z-index: 20;
     }
 
-    /* Mobile Lamp Placements */
+    /* Mobile Lamp Placements - Hide floating glow dot */
     .fire-glow {
-      width: 20vw;
-      height: 20vw;
+      display: none !important;
     }
     
     /* Proper rem sizing for mobile */
@@ -696,7 +695,7 @@
 <div class="container-wrapper">
   <div class="image-container">
     <picture>
-      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=hd5">
+      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=noglow6">
       <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
     </picture>
     
