@@ -58,6 +58,18 @@
 <section class="main-content-gradient" style="padding: clamp(120px, 14vw, 150px) 0 4rem;">
   <div class="container">
     
+    <!-- Contact Page Header -->
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h1 style="font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FCE893; text-shadow: 0 0 16px rgba(245, 217, 142, 0.5), 0 2px 4px rgba(0,0,0,0.8); margin-bottom: 0.5rem; font-weight: 800;">
+        <span class="lang-mr">आमच्याशी संपर्क साधा</span>
+        <span class="lang-en">Contact Us</span>
+      </h1>
+      <p style="color: #E6C875; font-size: 1.05rem; margin: 0; font-weight: 600;">
+        <span class="lang-mr">भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ</span>
+        <span class="lang-en">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal</span>
+      </p>
+    </div>
+
     <div class="grid-2" style="margin-bottom: 4rem;">
       <!-- Contact Info Box -->
       <div class="card-temple" style="padding: 2.5rem;">
@@ -69,7 +81,7 @@
         <div style="margin-bottom: 1.8rem;">
           <h4 style="color: #F5D98E; text-shadow: 0 0 10px rgba(245, 217, 142, 0.4); font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
             <i class="fa-solid fa-building-columns" style="color: #F5D98E;"></i> 
-            <span class="lang-mr">मण्डप व मुख्य कार्यालय पत्ता</span>
+            <span class="lang-mr">मंडप व मुख्य कार्यालय पत्ता</span>
             <span class="lang-en">Mandap & Head Office Address</span>
           </h4>
           <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.7; margin: 0; padding-left: 1.6rem;">
@@ -87,11 +99,13 @@
           <div style="display: flex; flex-direction: column; gap: 0.75rem; padding-left: 1.6rem;">
             <a href="tel:+919594512999" style="display: inline-flex; align-items: center; gap: 10px; color: #FCE893; text-decoration: none; font-size: 1rem; font-weight: 700; background: rgba(245, 217, 142, 0.08); border: 1px solid rgba(245, 217, 142, 0.3); border-radius: var(--radius-sm); padding: 0.5rem 0.9rem; width: fit-content; transition: all 0.25s ease;">
               <i class="fa-solid fa-phone" style="color: #F5D98E;"></i>
-              <span><span class="lang-mr">फोन:</span><span class="lang-en">Phone:</span> +९१ ९५९४५ १२९९९</span>
+              <span class="lang-mr">फोन: +९१ ९५९४५ १२९९९</span>
+              <span class="lang-en">Phone: +91 95945 12999</span>
             </a>
             <a href="https://wa.me/919594512999" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; color: #FCE893; text-decoration: none; font-size: 1rem; font-weight: 700; background: rgba(245, 217, 142, 0.08); border: 1px solid rgba(245, 217, 142, 0.3); border-radius: var(--radius-sm); padding: 0.5rem 0.9rem; width: fit-content; transition: all 0.25s ease;">
               <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i>
-              <span><span class="lang-mr">व्हॉट्सॲप हेल्पलाईन:</span><span class="lang-en">WhatsApp Helpline:</span> +९१ ९५९४५ १२९९९</span>
+              <span class="lang-mr">व्हॉट्सॲप हेल्पलाईन: +९१ ९५९४५ १२९९९</span>
+              <span class="lang-en">WhatsApp Helpline: +91 95945 12999</span>
             </a>
           </div>
         </div>
@@ -123,7 +137,11 @@
               <span class="lang-mr">तुमचे नाव *</span>
               <span class="lang-en">Your Name *</span>
             </label>
-            <input type="text" id="cName" required placeholder="संपूर्ण नाव टाका / Enter Full Name" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
+            <input type="text" id="cName" required 
+              data-ph-mr="तुमचे संपूर्ण नाव टाका" 
+              data-ph-en="Enter your full name" 
+              placeholder="Enter your full name" 
+              style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
           </div>
 
           <div style="margin-bottom: 1.2rem;">
@@ -131,7 +149,11 @@
               <span class="lang-mr">ईमेल पत्ता *</span>
               <span class="lang-en">Email Address *</span>
             </label>
-            <input type="email" id="cEmail" required placeholder="ईमेल पत्ता टाका | Enter Email Address" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
+            <input type="email" id="cEmail" required 
+              data-ph-mr="तुमचा ईमेल पत्ता टाका" 
+              data-ph-en="Enter your email address" 
+              placeholder="Enter your email address" 
+              style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
           </div>
 
           <div style="margin-bottom: 1.5rem;">
@@ -139,7 +161,11 @@
               <span class="lang-mr">तुमचा संदेश / प्रश्न *</span>
               <span class="lang-en">Your Message / Query *</span>
             </label>
-            <textarea id="cMessage" rows="4" required placeholder="येथे संदेश लिहा... / Write your message here..." style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;"></textarea>
+            <textarea id="cMessage" rows="4" required 
+              data-ph-mr="येथे तुमचा संदेश लिहा..." 
+              data-ph-en="Write your message here..." 
+              placeholder="Write your message here..." 
+              style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;"></textarea>
           </div>
 
           <button type="submit" class="btn" style="width: 100%; padding: 0.95rem; font-size: 1.1rem; font-weight: 800; background: linear-gradient(135deg, #F5D98E 0%, #CBA135 50%, #A5781E 100%); color: #180D06; border: 1px solid #FFE699; border-radius: var(--radius-md); box-shadow: 0 4px 18px rgba(203, 161, 53, 0.45); cursor: pointer; transition: all 0.3s ease;">
@@ -155,7 +181,7 @@
     <div class="card-temple" style="background: transparent; border-radius: var(--radius-lg); border: 1px solid rgba(212, 175, 55, 0.2); padding: 2rem; box-shadow: none;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.2rem;">
         <h3 style="font-size: clamp(1.3rem, 3.8vw, 1.7rem); color: #FCE893; text-shadow: 0 0 16px rgba(245, 217, 142, 0.5), 0 2px 4px rgba(0,0,0,0.8); margin: 0; border-left: 4px solid #F5D98E; padding-left: 1rem;">
-          <span class="lang-mr">गूगल मॅप्स - मण्डप स्थान (दगडी चाळ)</span>
+          <span class="lang-mr">गूगल मॅप्स - मंडप स्थान (दगडी चाळ)</span>
           <span class="lang-en">Google Maps - Mandap Location (Dagdi Chawl)</span>
         </h3>
         <a href="https://www.google.com/maps/search/Dagdi+Chawl,+Bapurao+Jagtap+Marg,+Byculla+West,+Mumbai+400011" target="_blank" rel="noopener noreferrer" class="btn" style="font-size: 0.95rem; font-weight: 800; padding: 0.65rem 1.25rem; background: rgba(245, 217, 142, 0.12); color: #FCE893; border: 1.5px solid #F5D98E; border-radius: var(--radius-md); box-shadow: 0 0 14px rgba(245, 217, 142, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
@@ -182,19 +208,34 @@
 </section>
 
 <script>
+  function updateContactPlaceholders() {
+    const isMr = document.body.getAttribute('data-lang') === 'mr' || document.documentElement.lang === 'mr';
+    const inputs = document.querySelectorAll('[data-ph-mr]');
+    inputs.forEach(el => {
+      el.placeholder = isMr ? el.getAttribute('data-ph-mr') : el.getAttribute('data-ph-en');
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', updateContactPlaceholders);
+  window.addEventListener('languageChanged', updateContactPlaceholders);
+  const langObserver = new MutationObserver(updateContactPlaceholders);
+  langObserver.observe(document.body, { attributes: true, attributeFilter: ['data-lang'] });
+  updateContactPlaceholders();
+
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const isMr = document.body.getAttribute('data-lang') === 'mr' || document.documentElement.lang === 'mr';
     const btn = e.target.querySelector('button[type="submit"]');
     const originalHTML = btn.innerHTML;
     btn.disabled = true;
-    btn.innerHTML = '<span>संदेश पाठवत आहे... / Sending...</span>';
+    btn.innerHTML = isMr ? '<span>संदेश पाठवत आहे...</span>' : '<span>Sending message...</span>';
 
     const name = document.getElementById('cName').value.trim();
     const email = document.getElementById('cEmail').value.trim();
     const message = document.getElementById('cMessage').value.trim();
 
     if (!name || !email || !message) {
-      alert('कृपया वैध ईमेल पत्ता व सर्व माहिती भरा. / Please enter a valid email and fill all required fields.');
+      alert(isMr ? 'कृपया वैध ईमेल पत्ता व सर्व माहिती भरा.' : 'Please enter a valid email and fill all required fields.');
       btn.disabled = false;
       btn.innerHTML = originalHTML;
       return;
@@ -209,14 +250,14 @@
       const data = await res.json();
 
       if (data.success) {
-        alert(data.message || 'तुमचा संदेश यशस्वीरित्या पाठवला गेला आहे!');
+        alert(isMr ? (data.message || 'तुमचा संदेश यशस्वीरित्या पाठवला गेला आहे!') : 'Your message has been sent successfully!');
         document.getElementById('contactForm').reset();
       } else {
-        alert(data.message || 'संदेश पाठवताना त्रुटी आली.');
+        alert(isMr ? (data.message || 'संदेश पाठवताना त्रुटी आली.') : 'An error occurred while sending your message.');
       }
     } catch (err) {
       console.error('Contact form error:', err);
-      alert('सर्व्हरशी कनेक्ट करता आले नाही. कृपया पुन्हा प्रयत्न करा.');
+      alert(isMr ? 'सर्व्हरशी कनेक्ट करता आले नाही. कृपया पुन्हा प्रयत्न करा.' : 'Could not connect to the server. Please try again.');
     } finally {
       btn.disabled = false;
       btn.innerHTML = originalHTML;

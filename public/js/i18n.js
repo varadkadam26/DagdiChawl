@@ -25,7 +25,7 @@ const translations = {
     nav_tshirt: "Official T-Shirt",
     nav_committee: "Committee",
     nav_advertisement: "Advertisement",
-    nav_contact: "Contact",
+    nav_contact: "Contact Us",
     nav_donate: "Donate Now",
 
     // Hero & Flip Clock
@@ -63,7 +63,7 @@ const translations = {
     timeline_title: "Golden Journey of Devotion & Heritage Since 1973",
     timeline_sub: "Click on any year point below to explore the royal history, idol form, and divine milestones of that year!",
     nav_advertisement: "Advertisement",
-    nav_contact: "Contact",
+    nav_contact: "Contact Us",
     nav_donate: "Donate Now",
 
     // Hero & Flip Clock
