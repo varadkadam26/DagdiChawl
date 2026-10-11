@@ -3174,3 +3174,36 @@ body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, in
     --font-mr-head: 'Baloo 2', sans-serif !important;
     --font-body: 'Baloo 2', sans-serif !important;
 }
+
+@media (max-width: 768px) {
+  .hd-text-container {
+    position: absolute !important;
+    top: 17vh !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .hd-main-title {
+    font-size: clamp(14px, 4.6vw, 18.5px) !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  .hd-main-title span {
+    display: inline-block !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+}

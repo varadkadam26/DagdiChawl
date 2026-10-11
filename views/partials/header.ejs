@@ -818,12 +818,15 @@
       position: absolute; /* Overlay on the image */
       top: 17vh; /* Properly spaced below top navigation title */
       left: 0;
+      right: 0;
       width: 100%;
-      margin: 0;
-      padding: 0 10px;
+      margin: 0 auto;
+      padding: 0 15px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: center;
       background: <%= currentTabName === 'home' ? 'transparent' : 'rgba(21, 19, 15, 0.7)' %>; /* Keep the cave as the background */
       backdrop-filter: none;
@@ -845,11 +848,21 @@
     .hd-main-title {
       font-family: 'Baloo 2', sans-serif; /* Applied Baloo 2 font */
       font-weight: 700; /* Bold */
-      font-size: 5.8vw; /* Scales to fit in one single line on mobile */
-      margin: 0;
+      font-size: clamp(14px, 4.6vw, 18.5px); /* A bit smaller to fit cleanly in one single line on mobile */
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       white-space: nowrap; /* Forces one line */
       /* Added a slight gold glow behind it while preserving readability */
       text-shadow: 0 0 25px rgba(212, 175, 55, 1), 0 0 45px rgba(212, 175, 55, 0.8), 2px 2px 10px rgba(0, 0, 0, 0.9); 
+    }
+    .hd-main-title span {
+      display: inline-block;
+      text-align: center;
+      margin: 0 auto;
     }
     
     /* Hide everything else so ONLY the sentence is shown on the picture */
