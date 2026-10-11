@@ -5,65 +5,40 @@
     background: linear-gradient(125deg, #050403 0%, #100A07 38%, #28140C 72%, #422315 100%) !important;
     min-height: 100vh;
   }
-  .main-content-gradient, .page-hero-banner {
+  .main-content-gradient {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    padding: clamp(170px, 15vw, 210px) 0 5rem !important;
   }
-  
-  /* Transparent Cards with Golden Border */
-  .main-content-gradient > .container > div,
-  .main-content-gradient .grid-2 > div,
+  @media (max-width: 768px) {
+    .main-content-gradient {
+      padding: clamp(155px, 20vw, 185px) 0 3.5rem !important;
+    }
+  }
   .stat-counter-card {
     background: transparent !important;
     border: 1px solid rgba(212, 175, 55, 0.4) !important;
     box-shadow: none !important;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
   }
-
-  /* Text Colors to compliment dark background */
-  .main-content-gradient p,
-  .main-content-gradient p span,
+  .stat-num-value {
+    color: #CBA135 !important;
+    text-shadow: 0 0 8px rgba(203, 161, 53, 0.4) !important;
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
   .stat-label-text span {
     color: #F4EDE0 !important;
   }
-  
-  .main-content-gradient h2,
-  .main-content-gradient h2 span,
-  .main-content-gradient h3,
-  .main-content-gradient h3 span,
-  .stat-num-value {
-    color: #CBA135; text-shadow: 0 0 8px rgba(203, 161, 53, 0.4); !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
-  }
-  
-  .main-content-gradient h2 {
-    border-left-color: #CBA135; text-shadow: 0 0 8px rgba(203, 161, 53, 0.4); !important;
-  }
-  
-  .page-hero-banner h1 span,
-  .page-hero-banner p span {
-    color: #F4EDE0 !important;
+  .page-hero-banner {
+    display: none !important;
   }
 </style>
 
-<section class="page-hero-banner">
-  <div class="container">
-    <span class="section-badge">
-      <span class="lang-mr">इतिहास व भव्य परंपरा</span>
-      <span class="lang-en">History & Grand Tradition</span>
-    </span>
-    <h1>
-      <span class="lang-mr">आमच्याबद्दल - मलबार हिलचा राजा</span>
-      <span class="lang-en">About Us - Malabar Hill Cha Raja</span>
-    </h1>
-    <p>
-      <span class="lang-mr">श्री बाल गोपाल गणेशोत्सव मंडळ (स्थापना १९७३)</span>
-      <span class="lang-en">Shree Bal Gopal Ganeshotsav Mandal (Est. 1973)</span>
-    </p>
-  </div>
-</section>
-
-<section class="main-content-gradient" style="padding: 5rem 0;">
+<section class="main-content-gradient">
   <div class="container" style="max-width: 1000px;">
     
     <style>
