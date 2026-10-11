@@ -1,42 +1,9 @@
 <%- include('partials/header') %>
 
   <style>
-    .committee-hero {
-      background: transparent;
-      color: var(--gold-soft);
-      padding: 4.5rem 0;
-      border-bottom: 3px solid var(--royal-gold);
-      text-align: center;
-    }
-
-    .committee-hero h1 {
-      font-size: 3rem;
-      color: var(--gold-soft);
-      margin: 0.7rem 0 0;
-    }
-
-    .committee-hero p {
-      font-size: 1.1rem;
-      color: #E5E7EB;
-      max-width: 850px;
-      margin: 1rem auto 0;
-      line-height: 1.8;
-    }
-
-    .committee-year {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1.2rem;
-      border: 1px solid var(--royal-gold);
-      border-radius: 999px;
-      color: var(--gold-soft);
-      background: rgba(212, 175, 55, 0.15);
-      font-weight: 800;
-    }
-
     .committee-section {
       background: transparent;
-      padding: 5rem 0;
+      padding: clamp(120px, 12vw, 150px) 0 5rem;
     }
 
     .committee-heading {
@@ -204,16 +171,8 @@
 
     @media (max-width: 650px) {
 
-      .committee-hero {
-        padding: 3.5rem 1rem;
-      }
-
-      .committee-hero h1 {
-        font-size: 2.2rem;
-      }
-
       .committee-section {
-        padding: 3.5rem 0;
+        padding: clamp(110px, 18vw, 130px) 0 3.5rem;
       }
 
       .committee-grid {
@@ -240,29 +199,6 @@
 
 <!-- Wrap everything in the gradient background -->
 <div style="background: linear-gradient(125deg, #050403 0%, #100A07 38%, #28140C 72%, #422315 100%); min-height: 100vh;">
-
-  <section class="page-hero-banner" style="background: transparent !important;">
-    <div class="container">
-      <span class="section-badge">
-        <span class="lang-mr">मंडळ नेतृत्व | कार्यकारिणी समिती</span>
-        <span class="lang-en">Mandal Leadership | Executive Committee</span>
-      </span>
-
-      <h1>
-        <span class="lang-mr">कार्यकारिणी समिती</span>
-        <span class="lang-en">Executive Committee</span>
-      </h1>
-
-      <div class="committee-year" style="display: inline-block; margin-top: 0.4rem; padding: 0.25rem 0.9rem; border: 1px solid var(--royal-gold); border-radius: 999px; color: var(--gold-soft); background: rgba(212, 175, 55, 0.15); font-size: 0.8rem; font-weight: 800;">
-        <span>
-          <span class="lang-mr">सन २०२६-२७</span>
-          <span class="lang-en">Year 2026-27</span>
-        </span>
-      </div>
-    </div>
-  </section>
-
-
 
   <!-- ==========================================
      COMMITTEE MEMBERS
