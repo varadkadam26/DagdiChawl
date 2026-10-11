@@ -17,7 +17,7 @@
     var pageDesc = typeof metaDescription !== 'undefined' ? metaDescription : defaultDesc;
     var currentTabName = typeof activeTab !== 'undefined' ? activeTab : 'home';
     var currentPath = currentTabName !== 'home' 
-      ? (currentTabName === 'socialwork' ? '/social-work' : currentTabName === 'photobooth' ? '/glimpses' : '/' + currentTabName) 
+      ? (currentTabName === 'photobooth' ? '/glimpses' : '/' + currentTabName) 
       : '';
     var canonicalUrl = 'https://malabarhillcharaja.in' + currentPath;
 
@@ -30,7 +30,6 @@
         'schedule': 'Schedule',
         'glimpses': 'Glimpses',
         'photobooth': 'Glimpses',
-        'socialwork': 'Social Work',
         'committee': 'Committee',
         'advertisement': 'Advertisement',
         'contact': 'Contact',

@@ -63,7 +63,6 @@ async function runTests() {
     { method: 'GET', path: '/about', expectedStatus: 200, name: 'About Page' },
     { method: 'GET', path: '/schedule', expectedStatus: 200, name: 'Schedule Page' },
     { method: 'GET', path: '/glimpses', expectedStatus: 200, name: 'Glimpses Gallery Page' },
-    { method: 'GET', path: '/social-work', expectedStatus: 200, name: 'Social Work Page' },
     { method: 'GET', path: '/committee', expectedStatus: 200, name: 'Committee Page' },
     { method: 'GET', path: '/contact', expectedStatus: 200, name: 'Contact Page' },
     

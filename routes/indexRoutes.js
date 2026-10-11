@@ -16,8 +16,8 @@ router.get('/api/live-status', yatraController.getLiveStatusApi);
 router.get('/glimpses', yatraController.renderGlimpsesPage);
 router.get('/photo-booth', (req, res) => res.redirect(301, '/glimpses'));
 
-// Social Work Page (Separate Page & Photos)
-router.get('/social-work', yatraController.renderSocialWorkPage);
+// Social Work Page Removed - Redirect to home
+router.get('/social-work', (req, res) => res.redirect(301, '/'));
 
 // Executive Committee Page (Public - Separate from Admin Login)
 router.get('/committee', yatraController.renderCommitteePage);

@@ -189,15 +189,6 @@ module.exports = {
     });
   },
 
-  // Render Social Work Page
-  renderSocialWorkPage(req, res) {
-    res.render('social-work', {
-      title: 'Social Initiatives & Community Service | Malabar Hill Cha Raja',
-      metaDescription: 'Discover community welfare programs by Shree Bal Gopal Ganeshutsav Mandal including Tulsi Vatap, student school kits, 2017 flood relief, and food security drives in Mumbai.',
-      activeTab: 'socialwork',
-      socialWorkData
-    });
-  },
 
   renderCommitteePage(req, res) {
     res.render('committee', {
