@@ -3229,3 +3229,22 @@ body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, in
     margin: 0 auto !important;
   }
 }
+
+/* Center Language Toggle and Social Media Handles on Laptop and Mobile */
+.nm-top-bar {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 20px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.nm-top-bar .nm-social-icons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+}
+.nm-top-bar .lang-toggle-container {
+  display: flex !important;
+  align-items: center !important;
+}
