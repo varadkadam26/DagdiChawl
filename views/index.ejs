@@ -533,8 +533,7 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      /* Adjusted to 74% to perfectly center the 68% idol mark on mobile screens */
-      object-position: 74% center; 
+      object-position: center center; 
     }
 
     
@@ -693,8 +692,10 @@
 
 <div class="container-wrapper">
   <div class="image-container">
-    <!-- Blurry baked background -->
-    <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
+    <picture>
+      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg">
+      <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
+    </picture>
     
     <!-- Animated Fire Glows for the Lamps (Auto-aligned by JS) -->
     <div class="fire-glow lamp-left"></div>
