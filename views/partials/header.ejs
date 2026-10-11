@@ -573,7 +573,7 @@
   /* HD Text Overlay Styles */
   .hd-text-container {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 8%;
     width: 45%;
     z-index: 10;
@@ -816,7 +816,7 @@
     /* 2. Second Section: Text below the image */
     .hd-text-container {
       position: absolute; /* Overlay on the image */
-      top: 18vh; /* Moved a bit down */
+      top: 17vh; /* Properly spaced below top navigation title */
       left: 0;
       width: 100%;
       margin: 0;
@@ -825,7 +825,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      background: <%= currentTabName === 'home' ? 'rgba(0,0,0,0.2)' : 'rgba(21, 19, 15, 0.7)' %>; /* Keep the cave as the background */
+      background: <%= currentTabName === 'home' ? 'transparent' : 'rgba(21, 19, 15, 0.7)' %>; /* Keep the cave as the background */
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
       border: none;
@@ -833,10 +833,9 @@
       z-index: 20;
     }
 
-    /* Mobile Lamp Placements */
+    /* Mobile Lamp Placements - Hide floating glow dot */
     .fire-glow {
-      width: 20vw;
-      height: 20vw;
+      display: none !important;
     }
     
     /* Proper rem sizing for mobile */
@@ -860,7 +859,7 @@
 
     .action-buttons-container {
       position: absolute;
-      top: 65vh; /* Moved back up to original position */
+      top: 64vh; /* Perfectly positioned below Devi pedestal */
       left: 0;
       width: 100%;
       justify-content: center;
