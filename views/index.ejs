@@ -266,11 +266,11 @@
      ============================================================ */
   .devi-divine-aura {
     position: absolute;
-    top: 13%;
+    top: 25.5%;
     left: 70.2%;
-    width: 36vw;
-    height: 36vw;
-    transform: translate(-50%, -20%);
+    width: 38vw;
+    height: 38vw;
+    transform: translate(-50%, -50%);
     z-index: 4;
     pointer-events: none;
     display: flex !important;
@@ -659,56 +659,70 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-    /* 1. First Section: Full Screen Devi Image - Shifted right so Devi's face is dead-center */
+    /* 1. First Section: Full Screen Devi Image - Shifted noticeably right so Devi is centered/right */
     .image-container img.bg-image {
       display: block;
-      width: 122vw;
-      max-width: none;
-      height: 100vh;
-      object-fit: cover;
-      object-position: 40% center;
-      margin-left: 2vw;
-      transform: none !important;
+      width: 132vw !important;
+      max-width: none !important;
+      height: 100vh !important;
+      object-fit: cover !important;
+      margin-left: -16vw !important;
+      transform: translateX(12vw) !important;
     }
 
     .hd-devi-wrapper {
       display: none !important;
     }
 
-    /* Prominent moving golden glow on mobile positioned directly behind Devi Maa's head and crown */
+    /* Pure golden aura strictly BEHIND Devi Maa: hollow center preserves face, crown & mukut 100% crystal clear with zero distortion */
     .devi-divine-aura {
       display: flex !important;
       position: absolute !important;
-      top: 41vh !important;
-      left: 50% !important;
+      top: 34vh !important;
+      left: 52vw !important;
       width: 86vw !important;
       height: 86vw !important;
       transform: translate(-50%, -50%) !important;
-      z-index: 5 !important;
+      z-index: 4 !important;
       pointer-events: none !important;
-      /* Soft divine halo with zero clipping distortion near crown */
     }
     .devi-aura-core {
-      width: 85% !important;
-      height: 85% !important;
-      background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.78) 0%, rgba(197, 160, 40, 0.45) 45%, transparent 72%) !important;
-      filter: blur(20px) !important;
-      opacity: 0.8 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle at 50% 50%,
+        transparent 0%,
+        transparent 45%,
+        rgba(212, 175, 55, 0.85) 56%,
+        rgba(245, 215, 110, 0.7) 64%,
+        rgba(184, 134, 11, 0.4) 76%,
+        rgba(184, 134, 11, 0.12) 86%,
+        transparent 94%
+      ) !important;
+      filter: blur(12px) !important;
+      opacity: 0.85 !important;
     }
     .devi-aura-rays {
-      width: 105% !important;
-      height: 105% !important;
-      filter: blur(16px) !important;
-      opacity: 0.35 !important;
+      display: none !important; /* Disables rotating conic lines on mobile to eliminate all flicker and crown distortion */
     }
     .devi-aura-shimmer {
-      width: 125% !important;
-      height: 125% !important;
-      background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.4) 0%, rgba(180, 130, 20, 0.2) 48%, transparent 70%) !important;
-      filter: blur(26px) !important;
-      opacity: 0.65 !important;
+      width: 120% !important;
+      height: 120% !important;
+      border-radius: 50% !important;
+      background: radial-gradient(circle at 50% 50%,
+        transparent 0%,
+        transparent 43%,
+        rgba(212, 175, 55, 0.5) 58%,
+        rgba(200, 150, 30, 0.25) 74%,
+        transparent 90%
+      ) !important;
+      filter: blur(24px) !important;
+      opacity: 0.7 !important;
     }
   }
 
@@ -875,7 +889,7 @@
 <div class="container-wrapper">
   <div class="image-container">
     <picture>
-      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=subtle_pure_royal_gold">
+      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=devi_centered_gold_behind_v4">
       <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
     </picture>
     
@@ -904,11 +918,6 @@
       </h1>
       <div class="hd-keywords">Faith &nbsp;|&nbsp; Unity &nbsp;|&nbsp; Celebration</div>
       <p class="hd-quote">"May the divine energy of Maa Durga<br>fill your life with happiness, prosperity and strength."</p>
-      
-      <!-- Action Buttons replacing Explore More -->
-      <div class="action-buttons-container">
-        <a href="/donate" class="glow-btn">Donate Now</a>
-      </div>
     </div>
 
   </div>
@@ -1194,8 +1203,7 @@
       <div class="container">
         <!-- Donate Button above Mandap Location & Contact -->
         <div style="text-align: center; margin-bottom: 2.5rem;">
-          <a href="/donate" class="glow-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 32px; font-size: clamp(0.95rem, 2.5vw, 1.15rem); font-weight: 700; text-decoration: none; border-radius: 40px;">
-            <i class="fa-solid fa-hand-holding-dollar" style="color: var(--royal-gold); font-size: 1.15rem;"></i>
+          <a href="/donate" class="glow-btn" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 34px; font-size: clamp(0.95rem, 2.5vw, 1.15rem); font-weight: 700; text-decoration: none; border-radius: 40px;">
             <span class="lang-mr">देणगी द्या / Donate Now</span>
             <span class="lang-en">Donate Now</span>
           </a>
