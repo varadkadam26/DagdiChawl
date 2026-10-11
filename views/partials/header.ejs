@@ -6,23 +6,25 @@
   <meta name="theme-color" content="#7F1D1D">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Malabar Hill Cha Raja">
-  <title><%= typeof title !== 'undefined' ? title : 'Malabar Hill Cha Raja | Shree Bal Gopal Ganeshutsav Mandal, Mumbai' %></title>
+  <meta name="apple-mobile-web-app-title" content="Dagdi Chawli Chi Aai Mauli">
+  <title><%= typeof title !== 'undefined' ? title : 'दगडी चाळीची आई माऊली | Dagdi Chawli Chi Aai Mauli, Byculla, Mumbai' %></title>
   <!-- Google Search Console Ownership Verification -->
   <meta name="google-site-verification" content="-La0Qcl3mNPWA_VzETqJiTZj5LkxDA9CygyqMylTeuY">
   <meta name="google-site-verification" content="660I70yKDwuyHiRbH-kyytKeHowTLgUQtc67gmOonAE">
   
   <%
-    var defaultDesc = 'Official Portal of Malabar Hill Cha Raja (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical photo gallery, social work & 80G tax exempt donations.';
+    var defaultDesc = 'अधिकृत पोर्टल - दगडी चाळीची आई माऊली (भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ). Daily Navratrotsav live darshan, aarti schedule, historical photo gallery, social work & donations.';
     var pageDesc = typeof metaDescription !== 'undefined' ? metaDescription : defaultDesc;
     var currentTabName = typeof activeTab !== 'undefined' ? activeTab : 'home';
     var currentPath = currentTabName !== 'home' 
       ? (currentTabName === 'photobooth' ? '/glimpses' : '/' + currentTabName) 
       : '';
-    var canonicalUrl = 'https://malabarhillcharaja.in' + currentPath;
+    var baseHost = typeof baseUrl !== 'undefined' && baseUrl ? baseUrl : 'https://dagdichawlichiaaimauli.com';
+    var canonicalUrl = baseHost + currentPath;
+    var ogImageUrl = baseHost + '/images/og_share.jpg';
 
     var breadcrumbs = [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://malabarhillcharaja.in/" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": baseHost + "/" }
     ];
     if (currentTabName !== 'home') {
       var tabLabelMap = {
@@ -46,22 +48,27 @@
     }
   %>
   <meta name="description" content="<%= pageDesc %>">
-  <!-- Canonical & Open Graph Meta Tags -->
+  <!-- Canonical & Open Graph Meta Tags for WhatsApp, Facebook & Social Link Sharing -->
   <link rel="canonical" href="<%= canonicalUrl %>">
-  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Malabar Hill Cha Raja | Shree Bal Gopal Ganeshutsav Mandal' %>">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'दगडी चाळीची आई माऊली | Dagdi Chawli Chi Aai Mauli' %>">
   <meta property="og:description" content="<%= pageDesc %>">
-  <meta property="og:image" content="https://malabarhillcharaja.in/images/malabar_ganpati_01.jpg">
+  <meta property="og:image" content="<%= ogImageUrl %>">
+  <meta property="og:image:secure_url" content="<%= ogImageUrl %>">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="दगडी चाळीची आई माऊली - Dagdi Chawli Chi Aai Mauli">
   <meta property="og:url" content="<%= canonicalUrl %>">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Malabar Hill Cha Raja">
+  <meta property="og:site_name" content="Dagdi Chawli Chi Aai Mauli">
   <meta property="og:locale" content="<%= typeof lang !== 'undefined' && lang === 'mr' ? 'mr_IN' : 'en_US' %>">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Malabar Hill Cha Raja | Shree Bal Gopal Ganeshutsav Mandal' %>">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'दगडी चाळीची आई माऊली | Dagdi Chawli Chi Aai Mauli' %>">
   <meta name="twitter:description" content="<%= pageDesc %>">
-  <meta name="twitter:image" content="https://malabarhillcharaja.in/images/malabar_ganpati_01.jpg">
+  <meta name="twitter:image" content="<%= ogImageUrl %>">
 
   <!-- LCP Image Preload for Instant First Contentful Render -->
-  <link rel="preload" as="image" href="/images/malabar_ganpati_new1.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/hero_mobile.jpg" type="image/jpeg" fetchpriority="high">
   
   <!-- JSON-LD Structured Data Schema for Google Search & AI Systems -->
   <script type="application/ld+json">
@@ -70,18 +77,18 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://malabarhillcharaja.in/#website",
-        "url": "https://malabarhillcharaja.in/",
-        "name": "Malabar Hill Cha Raja Official Website",
-        "description": "Official Portal of Malabar Hill Cha Raja - Shree Bal Gopal Ganeshutsav Mandal"
+        "@id": "<%= baseHost %>/#website",
+        "url": "<%= baseHost %>/",
+        "name": "Dagdi Chawli Chi Aai Mauli Official Website",
+        "description": "Official Portal of Dagdi Chawli Chi Aai Mauli - Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal"
       },
       {
         "@type": "Organization",
-        "@id": "https://malabarhillcharaja.in/#organization",
-        "name": "Shree Bal Gopal Ganeshutsav Mandal",
-        "alternateName": "Malabar Hill Cha Raja",
-        "url": "https://malabarhillcharaja.in/",
-        "logo": "https://malabarhillcharaja.in/images/logo.png",
+        "@id": "<%= baseHost %>/#organization",
+        "name": "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
+        "alternateName": "Dagdi Chawli Chi Aai Mauli",
+        "url": "<%= baseHost %>/",
+        "logo": "<%= baseHost %>/images/logo.png",
         "foundingDate": "1973",
         "identifier": "Reg. No. F-11518",
         "email": "byculladagadichawlnavratri1973@gmail.com",
@@ -101,11 +108,11 @@
       },
       {
         "@type": "HinduTemple",
-        "@id": "https://malabarhillcharaja.in/#temple",
-        "name": "Malabar Hill Cha Raja Mandap",
-        "alternateName": "Shree Bal Gopal Ganeshutsav Mandal",
-        "url": "https://malabarhillcharaja.in/",
-        "image": "https://malabarhillcharaja.in/images/malabar_ganpati_01.jpg",
+        "@id": "<%= baseHost %>/#temple",
+        "name": "Dagdi Chawli Chi Aai Mauli Mandap",
+        "alternateName": "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
+        "url": "<%= baseHost %>/",
+        "image": "<%= ogImageUrl %>",
         "telephone": "+919594512999",
         "address": {
           "@type": "PostalAddress",
@@ -124,11 +131,11 @@
       },
       {
         "@type": "Event",
-        "@id": "https://malabarhillcharaja.in/#event-2026",
-        "name": "Malabar Hill Cha Raja Ganeshotsav Festival 2026",
-        "description": "Grand 12-day Ganeshotsav festival featuring daily Maha Aarti, 50,000+ Annadan Mahaprasad, cultural programs, and visarjan procession.",
-        "startDate": "2026-09-14T08:00:00+05:30",
-        "endDate": "2026-09-25T22:00:00+05:30",
+        "@id": "<%= baseHost %>/#event-2026",
+        "name": "Dagdi Chawli Chi Aai Mauli Navratrotsav Festival 2026",
+        "description": "Grand Navratrotsav festival featuring daily Maha Aarti, Annadan Mahaprasad, cultural programs, and visarjan procession.",
+        "startDate": "2026-10-10T08:00:00+05:30",
+        "endDate": "2026-10-21T22:00:00+05:30",
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {
@@ -144,8 +151,8 @@
         },
         "organizer": {
           "@type": "Organization",
-          "name": "Shree Bal Gopal Ganeshutsav Mandal",
-          "url": "https://malabarhillcharaja.in/"
+          "name": "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
+          "url": "<%= baseHost %>/"
         }
       },
       {

@@ -259,23 +259,119 @@
     display: block;
   }
 
-    .hd-devi-wrapper {
+  /* ============================================================
+     PROMINENT MOVING GOLDEN GLOW AROUND & BEHIND DEVI MAA
+     ============================================================ */
+  .devi-divine-aura {
+    position: absolute;
+    top: 13%;
+    left: 68%;
+    width: 36vw;
+    height: 36vw;
+    transform: translate(-50%, -20%);
+    z-index: 4;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Core breathing pulsating golden halo */
+  .devi-aura-core {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 230, 100, 0.95) 0%, rgba(255, 185, 30, 0.75) 35%, rgba(212, 175, 55, 0.4) 60%, transparent 75%);
+    mix-blend-mode: screen;
+    animation: deviAuraPulse 3.5s ease-in-out infinite alternate;
+    filter: blur(16px);
+  }
+
+  /* Rotating divine prabhavali rays of golden light */
+  .devi-aura-rays {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg, rgba(255, 215, 0, 0.5) 15deg, transparent 30deg,
+      transparent 45deg, rgba(255, 190, 40, 0.45) 60deg, transparent 75deg,
+      transparent 90deg, rgba(255, 230, 80, 0.55) 105deg, transparent 120deg,
+      transparent 135deg, rgba(255, 180, 20, 0.45) 150deg, transparent 165deg,
+      transparent 180deg, rgba(255, 215, 0, 0.5) 195deg, transparent 210deg,
+      transparent 225deg, rgba(255, 190, 40, 0.45) 240deg, transparent 255deg,
+      transparent 270deg, rgba(255, 230, 80, 0.55) 285deg, transparent 300deg,
+      transparent 315deg, rgba(255, 180, 20, 0.45) 330deg, transparent 345deg
+    );
+    mix-blend-mode: screen;
+    animation: deviRaysRotate 20s linear infinite;
+    filter: blur(8px);
+    opacity: 0.85;
+  }
+
+  /* Moving ethereal shimmer wave */
+  .devi-aura-shimmer {
+    position: absolute;
+    width: 125%;
+    height: 125%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 245, 170, 0.55) 0%, rgba(255, 160, 0, 0.3) 45%, transparent 70%);
+    mix-blend-mode: screen;
+    animation: deviShimmerFloat 4s ease-in-out infinite alternate;
+    filter: blur(24px);
+  }
+
+  @keyframes deviAuraPulse {
+    0% {
+      transform: scale(0.92);
+      opacity: 0.7;
+      filter: blur(12px) drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+      filter: blur(20px) drop-shadow(0 0 50px rgba(255, 180, 0, 0.95));
+    }
+    100% {
+      transform: scale(0.96);
+      opacity: 0.8;
+      filter: blur(14px) drop-shadow(0 0 30px rgba(255, 215, 0, 0.7));
+    }
+  }
+
+  @keyframes deviRaysRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes deviShimmerFloat {
+    0% {
+      transform: scale(0.95) translateY(4px);
+      opacity: 0.65;
+    }
+    100% {
+      transform: scale(1.12) translateY(-8px);
+      opacity: 1;
+    }
+  }
+
+  .hd-devi-wrapper {
     position: absolute;
     top: 12.31%;
     left: 50.58%;
     width: 34.86%;
     z-index: 5;
     pointer-events: none;
-    /* Ambient occlusion and ground shadow */
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.85)) drop-shadow(0 5px 15px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.65)) drop-shadow(0 20px 40px rgba(0,0,0,0.85));
   }
 
   .hd-devi {
     display: block;
     width: 100%;
     height: auto;
-    /* Photorealistic color grading: warm, slightly darker, matching cave */
-    filter: sepia(0.35) brightness(0.9) contrast(1.15) saturate(1.2) hue-rotate(-5deg);
+    filter: sepia(0.18) brightness(0.98) contrast(1.14) saturate(1.18);
   }
 
   /* Photorealistic localized highlights and rim lighting via masking */
@@ -578,9 +674,45 @@
     .hd-devi-wrapper { display: none !important; }
   }
 
-    /* Hide the HD overlay on mobile. The base image is 1024px which is 
-       more than enough resolution for a phone screen, so it won't be blurry! */
-    .hd-devi-wrapper { display: none !important; }
+  /* Prominent moving golden glow on mobile positioned directly around & behind Devi Maa */
+  .devi-divine-aura-mobile {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .devi-divine-aura {
+      display: flex !important;
+      position: absolute !important;
+      top: 48vh !important;
+      left: 50% !important;
+      width: 82vw !important;
+      height: 82vw !important;
+      transform: translate(-50%, -50%) !important;
+      z-index: 8 !important;
+      pointer-events: none !important;
+    }
+    .devi-aura-core {
+      width: 88% !important;
+      height: 88% !important;
+      filter: blur(16px) !important;
+      opacity: 0.95 !important;
+    }
+    .devi-aura-rays {
+      width: 110% !important;
+      height: 110% !important;
+      filter: blur(8px) !important;
+      opacity: 0.85 !important;
+    }
+    .devi-aura-shimmer {
+      width: 120% !important;
+      height: 120% !important;
+      filter: blur(24px) !important;
+      opacity: 0.85 !important;
+    }
+  }
+
+  /* Hide the HD overlay on mobile. The base image is 1024px which is 
+     more than enough resolution for a phone screen, so it won't be blurry! */
+  .hd-devi-wrapper { display: none !important; }
 
     /* 2. Second Section: Text below the image */
     .hd-text-container {
@@ -745,7 +877,7 @@
 <div class="container-wrapper">
   <div class="image-container">
     <picture>
-      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=devi_hd_exact_overlap">
+      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=golden_aura_finished_edge">
       <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
     </picture>
     
@@ -753,8 +885,14 @@
     <div class="fire-glow lamp-left"></div>
     <div class="fire-glow lamp-right"></div>
     
-    <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
+    <!-- Prominent Moving Golden Glow around and behind Devi Maa -->
+    <div class="devi-divine-aura">
+      <div class="devi-aura-core"></div>
+      <div class="devi-aura-rays"></div>
+      <div class="devi-aura-shimmer"></div>
+    </div>
     
+    <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
     <div class="hd-devi-wrapper">
       <img src="/devi-idol.png" alt="HD Devi" class="hd-devi" />
     </div>

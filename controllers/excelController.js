@@ -124,7 +124,7 @@ module.exports = {
       const selectedRows = selectedSheet ? await db.getOfflineExcelRows(selectedSheet.id) : [];
 
       res.render('admin/excel', {
-        title: 'Excel & Offline Records | Malabar Hill Cha Raja',
+        title: 'Excel & Offline Records | Dagdi Chawli Chi Aai Mauli',
         activeTab: 'admin',
         sheets,
         onlineDonations,

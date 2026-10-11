@@ -137,8 +137,8 @@ module.exports = {
   renderHomePage(req, res) {
     const status = db.getYatraStatus();
     res.render('index', {
-      title: 'Malabar Hill Cha Raja | Shree Bal Gopal Ganeshutsav Mandal, Mumbai',
-      metaDescription: 'Official Portal of Malabar Hill Cha Raja (Shree Bal Gopal Ganeshutsav Mandal, Est. 1973, Reg. F-11518). Daily Ganeshotsav live darshan, schedule, historical gallery, social work & 80G tax exempt donations.',
+      title: 'दगडी चाळीची आई माऊली | Dagdi Chawli Chi Aai Mauli, Byculla, Mumbai',
+      metaDescription: 'अधिकृत पोर्टल - दगडी चाळीची आई माऊली (भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ). Daily live darshan, aarti schedule, photo gallery, social work & donations.',
       activeTab: 'home',
       yatraStatus: status,
       scheduleData: scheduleData.slice(0, 4),
@@ -150,8 +150,8 @@ module.exports = {
   // Render About Us Page
   renderAboutPage(req, res) {
     res.render('about', {
-      title: 'About Us — History & Legacy | Malabar Hill Cha Raja',
-      metaDescription: 'Explore the 50+ year legacy of Shree Bal Gopal Ganeshutsav Mandal (Est. 1973) at Ganesh Chowk, Bhaji Galli, Grant Road (W), Mumbai. Discover our history, vision, and 365-day social work.',
+      title: 'About Us — History & Legacy | Dagdi Chawli Chi Aai Mauli',
+      metaDescription: 'Explore the 50+ year legacy of Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Est. 1973), Byculla (W), Mumbai. Discover our history, vision, and 365-day social work.',
       activeTab: 'about'
     });
   },
@@ -160,8 +160,8 @@ module.exports = {
   renderSchedulePage(req, res) {
     const status = db.getYatraStatus();
     res.render('schedule', {
-      title: 'Ganeshotsav 2026 Schedule & Maha Aarti Timings | Malabar Hill Cha Raja',
-      metaDescription: 'Official 12-day Ganeshotsav 2026 festival schedule for Malabar Hill Cha Raja. Morning & Evening Maha Aarti timings, Annadan Mahaprasad, cultural events, Hom Havan & Visarjan procession.',
+      title: 'Navratrotsav 2026 Schedule & Maha Aarti Timings | Dagdi Chawli Chi Aai Mauli',
+      metaDescription: 'Official Navratrotsav festival schedule for Dagdi Chawli Chi Aai Mauli. Morning & Evening Maha Aarti timings, Annadan Mahaprasad, cultural events, Hom Havan & Visarjan procession.',
       activeTab: 'schedule',
       yatraStatus: status,
       scheduleData,
@@ -172,8 +172,8 @@ module.exports = {
   // Render Glimpses Page
   renderGlimpsesPage(req, res) {
     res.render('glimpses', {
-      title: 'Historical Photo Gallery & Idol Glimpses | Malabar Hill Cha Raja',
-      metaDescription: 'Browse the 20+ year historical photo gallery and idol themes of Malabar Hill Cha Raja from 1990 to 2025 by Shree Bal Gopal Ganeshutsav Mandal, Mumbai.',
+      title: 'Historical Photo Gallery & Idol Glimpses | Dagdi Chawli Chi Aai Mauli',
+      metaDescription: 'Browse the historical photo gallery and divine idol themes of Dagdi Chawli Chi Aai Mauli by Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Mumbai.',
       activeTab: 'glimpses',
       glimpsesData
     });
@@ -182,18 +182,17 @@ module.exports = {
   // Render Decade Gallery (Renamed from Photo Booth)
   renderPhotoBoothPage(req, res) {
     res.render('photo-booth', {
-      title: 'Decade Glimpses Archive (2015-2025) | Malabar Hill Cha Raja',
-      metaDescription: 'View historical retrospective photos and iconic themes of Malabar Hill Cha Raja over the past decade (2015-2025).',
+      title: 'Decade Glimpses Archive | Dagdi Chawli Chi Aai Mauli',
+      metaDescription: 'View historical retrospective photos and iconic themes of Dagdi Chawli Chi Aai Mauli over the past decade.',
       activeTab: 'photobooth',
       glimpsesData
     });
   },
 
-
   renderCommitteePage(req, res) {
     res.render('committee', {
-      title: 'Executive Committee & Trustees | Malabar Hill Cha Raja',
-      metaDescription: 'Meet the executive committee members, office bearers, advisory board, and karyakartas of Shree Bal Gopal Ganeshutsav Mandal, Grant Road, Mumbai.',
+      title: 'Executive Committee & Trustees | Dagdi Chawli Chi Aai Mauli',
+      metaDescription: 'Meet the executive committee members, office bearers, advisory board, and karyakartas of Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, Mumbai.',
       activeTab: 'committee',
       committeeData
     });
