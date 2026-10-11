@@ -657,61 +657,43 @@
       transform: translateX(3.5%) !important;
     }
 
-    .hd-devi-wrapper {
+    /* Complete removal of oval/ellipse aura - 0% oval */
+    .devi-divine-aura {
       display: none !important;
     }
 
-    /* Golden rim glow strictly on Devi Maa's outline / border and nowhere else */
-    .devi-divine-aura {
+    /* Golden glow strictly outlining the border of Devi photo - NOT an oval */
+    .hd-devi-wrapper {
       display: block !important;
       position: absolute !important;
-      top: 14vh !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 52vh !important;
-      transform: none !important;
-      z-index: 2 !important;
+      top: 23.7vh !important;
+      left: calc(50% - 2.075vh) !important;
+      width: 37.5vh !important;
+      height: 46.6vh !important;
+      transform: translate(-50%, 0) translateX(3.5%) !important;
+      z-index: 5 !important;
       pointer-events: none !important;
-      /* Tight rim band mask: 0% glow on Devi, 0% glow in cave, ONLY on her outline/border */
-      -webkit-mask-image: radial-gradient(ellipse 21vw 25vh at 53.5% 42%, transparent 0%, transparent 64%, black 78%, black 86%, transparent 98%);
-      mask-image: radial-gradient(ellipse 21vw 25vh at 53.5% 42%, transparent 0%, transparent 64%, black 78%, black 86%, transparent 98%);
+      animation: deviPhotoBorderGlow 3.5s ease-in-out infinite alternate !important;
     }
-    .devi-aura-core {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
+
+    .hd-devi-wrapper picture,
+    .hd-devi-wrapper img.hd-devi {
+      display: block !important;
       width: 100% !important;
       height: 100% !important;
-      border-radius: 0 !important;
-      background: radial-gradient(ellipse 22vw 26vh at 53.5% 42%,
-        #FFD700 0%,
-        #D4AF37 72%,
-        #B8860B 88%,
-        transparent 100%
-      ) !important;
-      filter: blur(10px) !important;
-      mix-blend-mode: screen !important;
-      opacity: 1 !important;
-      animation: deviAuraPulse 3.5s ease-in-out infinite alternate !important;
+      object-fit: contain !important;
     }
-    .devi-aura-rays {
-      display: none !important;
-    }
-    .devi-aura-shimmer {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      border-radius: 0 !important;
-      background: radial-gradient(ellipse 23vw 27vh at 53.5% 42%,
-        rgba(255, 215, 0, 0.95) 0%,
-        rgba(212, 175, 55, 0.65) 80%,
-        transparent 100%
-      ) !important;
-      filter: blur(14px) !important;
-      mix-blend-mode: screen !important;
-      opacity: 0.9 !important;
+
+    @keyframes deviPhotoBorderGlow {
+      0% {
+        filter: drop-shadow(0 0 5px #FFD700) drop-shadow(0 0 12px #D4AF37) drop-shadow(0 0 20px rgba(212, 175, 55, 0.75));
+      }
+      50% {
+        filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 18px #D4AF37) drop-shadow(0 0 30px rgba(212, 175, 55, 0.95));
+      }
+      100% {
+        filter: drop-shadow(0 0 5px #FFD700) drop-shadow(0 0 12px #D4AF37) drop-shadow(0 0 20px rgba(212, 175, 55, 0.75));
+      }
     }
   }
 
@@ -895,7 +877,10 @@
     
     <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
     <div class="hd-devi-wrapper">
-      <img src="/devi-idol.png" alt="HD Devi" class="hd-devi" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="/images/devi_mobile_hd.png">
+        <img src="/devi-idol.png" alt="HD Devi" class="hd-devi" />
+      </picture>
     </div>
 
     <!-- HD Text Overlay -->
@@ -1126,13 +1111,13 @@
             <img src="/images/marquee/new_1.jpg?v=4" alt="Dagdi Chawl Event 1" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_2.jpg?v=4" alt="Dagdi Chawl Event 2" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_2.jpg?v=rotated_right_90" alt="Dagdi Chawl Event 2" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_3.png?v=4" alt="Dagdi Chawl Event 3" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_4.jpg?v=4" alt="Dagdi Chawl Event 4" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_4.jpg?v=rotated_left_90" alt="Dagdi Chawl Event 4" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_5.jpg?v=4" alt="Dagdi Chawl Event 5" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
@@ -1141,13 +1126,13 @@
             <img src="/images/marquee/new_6.jpg?v=4" alt="Dagdi Chawl Event 6" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_7.jpg?v=4" alt="Dagdi Chawl Event 7" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_7.jpg?v=rotated_right_90" alt="Dagdi Chawl Event 7" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_8.png?v=4" alt="Dagdi Chawl Event 8" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_9.jpg?v=4" alt="Dagdi Chawl Event 9" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_9.jpg?v=rotated_left_90" alt="Dagdi Chawl Event 9" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_10.jpg?v=4" alt="Dagdi Chawl Event 10" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
@@ -1158,13 +1143,13 @@
             <img src="/images/marquee/new_1.jpg?v=4" alt="Dagdi Chawl Event 1" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_2.jpg?v=4" alt="Dagdi Chawl Event 2" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_2.jpg?v=rotated_right_90" alt="Dagdi Chawl Event 2" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_3.png?v=4" alt="Dagdi Chawl Event 3" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_4.jpg?v=4" alt="Dagdi Chawl Event 4" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_4.jpg?v=rotated_left_90" alt="Dagdi Chawl Event 4" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_5.jpg?v=4" alt="Dagdi Chawl Event 5" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
@@ -1173,13 +1158,13 @@
             <img src="/images/marquee/new_6.jpg?v=4" alt="Dagdi Chawl Event 6" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_7.jpg?v=4" alt="Dagdi Chawl Event 7" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_7.jpg?v=rotated_right_90" alt="Dagdi Chawl Event 7" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_8.png?v=4" alt="Dagdi Chawl Event 8" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
-            <img src="/images/marquee/new_9.jpg?v=4" alt="Dagdi Chawl Event 9" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
+            <img src="/images/marquee/new_9.jpg?v=rotated_left_90" alt="Dagdi Chawl Event 9" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
           </picture>
           <picture>
             <img src="/images/marquee/new_10.jpg?v=4" alt="Dagdi Chawl Event 10" width="400" height="300" loading="lazy" decoding="async" class="img-marquee">
