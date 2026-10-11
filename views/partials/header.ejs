@@ -226,15 +226,9 @@
     overflow: visible; /* Changed from hidden so mobile menu can drop down */
   }
 
-  /* Only on non-home pages, inject the blurred cave background */
   body:not([data-lang]) .nm-nav-header::before,
   body[data-lang] .nm-nav-header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url(/images/final_page_no_text.jpg) center top / cover no-repeat;
-    z-index: -2;
-    opacity: <%= currentTabName === 'home' ? '0' : '1' %>;
+    display: none !important;
   }
   
   .nm-nav-header::after {
