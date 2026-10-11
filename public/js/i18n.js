@@ -222,11 +222,11 @@ const translations = {
 
     // About Page
     about_badge: "Historic Heritage & Legacy",
-    about_title: "About Us - Malabar Hill Cha Raja",
-    about_sub: "Shree Bal Gopal Ganeshutsav Mandal (Estd. 1973)",
-    about_history_title: "The Glorious Legacy of the Mandal",
-    about_history_p1: "Shree Bal Gopal Ganeshutsav Mandal was established in 1973 in the historic premises at Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007. Since its inception, local residents, dedicated youth volunteers, and senior mentors have joined hands to build and sustain a grand public Ganeshotsav tradition.",
-    about_history_p2: "Over the decades, 'Malabar Hill Cha Raja' has become an iconic divine symbol cherished by millions of devotees. The idol's radiant majestic presence, the intricately carved wooden throne, and the unique cultural mandap decorations remain the true hallmarks of our Mandal.",
+    about_title: "About Us - Dagdi Chawli Chi Aai Mauli",
+    about_sub: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Estd. 1973)",
+    about_history_title: "Glorious History of the Mandal",
+    about_history_p1: "Established in 1973, the historic Dagdi Chawli Chi Aai Mauli Navratri Mandal in Byculla, Mumbai, is renowned for its deep-rooted devotion, grand Navratri celebrations, and the divine presence of Aai Mauli.",
+    about_history_p2: "Under the association of Hon. Shree Arun Gawli Ji and Hon. Ma’am Asha Arun Gawli Ji, the mandal has become a cherished symbol of faith, tradition, and community unity, attracting devotees from across Mumbai and beyond to seek the blessings of the Goddess and celebrate this sacred legacy.",
     about_vision_title: "Our Vision",
     about_vision_desc: "To elevate Maharashtra's rich Ganeshotsav tradition to global heights while fostering social unity and brotherhood through devotion.",
     about_mission_title: "Our Mission",
@@ -553,11 +553,11 @@ const translations = {
 
     // About Page
     about_badge: "इतिहास व भव्य परंपरा",
-    about_title: "आमच्याबद्दल - मालाबार हिलचा राजा",
-    about_sub: "श्री बाल गोपाल गणेशोत्सव मंडळ (स्थापना १९७३)",
+    about_title: "आमच्याबद्दल - दगडी चाळीची आई माऊली",
+    about_sub: "भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (स्थापना १९७३)",
     about_history_title: "मंडळाचा गौरवशाली इतिहास",
-    about_history_p1: "मालाबार हिल येथील गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७ वरील ऐतिहासिक श्री बाल गोपाल गणेशोत्सव मंडळ परिसरात १९७३ साली मंडळाची स्थापना झाली. सुरुवातीपासूनच स्थानिक रहिवासी, तरुण कार्यकर्ते आणि ज्येष्ठ मार्गदर्शकांनी मिळून सार्वजनिक गणेशोत्सवाची भव्य परंपरा सुरू केली.",
-    about_history_p2: "वर्षानुवर्षे 'मालाबार हिलचा राजा' ही मूर्ती हजारो आणि लाखो भाविकांच्या गळ्यातील ताईत बनली. मूर्तीची प्रसन्न राजेशाही मुद्रा, भव्य काष्ठ सिंहासन आणि अनोखा मण्डप शृंगार हे राजाचे वैशिष्ट्य मानले जाते.",
+    about_history_p1: "१९७३ मध्ये स्थापित झालेले मुंबईतील भायखळा येथील ऐतिहासिक 'दगडी चाळीची आई माऊली नवरात्रोत्सव मंडळ' हे आपल्या अथांग व निस्सीम भक्तीभाव, भव्यदिव्य नवरात्रौत्सव आणि आई माऊलीच्या पावन व दिव्य अस्तित्वासाठी सर्वदूर प्रसिद्ध आहे.",
+    about_history_p2: "माननीय श्री अरुण गवळी जी आणि माननीय सौ. आशा अरुण गवळी जी यांच्या मार्गदर्शनाखाली व सान्निध्यात हे मंडळ अढळ श्रद्धा, समृद्ध संस्कृती आणि सामाजिक एकतेचे एक अनमोल प्रतीक बनले आहे. संपूर्ण मुंबईसह देशभरातून लाखो भाविक देवी माऊलीचे पावन आशीर्वाद घेण्यासाठी आणि या पवित्र परंपरेचा उत्सव साजरा करण्यासाठी मोठ्या भक्तिभावाने येथे उपस्थित राहतात.",
     about_vision_title: "आमची दृष्टी (Vision)",
     about_vision_desc: "महाराष्ट्राची थोर गणेशोत्सव परंपरा जागतिक पातळीवर पोहोचवणे आणि भक्तीच्या माध्यमातून सामाजिक ऐक्य व बंधुता वाढवणे.",
     about_mission_title: "आमचे ध्येय (Mission)",
