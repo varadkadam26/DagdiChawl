@@ -3201,6 +3201,28 @@ body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, in
     text-align: center !important;
     white-space: nowrap !important;
   }
+  .image-container {
+    height: 100vh !important;
+    display: block !important;
+    background: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  .image-container picture {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  .image-container img.bg-image {
+    display: block !important;
+    width: 116vw !important;
+    max-width: none !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    object-position: 42% center !important;
+    margin-left: -2.5vw !important;
+  }
   .hd-main-title span {
     display: inline-block !important;
     text-align: center !important;

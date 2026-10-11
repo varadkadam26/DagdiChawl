@@ -548,19 +548,29 @@
       height: auto;
     }
     .image-container {
-      height: auto;
+      height: 100vh;
       display: block;
       background: none;
       overflow: hidden;
+      position: relative;
     }
     
-    /* 1. First Section: Full Screen Devi Image */
+    .image-container picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* 1. First Section: Full Screen Devi Image - Shifted right so Devi is in the exact center */
     .image-container img.bg-image {
       display: block;
-      width: 100vw;
+      width: 116vw;
+      max-width: none;
       height: 100vh;
       object-fit: cover;
-      object-position: center center;
+      object-position: 42% center;
+      margin-left: -2.5vw;
     }
 
     
