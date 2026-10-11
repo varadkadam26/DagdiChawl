@@ -238,12 +238,7 @@
   }
   
   .nm-nav-header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    box-shadow: inset 0 0 40px 10px rgba(0,0,0,0.6), inset 0 -80px 60px -20px rgba(0,0,0,1);
-    z-index: -1;
-    pointer-events: none;
+    display: none !important;
   }
 
 
@@ -362,6 +357,10 @@
   
   .nm-nav-links a:hover::after, .nm-nav-links a.active::after {
     width: 100%;
+  }
+
+  .nm-mobile-donate-link {
+    display: none;
   }
 
   /* Donate Button Animation */
@@ -681,7 +680,7 @@
     /* Adjust header for mobile */
     .nm-nav-header {
       /* padding: 18px 5%; removed for top bar */
-      background: linear-gradient(125deg, #050403 0%, #100A07 38%, #28140C 72%, #422315 100%) 0%, rgba(5, 5, 5, 0) 100%);
+      background: transparent !important;
     }
     .nm-nav-links {
       display: none; 
@@ -729,6 +728,25 @@
     }
     .nm-donate-btn {
       display: none; /* Hide on mobile to fit long title */
+    }
+    .nm-mobile-donate-link {
+      display: block !important;
+      background: linear-gradient(135deg, #F5D98E 0%, #CBA135 50%, #A5781E 100%) !important;
+      color: #180D06 !important;
+      font-weight: 800 !important;
+      font-size: 1.05rem !important;
+      padding: 10px 18px !important;
+      border-radius: 8px !important;
+      text-align: center !important;
+      margin-top: 6px !important;
+      box-shadow: 0 4px 15px rgba(203, 161, 53, 0.4) !important;
+      text-decoration: none !important;
+    }
+    .nm-mobile-donate-link::after {
+      display: none !important;
+    }
+    .nm-mobile-donate-link:hover, .nm-mobile-donate-link.active {
+      color: #180D06 !important;
     }
     .president-img {
       height: auto !important;
@@ -913,7 +931,7 @@
 </style>
 
 <!-- HD Animated Header -->
-<header class="nm-nav-header" style="flex-direction: column; padding: 0; align-items: stretch; background: <%= currentTabName === 'home' ? 'rgba(0,0,0,0.2)' : 'rgba(21, 19, 15, 0.7)' %>;">
+<header class="nm-nav-header" style="flex-direction: column; padding: 0; align-items: stretch; background: transparent;">
   
   <!-- Pre-Header (Top Bar) -->
   <div class="nm-top-bar" style="display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 10px 5%; background: transparent; border-bottom: none; width: 100%; box-sizing: border-box; flex-wrap: wrap;">
@@ -957,6 +975,7 @@
       <a href="/schedule" class="<%= currentTabName === 'schedule' ? 'active' : '' %>">Events</a>
       <a href="/glimpses" class="<%= (currentTabName === 'glimpses' || currentTabName === 'photobooth') ? 'active' : '' %>">Gallery</a>
       <a href="/contact" class="<%= currentTabName === 'contact' ? 'active' : '' %>">Contact</a>
+      <a href="/donate" class="<%= currentTabName === 'donate' ? 'active' : '' %> nm-mobile-donate-link"><span class="lang-mr">देणगी (Donate)</span><span class="lang-en">Donate</span></a>
     </nav>
 
     <a href="/donate" class="nm-donate-btn">
