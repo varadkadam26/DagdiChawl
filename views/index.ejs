@@ -525,6 +525,7 @@
       height: auto;
       display: block;
       background: none;
+      overflow: hidden;
     }
     
     /* 1. First Section: Full Screen Devi Image */
@@ -533,7 +534,11 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      object-position: center center; 
+      object-position: center 58%;
+      transform: scale(1.18);
+      transform-origin: center 58%;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     
