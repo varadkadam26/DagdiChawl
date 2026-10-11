@@ -268,7 +268,7 @@
     position: absolute;
     top: 25.5%;
     left: 70.2%;
-    width: 38vw;
+    width: 46vw;
     height: 38vw;
     transform: translate(-50%, -50%);
     z-index: 4;
@@ -278,51 +278,32 @@
     justify-content: center;
   }
 
-  /* Core breathing pulsating golden halo */
+  /* Core breathing pulsating golden radiance - diffuse, organic, NOT a geometric circle */
   .devi-aura-core {
     position: absolute;
-    width: 85%;
-    height: 85%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.75) 0%, rgba(197, 160, 40, 0.55) 35%, rgba(184, 134, 11, 0.3) 60%, transparent 75%);
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    background: radial-gradient(ellipse 65% 55% at 50% 50%, rgba(212, 175, 55, 0.75) 0%, rgba(197, 160, 40, 0.45) 40%, rgba(184, 134, 11, 0.2) 65%, transparent 85%);
     mix-blend-mode: screen;
     animation: deviAuraPulse 3.5s ease-in-out infinite alternate;
-    filter: blur(16px);
+    filter: blur(35px);
   }
 
-  /* Rotating divine prabhavali rays of golden light */
   .devi-aura-rays {
-    position: absolute;
-    width: 110%;
-    height: 110%;
-    border-radius: 50%;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg, rgba(212, 175, 55, 0.4) 15deg, transparent 30deg,
-      transparent 45deg, rgba(197, 160, 40, 0.35) 60deg, transparent 75deg,
-      transparent 90deg, rgba(212, 175, 55, 0.4) 105deg, transparent 120deg,
-      transparent 135deg, rgba(184, 134, 11, 0.35) 150deg, transparent 165deg,
-      transparent 180deg, rgba(212, 175, 55, 0.4) 195deg, transparent 210deg,
-      transparent 225deg, rgba(197, 160, 40, 0.35) 240deg, transparent 255deg,
-      transparent 270deg, rgba(212, 175, 55, 0.4) 285deg, transparent 300deg,
-      transparent 315deg, rgba(184, 134, 11, 0.35) 330deg, transparent 345deg
-    );
-    mix-blend-mode: screen;
-    animation: deviRaysRotate 20s linear infinite;
-    filter: blur(9px);
-    opacity: 0.7;
+    display: none; /* Removed geometric circular rays */
   }
 
-  /* Moving ethereal shimmer wave */
+  /* Soft atmospheric golden shimmer wash */
   .devi-aura-shimmer {
     position: absolute;
-    width: 125%;
-    height: 125%;
-    border-radius: 50%;
-    background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.4) 0%, rgba(180, 130, 20, 0.2) 45%, transparent 70%);
+    width: 120%;
+    height: 120%;
+    border-radius: 35%;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212, 175, 55, 0.35) 0%, rgba(180, 130, 20, 0.15) 50%, transparent 75%);
     mix-blend-mode: screen;
     animation: deviShimmerFloat 4s ease-in-out infinite alternate;
-    filter: blur(24px);
+    filter: blur(45px);
   }
 
   @keyframes deviAuraPulse {
@@ -664,64 +645,68 @@
       left: 0;
     }
 
-    /* 1. First Section: Full Screen Devi Image - Shifted noticeably right so Devi is centered/right */
+    /* 1. First Section: Full Screen Devi Image - Perfectly centered in middle of screen */
     .image-container img.bg-image {
       display: block;
-      width: 132vw !important;
-      max-width: none !important;
+      width: 100% !important;
       height: 100vh !important;
       object-fit: cover !important;
-      margin-left: -16vw !important;
-      transform: translateX(12vw) !important;
+      object-position: 50% center !important;
+      margin: 0 !important;
+      transform: none !important;
     }
 
     .hd-devi-wrapper {
       display: none !important;
     }
 
-    /* Pure golden aura strictly BEHIND Devi Maa: hollow center preserves face, crown & mukut 100% crystal clear with zero distortion */
+    /* Ambient golden divine back-illumination across cave wall behind Devi Maa - organic, NOT a circle */
     .devi-divine-aura {
-      display: flex !important;
+      display: block !important;
       position: absolute !important;
-      top: 34vh !important;
-      left: 52vw !important;
-      width: 86vw !important;
-      height: 86vw !important;
-      transform: translate(-50%, -50%) !important;
-      z-index: 4 !important;
+      top: 12vh !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 60vh !important;
+      transform: none !important;
+      z-index: 2 !important;
       pointer-events: none !important;
     }
     .devi-aura-core {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      border-radius: 50% !important;
-      background: radial-gradient(circle at 50% 50%,
-        transparent 0%,
-        transparent 45%,
-        rgba(212, 175, 55, 0.85) 56%,
-        rgba(245, 215, 110, 0.7) 64%,
-        rgba(184, 134, 11, 0.4) 76%,
-        rgba(184, 134, 11, 0.12) 86%,
-        transparent 94%
+      border-radius: 0 !important; /* Not a circle */
+      background: radial-gradient(ellipse 70% 55% at 50% 45%,
+        rgba(212, 175, 55, 0.45) 0%,
+        rgba(212, 175, 55, 0.25) 45%,
+        rgba(184, 134, 11, 0.1) 68%,
+        transparent 85%
       ) !important;
-      filter: blur(12px) !important;
+      filter: blur(40px) !important;
+      mix-blend-mode: screen !important;
       opacity: 0.85 !important;
+      animation: deviAuraPulse 4s ease-in-out infinite alternate !important;
     }
     .devi-aura-rays {
-      display: none !important; /* Disables rotating conic lines on mobile to eliminate all flicker and crown distortion */
+      display: none !important;
     }
     .devi-aura-shimmer {
-      width: 120% !important;
-      height: 120% !important;
-      border-radius: 50% !important;
-      background: radial-gradient(circle at 50% 50%,
-        transparent 0%,
-        transparent 43%,
-        rgba(212, 175, 55, 0.5) 58%,
-        rgba(200, 150, 30, 0.25) 74%,
-        transparent 90%
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 0 !important; /* Not a circle */
+      background: radial-gradient(ellipse 85% 65% at 50% 42%,
+        rgba(212, 175, 55, 0.28) 0%,
+        rgba(184, 134, 11, 0.12) 55%,
+        transparent 82%
       ) !important;
-      filter: blur(24px) !important;
+      filter: blur(50px) !important;
+      mix-blend-mode: screen !important;
       opacity: 0.7 !important;
     }
   }
