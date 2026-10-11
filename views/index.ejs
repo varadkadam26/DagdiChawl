@@ -343,12 +343,12 @@
   .hd-devi-wrapper {
     display: block !important;
     position: absolute;
-    top: 12.31%;
-    left: 52.78%;
-    width: 34.86%;
+    top: 16.72%;
+    left: 53.48%;
+    width: 35.99%;
     z-index: 5;
     pointer-events: none;
-    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.35)) drop-shadow(0 20px 40px rgba(0,0,0,0.85));
+    filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.45)) drop-shadow(0 0 32px rgba(212, 175, 55, 0.35));
   }
 
   .hd-devi {
@@ -371,11 +371,10 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     
-    /* Left and right warm firelight rim bounces, plus bottom darkening */
+    /* Left and right warm firelight rim bounces */
     background: 
-      radial-gradient(ellipse at -10% 60%, rgba(255, 150, 30, 0.6) 0%, transparent 45%),
-      radial-gradient(ellipse at 110% 60%, rgba(255, 150, 30, 0.5) 0%, transparent 45%),
-      linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 10%, transparent 25%);
+      radial-gradient(ellipse at -10% 60%, rgba(255, 150, 30, 0.5) 0%, transparent 45%),
+      radial-gradient(ellipse at 110% 60%, rgba(255, 150, 30, 0.4) 0%, transparent 45%);
     
     mix-blend-mode: overlay;
     z-index: 6;
@@ -667,10 +666,10 @@
       display: block !important;
       position: absolute !important;
       top: 23.7vh !important;
-      left: calc(50% - 2.075vh) !important;
+      left: calc(53.78% - 2.075vh) !important;
       width: 37.5vh !important;
       height: 46.6vh !important;
-      transform: translate(-50%, 0) translateX(3.5%) !important;
+      transform: translate(-50%, 0) !important;
       z-index: 5 !important;
       pointer-events: none !important;
       animation: deviPhotoBorderGlow 3.5s ease-in-out infinite alternate !important;
@@ -686,13 +685,13 @@
 
     @keyframes deviPhotoBorderGlow {
       0% {
-        filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.35)) drop-shadow(0 0 7px rgba(212, 175, 55, 0.25));
+        filter: drop-shadow(0 0 5px #FFD700) drop-shadow(0 0 12px #D4AF37) drop-shadow(0 0 20px rgba(212, 175, 55, 0.75));
       }
       50% {
-        filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
+        filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 18px #D4AF37) drop-shadow(0 0 30px rgba(212, 175, 55, 0.95));
       }
       100% {
-        filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.35)) drop-shadow(0 0 7px rgba(212, 175, 55, 0.25));
+        filter: drop-shadow(0 0 5px #FFD700) drop-shadow(0 0 12px #D4AF37) drop-shadow(0 0 20px rgba(212, 175, 55, 0.75));
       }
     }
   }
@@ -860,8 +859,8 @@
 <div class="container-wrapper">
   <div class="image-container">
     <picture>
-      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=clean_merged_final_v1">
-      <img src="/images/final_page_no_text.jpg?v=clean_merged_final_v1" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
+      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=final_restored_lamp_v2">
+      <img src="/images/final_page_no_text.jpg?v=final_restored_lamp_v2" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
     </picture>
     
     <!-- Animated Fire Glows for the Lamps (Auto-aligned by JS) -->
@@ -878,8 +877,8 @@
     <!-- Razor-sharp HD Devi Idol overlaid EXACTLY on top -->
     <div class="hd-devi-wrapper">
       <picture>
-        <source media="(max-width: 768px)" srcset="/images/devi_mobile_hd.png?v=master_hd_v1">
-        <img src="/devi-idol.png?v=master_hd_v1" alt="HD Devi" class="hd-devi" />
+        <source media="(max-width: 768px)" srcset="/images/devi_mobile_hd.png?v=master_hd_v2">
+        <img src="/devi-idol.png?v=master_hd_v2" alt="HD Devi" class="hd-devi" />
       </picture>
     </div>
 
