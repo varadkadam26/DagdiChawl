@@ -3216,12 +3216,12 @@ body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, in
   }
   .image-container img.bg-image {
     display: block !important;
-    width: 116vw !important;
+    width: 112vw !important;
     max-width: none !important;
     height: 100vh !important;
     object-fit: cover !important;
-    object-position: 42% center !important;
-    margin-left: -2.5vw !important;
+    object-position: 47% center !important;
+    margin-left: -5.5vw !important;
   }
   .hd-main-title span {
     display: inline-block !important;
