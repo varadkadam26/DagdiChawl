@@ -484,31 +484,57 @@
       display: flex;
     }
     .nm-hamburger {
-      display: flex;
+      display: flex !important;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      cursor: pointer;
+    }
+    .nm-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: #D4AF37 !important;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.6) !important;
+      border-radius: 3px;
     }
     .nm-nav-logo {
-      width: 35px !important;
-      height: 35px !important;
+      width: 38px !important;
+      height: 38px !important;
+      flex-shrink: 0;
     }
     .nm-logo-container {
-      gap: 4px;
-      max-width: 80%; /* Ensure it doesn't push hamburger */
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      max-width: calc(100% - 50px) !important;
+      text-decoration: none !important;
     }
     .nm-trishul-icon {
       width: 22px;
       height: 30px;
     }
     .nm-logo-text {
-      align-items: flex-start;
-      overflow: hidden;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+      flex: 1;
     }
     .nm-logo-title {
-      font-size: 2vw !important; /* Strictly scale with screen width to never overflow */
-      white-space: nowrap;
-      letter-spacing: 0px !important;
-    }
-    .nm-logo-subtitle {
-      font-size: 0.65rem;
+      font-family: 'Baloo 2', sans-serif !important;
+      font-weight: 700 !important;
+      font-size: clamp(10.5px, 2.9vw, 13px) !important;
+      line-height: 1.2 !important;
+      color: #F4EDE0 !important;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+      white-space: normal !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      letter-spacing: 0.3px !important;
     }
     .nm-donate-btn {
       display: none; /* Hide on mobile to fit long title */
