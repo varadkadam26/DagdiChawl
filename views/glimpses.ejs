@@ -17,16 +17,29 @@
     border: 1px solid rgba(212, 175, 55, 0.2) !important;
     box-shadow: none !important;
   }
+
+  .gallery-reel-section {
+    background: linear-gradient(180deg, #050403 0%, #100A07 100%);
+    padding: clamp(160px, 14vw, 190px) 0 2.5rem !important;
+    border-bottom: 2px solid var(--royal-gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-reel-section {
+      padding: clamp(140px, 18vw, 165px) 0 2rem !important;
+    }
+  }
 </style>
 
   <!-- Featured 3D Interactive Scroll Reel -->
-  <section
-    style="background: linear-gradient(180deg, #050403 0%, #100A07 100%); padding: 3.5rem 0 2.5rem; border-bottom: 2px solid var(--royal-gold); position: relative; overflow: hidden;">
+  <section class="gallery-reel-section">
     <div class="container">
       <div
-        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
 
-        <span style="font-size: 0.85rem; color: var(--gold-soft); font-weight: 700; opacity: 0.85;">
+        <span style="font-size: clamp(0.85rem, 2.5vw, 0.95rem); color: var(--gold-soft); font-weight: 700; opacity: 0.9; text-shadow: 0 0 8px rgba(212, 175, 55, 0.4); display: inline-flex; align-items: center; gap: 5px;">
           <i class="fa-solid fa-hand-pointer" style="margin-right: 4px;"></i> Drag or Scroll 3D Cards →
         </span>
       </div>
