@@ -245,9 +245,9 @@
 
             <!-- MEMBER ICON -->
 
-            <div class="committee-icon" style="<%= member.noBorder ? 'border: none; background: transparent; overflow: hidden;' : 'overflow: hidden;' %>">
+            <div class="committee-icon" style="<%= member.noBorder ? 'border: none; background: transparent;' : '' %> overflow: hidden; -webkit-mask-image: -webkit-radial-gradient(white, black); border-radius: 50%;">
               <% if (member.image) { %>
-                <img src="<%= member.image %>" alt="<%= member.nameEn %>" style="width: 100%; height: 100%; object-fit: <%= member.objectFit || 'cover' %>; object-position: <%= member.objectPosition || 'center' %>; border-radius: 50%; <%= member.customTransform ? 'transform: ' + member.customTransform + ';' : '' %>">
+                <img src="<%= member.image %>" alt="<%= member.nameEn %>" style="width: 100%; height: 100%; object-fit: <%= member.objectFit || 'cover' %>; object-position: <%= member.objectPosition || 'center' %>; <%= member.customTransform ? 'transform: ' + member.customTransform + ';' : '' %>">
               <% } else { %>
                 <i class="fa-solid fa-user-tie"></i>
               <% } %>
