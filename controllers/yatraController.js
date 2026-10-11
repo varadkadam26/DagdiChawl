@@ -31,6 +31,9 @@ const jagranData = [
 // Glimpses over a Decade (10+ Years Historical Retrospective Data)
 const glimpsesData = [
   {year:'2026',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2026_new_1.jpg',descMr:'',descEn:''},
+  {year:'2026',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2026_new_2.jpg',descMr:'',descEn:''},
+  {year:'2026',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2026_new_3.jpg',descMr:'',descEn:''},
+  {year:'2026',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2026_new_4.jpg',descMr:'',descEn:''},
   {year:'2025',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2025_new_1.jpg',descMr:'',descEn:''},
   {year:'2025',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2025_new_2.jpg',descMr:'',descEn:''},
   {year:'2025',category:'idols',titleMr:'',titleEn:'',themeMr:'',themeEn:'',height:'—',artistMr:'',artistEn:'',image:'/images/glimpses/2025_new_3.jpg',descMr:'',descEn:''},
