@@ -282,7 +282,7 @@
     width: 85%;
     height: 85%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 230, 100, 0.95) 0%, rgba(255, 185, 30, 0.75) 35%, rgba(212, 175, 55, 0.4) 60%, transparent 75%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.75) 0%, rgba(197, 160, 40, 0.55) 35%, rgba(184, 134, 11, 0.3) 60%, transparent 75%);
     mix-blend-mode: screen;
     animation: deviAuraPulse 3.5s ease-in-out infinite alternate;
     filter: blur(16px);
@@ -296,19 +296,19 @@
     border-radius: 50%;
     background: conic-gradient(
       from 0deg,
-      transparent 0deg, rgba(255, 215, 0, 0.5) 15deg, transparent 30deg,
-      transparent 45deg, rgba(255, 190, 40, 0.45) 60deg, transparent 75deg,
-      transparent 90deg, rgba(255, 230, 80, 0.55) 105deg, transparent 120deg,
-      transparent 135deg, rgba(255, 180, 20, 0.45) 150deg, transparent 165deg,
-      transparent 180deg, rgba(255, 215, 0, 0.5) 195deg, transparent 210deg,
-      transparent 225deg, rgba(255, 190, 40, 0.45) 240deg, transparent 255deg,
-      transparent 270deg, rgba(255, 230, 80, 0.55) 285deg, transparent 300deg,
-      transparent 315deg, rgba(255, 180, 20, 0.45) 330deg, transparent 345deg
+      transparent 0deg, rgba(212, 175, 55, 0.4) 15deg, transparent 30deg,
+      transparent 45deg, rgba(197, 160, 40, 0.35) 60deg, transparent 75deg,
+      transparent 90deg, rgba(212, 175, 55, 0.4) 105deg, transparent 120deg,
+      transparent 135deg, rgba(184, 134, 11, 0.35) 150deg, transparent 165deg,
+      transparent 180deg, rgba(212, 175, 55, 0.4) 195deg, transparent 210deg,
+      transparent 225deg, rgba(197, 160, 40, 0.35) 240deg, transparent 255deg,
+      transparent 270deg, rgba(212, 175, 55, 0.4) 285deg, transparent 300deg,
+      transparent 315deg, rgba(184, 134, 11, 0.35) 330deg, transparent 345deg
     );
     mix-blend-mode: screen;
     animation: deviRaysRotate 20s linear infinite;
-    filter: blur(8px);
-    opacity: 0.85;
+    filter: blur(9px);
+    opacity: 0.7;
   }
 
   /* Moving ethereal shimmer wave */
@@ -317,7 +317,7 @@
     width: 125%;
     height: 125%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at 50% 50%, rgba(255, 245, 170, 0.55) 0%, rgba(255, 160, 0, 0.3) 45%, transparent 70%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.4) 0%, rgba(180, 130, 20, 0.2) 45%, transparent 70%);
     mix-blend-mode: screen;
     animation: deviShimmerFloat 4s ease-in-out infinite alternate;
     filter: blur(24px);
@@ -325,19 +325,19 @@
 
   @keyframes deviAuraPulse {
     0% {
-      transform: scale(0.92);
-      opacity: 0.7;
-      filter: blur(12px) drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
+      transform: scale(0.94);
+      opacity: 0.65;
+      filter: blur(14px) drop-shadow(0 0 20px rgba(212, 175, 55, 0.45));
     }
     50% {
-      transform: scale(1.1);
-      opacity: 1;
-      filter: blur(20px) drop-shadow(0 0 50px rgba(255, 180, 0, 0.95));
+      transform: scale(1.08);
+      opacity: 0.9;
+      filter: blur(18px) drop-shadow(0 0 35px rgba(197, 160, 40, 0.7));
     }
     100% {
-      transform: scale(0.96);
-      opacity: 0.8;
-      filter: blur(14px) drop-shadow(0 0 30px rgba(255, 215, 0, 0.7));
+      transform: scale(0.97);
+      opacity: 0.72;
+      filter: blur(15px) drop-shadow(0 0 24px rgba(212, 175, 55, 0.5));
     }
   }
 
@@ -684,29 +684,32 @@
       position: absolute !important;
       top: 48vh !important;
       left: 50% !important;
-      width: 82vw !important;
-      height: 82vw !important;
+      width: 90vw !important;
+      height: 90vw !important;
       transform: translate(-50%, -50%) !important;
-      z-index: 8 !important;
+      z-index: 5 !important;
       pointer-events: none !important;
+      /* MASK: Center where Devi sits is completely transparent so glow is strictly BEHIND & AROUND her, NEVER on her face/body */
+      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 35%, black 65%);
+      mask-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 35%, black 65%);
     }
     .devi-aura-core {
-      width: 88% !important;
-      height: 88% !important;
-      filter: blur(16px) !important;
-      opacity: 0.95 !important;
+      width: 90% !important;
+      height: 90% !important;
+      filter: blur(18px) !important;
+      opacity: 0.7 !important;
     }
     .devi-aura-rays {
       width: 110% !important;
       height: 110% !important;
-      filter: blur(8px) !important;
-      opacity: 0.85 !important;
+      filter: blur(10px) !important;
+      opacity: 0.6 !important;
     }
     .devi-aura-shimmer {
       width: 120% !important;
       height: 120% !important;
       filter: blur(24px) !important;
-      opacity: 0.85 !important;
+      opacity: 0.55 !important;
     }
   }
 
@@ -877,7 +880,7 @@
 <div class="container-wrapper">
   <div class="image-container">
     <picture>
-      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=golden_aura_finished_edge">
+      <source media="(max-width: 768px)" srcset="/images/hero_mobile.jpg?v=subtle_pure_royal_gold">
       <img src="/images/final_page_no_text.jpg" alt="Shree Navratri Mandal Home" class="bg-image" id="devi-bg-img" />
     </picture>
     
