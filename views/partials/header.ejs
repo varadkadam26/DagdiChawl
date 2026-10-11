@@ -226,13 +226,21 @@
     overflow: visible; /* Changed from hidden so mobile menu can drop down */
   }
 
-  body:not([data-lang]) .nm-nav-header::before,
-  body[data-lang] .nm-nav-header::before {
-    display: none !important;
+  .nm-nav-header,
+  .nm-top-bar,
+  .nm-main-nav {
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
   }
-  
+
+  body:not([data-lang]) .nm-nav-header::before,
+  body[data-lang] .nm-nav-header::before,
+  .nm-nav-header::before,
   .nm-nav-header::after {
     display: none !important;
+    content: none !important;
+    box-shadow: none !important;
   }
 
 
