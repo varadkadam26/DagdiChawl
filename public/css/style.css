@@ -3111,22 +3111,23 @@ section {
   }
 }
 
-/* Malabar Hill Cha Raja supplied-photo framing: preserve the existing cards/animation while keeping the idol face visible. */
+/* Malabar Hill Cha Raja supplied-photo framing: fit photos properly in cards with zero blank space */
 .card-img-box img,
 .crazy-reel-card img,
+.crazy-reel-card .card-img-box img,
 .gallery-card-item img,
-.magazine-img-frame img {
-  object-position: 50% 25%;
+.glimpse-card-img-wrap img,
+.magazine-img-frame img,
+.malabar-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 20% !important;
+  display: block !important;
 }
 
 .hero-slide-bg {
   object-position: 50% 24%;
-}
-
-.malabar-photo {
-  object-fit: contain;
-  object-position: 50% 20%;
-  background: #111;
 }
 
 .main-content-gradient {
