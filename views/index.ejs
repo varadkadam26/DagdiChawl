@@ -661,20 +661,20 @@
       display: none !important;
     }
 
-    /* Ambient golden divine back-illumination strictly in the cave BEHIND Devi - completely masked off Devi */
+    /* Divine golden radiance radiating directly from behind Devi Maa's silhouette */
     .devi-divine-aura {
       display: block !important;
       position: absolute !important;
-      top: 6vh !important;
+      top: 8vh !important;
       left: 0 !important;
       width: 100% !important;
-      height: 70vh !important;
+      height: 65vh !important;
       transform: none !important;
       z-index: 2 !important;
       pointer-events: none !important;
-      /* Precise feather mask: guarantees 0% glow touches Devi's face, crown, or body */
-      -webkit-mask-image: radial-gradient(ellipse 26vw 34vh at 53.5% 45%, transparent 0%, transparent 68%, black 100%);
-      mask-image: radial-gradient(ellipse 26vw 34vh at 53.5% 45%, transparent 0%, transparent 68%, black 100%);
+      /* Tight feather mask: keeps her face & crown 100% clean while letting golden glow burst directly from behind her contours */
+      -webkit-mask-image: radial-gradient(ellipse 18vw 26vh at 53.5% 42%, transparent 0%, transparent 42%, black 72%);
+      mask-image: radial-gradient(ellipse 18vw 26vh at 53.5% 42%, transparent 0%, transparent 42%, black 72%);
     }
     .devi-aura-core {
       position: absolute !important;
@@ -683,16 +683,17 @@
       width: 100% !important;
       height: 100% !important;
       border-radius: 0 !important; /* Not a circle */
-      background: radial-gradient(ellipse 70% 55% at 53.5% 45%,
-        rgba(212, 175, 55, 0.5) 0%,
-        rgba(212, 175, 55, 0.3) 45%,
-        rgba(184, 134, 11, 0.12) 68%,
-        transparent 85%
+      background: radial-gradient(ellipse 46vw 44vh at 53.5% 42%,
+        rgba(255, 215, 0, 0.92) 0%,
+        rgba(212, 175, 55, 0.8) 32%,
+        rgba(212, 175, 55, 0.45) 55%,
+        rgba(184, 134, 11, 0.18) 75%,
+        transparent 92%
       ) !important;
-      filter: blur(35px) !important;
+      filter: blur(18px) !important;
       mix-blend-mode: screen !important;
-      opacity: 0.9 !important;
-      animation: deviAuraPulse 4s ease-in-out infinite alternate !important;
+      opacity: 0.95 !important;
+      animation: deviAuraPulse 3.5s ease-in-out infinite alternate !important;
     }
     .devi-aura-rays {
       display: none !important;
@@ -704,14 +705,15 @@
       width: 100% !important;
       height: 100% !important;
       border-radius: 0 !important; /* Not a circle */
-      background: radial-gradient(ellipse 85% 65% at 53.5% 42%,
-        rgba(212, 175, 55, 0.32) 0%,
-        rgba(184, 134, 11, 0.14) 55%,
-        transparent 82%
+      background: radial-gradient(ellipse 62vw 56vh at 53.5% 42%,
+        rgba(212, 175, 55, 0.5) 0%,
+        rgba(212, 175, 55, 0.3) 45%,
+        rgba(184, 134, 11, 0.12) 68%,
+        transparent 88%
       ) !important;
-      filter: blur(45px) !important;
+      filter: blur(30px) !important;
       mix-blend-mode: screen !important;
-      opacity: 0.75 !important;
+      opacity: 0.85 !important;
     }
   }
 
