@@ -5,28 +5,53 @@
     background: linear-gradient(135deg, #100A07 0%, #28140C 100%) !important;
     min-height: 100vh;
   }
-  .main-content-gradient, .page-hero-banner {
+  .main-content-gradient {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    padding: clamp(125px, 15vw, 150px) 0 3.5rem !important;
   }
   
-  /* Responsive clamp fonts to keep everything in 1 line on mobile */
+  .schedule-mandal-title {
+    font-family: var(--font-mr-head);
+    color: var(--gold-soft);
+    font-weight: 900;
+    font-size: clamp(1.35rem, 4.2vw, 2.1rem);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 14px rgba(212, 175, 55, 0.4), 1px 1px 4px rgba(0,0,0,0.8);
+    word-break: break-word;
+  }
+  .schedule-section-title {
+    font-family: var(--font-mr-head);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: clamp(1.15rem, 3.5vw, 1.65rem);
+    line-height: 1.35;
+    margin-top: 0.4rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6), 1px 1px 3px rgba(0,0,0,0.8);
+  }
+  .schedule-subheading {
+    font-size: clamp(0.95rem, 3.2vw, 1.25rem);
+    font-weight: 800;
+    line-height: 1.5;
+    color: var(--primary-saffron);
+    text-shadow: 0 0 8px rgba(203, 161, 53, 0.5);
+    margin-bottom: 0.35rem;
+  }
+  
+  /* Responsive clamp fonts to keep elements well fitted */
   .fit-1-line-lg {
-    white-space: nowrap;
-    font-size: clamp(0.7rem, 3.5vw, 1.8rem) !important;
+    font-size: clamp(1.2rem, 3.8vw, 1.8rem) !important;
   }
   .fit-1-line-md {
-    white-space: nowrap;
-    font-size: clamp(0.6rem, 2.8vw, 1.5rem) !important;
+    font-size: clamp(1.05rem, 3.2vw, 1.5rem) !important;
   }
   .fit-1-line-sm {
-    white-space: nowrap;
-    font-size: clamp(0.55rem, 2.4vw, 1.25rem) !important;
+    font-size: clamp(0.9rem, 2.8vw, 1.25rem) !important;
   }
   .fit-1-line-xs {
-    white-space: nowrap;
-    font-size: clamp(0.5rem, 2.0vw, 0.95rem) !important;
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem) !important;
   }
   
   .card-temple {
@@ -37,7 +62,7 @@
   }
   
   .event-title {
-    font-size: clamp(0.9rem, 3.5vw, 1.25rem);
+    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
     line-height: 1.4;
     word-break: break-word;
   }
@@ -54,35 +79,25 @@
   }
 </style>
 
-<section class="page-hero-banner">
-  <div class="container">
-    <span class="section-badge fit-1-line-sm" data-i18n="schedule_badge">उत्सव कार्यसूची</span>
-    <h1 data-i18n="schedule_page_title" class="fit-1-line-lg">कार्यक्रमाची रुपरेखा</h1>
-    <p data-i18n="schedule_page_sub" class="fit-1-line-md">
-      भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ (१० ऑक्टोबर ते २१ ऑक्टोबर २०२६)
-    </p>
-  </div>
-</section>
-
-<section class="main-content-gradient" style="padding: 4rem 0;">
+<section class="main-content-gradient">
   <div class="container" style="max-width: 900px;">
     
-    <div style="background: transparent; border: none; border-radius: var(--radius-lg); padding: 2.5rem 1rem; box-shadow: none; margin-bottom: 2rem;">
-      <div style="text-align: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-gold); padding-bottom: 1.5rem;">
-        <div style="font-family: var(--font-mr-head); color: var(--gold-soft); font-weight: 800; margin-bottom: 0.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);" class="fit-1-line-lg">
+    <div style="background: transparent; border: none; border-radius: var(--radius-lg); padding: 0.5rem 0.5rem 1.5rem; box-shadow: none; margin-bottom: 1.5rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-gold); padding-bottom: 1.2rem;">
+        <div class="schedule-mandal-title">
           <span class="lang-mr">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ</span>
           <span class="lang-en">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal</span>
         </div>
-        <div style="font-family: var(--font-mr-head); color: var(--gold-soft); font-weight: 800; margin-top: 0.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);" class="fit-1-line-md">
+        <div class="schedule-section-title">
           <span class="lang-mr">अधिकृत कार्यक्रम यादी</span><span class="lang-en">Official Program List</span>
         </div>
       </div>
 
-      <div style="text-align: center; color: var(--primary-saffron); text-shadow: 0 0 8px rgba(203, 161, 53, 0.4);; font-weight: 800; margin-bottom: 0.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
-        <div class="fit-1-line-sm lang-mr">कालावधी - शनिवार दि. १० ऑक्टोबर ते बुधवार दि. २१ ऑक्टोबर २०२६</div>
-        <div class="fit-1-line-sm lang-en">Duration - Saturday, 10 Oct to Wednesday, 21 Oct 2026</div>
-        <div class="fit-1-line-sm lang-mr">शनिवार १०/१०/२०२६ रात्री ८.०० वा. देवीचे आगमन</div>
-        <div class="fit-1-line-sm lang-en">Saturday 10/10/2026 at 8:00 PM - Arrival of the Goddess</div>
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <div class="schedule-subheading lang-mr">कालावधी - शनिवार दि. १० ऑक्टोबर ते बुधवार दि. २१ ऑक्टोबर २०२६</div>
+        <div class="schedule-subheading lang-en">Duration - Saturday, 10 Oct to Wednesday, 21 Oct 2026</div>
+        <div class="schedule-subheading lang-mr">शनिवार १०/१०/२०२६ रात्री ८.०० वा. देवीचे आगमन</div>
+        <div class="schedule-subheading lang-en">Saturday 10/10/2026 at 8:00 PM - Arrival of the Goddess</div>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -118,28 +133,28 @@
         <div style="font-size: clamp(0.8rem, 3.5vw, 1.15rem); line-height: 1.4;" class="lang-en">Wednesday 21/10/2026 After 5:00 PM - Devi Visarjan Ceremony</div>
       </div>
 
-      <div style="background: transparent; padding: 1rem 0; margin-top: 2rem; text-align: center;">
-        <h3 style="font-weight: 800; margin-bottom: 1rem; color: var(--primary-saffron); text-shadow: 0 0 8px rgba(203, 161, 53, 0.4);; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);" class="fit-1-line-md">
+      <div style="background: transparent; padding: 1rem 0; margin-top: 1.5rem; text-align: center;">
+        <h3 class="schedule-section-title" style="margin-bottom: 0.8rem; color: var(--primary-saffron); text-shadow: 0 0 10px rgba(203, 161, 53, 0.5);">
           <span class="lang-mr">महत्त्वाची सूचना</span>
           <span class="lang-en">Important Instructions</span>
         </h3>
         
-        <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--gold-soft);" class="fit-1-line-sm lang-mr">रोज सकाळी ९:०० वा. व रात्री ८:०० वा. देवीची आरती</p>
-        <p style="color: #ffffff; opacity: 0.9;" class="fit-1-line-xs lang-mr">वि. सूचना : कार्यक्रमात फेरफार करण्याचा अधिकार उत्सव समितीवर असेल.</p>
+        <p style="font-weight: 800; margin-bottom: 0.5rem; color: var(--gold-soft); font-size: clamp(1rem, 3vw, 1.25rem);" class="lang-mr">रोज सकाळी ९:०० वा. व रात्री ८:०० वा. देवीची आरती</p>
+        <p style="color: #ffffff; opacity: 0.95; font-size: clamp(0.85rem, 2.5vw, 1.05rem);" class="lang-mr">वि. सूचना : कार्यक्रमात फेरफार करण्याचा अधिकार उत्सव समितीवर असेल.</p>
         
-        <p style="font-weight: 700; margin-bottom: 0.5rem; color: var(--gold-soft);" class="fit-1-line-sm lang-en">Daily Morning 9:00 AM & Night 8:00 PM Devi's Aarti</p>
-        <p style="color: #ffffff; opacity: 0.9;" class="fit-1-line-xs lang-en">Note: The festival committee reserves the right to make changes to the schedule.</p>
+        <p style="font-weight: 800; margin-bottom: 0.5rem; color: var(--gold-soft); font-size: clamp(1rem, 3vw, 1.25rem);" class="lang-en">Daily Morning 9:00 AM & Night 8:00 PM Devi's Aarti</p>
+        <p style="color: #ffffff; opacity: 0.95; font-size: clamp(0.85rem, 2.5vw, 1.05rem);" class="lang-en">Note: The festival committee reserves the right to make changes to the schedule.</p>
       </div>
     </div>
 
     <!-- Devi's Jagran Section -->
-    <div style="background: transparent; border: none; border-radius: var(--radius-lg); padding: 2.5rem 1rem; box-shadow: none; margin-bottom: 2rem;">
-      <div style="text-align: center; margin-bottom: 2rem; border-bottom: 2px solid var(--border-gold); padding-bottom: 1.5rem;">
-        <div style="font-family: var(--font-mr-head); color: var(--gold-soft); font-weight: 800; margin-bottom: 0.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);" class="fit-1-line-lg">
+    <div style="background: transparent; border: none; border-radius: var(--radius-lg); padding: 1rem 0.5rem 1.5rem; box-shadow: none; margin-bottom: 1.5rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-gold); padding-bottom: 1.2rem;">
+        <div class="schedule-mandal-title">
           <span class="lang-mr">भायखळा दगडी चाळ सार्वजनिक नवरात्रोत्सव मंडळ</span>
           <span class="lang-en">Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal</span>
         </div>
-        <div style="font-family: var(--font-mr-head); color: var(--gold-soft); font-weight: 800; margin-top: 0.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);" class="fit-1-line-md">
+        <div class="schedule-section-title">
           <span class="lang-mr">देवीचे जागरण - २०२६</span><span class="lang-en">Devi's Jagran - 2026</span>
         </div>
       </div>
