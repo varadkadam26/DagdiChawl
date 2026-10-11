@@ -3228,6 +3228,16 @@ body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, in
     text-align: center !important;
     margin: 0 auto !important;
   }
+  .action-buttons-container {
+    position: absolute !important;
+    top: 73.5vh !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 25 !important;
+  }
 }
 
 /* Center Language Toggle and Social Media Handles on Laptop and Mobile */

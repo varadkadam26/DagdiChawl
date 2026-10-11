@@ -641,13 +641,16 @@
 
     .action-buttons-container {
       position: absolute;
-      top: 64vh; /* Perfectly positioned below Devi pedestal */
+      top: 73.5vh; /* In the cave background properly spaced below Devi's feet */
       left: 0;
       width: 100%;
+      display: flex;
       justify-content: center;
-      gap: 10px; /* Reduced gap for smaller screens */
-      flex-direction: row; /* Ensure side by side */
+      align-items: center;
+      gap: 10px;
+      flex-direction: row;
       margin-top: 0;
+      z-index: 25;
     }
 
     .glow-btn {
