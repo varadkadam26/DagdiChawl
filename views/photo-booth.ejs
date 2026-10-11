@@ -76,6 +76,7 @@
             </div>
           </div>
 
+          <% if (item.titleMr || item.titleEn || item.descMr || item.descEn || item.themeMr || item.artistMr) { %>
           <div style="padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <h3 style="font-size: 1.3rem; color: var(--temple-maroon); margin-bottom: 0.6rem;"><span class="lang-mr"><%= item.titleMr || item.title %></span><span class="lang-en"><%= item.titleEn || item.title %></span></h3>
@@ -91,6 +92,7 @@
               </div>
             </div>
           </div>
+          <% } %>
         </div>
       <% }); %>
     </div>

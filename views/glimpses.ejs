@@ -19,15 +19,6 @@
   }
 </style>
 
-  <section class="page-hero-banner">
-    <div class="container">
-      <h1>
-        <span class="lang-mr">क्षणचित्रे व दशकातील सुवर्ण प्रवास</span>
-        <span class="lang-en">Glimpses & Golden Journey of a Decade</span>
-      </h1>
-    </div>
-  </section>
-
   <!-- Featured 3D Interactive Scroll Reel -->
   <section
     style="background: linear-gradient(180deg, #050403 0%, #100A07 100%); padding: 3.5rem 0 2.5rem; border-bottom: 2px solid var(--royal-gold); position: relative; overflow: hidden;">
@@ -58,12 +49,16 @@
               <div class="card-img-box">
                 <img src="<%= item.image %>" alt="<%= item.titleMr || item.title %>" loading="lazy"
                   style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;">
+                <div class="year-badge">
+                  <span class="lang-mr">वर्ष</span><span class="lang-en">Year</span> <%= item.year %>
+                </div>
                 <div class="enlarge-hint">
                   <i class="fa-solid fa-magnifying-glass-plus" style="color: var(--royal-gold); margin-right: 4px;"></i>
                   <span class="lang-mr">झूम करा</span>
                   <span class="lang-en">Enlarge</span>
                 </div>
               </div>
+              <% if (item.titleMr || item.titleEn || item.themeMr || item.themeEn) { %>
               <div class="card-content">
                 <h4 class="card-title"><span class="lang-mr">
                     <%= item.titleMr || item.title %>
@@ -76,6 +71,7 @@
                     <%= item.themeEn || item.theme %>
                   </span></p>
               </div>
+              <% } %>
             </div>
             <% } %>
             <% }); %>
@@ -167,11 +163,57 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      align-items: stretch;
+    }
+    .gallery-card-item {
+      position: relative !important;
+      width: 100% !important;
+      aspect-ratio: 4 / 5 !important;
+      overflow: hidden !important;
+      border-radius: 16px !important;
+      border: 2px solid var(--royal-gold) !important;
+      background: #0d0507 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.2) !important;
+      display: block !important;
+    }
+    .gallery-card-item.is-horizontal {
+      aspect-ratio: 16 / 9 !important;
+      grid-column: 1 / -1 !important;
+    }
+    .glimpse-card-img-wrap {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden !important;
+      cursor: pointer;
+    }
+    .glimpse-card-img-wrap img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center 20% !important;
+      display: block !important;
+      transition: transform 0.5s ease;
+    }
+    .gallery-card-item:hover .glimpse-card-img-wrap img {
+      transform: scale(1.06);
     }
     @media (max-width: 768px) {
       .grid-2x2-year {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+      }
+      .gallery-card-item {
+        aspect-ratio: 4 / 5 !important;
+        border-radius: 12px !important;
+      }
+      .gallery-card-item.is-horizontal {
+        aspect-ratio: 16 / 9 !important;
       }
     }
   </style>
@@ -206,28 +248,33 @@
           <div class="year-content" data-content-year="<%= yr %>" style="display: <%= yr === defaultYear ? 'block' : 'none' %>; padding: 2rem 0;">
             <div class="grid-2x2-year">
               <% glimpsesData.filter(item => item.year === yr).forEach(item => { %>
-                <div class="card-temple gallery-card-item gold-motion-frame reveal-on-scroll"
+                <div class="card-temple gallery-card-item gold-motion-frame reveal-on-scroll <%= (item.isHorizontal || item.image.includes('2023_new_1.jpg')) ? 'is-horizontal' : '' %>"
                   data-category="<%= item.category %>"
-                  style="padding: 0; overflow: hidden; display: flex; flex-direction: column; <%= (item.isHorizontal || item.image.includes('2023_new_1.jpg')) ? 'grid-column: 1 / -1;' : '' %>">
-                  <div class="glimpse-card-img-wrap" style="position: relative; height: 100%; flex-grow: 1; overflow: hidden; cursor: pointer;"
+                  style="<%= (item.isHorizontal || item.image.includes('2023_new_1.jpg')) ? 'grid-column: 1 / -1;' : '' %>">
+                  <div class="glimpse-card-img-wrap"
                     data-lightbox data-lightbox-src="<%= item.image %>"
-                    data-lightbox-title="<%= item.titleMr || item.title %> (  ?  <%= item.year %>)"
-                    data-lightbox-title-mr="<%= item.titleMr || item.title %> (  ?  <%= item.year %>)"
+                    data-lightbox-title="<%= item.titleMr || item.title %> (वर्ष <%= item.year %>)"
+                    data-lightbox-title-mr="<%= item.titleMr || item.title %> (वर्ष <%= item.year %>)"
                     data-lightbox-title-en="<%= item.titleEn || item.title %> (Year <%= item.year %>)"
                     data-lightbox-caption="<%= item.descMr || item.desc %>"
                     data-lightbox-caption-mr="<%= item.descMr || item.desc %>"
                     data-lightbox-caption-en="<%= item.descEn || item.desc %>">
                     <img src="<%= item.image %>" alt="<%= item.title %>"
-                      style="width: 100%; height: 100%; display: block; object-fit: cover;">
+                      style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 20%;">
+                    <div class="enlarge-hint" style="position: absolute; bottom: 12px; left: 12px; background: rgba(10, 10, 10, 0.82); backdrop-filter: blur(6px); color: #FFF; font-size: 0.75rem; font-weight: 600; padding: 5px 12px; border-radius: 6px; border-left: 3.5px solid var(--royal-gold); z-index: 5;">
+                      <i class="fa-solid fa-magnifying-glass-plus" style="color: var(--royal-gold); margin-right: 4px;"></i>
+                      <span class="lang-mr">झूम करा</span>
+                      <span class="lang-en">Enlarge</span>
+                    </div>
                   </div>
                   <% if (item.titleMr || item.titleEn || item.descMr || item.descEn) { %>
-                  <div style="padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(180deg, transparent 0%, rgba(12, 4, 4, 0.95) 60%, #000 100%); z-index: 6;">
                     <div>
-                      <h3 style="font-size: 1.3rem; color: var(--temple-maroon); margin-bottom: 0.6rem;">
+                      <h3 style="font-size: 1.2rem; color: var(--gold-soft); margin-bottom: 0.4rem;">
                         <span class="lang-mr"><%= item.titleMr || item.title %></span>
                         <span class="lang-en"><%= item.titleEn || item.title %></span>
                       </h3>
-                      <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.2rem;">
+                      <p style="font-size: 0.88rem; color: #E5E7EB; line-height: 1.5; margin: 0;">
                         <span class="lang-mr"><%= item.descMr || item.desc %></span>
                         <span class="lang-en"><%= item.descEn || item.desc %></span>
                       </p>
