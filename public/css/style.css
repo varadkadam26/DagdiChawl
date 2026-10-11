@@ -3153,13 +3153,22 @@ section {
   box-shadow: 0 0 8px rgba(212, 175, 55, 0.6) !important;
   border-color: #D4AF37 !important;
 }
-.rich-gold-text, 
-.text-saffron,
-.text-gold,
+/* Universal Golden Glow behind every text - balanced (not overpowering, not too subtle) */
+body, p, a, li, strong, em, b, label,
+span:not([class*='fa']):not([class*='bi']), 
+i:not([class*='fa']):not([class*='bi']) {
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.45), 0 0 12px rgba(212, 175, 55, 0.22);
+}
+
 h1, h2, h3, h4, h5, h6,
 .section-title,
-.nm-logo-subtitle {
-    text-shadow: 0 0 8px rgba(203, 161, 53, 0.3), 0 0 15px rgba(203, 161, 53, 0.15);
+.section-badge,
+.nm-logo-title,
+.nm-logo-subtitle,
+.rich-gold-text, 
+.text-saffron,
+.text-gold {
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.65), 0 0 18px rgba(212, 175, 55, 0.35);
 }
 
 
