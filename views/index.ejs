@@ -254,9 +254,11 @@
   }
 
   .image-container img.bg-image {
-    width: 100%;
+    width: 104%;
+    max-width: none;
     height: auto;
     display: block;
+    transform: translateX(2.2%);
   }
 
   /* ============================================================
@@ -265,13 +267,13 @@
   .devi-divine-aura {
     position: absolute;
     top: 13%;
-    left: 68%;
+    left: 70.2%;
     width: 36vw;
     height: 36vw;
     transform: translate(-50%, -20%);
     z-index: 4;
     pointer-events: none;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
   }
@@ -358,9 +360,10 @@
   }
 
   .hd-devi-wrapper {
+    display: block !important;
     position: absolute;
     top: 12.31%;
-    left: 50.58%;
+    left: 52.78%;
     width: 34.86%;
     z-index: 5;
     pointer-events: none;
@@ -658,64 +661,56 @@
       overflow: hidden;
     }
 
-    /* 1. First Section: Full Screen Devi Image - Balanced standing lamps and centered Devi */
+    /* 1. First Section: Full Screen Devi Image - Shifted right so Devi's face is dead-center */
     .image-container img.bg-image {
       display: block;
-      width: 112vw;
+      width: 122vw;
       max-width: none;
       height: 100vh;
       object-fit: cover;
-      object-position: 47% center;
-      margin-left: -5.5vw;
+      object-position: 40% center;
+      margin-left: 2vw;
+      transform: none !important;
     }
 
-    
-  @media (max-width: 1200px) {
-    .hd-devi-wrapper { display: none !important; }
-  }
+    .hd-devi-wrapper {
+      display: none !important;
+    }
 
-  /* Prominent moving golden glow on mobile positioned directly around & behind Devi Maa */
-  .devi-divine-aura-mobile {
-    display: none;
-  }
-  @media (max-width: 768px) {
+    /* Prominent moving golden glow on mobile positioned directly behind Devi Maa's head and crown */
     .devi-divine-aura {
       display: flex !important;
       position: absolute !important;
-      top: 48vh !important;
+      top: 41vh !important;
       left: 50% !important;
-      width: 90vw !important;
-      height: 90vw !important;
+      width: 86vw !important;
+      height: 86vw !important;
       transform: translate(-50%, -50%) !important;
       z-index: 5 !important;
       pointer-events: none !important;
-      /* MASK: Center where Devi sits is completely transparent so glow is strictly BEHIND & AROUND her, NEVER on her face/body */
-      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 35%, black 65%);
-      mask-image: radial-gradient(ellipse at 50% 50%, transparent 0%, transparent 35%, black 65%);
+      /* Soft divine halo with zero clipping distortion near crown */
     }
     .devi-aura-core {
-      width: 90% !important;
-      height: 90% !important;
-      filter: blur(18px) !important;
-      opacity: 0.7 !important;
+      width: 85% !important;
+      height: 85% !important;
+      background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.78) 0%, rgba(197, 160, 40, 0.45) 45%, transparent 72%) !important;
+      filter: blur(20px) !important;
+      opacity: 0.8 !important;
     }
     .devi-aura-rays {
-      width: 110% !important;
-      height: 110% !important;
-      filter: blur(10px) !important;
-      opacity: 0.6 !important;
+      width: 105% !important;
+      height: 105% !important;
+      filter: blur(16px) !important;
+      opacity: 0.35 !important;
     }
     .devi-aura-shimmer {
-      width: 120% !important;
-      height: 120% !important;
-      filter: blur(24px) !important;
-      opacity: 0.55 !important;
+      width: 125% !important;
+      height: 125% !important;
+      background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.4) 0%, rgba(180, 130, 20, 0.2) 48%, transparent 70%) !important;
+      filter: blur(26px) !important;
+      opacity: 0.65 !important;
     }
   }
-
-  /* Hide the HD overlay on mobile. The base image is 1024px which is 
-     more than enough resolution for a phone screen, so it won't be blurry! */
-  .hd-devi-wrapper { display: none !important; }
 
     /* 2. Second Section: Text below the image */
     .hd-text-container {
@@ -1197,6 +1192,15 @@
 
 <section style="padding: 6rem 0;">
       <div class="container">
+        <!-- Donate Button above Mandap Location & Contact -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <a href="/donate" class="glow-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 32px; font-size: clamp(0.95rem, 2.5vw, 1.15rem); font-weight: 700; text-decoration: none; border-radius: 40px;">
+            <i class="fa-solid fa-hand-holding-dollar" style="color: var(--royal-gold); font-size: 1.15rem;"></i>
+            <span class="lang-mr">देणगी द्या / Donate Now</span>
+            <span class="lang-en">Donate Now</span>
+          </a>
+        </div>
+
         <div class="section-header">
           <span class="section-badge" style="color: #FFFFFF; text-shadow: 0 0 8px rgba(203, 161, 53, 0.6);">
             <span class="lang-mr">मंडप स्थान व संपर्क</span><span class="lang-en">MANDAP LOCATION & CONTACT</span>

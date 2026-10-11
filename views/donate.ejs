@@ -17,15 +17,28 @@
     border: 1px solid rgba(212, 175, 55, 0.2) !important;
     box-shadow: none !important;
   }
+
+  .donate-section {
+    padding: clamp(180px, 16vw, 225px) 0 5rem !important;
+  }
+
+  @media (max-width: 768px) {
+    .donate-section {
+      padding: clamp(160px, 22vw, 195px) 0 3.5rem !important;
+    }
+    .card-temple {
+      padding: 1.8rem 1.2rem !important;
+    }
+  }
 </style>
 
-  <section class="main-content-gradient" style="padding: 3rem 0 5rem;">
+  <section class="main-content-gradient donate-section">
     <div class="container" style="max-width: 850px;">
 
       <div class="card-temple" style="padding: 3rem;">
-        <h2 style="font-size: 1.8rem; color: var(--royal-gold); margin-bottom: 1.5rem; text-align: center;"
-          data-i18n="donate_form_title">
-          देणगी नोंदणी फॉर्म
+        <h2 style="font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--royal-gold); margin-bottom: 1.8rem; text-align: center; text-shadow: 0 0 12px rgba(212, 175, 55, 0.4); font-weight: 800;">
+          <span class="lang-mr">देणगी नोंदणी फॉर्म</span>
+          <span class="lang-en">Donation Registration Form</span>
         </h2>
 
         <form id="donationForm">

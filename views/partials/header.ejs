@@ -485,9 +485,10 @@
   }
 
     .hd-devi-wrapper {
+    display: block !important;
     position: absolute;
     top: 12.31%;
-    left: 50.58%;
+    left: 52.78%;
     width: 34.86%;
     z-index: 5;
     pointer-events: none;
@@ -821,13 +822,9 @@
     }
 
     
-  @media (max-width: 1200px) {
+  @media (max-width: 768px) {
     .hd-devi-wrapper { display: none !important; }
   }
-
-    /* Hide the HD overlay on mobile. The base image is 1024px which is 
-       more than enough resolution for a phone screen, so it won't be blurry! */
-    .hd-devi-wrapper { display: none !important; }
 
     /* 2. Second Section: Text below the image */
     .hd-text-container {

@@ -53,9 +53,19 @@
     color: #F5D98E !important;
     text-shadow: 0 0 12px rgba(245, 217, 142, 0.35) !important;
   }
+
+  .contact-section {
+    padding: clamp(180px, 16vw, 225px) 0 4.5rem !important;
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: clamp(160px, 22vw, 195px) 0 3.5rem !important;
+    }
+  }
 </style>
 
-<section class="main-content-gradient" style="padding: clamp(120px, 14vw, 150px) 0 4rem;">
+<section class="main-content-gradient contact-section">
   <div class="container">
     
     <!-- Contact Page Header -->
