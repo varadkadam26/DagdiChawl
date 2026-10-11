@@ -3299,6 +3299,10 @@ body, h1, h2, h3, h4, h5, h6, p, span:not([class*='fa']), a, div, li, button, in
 .bank-acc-line2 {
   white-space: nowrap;
 }
+.bank-detail-item span:not(.bank-upi-val),
+.bank-details-inner span:not(.bank-upi-val) {
+  color: #FFFFFF !important;
+}
 @media (max-width: 768px) {
   .bank-details-card {
     padding: 1.5rem 1rem !important;
