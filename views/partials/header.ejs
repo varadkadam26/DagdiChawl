@@ -985,7 +985,23 @@
   
   @media (max-width: 1450px) and (min-width: 769px) {
     .nm-logo-text {
-      display: none !important;
+      display: flex !important;
+    }
+    .nm-logo-title {
+      font-size: clamp(0.78rem, 1.15vw, 1.1rem) !important;
+      letter-spacing: 0.5px !important;
+      white-space: nowrap !important;
+    }
+    .nm-nav-links {
+      gap: clamp(12px, 1.6vw, 24px) !important;
+    }
+    .nm-nav-links a {
+      font-size: clamp(0.78rem, 0.95vw, 0.88rem) !important;
+      letter-spacing: 0.4px !important;
+    }
+    .nm-donate-btn {
+      padding: 6px 16px !important;
+      font-size: 0.85rem !important;
     }
   }
 </style>
