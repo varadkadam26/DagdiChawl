@@ -258,7 +258,6 @@ The app syncs data in real-time to a shared Google Spreadsheet with 3 tabs:
 | 📞 **Helpline** | +91 95945 12999 |
 | 📺 **YouTube** | [@MalabarHillChaRaja-e2z](https://www.youtube.com/@MalabarHillChaRaja-e2z) |
 | 📸 **Instagram** | [@malabarhill_cha_raja](https://www.instagram.com/malabarhill_cha_raja/) |
-| 📘 **Facebook** | [malabarhillcharaja](https://www.facebook.com/malabarhillcharaja) |
 
 ---
 
