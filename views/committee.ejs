@@ -193,10 +193,8 @@
 
     /* Adharsthambh (Our Pillars of Support) Styling */
     .adharsthambh-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 390px));
+      display: flex;
       justify-content: center;
-      gap: 2.5rem;
       margin-bottom: 2.5rem;
     }
 
@@ -209,6 +207,8 @@
       padding: 2.2rem 1.5rem;
       border-radius: var(--radius-lg);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 420px;
+      width: 100%;
     }
 
     .adharsthambh-card:hover {
@@ -242,12 +242,8 @@
     }
 
     @media (max-width: 850px) {
-      .adharsthambh-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 1.8rem;
+      .adharsthambh-card {
+        max-width: 100%;
       }
     }
   </style>
@@ -289,19 +285,6 @@
           </div>
           <div class="committee-name-english lang-en" style="font-size: 1.05rem; font-weight: 700; color: #F4EDE0; margin-bottom: 0.35rem; line-height: 1.4;">
             Hon.Shri. Arun Bhai Gawli (Daddy) - Ex. MLA
-          </div>
-        </div>
-
-        <!-- Asha Arun Gawli (Mummy) -->
-        <div class="committee-card adharsthambh-card">
-          <div class="adharsthambh-img-box">
-            <img src="/images/committee/asha_gawli_mummy.jpg" alt="आशा अरुण गवळी ( मम्मी )" class="adharsthambh-img" style="object-position: center 12%;">
-          </div>
-          <div class="committee-name-marathi lang-mr" style="font-size: 1.25rem; font-weight: 800; color: #FFF; text-shadow: 0 0 10px rgba(212, 175, 55, 0.6); margin-bottom: 0.35rem; line-height: 1.4;">
-            आशा अरुण गवळी ( मम्मी )
-          </div>
-          <div class="committee-name-english lang-en" style="font-size: 1.05rem; font-weight: 700; color: #F4EDE0; margin-bottom: 0.35rem; line-height: 1.4;">
-            Smt. Asha Arun Gawli (Mummy)
           </div>
         </div>
       </div>
