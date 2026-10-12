@@ -6,8 +6,8 @@ module.exports = {
   // Render Official T-Shirt Store Page
   renderTshirtPage(req, res) {
     res.render('tshirt', {
-      title: 'आगमन सोहळा टी शर्ट २०२६ - बुकिंग | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ - आगमन सोहळा अधिकृत टी शर्ट २०२६ ऑनलाईन बुकिंग.',
+      title: 'आगमन सोहळा टी शर्ट २०२६ | Dagdi Chawl Chi Aai Mauli',
+      metaDescription: 'भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ - आगमन सोहळा अधिकृत टी शर्ट २०२६.',
       activeTab: 'tshirt'
     });
   },
