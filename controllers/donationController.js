@@ -7,8 +7,8 @@ module.exports = {
   // Render Donation Page
   renderDonationPage(req, res) {
     res.render('donate', {
-      title: 'Online Donation Portal (80G Tax Exempt) | Dagdi Chawli Chi Aai Mauli',
-      metaDescription: 'Support Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal\'s social service and festival initiatives. 80G tax-exempt online donations with direct bank/UPI verification and official receipts.',
+      title: 'Online Donation Portal | Dagdi Chawli Chi Aai Mauli',
+      metaDescription: 'Support Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal\'s social service and festival initiatives. Online donations with direct bank/UPI verification and official receipts.',
       activeTab: 'donate'
     });
   },

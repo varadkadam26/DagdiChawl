@@ -44,7 +44,7 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Malabar Hill Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
+    ticker_text: "🎉 Malabar Hill Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • Online Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
@@ -82,7 +82,7 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Malabar Hill Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • 80G Tax Exempt Donations Open 🎉",
+    ticker_text: "🎉 Malabar Hill Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • Online Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
@@ -144,8 +144,8 @@ const translations = {
     // Donation Section
     donate_section_tag: "SACRED CONTRIBUTION",
     donate_section_title: "Support Malabar Hill Cha Raja Seva",
-    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section 80G.",
-    btn_donate_80g: "Donate Online (With 80G Receipt)",
+    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements.",
+    btn_donate_80g: "Donate Online (With Official Receipt)",
 
     // Location & Contact
     location_tag: "MANDAP LOCATION & CONTACT",
@@ -154,7 +154,7 @@ const translations = {
     contact_box_title: "Contact Information",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
     contact_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
-    contact_reg: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
+    contact_reg: "Reg No: E-3892 Mumbai",
     visitor_count_label: "Total Devotee Visits:",
 
     // Schedule Page Titles
@@ -181,7 +181,7 @@ const translations = {
     footer_col_initiatives: "Initiatives & Donation",
     footer_col_location: "Mandap Location & Map",
     footer_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
-    footer_reg_tax: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
+    footer_reg_tax: "Reg No: E-3892 Mumbai",
     footer_desc: "Shree Bal Gopal Ganeshutsav Mandal (Est. 1973). Dedicated to preserving Maharashtrian heritage and serving humanity.",
     footer_copyright: "© Shree Bal Gopal Ganeshutsav Mandal. All Rights Reserved.",
 
@@ -195,7 +195,7 @@ const translations = {
     // Donate CTA section
     donate_section_tag: "SACRED CONTRIBUTION",
     donate_section_title: "Support Malabar Hill Cha Raja Seva",
-    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements. All donations are 50% Tax Exempt under Section 80G.",
+    donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements.",
 
     // Location & Contact
     location_tag: "MANDAP LOCATION & CONTACT",
@@ -204,7 +204,7 @@ const translations = {
     contact_box_title: "Contact Information",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
     contact_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
-    contact_reg: "Reg No: E-3892 Mumbai (80G Tax Exempt Certified)",
+    contact_reg: "Reg No: E-3892 Mumbai",
 
     // Social Work section
     social_section_tag: "COMMUNITY SERVICES",
@@ -234,7 +234,7 @@ const translations = {
     about_gallery_title: "Festival Glimpses & Mandap Art",
 
     // Donate Page Form & Modal
-    badge_80g: "80G Tax Exempt Eligible",
+    badge_80g: "Official Mandal Donation",
     donate_title: "Online Donation Portal",
     donate_sub: "Support social initiatives, Annadan Mahaprasad, and mandap management of Malabar Hill Cha Raja.",
     donate_form_title: "Donation Registration Form",
@@ -245,12 +245,12 @@ const translations = {
     lbl_mobile: "Mobile Number *",
     ph_mobile: "10-digit mobile number",
     lbl_email: "Email ID (Optional)",
-    ph_email: "Email for 80G PDF receipt",
-    lbl_pan: "PAN Card Number (For 80G Tax Exemption Receipt)",
+    ph_email: "Email for PDF receipt",
+    lbl_pan: "PAN Card Number (Optional)",
     ph_pan: "e.g. ABCDE1234F",
     btn_donate_submit: "Donate & Get Receipt",
     msg_donation_processing: "Donation processing in progress...",
-    msg_donation_success: "Donation successful! Your 80G receipt is downloading.",
+    msg_donation_success: "Donation successful! Your receipt is downloading.",
     bank_details_title: "Bank Account Details for Direct Transfer",
     bank_name_lbl: "Bank Name:",
     acc_name_lbl: "Account Name:",
@@ -301,7 +301,7 @@ const translations = {
     mandal_full_title: "श्री बाल गोपाल गणेशोत्सव मंडळ, मुंबई",
     btn_all_photos: "दशकातील सर्व फोटो पाहा",
     official_emails: "byculladagadichawlnavratri1973@gmail.com",
-    badge_80g: "८०जी कर सवलत प्राप्त",
+    badge_80g: "अधिकृत देणगी पावती",
     donate_title: "ऑनलाईन देणगी पोर्टल",
     donate_sub: "मलबार हिलचा राजाच्या सामाजिक उपक्रमांना, अन्नदान महाप्रसादाला आणि मंडप व्यवस्थापनाला मदत करा.",
     donate_form_title: "देणगी नोंदणी फॉर्म",
@@ -312,12 +312,12 @@ const translations = {
     lbl_mobile: "मोबाईल नंबर *",
     ph_mobile: "१० अंकी मोबाईल नंबर",
     lbl_email: "ईमेल आयडी (ऐच्छिक)",
-    ph_email: "८०जी पीडीएफ पावतीसाठी ईमेल",
-    lbl_pan: "पॅन कार्ड नंबर (८०जी कर सवलत पावतीसाठी)",
+    ph_email: "पीडीएफ पावतीसाठी ईमेल",
+    lbl_pan: "पॅन कार्ड नंबर (ऐच्छिक)",
     ph_pan: "उदा. ABCDE1234F",
     btn_donate_submit: "देणगी द्या व पावती मिळवा",
     msg_donation_processing: "देणगी प्रक्रियेत आहे...",
-    msg_donation_success: "देणगी यशस्वी! तुमची ८०जी पावती डाउनलोड होत आहे.",
+    msg_donation_success: "देणगी यशस्वी! तुमची पावती डाउनलोड होत आहे.",
     bank_details_title: "थेट बँक ट्रान्सफरसाठी खाते तपशील",
     bank_name_lbl: "बँकेचे नाव:",
     acc_name_lbl: "खात्याचे नाव:",
@@ -344,7 +344,7 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "उत्सव घडामोडी",
-    ticker_text: "🎉 मलबार हिलच्या राजाचे आगमन आज सायंकाळी ६:०० वाजता! • सर्व भाविकांना आग्रहाचे निमंत्रण • दररोज महाआरती सकाळी ८:०० व संध्याकाळी ८:०० वाजता • ५०,०००+ भाविकांना अन्नदान महाप्रसाद • ८०जी अंतर्गत कर सवलत देणगी खुली 🎉",
+    ticker_text: "🎉 मलबार हिलच्या राजाचे आगमन आज सायंकाळी ६:०० वाजता! • सर्व भाविकांना आग्रहाचे निमंत्रण • दररोज महाआरती सकाळी ८:०० व संध्याकाळी ८:०० वाजता • ५०,०००+ भाविकांना अन्नदान महाप्रसाद • ऑनलाईन देणगी खुली 🎉",
 
     // President Message & Counters
     pres_badge: "अध्यक्ष व कार्यकारिणी संदेश",
@@ -401,8 +401,8 @@ const translations = {
     // Donation Section
     donate_section_tag: "सेवा योगदान",
     donate_section_title: "मलबार हिलचा राजा सेवेला पाठिंबा द्या",
-    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
-    btn_donate_80g: "ONLINE देणगी द्या (८०जी पावतीसह)",
+    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते.",
+    btn_donate_80g: "ONLINE देणगी द्या (पावतीसह)",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
@@ -410,7 +410,7 @@ const translations = {
     location_sub: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
     contact_box_title: "संपर्क माहिती",
     contact_address: "श्री बाल गोपाल गणेशोत्सव मंडळ, मलबार हिल, मुंबई.",
-    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई",
     visitor_count_label: "एकूण दर्शनार्थी भेट :",
 
     // Schedule Page Titles
@@ -437,7 +437,7 @@ const translations = {
     footer_col_initiatives: "उपक्रम व देणगी",
     footer_col_location: "मंडप स्थान व नकाशा",
     footer_address: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
-    footer_reg_tax: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    footer_reg_tax: "नोंदणी क्र. : ई-३८९२ मुंबई",
     footer_desc: "श्री बाल गोपाल गणेशोत्सव मंडळ (स्थापना १९७३). भक्ती, संस्कृती आणि समाजसेवेचा अखंड वसा.",
     footer_copyright: "© श्री बाल गोपाल गणेशोत्सव मंडळ. सर्व हक्क सुरक्षित.",
 
@@ -451,7 +451,7 @@ const translations = {
     // Donate CTA section
     donate_section_tag: "सेवा योगदान",
     donate_section_title: "मलबार हिलचा राजा सेवेला पाठिंबा द्या",
-    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
+    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते.",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
@@ -459,7 +459,7 @@ const translations = {
     location_sub: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
     contact_box_title: "संपर्क माहिती",
     contact_address: "श्री बाल गोपाल गणेशोत्सव मंडळ, मलबार हिल, मुंबई.",
-    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई",
 
     // Social Work section
     social_section_tag: "समाजोपयोगी उपक्रम",
@@ -519,7 +519,7 @@ const translations = {
     // Donate CTA section
     donate_section_tag: "सेवा योगदान",
     donate_section_title: "मालाबार हिलचा राजा सेवेला पाठिंबा द्या",
-    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते. सर्व देणग्यांना कलम 80G अंतर्गत ५०% कर सवलत मिळतो.",
+    donate_section_sub: "तुमची देणगी सामाजिक कार्य, अन्नदान महाप्रसाद व मंडप व्यवस्थापनासाठी वापरली जाते.",
 
     // Location & Contact
     location_tag: "मंडप स्थान व संपर्क",
@@ -527,7 +527,7 @@ const translations = {
     location_sub: "गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७.",
     contact_box_title: "संपर्क माहिती",
     contact_address: "श्री बाल गोपाल गणेशोत्सव मंडळ, मालाबार हिल, मुंबई.",
-    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई (८०जी कर सवलत प्राप्त)",
+    contact_reg: "नोंदणी क्र. : ई-३८९२ मुंबई",
 
     // Social Work section
     social_section_tag: "समाजोपयोगी उपक्रम",
