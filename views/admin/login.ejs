@@ -1,36 +1,102 @@
 <%- include('../partials/header') %>
 
-<section class="main-content-gradient" style="padding: 5rem 0; min-height: 70vh; display: flex; align-items: center;">
-  <div class="container" style="max-width: 520px;">
+<style>
+  body {
+    background: linear-gradient(125deg, #050403 0%, #100A07 38%, #28140C 72%, #422315 100%) !important;
+    min-height: 100vh;
+  }
+  .admin-login-section {
+    background: transparent !important;
+    padding: clamp(160px, 16vw, 210px) 1rem 4rem !important;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .admin-login-section {
+      padding: clamp(140px, 20vw, 170px) 1rem 3rem !important;
+      min-height: auto;
+    }
+  }
+  .admin-login-card {
+    background: rgba(22, 14, 10, 0.85) !important;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65), inset 0 0 25px rgba(212, 175, 55, 0.06) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .admin-login-card h2 {
+    color: #F4EDE0 !important;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+    margin-bottom: 0.3rem;
+  }
+  .admin-login-card label {
+    color: #E5E7EB !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .admin-login-card input {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #FFFFFF !important;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  .admin-login-card input:focus {
+    outline: none;
+    border-color: var(--royal-gold) !important;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+  .admin-login-card input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+</style>
+
+<section class="admin-login-section">
+  <div class="container" style="max-width: 520px; width: 100%;">
     
-    <div style="background: var(--bg-dark); border-radius: var(--radius-lg); border: 2px solid var(--royal-gold); padding: 2.5rem; box-shadow: var(--shadow-md);">
+    <div class="admin-login-card">
       <div style="text-align: center; margin-bottom: 2rem;">
-        <div style="margin: 0 auto 1rem; width: 64px; height: 64px; border-radius: var(--radius-full); background: var(--temple-maroon); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 2px solid var(--royal-gold);">
+        <div style="margin: 0 auto 1rem; width: 64px; height: 64px; border-radius: var(--radius-full); background: linear-gradient(135deg, #7F1D1D, #450A0A); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 2px solid var(--royal-gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);">
           <i class="fa-solid fa-lock"></i>
         </div>
-        <h2 style="font-size: 1.6rem; color: var(--temple-maroon); margin-bottom: 0.3rem;">मंडळ ॲडमिन डेस्क लॉगिन</h2>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">श्री बाल गोपाल गणेशोत्सव मंडळ सार्वजनिक श्री गणेशोत्सव मंडळ</p>
+        <h2>मंडळ ॲडमिन डेस्क लॉगिन</h2>
+        <p style="font-size: 0.88rem; color: var(--gold-soft); opacity: 0.85; margin: 0;">भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ</p>
       </div>
 
       <% if (typeof error !== 'undefined' && error) { %>
-        <div style="background: #FEE2E2; border: 1px solid #FCA5A5; color: #991B1B; padding: 0.8rem; border-radius: 8px; font-size: 0.9rem; margin-bottom: 1.5rem; text-align: center;">
-          <i class="bi bi-exclamation-triangle-fill"></i> <%= error %>
+        <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #FCA5A5; padding: 0.8rem; border-radius: 8px; font-size: 0.9rem; margin-bottom: 1.5rem; text-align: center;">
+          <i class="fa-solid fa-triangle-exclamation"></i> <%= error %>
         </div>
       <% } %>
 
       <form action="/admin/login" method="POST">
         <div style="margin-bottom: 1.2rem;">
-          <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-main);" for="username">युझरनेम (Username) *</label>
-          <input type="text" id="username" name="username" required autocomplete="username" placeholder="युझरनेम प्रविष्ट करा" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
+          <label for="username">युझरनेम (Username) *</label>
+          <input type="text" id="username" name="username" required autocomplete="username" placeholder="युझरनेम प्रविष्ट करा">
         </div>
 
         <div style="margin-bottom: 1.8rem;">
-          <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-main);" for="password">पासवर्ड (Password) *</label>
-          <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="पासवर्ड प्रविष्ट करा" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
+          <label for="password">पासवर्ड (Password) *</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="पासवर्ड प्रविष्ट करा">
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1.05rem;">
-          लॉगिन करा <i class="fa-solid fa-right-to-bracket"></i>
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1.05rem; font-weight: 700; box-shadow: 0 0 15px rgba(212, 175, 55, 0.35);">
+          लॉगिन करा <i class="fa-solid fa-right-to-bracket" style="margin-left: 6px;"></i>
         </button>
       </form>
     </div>

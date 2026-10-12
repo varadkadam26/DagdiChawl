@@ -1,19 +1,300 @@
 <%- include('../partials/header') %>
 
-  <section class="main-content-gradient" style="padding: 4rem 0;">
+<style>
+  body {
+    background: linear-gradient(125deg, #050403 0%, #100A07 38%, #28140C 72%, #422315 100%) !important;
+    min-height: 100vh;
+  }
+  .main-content-gradient {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: clamp(160px, 15vw, 205px) 0 4rem !important;
+  }
+  @media (max-width: 768px) {
+    .main-content-gradient {
+      padding: clamp(140px, 18vw, 165px) 0 3rem !important;
+    }
+  }
+
+  /* Dark Temple Cards */
+  .card-temple {
+    background: rgba(22, 14, 10, 0.82) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(212, 175, 55, 0.04) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .card-temple:hover {
+    border-color: rgba(212, 175, 55, 0.45) !important;
+  }
+
+  /* Admin Header */
+  .admin-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.2rem;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+  .admin-title {
+    font-size: clamp(1.4rem, 4.5vw, 2.2rem) !important;
+    color: #F4EDE0 !important;
+    text-shadow: 0 0 16px rgba(212, 175, 55, 0.4);
+    margin: 0.3rem 0 0 !important;
+    font-weight: 800;
+  }
+  .admin-actions-flex {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-clear-data {
+    padding: 0.55rem 1.15rem !important;
+    font-size: 0.88rem !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    color: #FCA5A5 !important;
+    font-weight: 700 !important;
+    background: rgba(127, 29, 29, 0.3) !important;
+    border-radius: var(--radius-sm);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-clear-data:hover {
+    background: rgba(220, 38, 38, 0.45) !important;
+    border-color: #EF4444 !important;
+    color: #FFF !important;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+  }
+  .btn-logout {
+    padding: 0.55rem 1.15rem !important;
+    font-size: 0.88rem !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    color: var(--gold-soft) !important;
+    font-weight: 700 !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    border-radius: var(--radius-sm);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .btn-logout:hover {
+    background: var(--royal-gold) !important;
+    color: #100A07 !important;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .admin-header-flex {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .admin-actions-flex {
+      width: 100%;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .admin-actions-flex .btn-clear-data,
+    .admin-actions-flex .btn-logout {
+      width: 100% !important;
+      justify-content: center !important;
+      text-align: center;
+    }
+    .grid-3 {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+  }
+
+  /* Metric Stat Cards */
+  .stat-card-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary-saffron);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stat-card-num {
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    font-weight: 800;
+    color: #F4EDE0 !important;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    margin: 0.4rem 0;
+  }
+  .stat-card-sub {
+    font-size: 0.82rem;
+    color: #BDB0A0 !important;
+    word-break: break-word;
+  }
+
+  /* Excel Management Flex */
+  .excel-card-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    .excel-card-flex {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .excel-card-flex .btn {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
+
+  /* Responsive Admin Tables */
+  .table-scroll-hint {
+    display: none;
+    font-size: 0.78rem;
+    color: var(--gold-soft);
+    background: rgba(212, 175, 55, 0.1);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.8rem;
+    align-items: center;
+    gap: 6px;
+    border: 1px dashed rgba(212, 175, 55, 0.35);
+  }
+  @media (max-width: 992px) {
+    .table-scroll-hint {
+      display: inline-flex;
+    }
+  }
+  .admin-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    scrollbar-width: thin;
+    scrollbar-color: var(--royal-gold) rgba(0, 0, 0, 0.3);
+  }
+  .admin-table-container::-webkit-scrollbar {
+    height: 7px;
+  }
+  .admin-table-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .admin-table-container::-webkit-scrollbar-thumb {
+    background: var(--royal-gold);
+    border-radius: 4px;
+  }
+  .admin-table {
+    width: 100%;
+    min-width: 820px;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.88rem;
+  }
+  .admin-table thead tr {
+    background: linear-gradient(135deg, #3A170A 0%, #1E0C05 100%) !important;
+    border-bottom: 2px solid var(--royal-gold);
+  }
+  .admin-table th {
+    padding: 12px 14px;
+    color: var(--gold-soft) !important;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .admin-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    color: #F3F4F6 !important;
+    vertical-align: middle;
+  }
+  .admin-table tr:hover td {
+    background: rgba(255, 255, 255, 0.035);
+  }
+  .admin-table td strong {
+    color: #FFFFFF !important;
+  }
+
+  /* Status Badges */
+  .badge-pending {
+    background: rgba(245, 158, 11, 0.18) !important;
+    color: #FCD34D !important;
+    border: 1px solid rgba(245, 158, 11, 0.45) !important;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.78rem;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .badge-approved {
+    background: rgba(16, 185, 129, 0.18) !important;
+    color: #6EE7B7 !important;
+    border: 1px solid rgba(16, 185, 129, 0.45) !important;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.78rem;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .btn-approve {
+    padding: 5px 12px !important;
+    font-size: 0.78rem !important;
+    background: linear-gradient(135deg, #16A34A, #15803D) !important;
+    color: #FFF !important;
+    border: 1px solid #22C55E !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+    cursor: pointer;
+  }
+  .btn-approve:hover {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+    transform: translateY(-1px);
+  }
+  .btn-pdf-receipt {
+    padding: 4px 11px !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+    border: 1px solid var(--royal-gold) !important;
+    color: var(--gold-soft) !important;
+    background: rgba(212, 175, 55, 0.12) !important;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-pdf-receipt:hover {
+    background: var(--royal-gold) !important;
+    color: #100A07 !important;
+  }
+</style>
+
+  <section class="main-content-gradient">
     <div class="container">
-      <div
-        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div class="admin-header-flex">
         <div>
-          <span class="section-badge">मंंडळ कार्यकारिणी डेस्क</span>
-          <h1 style="font-size: 2.2rem; color: var(--temple-maroon); margin: 0;">ॲडमिन कंट्रोल पॅनेल</h1>
+          <span class="section-badge">मंडळ कार्यकारिणी डेस्क</span>
+          <h1 class="admin-title">ॲडमिन कंट्रोल पॅनेल</h1>
         </div>
-        <div style="display: flex; gap: 0.8rem; align-items: center;">
-          <button type="button" id="btnClearTestDataBtn" class="btn btn-outline"
-            style="padding: 0.5rem 1.2rem; font-size: 0.88rem; border-color: #7F1D1D; color: #7F1D1D; font-weight: 700; background: #FFF5F5;">
+        <div class="admin-actions-flex">
+          <button type="button" id="btnClearTestDataBtn" class="btn btn-clear-data">
             <i class="fa-solid fa-trash-can"></i> सर्व डेटा क्लियर करा (Clear All Data)
           </button>
-          <a href="/admin/logout" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.88rem;">
+          <a href="/admin/logout" class="btn btn-logout">
             <i class="fa-solid fa-right-from-bracket"></i> लॉगआउट (Logout)
           </a>
         </div>
@@ -22,355 +303,246 @@
       <!-- Alert Notices -->
       <% if (typeof query.broadcast_success !=='undefined' ) { %>
         <div
-          style="background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
-          <i class="bi bi-check-circle-fill"></i>
+          style="background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.45); color: #6EE7B7; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+          <i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i>
           <%= query.broadcast_success %>
         </div>
-        <% } %>
+      <% } %>
 
-          <!-- Executive Metrics Grid -->
+      <!-- Executive Metrics Grid -->
+      <div class="grid-3" style="margin-bottom: 2.5rem;">
 
-          <div class="grid-3" style="margin-bottom:3rem;">
-
-            <!-- TOTAL DONATIONS -->
-
-            <div class="card-temple" style="text-align:center;">
-
-              <div style="
-      font-size:.85rem;
-      font-weight:800;
-      color:var(--primary-saffron);
-      text-transform:uppercase;
-    ">
-                एकूण देणगी
-              </div>
-
-              <div style="
-      font-size:2.2rem;
-      font-weight:800;
-      color:var(--temple-maroon);
-      margin:.5rem 0;
-    ">
-
-                ₹
-                <%= (combinedDonationTotal || 0).toLocaleString('en-IN') %>
-
-              </div>
-
-              <span style="
-      font-size:.82rem;
-      color:var(--text-muted);
-    ">
-
-                Online ₹
-                <%= (totalDonations || 0).toLocaleString('en-IN') %>
-
-                  ·
-
-                  Offline ₹
-                  <%= (offlineDonationTotal || 0).toLocaleString('en-IN') %>
-
-              </span>
-
-            </div>
-
-
-            <!-- T-SHIRT BOOKINGS -->
-
-            <div class="card-temple" style="text-align:center;">
-
-              <div style="
-      font-size:.85rem;
-      font-weight:800;
-      color:var(--primary-saffron);
-      text-transform:uppercase;
-    ">
-                T-Shirt Bookings
-              </div>
-
-              <div style="
-      font-size:2.2rem;
-      font-weight:800;
-      color:var(--temple-maroon);
-      margin:.5rem 0;
-    ">
-
-                <%= tshirtOrders.length + offlineTshirtOrders.length %>
-
-              </div>
-
-              <span style="
-      font-size:.82rem;
-      color:var(--text-muted);
-    ">
-
-                Online
-                <%= tshirtOrders.length %>
-
-                  ·
-
-                  Offline
-                  <%= offlineTshirtOrders.length %>
-
-              </span>
-
-            </div>
-
-
-            <!-- T-SHIRT REVENUE -->
-
-            <div class="card-temple" style="text-align:center;">
-
-              <div style="
-      font-size:.85rem;
-      font-weight:800;
-      color:var(--primary-saffron);
-      text-transform:uppercase;
-    ">
-                T-Shirt Revenue
-              </div>
-
-              <div style="
-      font-size:2.2rem;
-      font-weight:800;
-      color:var(--temple-maroon);
-      margin:.5rem 0;
-    ">
-
-                ₹
-                <%= (combinedTshirtTotal || 0).toLocaleString('en-IN') %>
-
-              </div>
-
-              <span style="
-      font-size:.82rem;
-      color:var(--text-muted);
-    ">
-
-                Online ₹
-                <%= (onlineTshirtTotal || 0).toLocaleString('en-IN') %>
-
-                  ·
-
-                  Offline ₹
-                  <%= (offlineTshirtTotal || 0).toLocaleString('en-IN') %>
-
-              </span>
-
-            </div>
-
+        <!-- TOTAL DONATIONS -->
+        <div class="card-temple" style="text-align:center;">
+          <div class="stat-card-title">एकूण देणगी (Total Donations)</div>
+          <div class="stat-card-num">
+            ₹ <%= (combinedDonationTotal || 0).toLocaleString('en-IN') %>
           </div>
+          <span class="stat-card-sub">
+            Online ₹ <%= (totalDonations || 0).toLocaleString('en-IN') %>
+            &nbsp;·&nbsp;
+            Offline ₹ <%= (offlineDonationTotal || 0).toLocaleString('en-IN') %>
+          </span>
+        </div>
 
-
-          <!-- EXCEL MANAGEMENT -->
-
-          <div class="card-temple" style="
-    margin-bottom:3rem;
-    padding:1.5rem;
-  ">
-
-            <div style="
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:1rem;
-    flex-wrap:wrap;
-  ">
-
-              <div>
-
-                <h3 style="
-        color:var(--temple-maroon);
-        margin:0;
-      ">
-                  Excel & Offline Records
-                </h3>
-
-                <p style="
-        margin:.4rem 0 0;
-        color:var(--text-muted);
-        font-size:.9rem;
-      ">
-                  Upload committee Excel sheets,
-                  view online/offline records and
-                  export combined data.
-                </p>
-
-              </div>
-
-              <a href="/admin/excel" class="btn btn-primary">
-
-                <i class="fa-solid fa-file-excel"></i>
-
-                Manage Excel & Records
-
-              </a>
-
-            </div>
-
+        <!-- T-SHIRT BOOKINGS -->
+        <div class="card-temple" style="text-align:center;">
+          <div class="stat-card-title">T-Shirt Bookings</div>
+          <div class="stat-card-num">
+            <%= tshirtOrders.length + offlineTshirtOrders.length %>
           </div>
+          <span class="stat-card-sub">
+            Online <%= tshirtOrders.length %>
+            &nbsp;·&nbsp;
+            Offline <%= offlineTshirtOrders.length %>
+          </span>
+        </div>
 
-          <!-- Donations Table -->
-          <div class="card-temple" style="margin-bottom: 3rem; padding: 2rem;">
-            <h3 style="font-size: 1.4rem; color: var(--temple-maroon); margin-bottom: 1.2rem;">
-              प्राप्त ऑनलाइन देणगी नोंदी व पडताळणी (80G Approval & Verification)
+        <!-- T-SHIRT REVENUE -->
+        <div class="card-temple" style="text-align:center;">
+          <div class="stat-card-title">T-Shirt Revenue</div>
+          <div class="stat-card-num">
+            ₹ <%= (combinedTshirtTotal || 0).toLocaleString('en-IN') %>
+          </div>
+          <span class="stat-card-sub">
+            Online ₹ <%= (onlineTshirtTotal || 0).toLocaleString('en-IN') %>
+            &nbsp;·&nbsp;
+            Offline ₹ <%= (offlineTshirtTotal || 0).toLocaleString('en-IN') %>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- EXCEL MANAGEMENT -->
+      <div class="card-temple" style="margin-bottom: 2.5rem; padding: clamp(1.2rem, 3vw, 1.8rem);">
+        <div class="excel-card-flex">
+          <div>
+            <h3 style="color: var(--gold-soft); margin: 0; font-size: clamp(1.15rem, 3.5vw, 1.35rem); text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);">
+              <i class="fa-solid fa-file-excel" style="margin-right: 6px; color: #22C55E;"></i> Excel & Offline Records
             </h3>
-
-            <div style="overflow-x: auto;">
-              <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
-                <thead>
-                  <tr style="background: var(--temple-maroon); color: var(--gold-soft);">
-                    <th style="padding: 10px 14px;">पावती क्र.</th>
-                    <th style="padding: 10px 14px;">देणगीदाराचे नाव</th>
-                    <th style="padding: 10px 14px;">मोबाईल / ईमेल</th>
-                    <th style="padding: 10px 14px;">रक्कम (₹)</th>
-                    <th style="padding: 10px 14px;">UTR No / Ref</th>
-                    <th style="padding: 10px 14px;">स्थिती (Status)</th>
-                    <th style="padding: 10px 14px;">ॲक्शन (Action)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% if (!donations || donations.length === 0) { %>
-                    <tr>
-                      <td colspan="7" style="text-align: center; padding: 2rem; color: #888;">
-                        कोणतीही देणगी नोंद उपलब्ध नाही.
-                      </td>
-                    </tr>
-                  <% } else { %>
-                    <% donations.forEach(d=> { %>
-                      <tr style="border-bottom: 1px solid var(--border-subtle);">
-                        <td style="padding: 10px 14px; font-weight: 700; font-family: monospace;">
-                          <%= d.receipt_no %>
-                        </td>
-                        <td style="padding: 10px 14px;"><strong>
-                            <%= d.donor_name %>
-                          </strong></td>
-                        <td style="padding: 10px 14px;">
-                          <div><%= d.phone %></div>
-                          <small style="color: var(--text-muted);"><%= d.email || 'ईमेल नाही' %></small>
-                        </td>
-                        <td style="padding: 10px 14px; font-weight: 800; color: var(--temple-maroon);">₹ <%=
-                            parseFloat(d.amount).toLocaleString('en-IN') %>
-                        </td>
-                        <td style="padding: 10px 14px; font-family: monospace; font-weight: bold;">
-                          <%= d.payment_utr || d.payment_id || 'N/A' %>
-                        </td>
-                        <td style="padding: 10px 14px;">
-                          <% if (d.status === 'PENDING_APPROVAL' || d.status === 'PENDING') { %>
-                            <span style="background: #FEF3C7; color: #D97706; padding: 3px 10px; border-radius: 20px; font-weight: bold; font-size: 0.78rem; display: inline-block;">
-                              <i class="fa-solid fa-clock"></i> प्रलंबित (Pending Approval)
-                            </span>
-                          <% } else { %>
-                            <span style="background: #D1FAE5; color: #059669; padding: 3px 10px; border-radius: 20px; font-weight: bold; font-size: 0.78rem; display: inline-block;">
-                              <i class="fa-solid fa-circle-check"></i> मंजूर (Approved)
-                            </span>
-                          <% } %>
-                        </td>
-                        <td style="padding: 10px 14px;">
-                          <% if (d.status === 'PENDING_APPROVAL' || d.status === 'PENDING') { %>
-                            <button type="button" onclick="approveDonation('<%= d.receipt_no %>', this)" class="btn btn-primary"
-                              style="padding: 4px 10px; font-size: 0.78rem; background: #16A34A !important; border: none; font-weight: 700; white-space: nowrap;">
-                              <i class="fa-solid fa-circle-check"></i> मंजूर करा व पावती पाठवा
-                            </button>
-                          <% } else { %>
-                            <a href="/download-receipt/<%= d.receipt_no %>" class="btn btn-outline"
-                              style="padding: 3px 10px; font-size: 0.78rem; white-space: nowrap;">
-                              <i class="fa-solid fa-file-pdf"></i> PDF 80G
-                            </a>
-                          <% } %>
-                        </td>
-                      </tr>
-                    <% }); %>
-                  <% } %>
-                </tbody>
-              </table>
-            </div>
+            <p style="margin: 0.4rem 0 0; color: #D1D5DB; font-size: 0.88rem; line-height: 1.5;">
+              Upload committee Excel sheets, view online/offline records, and export combined data.
+            </p>
           </div>
+          <a href="/admin/excel" class="btn btn-primary" style="white-space: nowrap; padding: 0.75rem 1.4rem; font-weight: 700; box-shadow: 0 0 15px rgba(212, 175, 55, 0.35);">
+            <i class="fa-solid fa-file-excel"></i> Manage Excel & Records
+          </a>
+        </div>
+      </div>
 
-          <!-- T-Shirt Orders Table -->
-          <div class="card-temple" style="margin-bottom: 3rem; padding: 2rem;">
-            <h3 style="font-size: 1.4rem; color: var(--temple-maroon); margin-bottom: 1.2rem;">
-              प्राप्त ऑनलाइन टी-शर्ट बुकिंग नोंदी व पडताळणी (T-Shirt Verification & Approval)
-            </h3>
+      <!-- Donations Table -->
+      <div class="card-temple" style="margin-bottom: 2.5rem; padding: clamp(1.2rem, 3vw, 2rem);">
+        <h3 style="font-size: clamp(1.1rem, 3.8vw, 1.35rem); color: var(--gold-soft); margin-bottom: 0.4rem; text-shadow: 0 0 10px rgba(212, 175, 55, 0.35);">
+          <i class="fa-solid fa-hand-holding-heart" style="margin-right: 6px; color: var(--primary-saffron);"></i> प्राप्त ऑनलाइन देणगी नोंदी व पडताळणी (80G Approval & Verification)
+        </h3>
+        <p style="color: #9CA3AF; font-size: 0.82rem; margin-top: 0; margin-bottom: 1rem;">
+          Verified online devotees who donated with 80G tax benefit receipts.
+        </p>
 
-            <div style="overflow-x: auto;">
-              <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
-                <thead>
-                  <tr style="background: var(--temple-maroon); color: var(--gold-soft);">
-                    <th style="padding: 10px 14px;">पावती क्र.</th>
-                    <th style="padding: 10px 14px;">ग्राहकाचे नाव</th>
-                    <th style="padding: 10px 14px;">मोबाईल / ईमेल</th>
-                    <th style="padding: 10px 14px;">साईझ व रंग</th>
-                    <th style="padding: 10px 14px;">संख्या</th>
-                    <th style="padding: 10px 14px;">रक्कम (₹)</th>
-                    <th style="padding: 10px 14px;">UTR No / Ref</th>
-                    <th style="padding: 10px 14px;">स्थिती (Status)</th>
-                    <th style="padding: 10px 14px;">ॲक्शन (Action)</th>
+        <div class="table-scroll-hint">
+          <i class="fa-solid fa-arrows-left-right"></i> आडवे स्क्रोल करा (Scroll horizontally to view all columns)
+        </div>
+
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>पावती क्र.</th>
+                <th>देणगीदाराचे नाव</th>
+                <th>मोबाईल / ईमेल</th>
+                <th>रक्कम (₹)</th>
+                <th>UTR No / Ref</th>
+                <th>स्थिती (Status)</th>
+                <th>ॲक्शन (Action)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (!donations || donations.length === 0) { %>
+                <tr>
+                  <td colspan="7" style="text-align: center; padding: 2.5rem; color: #9CA3AF;">
+                    <i class="fa-solid fa-inbox" style="font-size: 1.8rem; display: block; margin-bottom: 0.5rem; opacity: 0.5;"></i>
+                    कोणतीही देणगी नोंद उपलब्ध नाही.
+                  </td>
+                </tr>
+              <% } else { %>
+                <% donations.forEach(d=> { %>
+                  <tr>
+                    <td style="font-weight: 700; font-family: monospace; color: var(--gold-soft) !important;">
+                      <%= d.receipt_no %>
+                    </td>
+                    <td><strong>
+                        <%= d.donor_name %>
+                      </strong></td>
+                    <td>
+                      <div><%= d.phone %></div>
+                      <small style="color: #9CA3AF;"><%= d.email || 'ईमेल नाही' %></small>
+                    </td>
+                    <td style="font-weight: 800; color: var(--gold-soft) !important; font-size: 0.95rem;">
+                      ₹ <%= parseFloat(d.amount).toLocaleString('en-IN') %>
+                    </td>
+                    <td style="font-family: monospace; font-weight: bold; color: #D1D5DB;">
+                      <%= d.payment_utr || d.payment_id || 'N/A' %>
+                    </td>
+                    <td>
+                      <% if (d.status === 'PENDING_APPROVAL' || d.status === 'PENDING') { %>
+                        <span class="badge-pending">
+                          <i class="fa-solid fa-clock"></i> प्रलंबित (Pending Approval)
+                        </span>
+                      <% } else { %>
+                        <span class="badge-approved">
+                          <i class="fa-solid fa-circle-check"></i> मंजूर (Approved)
+                        </span>
+                      <% } %>
+                    </td>
+                    <td>
+                      <% if (d.status === 'PENDING_APPROVAL' || d.status === 'PENDING') { %>
+                        <button type="button" onclick="approveDonation('<%= d.receipt_no %>', this)" class="btn-approve">
+                          <i class="fa-solid fa-circle-check"></i> मंजूर करा व पावती पाठवा
+                        </button>
+                      <% } else { %>
+                        <a href="/download-receipt/<%= d.receipt_no %>" class="btn-pdf-receipt">
+                          <i class="fa-solid fa-file-pdf"></i> PDF 80G
+                        </a>
+                      <% } %>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  <% if (!tshirtOrders || tshirtOrders.length === 0) { %>
-                    <tr>
-                      <td colspan="9" style="text-align: center; padding: 2rem; color: #888;">
-                        कोणतीही टी-शर्ट बुकिंग नोंद उपलब्ध नाही.
-                      </td>
-                    </tr>
-                  <% } else { %>
-                    <% tshirtOrders.forEach(o => { %>
-                      <tr style="border-bottom: 1px solid var(--border-subtle);">
-                        <td style="padding: 10px 14px; font-weight: 700; font-family: monospace;">
-                          <%= o.receipt_no %>
-                        </td>
-                        <td style="padding: 10px 14px;"><strong>
-                            <%= o.buyer_name %>
-                          </strong></td>
-                        <td style="padding: 10px 14px;">
-                          <div><%= o.phone %></div>
-                          <small style="color: var(--text-muted);"><%= o.email || 'ईमेल नाही' %></small>
-                        </td>
-                        <td style="padding: 10px 14px;">
-                          <span style="font-weight: 700;"><%= o.size %></span> (<%= o.color %>)
-                        </td>
-                        <td style="padding: 10px 14px; font-weight: 700;">
-                          <%= o.quantity %>
-                        </td>
-                        <td style="padding: 10px 14px; font-weight: 800; color: var(--temple-maroon);">₹ <%=
-                            parseFloat(o.total_amount).toLocaleString('en-IN') %>
-                        </td>
-                        <td style="padding: 10px 14px; font-family: monospace; font-weight: bold;">
-                          <%= o.payment_id || 'N/A' %>
-                        </td>
-                        <td style="padding: 10px 14px;">
-                          <% if (o.status === 'PENDING_APPROVAL' || o.status === 'PENDING') { %>
-                            <span style="background: #FEF3C7; color: #D97706; padding: 3px 10px; border-radius: 20px; font-weight: bold; font-size: 0.78rem; display: inline-block;">
-                              <i class="fa-solid fa-clock"></i> प्रलंबित (Pending Approval)
-                            </span>
-                          <% } else { %>
-                            <span style="background: #D1FAE5; color: #059669; padding: 3px 10px; border-radius: 20px; font-weight: bold; font-size: 0.78rem; display: inline-block;">
-                              <i class="fa-solid fa-circle-check"></i> मंजूर (Approved)
-                            </span>
-                          <% } %>
-                        </td>
-                        <td style="padding: 10px 14px;">
-                          <% if (o.status === 'PENDING_APPROVAL' || o.status === 'PENDING') { %>
-                            <button type="button" onclick="approveTshirt('<%= o.receipt_no %>', this)" class="btn btn-primary"
-                              style="padding: 4px 10px; font-size: 0.78rem; background: #16A34A !important; border: none; font-weight: 700; white-space: nowrap;">
-                              <i class="fa-solid fa-circle-check"></i> मंजूर करा
-                            </button>
-                          <% } else { %>
-                            <a href="/download-tshirt-receipt/<%= o.receipt_no %>" class="btn btn-outline"
-                              style="padding: 3px 10px; font-size: 0.78rem; white-space: nowrap;">
-                              <i class="fa-solid fa-file-pdf"></i> पावती PDF
-                            </a>
-                          <% } %>
-                        </td>
-                      </tr>
-                    <% }); %>
-                  <% } %>
-                </tbody>
-              </table>
-            </div>
-          </div>
+                <% }); %>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- T-Shirt Orders Table -->
+      <div class="card-temple" style="margin-bottom: 2.5rem; padding: clamp(1.2rem, 3vw, 2rem);">
+        <h3 style="font-size: clamp(1.1rem, 3.8vw, 1.35rem); color: var(--gold-soft); margin-bottom: 0.4rem; text-shadow: 0 0 10px rgba(212, 175, 55, 0.35);">
+          <i class="fa-solid fa-shirt" style="margin-right: 6px; color: var(--primary-saffron);"></i> प्राप्त ऑनलाइन टी-शर्ट बुकिंग नोंदी व पडताळणी (T-Shirt Verification & Approval)
+        </h3>
+        <p style="color: #9CA3AF; font-size: 0.82rem; margin-top: 0; margin-bottom: 1rem;">
+          Orders placed for official Mandal devotional T-Shirts.
+        </p>
+
+        <div class="table-scroll-hint">
+          <i class="fa-solid fa-arrows-left-right"></i> आडवे स्क्रोल करा (Scroll horizontally to view all columns)
+        </div>
+
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>पावती क्र.</th>
+                <th>ग्राहकाचे नाव</th>
+                <th>मोबाईल / ईमेल</th>
+                <th>साईझ व रंग</th>
+                <th>संख्या</th>
+                <th>रक्कम (₹)</th>
+                <th>UTR No / Ref</th>
+                <th>स्थिती (Status)</th>
+                <th>ॲक्शन (Action)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (!tshirtOrders || tshirtOrders.length === 0) { %>
+                <tr>
+                  <td colspan="9" style="text-align: center; padding: 2.5rem; color: #9CA3AF;">
+                    <i class="fa-solid fa-inbox" style="font-size: 1.8rem; display: block; margin-bottom: 0.5rem; opacity: 0.5;"></i>
+                    कोणतीही टी-शर्ट बुकिंग नोंद उपलब्ध नाही.
+                  </td>
+                </tr>
+              <% } else { %>
+                <% tshirtOrders.forEach(o => { %>
+                  <tr>
+                    <td style="font-weight: 700; font-family: monospace; color: var(--gold-soft) !important;">
+                      <%= o.receipt_no %>
+                    </td>
+                    <td><strong>
+                        <%= o.buyer_name %>
+                      </strong></td>
+                    <td>
+                      <div><%= o.phone %></div>
+                      <small style="color: #9CA3AF;"><%= o.email || 'ईमेल नाही' %></small>
+                    </td>
+                    <td>
+                      <span style="font-weight: 700; color: #F4EDE0;"><%= o.size %></span> (<%= o.color %>)
+                    </td>
+                    <td style="font-weight: 700;">
+                      <%= o.quantity %>
+                    </td>
+                    <td style="font-weight: 800; color: var(--gold-soft) !important; font-size: 0.95rem;">
+                      ₹ <%= parseFloat(o.total_amount).toLocaleString('en-IN') %>
+                    </td>
+                    <td style="font-family: monospace; font-weight: bold; color: #D1D5DB;">
+                      <%= o.payment_id || 'N/A' %>
+                    </td>
+                    <td>
+                      <% if (o.status === 'PENDING_APPROVAL' || o.status === 'PENDING') { %>
+                        <span class="badge-pending">
+                          <i class="fa-solid fa-clock"></i> प्रलंबित (Pending Approval)
+                        </span>
+                      <% } else { %>
+                        <span class="badge-approved">
+                          <i class="fa-solid fa-circle-check"></i> मंजूर (Approved)
+                        </span>
+                      <% } %>
+                    </td>
+                    <td>
+                      <% if (o.status === 'PENDING_APPROVAL' || o.status === 'PENDING') { %>
+                        <button type="button" onclick="approveTshirt('<%= o.receipt_no %>', this)" class="btn-approve">
+                          <i class="fa-solid fa-circle-check"></i> मंजूर करा
+                        </button>
+                      <% } else { %>
+                        <a href="/download-tshirt-receipt/<%= o.receipt_no %>" class="btn-pdf-receipt">
+                          <i class="fa-solid fa-file-pdf"></i> पावती PDF
+                        </a>
+                      <% } %>
+                    </td>
+                  </tr>
+                <% }); %>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
   </section>
