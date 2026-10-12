@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Home Page -->
   <url>
@@ -9,19 +7,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/" />
-    <image:image>
-      <image:loc>https://dagdichawlichiaaimauli.in/images/og_share.jpg</image:loc>
-      <image:title>दगडी चाळीची आई माऊली - भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ</image:title>
-      <image:caption>Dagdi Chawli Chi Aai Mauli Official Darshan</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://dagdichawlichiaaimauli.in/images/hero_mobile.jpg</image:loc>
-      <image:title>आई माऊली दिव्य रूप २०२६</image:title>
-      <image:caption>Dagdi Chawl Chi Aai Mauli Navratrotsav 2026</image:caption>
-    </image:image>
   </url>
 
   <!-- About Us -->
@@ -30,9 +15,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/about" />
   </url>
 
   <!-- Navratrotsav Schedule & Timings -->
@@ -41,20 +23,14 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/schedule" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/schedule" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/schedule" />
   </url>
 
-  <!-- Historical Glimpses & Gallery -->
+  <!-- Historical Glimpses & Archives -->
   <url>
     <loc>https://dagdichawlichiaaimauli.in/glimpses</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/glimpses" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/glimpses" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/glimpses" />
   </url>
 
   <!-- Executive Committee -->
@@ -63,14 +39,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/committee" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/committee" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/committee" />
-    <image:image>
-      <image:loc>https://dagdichawlichiaaimauli.in/images/committee/arun_gawli_daddy.png</image:loc>
-      <image:title>मा. श्री. अरुण भाई गवळी (डॅडी) - माजी आमदार</image:title>
-      <image:caption>Pillars of Support - Byculla Dagdi Chawl</image:caption>
-    </image:image>
   </url>
 
   <!-- Official T-Shirt Showcase -->
@@ -79,14 +47,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/tshirt" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/tshirt" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/tshirt" />
-    <image:image>
-      <image:loc>https://dagdichawlichiaaimauli.in/images/tshirt_info.webp</image:loc>
-      <image:title>आगमन सोहळा टी-शर्ट २०२६ - Aagman Sohala T-Shirt 2026</image:title>
-      <image:caption>Official Aagman Sohala T-Shirt Poster</image:caption>
-    </image:image>
   </url>
 
   <!-- Online Donation Portal -->
@@ -95,9 +55,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/donate" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/donate" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/donate" />
   </url>
 
   <!-- Contact Us & Mandap Location -->
@@ -106,9 +63,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/contact" />
   </url>
 
   <!-- Souvenir & Advertisement -->
@@ -117,9 +71,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="mr" href="https://dagdichawlichiaaimauli.in/advertisement" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dagdichawlichiaaimauli.in/advertisement" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dagdichawlichiaaimauli.in/advertisement" />
   </url>
 
 </urlset>
