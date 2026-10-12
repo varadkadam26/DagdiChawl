@@ -61,7 +61,7 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use((req, res, next) => {
   const proto = req.headers['x-forwarded-proto'] || req.protocol || 'https';
   const host = req.get('host') || 'localhost:3000';
-  res.locals.baseUrl = `${proto}://${host}`;
+  res.locals.baseUrl = process.env.BASE_URL || `${proto}://${host}`;
 
   let lang = 'en';
   const cookieHeader = req.headers.cookie || '';

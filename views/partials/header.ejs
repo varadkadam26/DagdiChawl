@@ -13,13 +13,13 @@
   <meta name="google-site-verification" content="660I70yKDwuyHiRbH-kyytKeHowTLgUQtc67gmOonAE">
   
   <%
-    var defaultDesc = 'अधिकृत पोर्टल - दगडी चाळीची आई माऊली (भायखळा दगडीचाळ सार्वजनिक नवरात्रौत्सव मंडळ). Daily Navratrotsav live darshan, aarti schedule, historical photo gallery, social work & donations.';
+    var defaultDesc = 'अधिकृत पोर्टल - दगडी चाळीची आई माऊली (भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ). Daily Navratrotsav live darshan, aarti schedule, historical photo gallery, social work & donations.';
     var pageDesc = typeof metaDescription !== 'undefined' ? metaDescription : defaultDesc;
     var currentTabName = typeof activeTab !== 'undefined' ? activeTab : 'home';
     var currentPath = currentTabName !== 'home' 
       ? (currentTabName === 'photobooth' ? '/glimpses' : '/' + currentTabName) 
       : '';
-    var baseHost = typeof baseUrl !== 'undefined' && baseUrl ? baseUrl : 'https://dagdichawlichiaaimauli.com';
+    var baseHost = 'https://dagdichawlichiaaimauli.in';
     var canonicalUrl = baseHost + currentPath;
     var ogImageUrl = baseHost + '/images/og_share.jpg';
 
@@ -47,9 +47,25 @@
       });
     }
   %>
+  <!-- Primary Meta Tags -->
   <meta name="description" content="<%= pageDesc %>">
-  <!-- Canonical & Open Graph Meta Tags for WhatsApp & Social Link Sharing -->
+  <meta name="keywords" content="दगडी चाळीची आई माऊली, Dagdi Chawli Chi Aai Mauli, Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal, भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ, Arun Bhai Gawli Daddy, Arun Gawli Navratri, Dagdi Chawl Byculla Mumbai, Navratrotsav 2026, Aai Mauli Aarti, Dagdi Chawl Navratri live darshan, Aai Mauli donation, Aagman Sohala 2026, dagdichawlichiaaimauli.in">
+  <meta name="author" content="Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="geo.region" content="IN-MH">
+  <meta name="geo.placename" content="Mumbai">
+  <meta name="geo.position" content="18.9634;72.8156">
+  <meta name="ICBM" content="18.9634, 72.8156">
+
+  <!-- Canonical & Multilingual Alternate Hreflang Tags -->
   <link rel="canonical" href="<%= canonicalUrl %>">
+  <link rel="alternate" hreflang="mr" href="<%= canonicalUrl %>">
+  <link rel="alternate" hreflang="en" href="<%= canonicalUrl %>">
+  <link rel="alternate" hreflang="x-default" href="<%= canonicalUrl %>">
+
+  <!-- Open Graph / Facebook / WhatsApp Social Card Tags -->
   <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'दगडी चाळीची आई माऊली | Dagdi Chawli Chi Aai Mauli' %>">
   <meta property="og:description" content="<%= pageDesc %>">
   <meta property="og:image" content="<%= ogImageUrl %>">
@@ -62,6 +78,10 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dagdi Chawli Chi Aai Mauli">
   <meta property="og:locale" content="<%= typeof lang !== 'undefined' && lang === 'mr' ? 'mr_IN' : 'en_US' %>">
+  <meta property="og:locale:alternate" content="mr_IN">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'दगडी चाळीची आई माऊली | Dagdi Chawli Chi Aai Mauli' %>">
   <meta name="twitter:description" content="<%= pageDesc %>">
