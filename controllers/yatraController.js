@@ -17,12 +17,12 @@ const scheduleData = [
 ];
 
 const jagranData = [
-  { day:1, dateMr:'रविवार, ११/१०/२०२६', dateEn:'Sunday, 11/10/2026', titleMr:'नवरात्रोत्सव मंडळ', titleEn:'Navratrotsav Mandal', bg: '#F47F24', color: '#FFFFFF' },
+  { day:1, dateMr:'रविवार, ११/१०/२०२६', dateEn:'Sunday, 11/10/2026', titleMr:'नवरात्रौत्सव मंडळ', titleEn:'Navratrotsav Mandal', bg: '#F47F24', color: '#FFFFFF' },
   { day:2, dateMr:'सोमवार, १२/१०/२०२६', dateEn:'Monday, 12/10/2026', titleMr:"'गिताई'", titleEn:"'Gitai'", bg: '#FFFFFF', color: '#D32F2F' },
   { day:3, dateMr:'मंगळवार, १३/१०/२०२६', dateEn:'Tuesday, 13/10/2026', titleMr:"'ई' चाळ", titleEn:"'E' Chawl", bg: '#D32F2F', color: '#FFFFFF' },
   { day:4, dateMr:'बुधवार, १४/१०/२०२६', dateEn:'Wednesday, 14/10/2026', titleMr:"'एफ' चाळ", titleEn:"'F' Chawl", bg: '#2B3B96', color: '#FFFFFF' },
   { day:5, dateMr:'गुरुवार, १५/१०/२०२६', dateEn:'Thursday, 15/10/2026', titleMr:"'जी' चाळ", titleEn:"'G' Chawl", bg: '#FDD835', color: '#D32F2F' },
-  { day:6, dateMr:'शुक्रवार, १६/१०/२०२६', dateEn:'Friday, 16/10/2026', titleMr:'नवरात्रोत्सव मंडळ', titleEn:'Navratrotsav Mandal', bg: '#4CAF50', color: '#FFFFFF' },
+  { day:6, dateMr:'शुक्रवार, १६/१०/२०२६', dateEn:'Friday, 16/10/2026', titleMr:'नवरात्रौत्सव मंडळ', titleEn:'Navratrotsav Mandal', bg: '#4CAF50', color: '#FFFFFF' },
   { day:7, dateMr:'शनिवार, १७/१०/२०२६', dateEn:'Saturday, 17/10/2026', titleMr:"'एच' चाळ", titleEn:"'H' Chawl", bg: '#5E35B1', color: '#FFFFFF' },
   { day:8, dateMr:'रविवार, १८/१०/२०२६', dateEn:'Sunday, 18/10/2026', titleMr:"'आय' चाळ", titleEn:"'I' Chawl", bg: '#D81B60', color: '#FFFFFF' },
   { day:9, dateMr:'सोमवार, १९/१०/२०२६', dateEn:'Monday, 19/10/2026', titleMr:"'जे' चाळ", titleEn:"'J' Chawl", bg: '#00ACC1', color: '#FFFFFF' }
