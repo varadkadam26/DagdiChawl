@@ -7,7 +7,7 @@ module.exports = {
   renderTshirtPage(req, res) {
     res.render('tshirt', {
       title: 'आगमन सोहळा टी शर्ट २०२६ | Dagdi Chawl Chi Aai Mauli',
-      metaDescription: 'भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळ - आगमन सोहळा अधिकृत टी शर्ट २०२६.',
+      metaDescription: 'भायखळा दगडी चाळीची सार्वजनिक नवरात्रौत्सव मंडळ - आगमन सोहळा अधिकृत टी शर्ट २०२६.',
       activeTab: 'tshirt'
     });
   },
