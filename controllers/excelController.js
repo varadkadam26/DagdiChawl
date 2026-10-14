@@ -187,7 +187,7 @@ module.exports = {
       const filtered = type === 'all' ? sheets : sheets.filter(s => s.record_type === type);
 
       const workbook = new ExcelJS.Workbook();
-      workbook.creator = 'Malabar Hill Cha Raja Admin';
+      workbook.creator = 'Dagdi Chawl Navratrotsav Mandal Admin';
       workbook.created = new Date();
 
       if (!filtered.length) {
@@ -230,7 +230,7 @@ module.exports = {
       const offlineTshirts = await db.getOfflineTshirtOrders();
 
       const workbook = new ExcelJS.Workbook();
-      workbook.creator = 'Malabar Hill Cha Raja Admin';
+      workbook.creator = 'Dagdi Chawl Navratrotsav Mandal Admin';
 
       const donationSheet = workbook.addWorksheet('All Donations');
       donationSheet.addRow(['Source', 'Receipt / Row', 'Name', 'Phone', 'Amount', 'Date']);

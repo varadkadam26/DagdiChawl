@@ -1,6 +1,6 @@
 /**
- * Malabar Hill Cha Raja - Internationalization (i18n) System
- * Mandal: Shree Bal Gopal Ganeshutsav Mandal
+ * Dagdi Chawlichi Aai Mauli - Internationalization (i18n) System
+ * Mandal: Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal
  * Languages: Marathi (mr), English (en)
  * 100% Strict Zero-Leakage Translation Engine
  */
@@ -10,9 +10,9 @@ const translations = {
     // Header & Meta
     est_label: "Est. Year: 1973",
     reg_label: "Reg No: E-3892 Mumbai",
-    mandal_full_title: "Shree Bal Gopal Ganeshutsav Mandal",
-    mandal_name_header: "Malabar Hill Cha Raja",
-    mandal_sub_header: "Shree Bal Gopal Ganeshutsav Mandal",
+    mandal_full_title: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
+    mandal_name_header: "Dagdi Chawlichi Aai Mauli",
+    mandal_sub_header: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal",
     nav_mandal_title: "BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL",
 
     // Navigation
@@ -30,9 +30,9 @@ const translations = {
 
     // Hero & Flip Clock
     hero_tag: "ESTD 1973",
-    hero_title: "Malabar Hill Cha Raja",
+    hero_title: "Dagdi Chawlichi Aai Mauli",
     hero_sub_tag: "Warm Welcome - We cordially welcome you all.",
-    hero_subtitle: "Shree Bal Gopal Ganeshutsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
+    hero_subtitle: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. A timeless tradition of faith, devotion, and community service since 1973.",
     btn_hero_live: "Watch Live Darshan",
     btn_hero_donate: "Donate Seva Online",
     countdown_badge: "Ganeshotsav 2026 Arrival",
@@ -44,15 +44,15 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Malabar Hill Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • Online Donations Open 🎉",
+    ticker_text: "🎉 Dagdi Chawlichi Aai Mauli Navratrotsav Grand Celebration! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • Online Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
     pres_title: "Warm Welcome & Divine Blessings",
     pres_desc: "Welcome to the official digital temple portal of Malabar Hill Cha Raja, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
-    pres_quote: '"Faith, service, and social commitment are the core pillars of Malabar Hill Cha Raja Mandal."',
+    pres_quote: '"Faith, service, and community devotion are the core pillars of Dagdi Chawlichi Aai Mauli Mandal."',
     pres_name: "Mr. Sandeep Sawal",
-    pres_role: "President, Shree Bal Gopal Ganeshutsav Mandal",
+    pres_role: "President, Dagdi Chawl Navratrotsav Mandal",
     stat_year_label: "Founding Year",
     stat_service_label: "Years of Continuous Service",
     stat_prasadam_label: "Daily Mahaprasad Devotees",
@@ -68,9 +68,9 @@ const translations = {
 
     // Hero & Flip Clock
     hero_tag: "ESTD 1973",
-    hero_title: "Malabar Hill Cha Raja",
+    hero_title: "Dagdi Chawlichi Aai Mauli",
     hero_sub_tag: "Warm Welcome - We cordially welcome you all.",
-    hero_subtitle: "Shree Bal Gopal Ganeshutsav Mandal. A timeless tradition of faith, royal heritage, and community service since 1973.",
+    hero_subtitle: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal. A timeless tradition of faith, devotion, and community service since 1973.",
     btn_hero_live: "Watch Live Darshan",
     btn_hero_donate: "Donate Seva Online",
     countdown_badge: "Ganeshotsav 2026 Arrival",
@@ -82,15 +82,15 @@ const translations = {
 
     // Ticker Marquee
     ticker_badge: "FESTIVAL UPDATES",
-    ticker_text: "🎉 Malabar Hill Cha Raja Grand Aagman TODAY at 6:00 PM IST! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • Online Donations Open 🎉",
+    ticker_text: "🎉 Dagdi Chawlichi Aai Mauli Navratrotsav Grand Celebration! • Hearty Welcome to All Devotees • Daily Maha Aarti Morning 8:00 AM & Evening 8:00 PM • Online Donations Open 🎉",
 
     // President Message & Counters
     pres_badge: "President & Executive Message",
     pres_title: "Warm Welcome & Divine Blessings",
     pres_desc: "Welcome to the official digital temple portal of Malabar Hill Cha Raja, Shree Bal Gopal Ganeshutsav Mandal. Serving society with faith, culture, and unity since 1973.",
-    pres_quote: '"Faith, service, and social commitment are the core pillars of Malabar Hill Cha Raja Mandal."',
+    pres_quote: '"Faith, service, and community devotion are the core pillars of Dagdi Chawlichi Aai Mauli Mandal."',
     pres_name: "Mr. Sandeep Sawal",
-    pres_role: "President, Shree Bal Gopal Ganeshutsav Mandal",
+    pres_role: "President, Dagdi Chawl Navratrotsav Mandal",
     stat_year_label: "Founding Year",
     stat_service_label: "Years of Continuous Service",
     stat_prasadam_label: "Daily Mahaprasad Devotees",
@@ -107,7 +107,7 @@ const translations = {
     // Legacy & Craftsmanship
     craft_badge: "Royal Attire & Sculpture Craft",
     craft_title: "24-Feet Grandeur & Golden Decoration",
-    craft_desc1: "Standing 24 feet tall, the divine smile and radiant eyes of Malabar Hill Cha Raja captivate millions of visiting devotees.",
+    craft_desc1: "The divine grace of Dagdi Chawlichi Aai Mauli captivates millions of devoted pilgrims every Navratri season.",
     craft_desc2: "Seated on carved wooden and golden thrones, the idol form is crafted according to unique Maharashtrian cultural themes every single year.",
     craft_stat1_num: "24 Feet",
     craft_stat1_label: "Grand Idol Height",
@@ -118,14 +118,14 @@ const translations = {
     live_badge: "Live Stream",
     live_title: "Ganeshotsav Aarti & Live Stream",
     live_sub: "Watch 24/7 Live Stream and Daily Morning (8:00 AM) & Evening (8:00 PM) Maha Aarti directly from the royal mandap.",
-    live_box_title: "Malabar Hill Cha Raja - 24/7 Live Stream",
+    live_box_title: "Dagdi Chawlichi Aai Mauli - Live Stream",
     live_box_sub: "Official YouTube Live Channel Stream",
     btn_watch_youtube: "Watch on YouTube",
 
     // Glimpses 3D Reel Section
     reel_tag: "HISTORIC GOLDEN MOMENTS",
     reel_title: "Glimpses Over The Years",
-    reel_sub: "Glorious forms, royal thrones, and divine arches of Malabar Hill Cha Raja across the years.",
+    reel_sub: "Glorious celebrations, divine decorations, and sacred moments of Dagdi Chawlichi Aai Mauli across the years.",
     reel_drag_hint: "Drag or Scroll 3D Cards →",
     btn_view_decade_all: "View All Retrospective",
 
@@ -143,7 +143,7 @@ const translations = {
 
     // Donation Section
     donate_section_tag: "SACRED CONTRIBUTION",
-    donate_section_title: "Support Malabar Hill Cha Raja Seva",
+    donate_section_title: "Support Dagdi Chawlichi Aai Mauli Seva",
     donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements.",
     btn_donate_80g: "Donate Online (With Official Receipt)",
 
@@ -182,8 +182,8 @@ const translations = {
     footer_col_location: "Mandap Location & Map",
     footer_address: "Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.",
     footer_reg_tax: "Reg No: E-3892 Mumbai",
-    footer_desc: "Shree Bal Gopal Ganeshutsav Mandal (Est. 1973). Dedicated to preserving Maharashtrian heritage and serving humanity.",
-    footer_copyright: "© Shree Bal Gopal Ganeshutsav Mandal. All Rights Reserved.",
+    footer_desc: "Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal (Est. 1973). Dedicated to preserving Maharashtrian heritage and serving humanity.",
+    footer_copyright: "© Dagdi Chawlichi Aai Mauli Mandal. All Rights Reserved.",
 
     // Scroll Info Popup
     scroll_popup_badge: "Live Updates",
@@ -194,7 +194,7 @@ const translations = {
 
     // Donate CTA section
     donate_section_tag: "SACRED CONTRIBUTION",
-    donate_section_title: "Support Malabar Hill Cha Raja Seva",
+    donate_section_title: "Support Dagdi Chawlichi Aai Mauli Seva",
     donate_section_sub: "Your contributions support community welfare, free meals, and mandap arrangements.",
 
     // Location & Contact
@@ -236,7 +236,7 @@ const translations = {
     // Donate Page Form & Modal
     badge_80g: "Official Mandal Donation",
     donate_title: "Online Donation Portal",
-    donate_sub: "Support social initiatives, Annadan Mahaprasad, and mandap management of Malabar Hill Cha Raja.",
+    donate_sub: "Support social initiatives, Annadan Mahaprasad, and Navratri celebrations of Dagdi Chawlichi Aai Mauli.",
     donate_form_title: "Donation Registration Form",
     lbl_select_amount: "Select Donation Amount (₹) *",
     lbl_custom_amount: "Enter Donation Amount (₹) *",
@@ -259,8 +259,8 @@ const translations = {
     branch_lbl: "Branch:",
     bank_transfer_note: "Please contact us for your receipt if you make a direct bank transfer.",
     tshirt_badge: "Official Merchandise",
-    tshirt_page_title: "Malabar Hill Cha Raja - T-Shirt Booking",
-    tshirt_page_sub: "Official cotton polo t-shirt with royal emblem print of Shree Bal Gopal Ganeshutsav Mandal.",
+    tshirt_page_title: "Dagdi Chawlichi Aai Mauli - T-Shirt Booking",
+    tshirt_page_sub: "Official cotton polo t-shirt with the divine emblem of Dagdi Chawlichi Aai Mauli Mandal.",
     tshirt_product_title: "Official Collar Polo T-Shirt",
     tshirt_product_sub: "Half-collar polo T-shirt with royal emblem and official logo.",
     tshirt_price_label: "Price per T-shirt",

@@ -1,6 +1,6 @@
 const db = require('../config/db');
 
-// Ganeshotsav Event Schedule Data for Malabar Hill Cha Raja
+// Navratrotsav Event Schedule Data for Dagdi Chawlichi Aai Mauli
 const SCHEDULE_LOCATION_EN = 'Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007';
 const SCHEDULE_LOCATION_MR = 'गणेश चौक, भाजी गल्ली, शंकर शेट रोड, ग्रँट रोड (पश्चिम), मुंबई - ४००००७';
 

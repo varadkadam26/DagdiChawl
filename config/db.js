@@ -11,7 +11,7 @@ const mockStore = {
   yatra_status: {
     current_day: 3,
     total_days: 10,
-    current_location: 'Tulsiwadi Pandal, Malabar Hill (Mandap Darshan Open)',
+    current_location: 'Dagdi Chawl, Byculla (Mandap Darshan Open)',
     next_location: 'Maha Aarti & Evening Mahaprasad (8:00 PM)',
     distance_covered_km: 100,
     total_distance_km: 100,
@@ -20,7 +20,7 @@ const mockStore = {
     last_updated: new Date()
   },
   logs: [
-    { id: 1, type: 'SYSTEM', message: 'Malabar Hill Cha Raja Portal Initialized', timestamp: new Date() }
+    { id: 1, type: 'SYSTEM', message: 'Dagdi Chawlichi Aai Mauli Portal Initialized', timestamp: new Date() }
   ]
 };
 

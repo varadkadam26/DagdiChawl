@@ -34,12 +34,12 @@ module.exports = {
       }
 
       const donationData = {
-        receipt_no: `MCC-REC-2026-${Math.floor(100 + Math.random() * 900)}`,
+        receipt_no: `DCM-REC-2026-${Math.floor(1000 + Math.random() * 9000)}`,
         donor_name: donor_name.trim(),
         phone: phone.trim(),
         email: (email || '').trim(),
         amount: numAmount,
-        category: 'General Mandal Seva',
+        category: 'Navratri Utsav Mandal Seva',
         payment_id: payment_utr.trim(),
         order_id: `utr_${Date.now()}`,
         payment_utr: payment_utr.trim(),
@@ -112,7 +112,7 @@ module.exports = {
     }
   },
 
-  // Download 80G PDF Receipt
+  // Download Official PDF Receipt
   async downloadDonationReceipt(req, res) {
     const { receiptNo } = req.params;
     const donation = await db.getDonationByReceipt(receiptNo);
