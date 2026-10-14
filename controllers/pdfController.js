@@ -4,14 +4,13 @@ const fs = require('fs');
 
 const logoPath = path.join(__dirname, '../public/images/logo.png');
 
-// Helper to render subtle background logo watermark on PDF receipts
+// Helper: draw subtle background logo watermark
 const drawWatermark = (doc) => {
   if (fs.existsSync(logoPath)) {
     try {
       doc.save();
-      doc.opacity(0.12);
-      // Center watermark logo on standard A4 page (595 x 842 pt)
-      doc.image(logoPath, (595 - 280) / 2, 220, { width: 280 });
+      doc.opacity(0.07);
+      doc.image(logoPath, (595 - 260) / 2, 230, { width: 260 });
       doc.restore();
     } catch (err) {
       console.error('PDF watermark error:', err.message);
@@ -19,186 +18,253 @@ const drawWatermark = (doc) => {
   }
 };
 
+// Helper: draw a labeled field pair (label above, bold value below)
+const makeDrawField = (doc) => (label, value, x, y, width = 220) => {
+  doc.fillColor('#7A3B3B').fontSize(8).font('Helvetica-Bold').text(label.toUpperCase(), x, y);
+  doc.fillColor('#1a1a1a').fontSize(11).font('Helvetica-Bold').text(value || 'N/A', x, y + 13, { width });
+};
+
+// Helper: draw the shared Dagdi Chawl receipt header
+const drawHeader = (doc) => {
+  doc.rect(40, 40, 515, 105).fill('#7B1A1A');
+  doc.fillColor('#FFD700').fontSize(10).font('Helvetica-Oblique')
+    .text('|| JAI AAI MAULI ||', 55, 52, { align: 'center', width: 485 });
+  doc.fillColor('#FFD700').fontSize(20).font('Helvetica-Bold')
+    .text('DAGDI CHAWLICHI AAI MAULI', 55, 68, { align: 'center', width: 485 });
+  doc.fillColor('#F5E0C3').fontSize(11).font('Helvetica')
+    .text('BHAYKHAALA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL', 55, 94, { align: 'center', width: 485 });
+  doc.fillColor('#E8C98A').fontSize(8).font('Helvetica')
+    .text('Address: Dagdi Chawl, B.J. Marg, Byculla West, Mumbai - 400011    |    Website: dagdichawlichiaaimauli.in',
+      55, 116, { align: 'center', width: 485 });
+  doc.moveTo(40, 148).lineTo(555, 148).lineWidth(2).strokeColor('#D4AF37').stroke();
+};
+
+// Helper: draw the receipt title strip
+const drawReceiptTitleStrip = (doc, receiptNo, date) => {
+  doc.rect(40, 155, 515, 30).fill('#FFF8F0');
+  doc.rect(40, 155, 515, 30).lineWidth(1).strokeColor('#C09040').stroke();
+  doc.fillColor('#7B1A1A').fontSize(11).font('Helvetica-Bold')
+    .text('OFFICIAL DONATION RECEIPT', 55, 165);
+  doc.fillColor('#444').fontSize(9).font('Helvetica')
+    .text('Receipt No: ' + receiptNo + '    Date: ' + date, 55, 165, { align: 'right', width: 485 });
+};
+
 module.exports = {
+
+  // 1. DONATION RECEIPT for /download-receipt/:id
   generateDonationPDF(donation, res) {
     const doc = new PDFDocument({ size: 'A4', margin: 40 });
-
     res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename=Receipt_${donation.receipt_no}.pdf`);
-
+    res.setHeader('Content-Disposition', 'attachment; filename=DCM_Donation_Receipt_' + donation.receipt_no + '.pdf');
     doc.pipe(res);
 
-    // Draw Background Watermark Logo
     drawWatermark(doc);
+    drawHeader(doc);
 
-    // Header Box
-    doc.rect(40, 40, 515, 100).fill('#4A0404');
-    doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
-    doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('MALABAR HILL CHA RAJA', 55, 85);
-    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | @malabarhill_cha_raja', 55, 106);
+    const dateStr = new Date(donation.created_at || Date.now())
+      .toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+    drawReceiptTitleStrip(doc, donation.receipt_no, dateStr);
 
-    // Main Receipt Body
-    doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#800020').stroke();
+    // DONOR DETAILS
+    doc.rect(40, 195, 515, 130).lineWidth(1).strokeColor('#C09040').stroke();
+    doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('DONOR DETAILS', 55, 208);
+    doc.moveTo(55, 222).lineTo(540, 222).lineWidth(0.5).strokeColor('#D4AF37').stroke();
 
-    doc.fillColor('#4A0404').fontSize(13).font('Helvetica-Bold').text('OFFICIAL DONATION ACKNOWLEDGEMENT RECEIPT', 60, 172);
-    doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
+    const drawField = makeDrawField(doc);
+    drawField('Donor Full Name', donation.donor_name, 55, 230);
+    drawField('Contact Number', donation.phone ? '+91 ' + donation.phone : 'N/A', 310, 230);
+    drawField('PAN Number', donation.pan_number || 'N/A', 55, 280);
+    drawField('Seva Category / Purpose', donation.category || 'Navratri Utsav Mandal Seva', 310, 280);
 
-    const drawField = (label, value, x, y, width = 220) => {
-      doc.fillColor('#64748B').fontSize(9).font('Helvetica-Bold').text(label.toUpperCase(), x, y);
-      doc.fillColor('#1E293B').fontSize(11).font('Helvetica-Bold').text(value || 'N/A', x, y + 13, { width });
-    };
+    // AMOUNT HIGHLIGHT
+    doc.rect(40, 340, 515, 75).fill('#FFFDF0');
+    doc.rect(40, 340, 515, 75).lineWidth(1.5).strokeColor('#D4AF37').stroke();
+    doc.fillColor('#7B3F00').fontSize(9).font('Helvetica-Bold')
+      .text('CONTRIBUTION AMOUNT RECEIVED', 0, 355, { align: 'center', width: 595 });
+    doc.fillColor('#8B1A1A').fontSize(26).font('Helvetica-Bold')
+      .text('Rs. ' + parseFloat(donation.amount).toLocaleString('en-IN') + '/-', 0, 372, { align: 'center', width: 595 });
+    const words = amountInWords(parseFloat(donation.amount));
+    doc.fillColor('#555').fontSize(9).font('Helvetica-Oblique')
+      .text('(' + words + ')', 0, 400, { align: 'center', width: 595 });
 
-    drawField('Receipt Number', donation.receipt_no, 60, 205);
-    drawField('Donation Date', new Date(donation.created_at || Date.now()).toLocaleDateString('en-IN', { dateStyle: 'medium' }), 300, 205);
+    // TRANSACTION BREAKDOWN
+    doc.rect(40, 430, 515, 90).lineWidth(1).strokeColor('#C09040').stroke();
+    doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('TRANSACTION BREAKDOWN', 55, 443);
+    doc.moveTo(55, 458).lineTo(540, 458).lineWidth(0.5).strokeColor('#D4AF37').stroke();
+    drawField('Payment Mode', 'UPI / Online', 55, 466);
+    drawField('Payment UTR / Ref No.', donation.payment_id || donation.payment_utr || 'N/A', 230, 466);
+    doc.fillColor('#7A3B3B').fontSize(8).font('Helvetica-Bold').text('PAYMENT STATUS', 430, 466);
+    const status = (donation.status || 'SUCCESS').toUpperCase();
+    const statusColor = (status === 'SUCCESS' || status === 'APPROVED') ? '#166534' : '#92400E';
+    const statusBg = (status === 'SUCCESS' || status === 'APPROVED') ? '#D1FAE5' : '#FEF3C7';
+    doc.rect(430, 479, 70, 18).fill(statusBg);
+    doc.fillColor(statusColor).fontSize(9).font('Helvetica-Bold').text(status, 435, 483);
 
-    drawField('Donor Full Name', donation.donor_name, 60, 250);
-    drawField('Contact Phone', donation.phone, 300, 250);
+    // BLESSING QUOTE
+    doc.rect(40, 540, 515, 55).fill('#FFF9F0');
+    doc.rect(40, 540, 515, 55).lineWidth(0.5).strokeColor('#D4AF37').stroke();
+    doc.fillColor('#7B1A1A').fontSize(9).font('Helvetica-Oblique')
+      .text('"Maulichya krupaprasadane aapachya kutumbavar sadaiv sukh, samruddhi aani aarogya labho."', 55, 553, { align: 'center', width: 485 });
+    doc.fillColor('#6B5C3E').fontSize(8).font('Helvetica')
+      .text('All donations support sacred Navratri festival celebrations, cultural programs, and social welfare activities.', 55, 572, { align: 'center', width: 485 });
 
-    drawField('PAN Number', donation.pan_number || 'NOT PROVIDED', 60, 295);
-    drawField('Seva Category', donation.category || 'General Mandal Seva', 300, 295);
-
-    drawField('Payment UTR / Ref', donation.payment_id || donation.payment_utr || 'N/A', 60, 340);
-    drawField('Transaction Status', donation.status || 'SUCCESS', 300, 340);
-
-    // Amount Highlight Card
-    doc.rect(60, 395, 455, 65).fill('#FFFBEB');
-    doc.rect(60, 395, 455, 65).lineWidth(1.5).strokeColor('#F59E0B').stroke();
-    
-    doc.fillColor('#92400E').fontSize(10).font('Helvetica-Bold').text('CONTRIBUTION AMOUNT RECEIVED', 75, 408);
-    doc.fillColor('#B45309').fontSize(20).font('Helvetica-Bold').text(`₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}/-`, 75, 427);
-
-    // Acknowledgement Note
-    doc.fillColor('#475569').fontSize(9).font('Helvetica-Oblique').text('All donations made to Shree Bal Gopal Ganeshutsav Mandal support sacred cultural and social welfare seva.', 40, 505, { align: 'center', width: 515 });
-
-    // Signatures
-    doc.fillColor('#4A0404').fontSize(10).font('Helvetica-Bold').text('For Malabar Hill Cha Raja Mandal', 350, 570);
-    doc.fillColor('#64748B').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 350, 620);
-    
-    doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Follow us on Instagram @malabarhill_cha_raja', 40, 750, { align: 'center', width: 515 });
+    // FOOTER
+    doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('Dagdi Chawl Navratrotsav Mandal', 55, 630);
+    doc.fillColor('#555').fontSize(8).font('Helvetica').text('This is a computer-generated receipt for online contribution.', 55, 644);
+    doc.fillColor('#555').fontSize(8).font('Helvetica').text('No physical signature required.', 55, 656);
+    doc.moveTo(380, 668).lineTo(540, 668).lineWidth(0.5).strokeColor('#999').stroke();
+    doc.fillColor('#555').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 380, 673);
+    doc.fillColor('#aaa').fontSize(7.5).font('Helvetica')
+      .text('Jai Aai Mauli  |  dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
 
     doc.end();
   },
 
+  // 2. T-SHIRT RECEIPT for /download-tshirt-receipt/:id
   generateTshirtPDF(order, res) {
     const doc = new PDFDocument({ size: 'A4', margin: 40 });
-
     res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename=Tshirt_Booking_${order.receipt_no}.pdf`);
-
+    res.setHeader('Content-Disposition', 'attachment; filename=DCM_TShirt_Token_' + order.receipt_no + '.pdf');
     doc.pipe(res);
 
-    // Draw Background Watermark Logo
     drawWatermark(doc);
+    drawHeader(doc);
 
-    // Header Banner
-    doc.rect(40, 40, 515, 100).fill('#800020');
-    doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
-    doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('OFFICIAL T-SHIRT & MERCHANDISE BOOKING TOKEN', 55, 85);
-    doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | Instagram: @malabarhill_cha_raja', 55, 106);
+    const dateStr = new Date(order.created_at || Date.now())
+      .toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 
-    // Main Receipt Body
-    doc.rect(40, 155, 515, 340).lineWidth(1.5).strokeColor('#800020').stroke();
+    // T-Shirt title strip
+    doc.rect(40, 155, 515, 30).fill('#FFF8F0');
+    doc.rect(40, 155, 515, 30).lineWidth(1).strokeColor('#C09040').stroke();
+    doc.fillColor('#7B1A1A').fontSize(11).font('Helvetica-Bold').text('OFFICIAL T-SHIRT BOOKING TOKEN', 55, 165);
+    doc.fillColor('#444').fontSize(9).font('Helvetica')
+      .text('Token No: ' + order.receipt_no + '    Date: ' + dateStr, 55, 165, { align: 'right', width: 485 });
 
-    doc.fillColor('#800020').fontSize(13).font('Helvetica-Bold').text('MALABAR HILL CHA RAJA OFFICIAL MERCHANDISE', 60, 172);
-    doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
+    // BUYER DETAILS
+    doc.rect(40, 195, 515, 130).lineWidth(1).strokeColor('#C09040').stroke();
+    doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('BUYER DETAILS', 55, 208);
+    doc.moveTo(55, 222).lineTo(540, 222).lineWidth(0.5).strokeColor('#D4AF37').stroke();
 
-    const drawField = (label, value, x, y, width = 220) => {
-      doc.fillColor('#64748B').fontSize(9).font('Helvetica-Bold').text(label.toUpperCase(), x, y);
-      doc.fillColor('#1E293B').fontSize(11).font('Helvetica-Bold').text(value || 'N/A', x, y + 13, { width });
-    };
+    const drawField = makeDrawField(doc);
+    drawField('Buyer Full Name', order.buyer_name, 55, 230);
+    drawField('Contact Mobile', order.phone ? '+91 ' + order.phone : 'N/A', 310, 230);
+    drawField('Selected Size', order.size || 'N/A', 55, 280);
+    drawField('Color & Quantity', (order.color || 'N/A') + ' - ' + (order.quantity || 1) + ' Pc(s)', 310, 280);
 
-    drawField('Order Token Number', order.receipt_no, 60, 205);
-    drawField('Order Date', new Date(order.created_at || Date.now()).toLocaleDateString('en-IN', { dateStyle: 'medium' }), 300, 205);
+    // AMOUNT
+    doc.rect(40, 340, 515, 70).fill('#FFFDF0');
+    doc.rect(40, 340, 515, 70).lineWidth(1.5).strokeColor('#D4AF37').stroke();
+    doc.fillColor('#7B3F00').fontSize(9).font('Helvetica-Bold')
+      .text('TOTAL AMOUNT PAID FOR T-SHIRT', 0, 353, { align: 'center', width: 595 });
+    doc.fillColor('#8B1A1A').fontSize(26).font('Helvetica-Bold')
+      .text('Rs. ' + parseFloat(order.total_amount || 0).toLocaleString('en-IN') + '/-', 0, 370, { align: 'center', width: 595 });
 
-    drawField('Buyer Full Name', order.buyer_name, 60, 250);
-    drawField('Contact Mobile', order.phone, 300, 250);
-
-    drawField('Selected Size', `${order.size} (Chest Fit)`, 60, 295);
-    drawField('T-Shirt Color & Qty', `${order.color} (${order.quantity} Pcs)`, 300, 295);
-
-    drawField('Payment UTR / Ref', order.payment_id || 'N/A', 60, 340);
-    drawField('Delivery / Pickup Option', order.address || 'Mandap Counter Pickup', 300, 340, 220);
-
-    // Highlight Total Amount
-    doc.rect(60, 400, 455, 65).fill('#FFFBEB');
-    doc.rect(60, 400, 455, 65).lineWidth(1.5).strokeColor('#F59E0B').stroke();
-    
-    doc.fillColor('#92400E').fontSize(10).font('Helvetica-Bold').text('TOTAL AMOUNT PAID FOR MERCHANDISE', 75, 413);
-    doc.fillColor('#B45309').fontSize(20).font('Helvetica-Bold').text(`₹ ${parseFloat(order.total_amount).toLocaleString('en-IN')}/-`, 75, 432);
-
-    // Mandap Pickup Note
-    doc.rect(40, 510, 515, 120).fill('#EFF6FF');
-    doc.rect(40, 510, 515, 120).lineWidth(1).strokeColor('#93C5FD').stroke();
-    
-    doc.fillColor('#1E40AF').fontSize(10).font('Helvetica-Bold').text('T-SHIRT PICKUP INSTRUCTIONS FOR DEVOTEES', 55, 525);
+    // PICKUP INSTRUCTIONS
+    doc.rect(40, 425, 515, 115).fill('#F0F8FF');
+    doc.rect(40, 425, 515, 115).lineWidth(1).strokeColor('#93C5FD').stroke();
+    doc.fillColor('#1E40AF').fontSize(10).font('Helvetica-Bold').text('T-SHIRT PICKUP INSTRUCTIONS', 55, 440);
     const instructions = [
-      '1. Please show this PDF order token (digital or printed) at Mandap Merchandise Desk.',
-      '2. Pickup Address: Tulsiwadi Pandal, Ganesh Chowk, Bhaji Galli, Shankar Sheth Road, Grant Road (W), Mumbai-400007.',
-      '3. For courier delivery queries, contact Mandal Help Desk: +91 98765 43210.'
+      '1. Show this PDF token (digital or printed) at the Mandap Merchandise Desk.',
+      '2. Pickup: Dagdi Chawl, B.J. Marg, Byculla West, Mumbai - 400011.',
+      '3. For courier delivery queries, contact us via Instagram: @dagdichawlichiaaimauli',
+      '4. Keep this receipt safe until you collect your T-Shirt.',
     ];
-    let instY = 545;
-    instructions.forEach(inst => {
-      doc.fillColor('#1E3A8A').fontSize(9).font('Helvetica').text(inst, 55, instY);
-      instY += 20;
+    let instY = 458;
+    instructions.forEach(function(inst) {
+      doc.fillColor('#1E3A8A').fontSize(9).font('Helvetica').text(inst, 55, instY, { width: 475 });
+      instY += 18;
     });
 
-    doc.fillColor('#94A3B8').fontSize(8).font('Helvetica').text('Ganpati Bappa Morya! Shree Bal Gopal Ganeshutsav Mandal', 40, 750, { align: 'center', width: 515 });
+    // FOOTER
+    doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('Dagdi Chawl Navratrotsav Mandal', 55, 580);
+    doc.fillColor('#555').fontSize(8).font('Helvetica').text('Computer-generated booking token. No physical signature required.', 55, 594);
+    doc.moveTo(380, 616).lineTo(540, 616).lineWidth(0.5).strokeColor('#999').stroke();
+    doc.fillColor('#555').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 380, 621);
+    doc.fillColor('#aaa').fontSize(7.5).font('Helvetica')
+      .text('Jai Aai Mauli  |  dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
 
     doc.end();
   },
 
+  // 3. DONATION EMAIL BUFFER for email after admin approval
   generateDonationPDFBuffer(donation) {
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject) {
       const doc = new PDFDocument({ size: 'A4', margin: 40 });
       const buffers = [];
+      doc.on('data', function(chunk) { buffers.push(chunk); });
+      doc.on('end', function() { resolve(Buffer.concat(buffers)); });
+      doc.on('error', function(err) { reject(err); });
 
-      doc.on('data', chunk => buffers.push(chunk));
-      doc.on('end', () => resolve(Buffer.concat(buffers)));
-      doc.on('error', err => reject(err));
-
-      // Draw Background Watermark Logo
       drawWatermark(doc);
+      drawHeader(doc);
 
-      // Header Box
-      doc.rect(40, 40, 515, 100).fill('#4A0404');
-      doc.fillColor('#FFD700').fontSize(18).font('Helvetica-Bold').text('SHREE BAL GOPAL GANESHUTSAV MANDAL', 55, 52, { width: 485 });
-      doc.fillColor('#FFFFFF').fontSize(14).font('Helvetica-Bold').text('MALABAR HILL CHA RAJA', 55, 85);
-      doc.fillColor('#FFC107').fontSize(9).font('Helvetica').text('Reg Trust No: F-11518 | @malabarhill_cha_raja', 55, 106);
+      const dateStr = new Date(donation.created_at || Date.now())
+        .toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+      drawReceiptTitleStrip(doc, donation.receipt_no, dateStr);
 
-      // Main Receipt Body
-      doc.rect(40, 155, 515, 335).lineWidth(1.5).strokeColor('#800020').stroke();
+      // DONOR DETAILS
+      doc.rect(40, 195, 515, 130).lineWidth(1).strokeColor('#C09040').stroke();
+      doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('DONOR DETAILS', 55, 208);
+      doc.moveTo(55, 222).lineTo(540, 222).lineWidth(0.5).strokeColor('#D4AF37').stroke();
 
-      doc.fillColor('#4A0404').fontSize(13).font('Helvetica-Bold').text('OFFICIAL DONATION ACKNOWLEDGEMENT RECEIPT', 60, 172);
-      doc.moveTo(60, 190).lineTo(535, 190).lineWidth(1).strokeColor('#FCD34D').stroke();
+      const drawField = makeDrawField(doc);
+      drawField('Donor Full Name', donation.donor_name, 55, 230);
+      drawField('Contact Number', donation.phone ? '+91 ' + donation.phone : 'N/A', 310, 230);
+      drawField('Email Address', donation.email || 'N/A', 55, 280);
+      drawField('Payment UTR / Ref No.', donation.payment_id || donation.payment_utr || 'N/A', 310, 280);
+      drawField('Payment Status', 'APPROVED (SUCCESS)', 55, 315);
+      drawField('Verification', 'MANDAL ADMIN VERIFIED', 310, 315);
 
-      const drawField = (label, value, x, y, width = 220) => {
-        doc.fillColor('#64748B').fontSize(9).font('Helvetica-Bold').text(label.toUpperCase(), x, y);
-        doc.fillColor('#1E293B').fontSize(11).font('Helvetica-Bold').text(value || 'N/A', x, y + 13, { width });
-      };
+      // AMOUNT
+      doc.rect(40, 340, 515, 75).fill('#FFFDF0');
+      doc.rect(40, 340, 515, 75).lineWidth(1.5).strokeColor('#D4AF37').stroke();
+      doc.fillColor('#7B3F00').fontSize(9).font('Helvetica-Bold')
+        .text('CONTRIBUTION AMOUNT RECEIVED', 0, 355, { align: 'center', width: 595 });
+      doc.fillColor('#8B1A1A').fontSize(26).font('Helvetica-Bold')
+        .text('Rs. ' + parseFloat(donation.amount).toLocaleString('en-IN') + '/-', 0, 372, { align: 'center', width: 595 });
+      const words = amountInWords(parseFloat(donation.amount));
+      doc.fillColor('#555').fontSize(9).font('Helvetica-Oblique')
+        .text('(' + words + ')', 0, 400, { align: 'center', width: 595 });
 
-      drawField('Receipt Number', donation.receipt_no, 60, 205);
-      drawField('Donation Date', new Date(donation.created_at || Date.now()).toLocaleDateString('en-IN', { dateStyle: 'medium' }), 300, 205);
+      // BLESSING
+      doc.rect(40, 435, 515, 55).fill('#FFF9F0');
+      doc.rect(40, 435, 515, 55).lineWidth(0.5).strokeColor('#D4AF37').stroke();
+      doc.fillColor('#7B1A1A').fontSize(9).font('Helvetica-Oblique')
+        .text('"Maulichya krupaprasadane aapachya kutumbavar sadaiv sukh, samruddhi aani aarogya labho."', 55, 448, { align: 'center', width: 485 });
+      doc.fillColor('#6B5C3E').fontSize(8).font('Helvetica')
+        .text('All donations support sacred Navratri festival celebrations, cultural programs, and social welfare activities.', 55, 468, { align: 'center', width: 485 });
 
-      drawField('Donor Full Name', donation.donor_name, 60, 250);
-      drawField('Contact Phone', donation.phone, 300, 250);
-
-      drawField('Email Address', donation.email || 'N/A', 60, 295);
-      drawField('Payment UTR / Ref', donation.payment_id || donation.payment_utr || 'N/A', 300, 295);
-
-      drawField('Payment Status', 'APPROVED (SUCCESS)', 60, 340);
-      drawField('Verification', 'MANDAL ADMIN VERIFIED', 300, 340);
-
-      // Amount Highlight Card
-      doc.rect(60, 395, 455, 65).fill('#FFFBEB');
-      doc.rect(60, 395, 455, 65).lineWidth(1.5).strokeColor('#F59E0B').stroke();
-      
-      doc.fillColor('#92400E').fontSize(10).font('Helvetica-Bold').text('CONTRIBUTION AMOUNT RECEIVED', 75, 408);
-      doc.fillColor('#B45309').fontSize(20).font('Helvetica-Bold').text(`₹ ${parseFloat(donation.amount).toLocaleString('en-IN')}/-`, 75, 427);
-
-      // Acknowledgement Note
-      doc.fillColor('#334155').fontSize(9).font('Helvetica').text('Thank you for your sacred contribution and Seva!', 60, 475, { width: 475 });
+      // FOOTER
+      doc.fillColor('#7B1A1A').fontSize(10).font('Helvetica-Bold').text('Dagdi Chawl Navratrotsav Mandal', 55, 540);
+      doc.fillColor('#555').fontSize(8).font('Helvetica')
+        .text('This is a computer-generated receipt for online contribution. No physical signature required.', 55, 554);
+      doc.moveTo(380, 576).lineTo(540, 576).lineWidth(0.5).strokeColor('#999').stroke();
+      doc.fillColor('#555').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 380, 581);
+      doc.fillColor('#aaa').fontSize(7.5).font('Helvetica')
+        .text('Jai Aai Mauli  |  dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
 
       doc.end();
     });
   }
 };
+
+// Utility: convert number to Indian English words
+function amountInWords(num) {
+  if (!num || isNaN(num)) return 'Amount Not Available';
+  var a = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine',
+    'Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+  var b = ['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+  function inWords(n) {
+    if (n < 20) return a[n];
+    if (n < 100) return b[Math.floor(n/10)] + (n%10 ? ' ' + a[n%10] : '');
+    if (n < 1000) return a[Math.floor(n/100)] + ' Hundred' + (n%100 ? ' ' + inWords(n%100) : '');
+    if (n < 100000) return inWords(Math.floor(n/1000)) + ' Thousand' + (n%1000 ? ' ' + inWords(n%1000) : '');
+    if (n < 10000000) return inWords(Math.floor(n/100000)) + ' Lakh' + (n%100000 ? ' ' + inWords(n%100000) : '');
+    return inWords(Math.floor(n/10000000)) + ' Crore' + (n%10000000 ? ' ' + inWords(n%10000000) : '');
+  }
+  var rupees = Math.floor(num);
+  var paise = Math.round((num - rupees) * 100);
+  var result = 'Rupees ' + inWords(rupees) + ' Only';
+  if (paise > 0) result += ' and ' + inWords(paise) + ' Paise';
+  return result;
+}
