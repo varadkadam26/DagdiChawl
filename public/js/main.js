@@ -496,13 +496,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     '2026': {
       yearTag: 'वर्ष २०२६',
-      subhead: 'सुवर्ण तेज व राजेशाही आगमन',
-      title: 'मलबार हिलचा राजा २०२६ - सुवर्ण तेज दर्शन',
-      desc: 'सन २०२६ च्या गणेशोत्सवातील मलबार हिलच्या राजाचे मनमोहक, भव्य दिव्य आणि अलौकिक सुवर्ण रूप दर्शन.',
-      image: '/images/malabar_ganpati_2026.png',
-      feat1: 'वर्ष: २०२६',
-      feat2: 'रूप: राजेशाही अलौकिक सुवर्ण तेज',
-      feat3: 'स्थान: मलबार हिल'
+      subhead: 'नवरात्रोत्सव २०२६ — दिव्य माँ दुर्गा शृंगार',
+      title: 'दगडी चाळीची आई माऊली २०२६ — नवरात्रोत्सव दर्शन',
+      desc: 'सन २०२६ च्या नवरात्रोत्सवातील दगडी चाळीची आई माऊलीचे मनमोहक, भव्य दिव्य आणि अलौकिक शृंगार रूप दर्शन. भायखळा दगडी चाळ सार्वजनिक नवरात्रौत्सव मंडळाचा हा अविस्मरणीय सोहळा.',
+      image: '/images/glimpses/2026_navratri_2.jpg',
+      feat1: 'वर्ष: नवरात्रोत्सव २०२६',
+      feat2: 'रूप: माँ दुर्गा — दिव्य शृंगार दर्शन',
+      feat3: 'स्थान: दगडी चाळ, भायखळा, मुंबई'
     }
   };
 
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '2020': {yearTag:'Year 2020', subhead:'Health & Seva', title:'Health Service & Community Support', desc:'A service-focused milestone highlighting health support and community care.', image:'/images/malabar_ganpati_01.jpg', feat1:'Service: Health Support', feat2:'Community: Seva', feat3:'Care: Devotee Assistance'},
     '2024': {yearTag:'Year 2024', subhead:'Golden Throne Adornment', title:'Golden Throne & Radiant Darshan', desc:'A grand darshan presentation featuring ornate adornment and a festive setting.', image:'/images/malabar_ganpati_03.jpg', feat1:'Throne: Ornate Craft', feat2:'Attire: Festive Adornment', feat3:'Darshan: Devotional Experience'},
     '2025': {yearTag:'Year 2025', subhead:'Royal Woodcraft & Digital Darshan', title:'Carved Throne & Digital Darshan Portal', desc:'A modern milestone combining traditional woodcraft aesthetics with digital darshan access.', image:'/images/malabar_ganpati_04.jpg', feat1:'Craft: Traditional Woodwork', feat2:'Digital: Live Darshan', feat3:'Seva: Online Support'},
-    '2026': {yearTag:'Year 2026', subhead:'Golden Radiance & Royal Darshan', title:'Malabar Hill Cha Raja 2026 - Divine Golden Darshan', desc:'The majestic, divine, and enchanting golden idol form of Malabar Hill Cha Raja for Ganeshotsav 2026.', image:'/images/malabar_ganpati_2026.png', feat1:'Year: 2026', feat2:'Darshan: Royal Divine Radiance', feat3:'Location: Malabar Hill'}
+    '2026': {yearTag:'Year 2026', subhead:'Navratrotsav 2026 — Divine Maa Durga Adornment', title:'Dagdi Chawlichi Aai Mauli 2026 — Navratrotsav Darshan', desc:'The majestic, divine, and enchanting adornment of Dagdi Chawlichi Aai Mauli during Navratrotsav 2026. An unforgettable celebration by Byculla Dagdi Chawl Sarvajanik Navratrotsav Mandal.', image:'/images/glimpses/2026_navratri_2.jpg', feat1:'Year: Navratrotsav 2026', feat2:'Form: Maa Durga — Divine Adornment', feat3:'Location: Dagdi Chawl, Byculla, Mumbai'}
   };
 
   function setActiveTimelineYear(year) {
