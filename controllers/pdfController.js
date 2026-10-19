@@ -27,12 +27,10 @@ const makeDrawField = (doc) => (label, value, x, y, width = 220) => {
 // Helper: draw the shared Dagdi Chawl receipt header
 const drawHeader = (doc) => {
   doc.rect(40, 40, 515, 105).fill('#7B1A1A');
-  doc.fillColor('#FFD700').fontSize(10).font('Helvetica-Oblique')
-    .text('|| JAI AAI MAULI ||', 55, 52, { align: 'center', width: 485 });
   doc.fillColor('#FFD700').fontSize(20).font('Helvetica-Bold')
     .text('DAGDI CHAWLICHI AAI MAULI', 55, 68, { align: 'center', width: 485 });
   doc.fillColor('#F5E0C3').fontSize(11).font('Helvetica')
-    .text('BHAYKHAALA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL', 55, 94, { align: 'center', width: 485 });
+    .text('BYCULLA DAGDI CHAWL SARVAJANIK NAVRATROTSAV MANDAL', 55, 94, { align: 'center', width: 485 });
   doc.fillColor('#E8C98A').fontSize(8).font('Helvetica')
     .text('Address: Dagdi Chawl, B.J. Marg, Byculla West, Mumbai - 400011    |    Website: dagdichawlichiaaimauli.in',
       55, 116, { align: 'center', width: 485 });
@@ -74,7 +72,6 @@ module.exports = {
     drawField('Donor Full Name', donation.donor_name, 55, 230);
     drawField('Contact Number', donation.phone ? '+91 ' + donation.phone : 'N/A', 310, 230);
     drawField('PAN Number', donation.pan_number || 'N/A', 55, 280);
-    drawField('Seva Category / Purpose', donation.category || 'Navratri Utsav Mandal Seva', 310, 280);
 
     // AMOUNT HIGHLIGHT
     doc.rect(40, 340, 515, 75).fill('#FFFDF0');
@@ -115,7 +112,7 @@ module.exports = {
     doc.moveTo(380, 668).lineTo(540, 668).lineWidth(0.5).strokeColor('#999').stroke();
     doc.fillColor('#555').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 380, 673);
     doc.fillColor('#aaa').fontSize(7.5).font('Helvetica')
-      .text('Jai Aai Mauli  |  dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
+      .text('dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
 
     doc.end();
   },
@@ -181,7 +178,7 @@ module.exports = {
     doc.moveTo(380, 616).lineTo(540, 616).lineWidth(0.5).strokeColor('#999').stroke();
     doc.fillColor('#555').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 380, 621);
     doc.fillColor('#aaa').fontSize(7.5).font('Helvetica')
-      .text('Jai Aai Mauli  |  dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
+      .text('dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
 
     doc.end();
   },
@@ -241,7 +238,7 @@ module.exports = {
       doc.moveTo(380, 576).lineTo(540, 576).lineWidth(0.5).strokeColor('#999').stroke();
       doc.fillColor('#555').fontSize(9).font('Helvetica').text('Authorized Trustee / Treasurer', 380, 581);
       doc.fillColor('#aaa').fontSize(7.5).font('Helvetica')
-        .text('Jai Aai Mauli  |  dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
+        .text('dagdichawlichiaaimauli.in  |  Instagram: @dagdichawlichiaaimauli', 40, 800, { align: 'center', width: 515 });
 
       doc.end();
     });
