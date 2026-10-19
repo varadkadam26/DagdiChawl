@@ -45,9 +45,9 @@
           <!-- Custom Amount -->
           <div style="margin-bottom: 1.5rem;">
             <label
-              style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;"
-              data-i18n="lbl_custom_amount">
-              देणगी रक्कम टाका (₹) *
+              style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;">
+              <span class="lang-mr">देणगी रक्कम टाका (₹) *</span>
+              <span class="lang-en">Enter Donation Amount (₹) *</span>
             </label>
             <input type="number" id="donationAmount" min="11" required placeholder="रक्कम टाका (उदा. ५०१)"
               style="width: 100%; padding: 0.85rem 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 1.1rem; font-weight: 700; color: var(--royal-gold);">
@@ -56,9 +56,9 @@
           <!-- Donor Name -->
           <div style="margin-bottom: 1.5rem;">
             <label
-              style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;"
-              data-i18n="lbl_donor_name">
-              देणगीदाराचे संपूर्ण नाव *
+              style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;">
+              <span class="lang-mr">देणगीदाराचे संपूर्ण नाव *</span>
+              <span class="lang-en">Donor's Full Name *</span>
             </label>
             <input type="text" id="donorName" required placeholder="संपूर्ण नाव टाका" data-i18n="ph_donor_name"
               style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
@@ -68,9 +68,9 @@
           <div class="form-grid-2" style="margin-bottom: 1.5rem;">
             <div>
               <label
-                style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;"
-                data-i18n="lbl_mobile">
-                मोबाईल नंबर *
+                style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;">
+                <span class="lang-mr">मोबाईल नंबर *</span>
+                <span class="lang-en">Mobile Number *</span>
               </label>
               <input type="tel" id="donorPhone" required placeholder="१० अंकी मोबाईल नंबर" data-i18n="ph_mobile"
                 style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
@@ -78,9 +78,9 @@
 
             <div>
               <label
-                style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;"
-                data-i18n="lbl_email">
-                ईमेल आयडी (पावतीसाठी)
+                style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;">
+                <span class="lang-mr">ईमेल आयडी (पावतीसाठी)</span>
+                <span class="lang-en">Email Address (for receipt)</span>
               </label>
               <input type="email" id="donorEmail" placeholder="पावती मिळण्यासाठी ईमेल प्रविष्ट करा" data-i18n="ph_email"
                 style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem;">
@@ -91,18 +91,23 @@
           <div style="margin-bottom: 2rem;">
             <label
               style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; color: #FFFFFF;">
-              पेमेंट UTR / व्यवहार क्रमांक (Payment UTR No) *
+              <span class="lang-mr">पेमेंट UTR / व्यवहार क्रमांक *</span>
+              <span class="lang-en">Payment UTR / Transaction Number *</span>
             </label>
             <input type="text" id="paymentUtrNo" required placeholder="१२ अंकी UTR नंबर प्रविष्ट करा (उदा. 423456789012)"
               style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-gold); font-size: 0.95rem; font-family: monospace; font-weight: bold;">
             <small style="color: #D1D5DB; font-size: 0.8rem; display: block; margin-top: 4px;">
-              <i class="bi bi-info-circle"></i> UPI / बँक ट्रान्सफर केल्यानंतर मिळणारा १२ अंकी UTR नंबर येथे प्रविष्ट करा.
+              <i class="bi bi-info-circle"></i>
+              <span class="lang-mr">UPI / बँक ट्रान्सफर केल्यानंतर मिळणारा १२ अंकी UTR नंबर येथे प्रविष्ट करा.</span>
+              <span class="lang-en">Enter the 12-digit UTR number received after a UPI or bank transfer.</span>
             </small>
           </div>
 
           <button type="submit" class="btn btn-primary"
             style="width: 100%; padding: 1rem; font-size: clamp(0.95rem, 4vw, 1.1rem); font-weight: 800; white-space: normal; line-height: 1.3;" id="btnDonateSubmit">
-            <span>देणगी नोंदवा</span> <i class="bi bi-shield-check"></i>
+            <span class="lang-mr">देणगी नोंदवा</span>
+            <span class="lang-en">Submit Donation</span>
+            <i class="bi bi-shield-check"></i>
           </button>
         </form>
       </div>
@@ -114,7 +119,8 @@
             Bank of Maharashtra
           </span>
           <h3 style="font-size: 1.4rem; color: var(--royal-gold); margin: 0.2rem 0 0; font-family: var(--font-en-head);">
-            SCAN & PAY VIA UPI
+            <span class="lang-mr">स्कॅन करा आणि UPI द्वारे पैसे भरा</span>
+            <span class="lang-en">SCAN &amp; PAY VIA UPI</span>
           </h3>
         </div>
 
@@ -132,7 +138,8 @@
             </span>
             <button type="button" onclick="navigator.clipboard.writeText('bdc@mahb'); alert('UPI ID Copied: bdc@mahb');" 
               style="background: var(--temple-maroon); color: #FFF; border: none; padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; cursor: pointer; white-space: nowrap;">
-              <i class="fa-regular fa-copy"></i> Copy
+              <i class="fa-regular fa-copy"></i>
+              <span class="lang-mr">कॉपी करा</span><span class="lang-en">Copy</span>
             </button>
           </div>
         </div>
@@ -148,33 +155,34 @@
       <!-- Bank Details Section -->
       <div class="card-temple bank-details-card" style="padding: 3rem; margin-top: 2.5rem;">
         <h2 style="font-size: 1.8rem; color: var(--royal-gold); margin-bottom: 1.5rem; text-align: center;">
-          <span data-i18n="bank_details_title">बँक खाते तपशील / Bank Account Details</span>
+          <span class="lang-mr">बँक खाते तपशील</span>
+          <span class="lang-en">Bank Account Details</span>
         </h2>
         
         <div class="bank-details-inner" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-gold); padding: 2rem; border-radius: var(--radius-sm); font-size: 1.1rem; line-height: 1.8; color: #FFFFFF;">
           <div style="display: flex; flex-direction: column; gap: 0.8rem;">
             <div class="bank-detail-item" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; border-bottom: 1px dashed var(--border-gold); padding-bottom: 0.5rem;">
-              <strong style="color: var(--royal-gold);"><span data-i18n="bank_name_lbl">बँकेचे नाव:</span></strong>
+              <strong style="color: var(--royal-gold);"><span class="lang-mr">बँकेचे नाव:</span><span class="lang-en">Bank Name:</span></strong>
               <span style="color: #FFFFFF;">Bank of Maharashtra</span>
             </div>
             <div class="bank-detail-item bank-detail-item-acc" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; border-bottom: 1px dashed var(--border-gold); padding-bottom: 0.5rem;">
-              <strong style="color: var(--royal-gold);"><span data-i18n="acc_name_lbl">खात्याचे नाव:</span></strong>
+              <strong style="color: var(--royal-gold);"><span class="lang-mr">खात्याचे नाव:</span><span class="lang-en">Account Name:</span></strong>
               <span class="bank-acc-name" style="color: #FFFFFF;"><span class="bank-acc-line1">BYCULLA DAGDI CHAWL</span> <span class="bank-acc-line2">SARVAJANIK NAVRATROTSAV MANDAL</span></span>
             </div>
             <div class="bank-detail-item" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; border-bottom: 1px dashed var(--border-gold); padding-bottom: 0.5rem;">
-              <strong style="color: var(--royal-gold);"><span>UPI ID:</span></strong>
+              <strong style="color: var(--royal-gold);"><span class="lang-mr">UPI ID:</span><span class="lang-en">UPI ID:</span></strong>
               <span class="bank-upi-val" style="font-family: monospace; font-size: 1.15rem; font-weight: bold; color: var(--primary-saffron); text-shadow: 0 0 8px rgba(203, 161, 53, 0.4);">bdc@mahb</span>
             </div>
             <div class="bank-detail-item" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; border-bottom: 1px dashed var(--border-gold); padding-bottom: 0.5rem;">
-              <strong style="color: var(--royal-gold);"><span data-i18n="acc_no_lbl">खाते क्रमांक:</span></strong>
+              <strong style="color: var(--royal-gold);"><span class="lang-mr">खाते क्रमांक:</span><span class="lang-en">Account Number:</span></strong>
               <span style="font-family: monospace; font-size: 1.2rem; font-weight: bold; color: #FFFFFF;">20023347685</span>
             </div>
             <div class="bank-detail-item" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; border-bottom: 1px dashed var(--border-gold); padding-bottom: 0.5rem;">
-              <strong style="color: var(--royal-gold);"><span data-i18n="ifsc_lbl">आयएफएससी कोड:</span></strong>
+              <strong style="color: var(--royal-gold);"><span class="lang-mr">आयएफएससी कोड:</span><span class="lang-en">IFSC Code:</span></strong>
               <span style="font-family: monospace; font-size: 1.2rem; font-weight: bold; color: #FFFFFF;">MAHB0000294</span>
             </div>
             <div class="bank-detail-item" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; border-bottom: 1px dashed var(--border-gold); padding-bottom: 0.5rem;">
-              <strong style="color: var(--royal-gold);"><span data-i18n="branch_lbl">शाखा:</span></strong>
+              <strong style="color: var(--royal-gold);"><span class="lang-mr">शाखा:</span><span class="lang-en">Branch:</span></strong>
               <span style="color: #FFFFFF;">MUMBAI JACOB CIRCLE</span>
             </div>
           </div>
@@ -190,16 +198,17 @@
       <div style="width: 70px; height: 70px; background: #D1FAE5; color: #059669; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.2rem;">
         <i class="fa-solid fa-circle-check"></i>
       </div>
-      <h3 style="color: var(--royal-gold); font-size: 1.5rem; margin-bottom: 0.6rem;">तुमची देणगी नोंदणी यशस्वी झाली आहे!</h3>
+      <h3 style="color: var(--royal-gold); font-size: 1.5rem; margin-bottom: 0.6rem;"><span class="lang-mr">तुमची देणगी नोंदणी यशस्वी झाली आहे!</span><span class="lang-en">Your donation registration was successful!</span></h3>
       <p style="color: #E5E7EB; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-        मंडळाच्या बँक पडताळणीनंतर (Admin Approval) तुमची अधिकृत <strong>PDF पावती</strong> तुमच्या ईमेलवर पाठवली जाईल.
+        <span class="lang-mr">मंडळाच्या बँक पडताळणीनंतर (Admin Approval) तुमची अधिकृत <strong>PDF पावती</strong> तुमच्या ईमेलवर पाठवली जाईल.</span>
+        <span class="lang-en">Your official <strong>PDF receipt</strong> will be emailed to you after the Mandal verifies the bank transaction and approves it.</span>
       </p>
       <div style="background: rgba(255, 255, 255, 0.05); border: 1px dashed var(--border-gold); padding: 1rem; border-radius: 8px; margin-bottom: 1.8rem; font-size: 0.9rem; text-align: left;">
-        <div><strong>पावती क्रमांक:</strong> <span id="modalReceiptNo" style="font-family: monospace; font-weight: bold; color: var(--royal-gold);"></span></div>
-        <div><strong>पडताळणी स्थिती:</strong> <span style="color: #D97706; font-weight: bold;">पडताळणी प्रलंबित (Pending Admin Approval)</span></div>
+        <div><strong><span class="lang-mr">पावती क्रमांक:</span><span class="lang-en">Receipt Number:</span></strong> <span id="modalReceiptNo" style="font-family: monospace; font-weight: bold; color: var(--royal-gold);"></span></div>
+        <div><strong><span class="lang-mr">पडताळणी स्थिती:</span><span class="lang-en">Verification Status:</span></strong> <span style="color: #D97706; font-weight: bold;"><span class="lang-mr">पडताळणी प्रलंबित (प्रशासकीय मंजुरी बाकी)</span><span class="lang-en">Pending Admin Approval</span></span></div>
       </div>
       <button type="button" class="btn btn-primary" onclick="window.location.reload();" style="width: 100%; padding: 0.85rem; font-weight: bold;">
-        ठीक आहे (OK)
+        <span class="lang-mr">ठीक आहे</span><span class="lang-en">OK</span>
       </button>
     </div>
   </div>
@@ -216,7 +225,10 @@
         btn.disabled = true;
 
         if (btnTextSpan) {
-          btnTextSpan.textContent = 'नोंदणी होत आहे... (Submitting)';
+          const mr = btn.querySelector('.lang-mr');
+          const en = btn.querySelector('.lang-en');
+          if (mr) mr.textContent = 'नोंदणी होत आहे...';
+          if (en) en.textContent = 'Submitting...';
         } else {
           btn.textContent = 'नोंदणी होत आहे... (Submitting)';
         }
@@ -246,15 +258,25 @@
             const modal = document.getElementById('donationSuccessModal');
             if (modal) modal.style.display = 'flex';
           } else {
-            alert(data.message || 'देणगी नोंदवताना त्रुटी आली.');
+            alert(data.message || (document.documentElement.lang === 'en' ? 'An error occurred while submitting the donation.' : 'देणगी नोंदवताना त्रुटी आली.'));
             btn.disabled = false;
-            if (btnTextSpan) btnTextSpan.textContent = 'देणगी नोंदवा';
+            if (btnTextSpan) {
+              const mr = btn.querySelector('.lang-mr');
+              const en = btn.querySelector('.lang-en');
+              if (mr) mr.textContent = 'देणगी नोंदवा';
+              if (en) en.textContent = 'Submit Donation';
+            }
           }
         } catch (err) {
           console.error('Submission error:', err);
-          alert('नेटवर्क किंवा सर्वर त्रुटी आली.');
+          alert(document.documentElement.lang === 'en' ? 'A network or server error occurred.' : 'नेटवर्क किंवा सर्वर त्रुटी आली.');
           btn.disabled = false;
-          if (btnTextSpan) btnTextSpan.textContent = 'देणगी नोंदवा';
+          if (btnTextSpan) {
+            const mr = btn.querySelector('.lang-mr');
+            const en = btn.querySelector('.lang-en');
+            if (mr) mr.textContent = 'देणगी नोंदवा';
+            if (en) en.textContent = 'Submit Donation';
+          }
         }
       });
     });
